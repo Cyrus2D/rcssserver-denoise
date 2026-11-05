@@ -1,0 +1,130 @@
+version: 1.0
+generated_by: IGT Project Bootstrapper
+project:
+  name: rcssserver-denoise
+  has_submodules: false
+  root_path: .
+  checkpoint_mode: per-batch
+unavailable_units: []
+units:
+  - id: main
+    path: .
+    type: main
+    sub_projects: []
+    existing:
+      copilot_instructions: new
+      instructions_dir: new
+      agents_entry: new
+      claude_entry: new
+    copilot_instruction:
+      id: project-root
+      path: .github/copilot-instructions.md
+      description: Root map, build/run, instruction index, PR-review maintenance note
+      depends_on: [server-core, player-protocol, actions-models, observation-sensors, config-params, net-logging, noise-model, build-system]
+      action: new
+      progress: verified
+      write_mode: planner
+      last_worker: null
+    instructions:
+      - id: server-core
+        name: Server Core (stadium, world, referee)
+        path: .github/instructions/server-core.instructions.md
+        apply_to: "src/{main,stadium,field,object,weather,referee,team,timer,stdtimer,synctimer}*"
+        includes: [src/]
+        description: main loop, world objects, referee, timers
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: player-protocol
+        name: Player Protocol, Senders, Serializers
+        path: .github/instructions/player-protocol.instructions.md
+        apply_to: "src/{player,pcom,heteroplayer,serializer,sender,visualsender,bodysender,initsender,audio,leg,arm}*,src/player_command*"
+        includes: [src/]
+        description: player commands parsing, sensors, versioned serializers
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: actions-models
+        name: Player Actions (kick/dash/turn/tackle/catch/move)
+        path: .github/instructions/actions-models.instructions.md
+        apply_to: "src/{player,leg,arm}*,src/{pcomparser,pcombuilder}*"
+        includes: [src/player.cpp]
+        description: how player commands become physics; current models only
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: observation-sensors
+        name: Observations (visual/body/audio/fullstate senders)
+        path: .github/instructions/observation-sensors.instructions.md
+        apply_to: "src/{visualsender,bodysender,audio,fullstatesender,initsender,serializer}*"
+        includes: [src/]
+        description: what clients observe, sensor timing, serializer versions; skip deprecated
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: config-params
+        name: Config and Parameters
+        path: .github/instructions/config-params.instructions.md
+        apply_to: "src/{serverparam,playerparam,param}*,rcss/conf/**"
+        includes: [rcss/conf/]
+        description: server.conf/player.conf params and parsers
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: net-logging
+        name: Network, Monitor, Logging
+        path: .github/instructions/net-logging.instructions.md
+        apply_to: "rcss/net/**,rcss/gzip/**,src/{monitor,logger,csvsaver,mysqlsaver,stdoutsaver,serializermonitor}*"
+        includes: [rcss/net/, rcss/gzip/]
+        description: sockets, monitor protocol, rcg/rcl logs, savers
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: noise-model
+        name: Noise Model (cross-cutting)
+        path: .github/instructions/noise-model.instructions.md
+        apply_to: "src/{player,object,heteroplayer,serverparam}*"
+        includes: [src/]
+        description: CURRENT noise only - gaussian_see vs quantized see model, kick/dash/tackle noise; flag deprecated (low/high quality, old models) as ignorable
+        priority: 2
+        depends_on: [server-core, player-protocol, actions-models, observation-sensors, config-params]
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+      - id: build-system
+        name: Build System and CI
+        path: .github/instructions/build-system.instructions.md
+        apply_to: "CMakeLists.txt,**/CMakeLists.txt,configure.ac,**/Makefile.am,.circleci/**"
+        includes: [.]
+        description: autotools+CMake, flex/bison, CI smoke run
+        priority: 1
+        depends_on: []
+        action: new
+        progress: verified
+        write_mode: worker
+        last_worker: null
+    entrypoints:
+      - {id: codex-entry, path: AGENTS.md, depends_on: [project-root], action: new, progress: verified, write_mode: planner, last_worker: null}
+      - {id: claude-entry, path: CLAUDE.md, depends_on: [project-root], action: new, progress: verified, write_mode: planner, last_worker: null}
+    skills: []
+    indexes: []
+    scripts: []
