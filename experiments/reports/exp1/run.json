@@ -1,0 +1,31 @@
+{
+  "source": "/home/nader/workspace/denoise/logs/exp1",
+  "settings": {
+    "full_view": "false",
+    "see_noise_free": "false",
+    "see_no_fade_unum": "false",
+    "see_no_fade_all": "false",
+    "say_msg_size": "10",
+    "synch_mode": "true",
+    "version": "19",
+    "gaussian_see": "false",
+    "use_fullstate": "false",
+    "debug_fullstate": "true"
+  },
+  "coverage": {
+    "agent_logs": 2200,
+    "play_on_rows": 10634806,
+    "missing_truth": 0,
+    "skipped_decisions": 0,
+    "ambiguous_raw_matches": 2582304,
+    "seen_objects": 63098760,
+    "object_rows": 233965732,
+    "next_cycle_pairs": 10547188,
+    "landmark_logs": 2200,
+    "hear_logs": 2200,
+    "games": 100,
+    "logs_per_game": {
+      "22": 100
+    }
+  }
+}

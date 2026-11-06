@@ -79,3 +79,43 @@ Change one factor at a time first; combine later.
 - Batch runner script for the matrix (ports, ids, output dirs).
 - Optional `--gaussian-see` option in `start.sh`.
 - Not built or run yet: build on Linux and do a short smoke game first (check `meta.json` `final: true`).
+
+## Generate a play-on report
+
+Install NumPy, pandas, and Matplotlib in your Python environment if needed.
+Run this from the server checkout:
+
+~~~sh
+python3 experiments/report_denoise.py /home/nader/workspace/denoise/logs/exp1 --workers 24
+~~~
+
+The report defaults to `experiments/reports/<log-directory-name>/`. Use
+`--output PATH` to choose a different directory. Pass one game directory
+for a quicker preview. Each agent must have finalized schema-v2 logs
+with fullstate separate from the decision world model.
+
+- `report.html` includes plots and expandable tables for self, ball,
+  teammates, and opponents. It covers true distance, view width,
+  visibility, visual age, fused-estimate age, and recorded teammate reports.
+  The visual-gap summary includes all distances and targets strictly under
+  50 m from the observer, based on server ground truth.
+- `metrics.csv` contains the pooled means, approximate medians and p90s,
+  signed bias for scalar residuals, and metric coverage by group.
+- `run.json` records the source, run settings, and coverage checks.
+
+Every eligible sample contributes equally to its metric. Object rows
+are joined to the agent's `play_on` decision at the same cycle and stopped
+counter. One-step predictions are scored against fullstate at exactly the
+next cycle within uninterrupted `play_on`. Each prediction is paired
+with a persistence baseline using the same rows. The hearing breakdown
+describes association under the current communication policy. Compare
+separate `B0` and `S0` reports to measure the effect of disabling it.
+
+The hearing section compares each decoded teammate position with a local
+reference for the same target and cycle. For a seen target it uses the
+fresh visual position. For an unseen target it uses the previous
+ball forecast or the previous known player position. It groups the
+results by message type, visual age and target distance. A gain or
+loss larger than 5 cm counts as better or worse. These comparisons
+evaluate the reported positions against those references. Actual
+fusion gains require before-and-after logging or a controlled run.
