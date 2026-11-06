@@ -4,11 +4,11 @@
 RoboCup Soccer Simulation 2D server (rcssserver 19.0.0, C++17, autotools + CMake).
 - `src/` = server executable; `rcss/` = libs (net, conf, clang, gzip).
 - Clients (e.g. helios-base on librcsc) connect via UDP; players get observations and send actions.
-- Noise: quantized see model by default, Gaussian via `(gaussian_see)`; see noise-model instruction.
+- Noise: quantized see model by default, Gaussian via `(gaussian_see)`; v19 bool params `full_view`, `see_no_fade_unum`, `see_no_fade_all`, `see_noise_free` (exact distance, wins over Gaussian) support denoise experiments; see noise-model instruction.
 - **Open the full file when:** you need build commands or to pick the right scoped instruction.
 
 ## Project Overview
-Runs a 2D soccer game: world simulation, referee, player/coach/monitor protocols, logging (rcg/rcl). Sibling repos: `../librcsc-denoise` (client library), `../helios-base-denoise` (sample client). Protocol/model docs: `../manual/source/` (Sphinx; not a Git repo).
+Runs a 2D soccer game: world simulation, referee, player/coach/monitor protocols, logging (rcg/rcl). Sibling repos: `../librcsc-denoise` (client library), `../helios-base-denoise` (sample client). Protocol/model docs: `../manual/source/` (Sphinx; not a Git repo). Experiment matrix and run notes: `experiments/README.md`.
 
 ## Architecture and Entry Points
 - `src/main.cpp` -> `Stadium` (`src/stadium.*`) main loop; players in `src/player.cpp`; senders/serializers per protocol version.

@@ -6,7 +6,7 @@ applyTo: "src/{visualsenderplayer,player,serverparam,utility,heteroplayer}*"
 
 ## TL;DR
 
-The default `see` noise model is **deterministic**: distances are rounded on a log grid, then to 0.1; no random numbers are drawn (only the hide/show ramps are random). It is `QuantizeObservation` in `src/visualsenderplayer.cpp`, active for every player until the client sends `(gaussian_see)`.
+The default `see` noise model is **deterministic**: distances are rounded on a log grid, then to 0.1; no random numbers are drawn (only the hide/show ramps are random). It is `QuantizeObservation` in `src/visualsenderplayer.cpp`, active for every player until the client sends `(gaussian_see)`, unless the server param `see_noise_free` is on (see Noise-free variant).
 - **Open the full file when:** you invert/denoise quantized distances, `dist_chg`/`dir_chg`, flags, lines, or need error bounds.
 - Distance (ball, players, flags, goals): `qd = exp(Quantize(ln(d+EPS), q))`, `qf` same for focus distance `f`, `r = Quantize(max(0, d - ((f-qf)+(d-qd))/2), 0.1)`; with `focus = self` (always for v<18, default for v18+) `f=d` so `r = Quantize(qd, 0.1)`.
 - `q = quantize_step = 0.1` (movable), `quantize_step_l = 0.01` (flags/goals/lines). Relative error <= ~5.1 % (movable) / ~0.5 % (landmarks) plus 0.05 rounding.
@@ -55,6 +55,10 @@ Rule of thumb: `|err| <= d*(e^0.05 - 1) + 0.05 = 0.0513 d + 0.05` (movable), `0.
 - `dirch_raw = (vtmp.y*e.x - vtmp.x*e.y)/d * RAD2DEG` (deg/cycle); `dir_chg = 0` if exactly 0 else `Quantize(dirch_raw, dirQStep()=0.1)` (L183-189).
 - `d == 0` -> both 0 (L192-196). Flags: `v_obj = 0` (`sendHighFlag` L519) so values only reflect own motion.
 - Presence is probabilistic (ramps in [visual-observation-detail](visual-observation-detail.instructions.md)).
+
+## Noise-free variant (`see_noise_free`, v19, default false)
+
+`ExactObservation` (`visualsenderplayer.cpp` L299-330) derives from `QuantizeObservation` and overrides only `calcDist`/`calcDistLandmark` to return the true distance. It is chosen in `sendVisual()` before the Gaussian check, so it also overrides `(gaussian_see)`. `dir` stays an int, `dist_chg = nd*Quantize(dch/d, 0.02)` and `dir_chg` rounding are unchanged (`nd` = true distance), and `serializeHighLine` sends the exact `|p2l/cos(ang)|` (no log-grid, no 0.1 rounding). Printed distance is still a 6-significant-digit float. Applies to the high-quality (v18+) senders.
 
 ## Direction, body, head
 

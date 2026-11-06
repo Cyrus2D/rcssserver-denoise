@@ -335,9 +335,9 @@ public:
     //
     // visual sensor
     //
-    int visualSendInterval() const { return M_visual_send_interval; }
+    int visualSendInterval() const { return ( M_synch_see && ServerParam::instance().fullView() ) ? 1 : M_visual_send_interval; }
     bool highQuality() const { return M_high_quality; }
-    const double & visibleAngle() const { return M_visible_angle; }
+    double visibleAngle() const { return ServerParam::instance().fullView() ? 2.0 * M_PI + 1.0e-6 : M_visible_angle; }
     rcss::pcom::VIEW_WIDTH viewWidth() const { return M_view_width; }
     double wideViewAngleNoiseTerm() const { return M_wide_view_angle_noise_term; }
     double normalViewAngleNoiseTerm() const { return M_normal_view_angle_noise_term; }

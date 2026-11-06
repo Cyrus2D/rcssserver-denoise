@@ -631,6 +631,10 @@ private:
     double M_focus_dist_noise_rate;
     double M_land_dist_noise_rate;
     double M_land_focus_dist_noise_rate;
+    bool M_full_view;
+    bool M_see_no_fade_unum;
+    bool M_see_no_fade_all;
+    bool M_see_noise_free;
 
 private:
 
@@ -995,6 +999,10 @@ public:
     double focusDistNoiseRate() const { return M_focus_dist_noise_rate; }
     double landDistNoiseRate() const { return M_land_dist_noise_rate; }
     double landFocusDistNoiseRate() const { return M_land_focus_dist_noise_rate; }
+    bool fullView() const { return M_full_view; }
+    bool seeNoFadeUnum() const { return M_see_no_fade_unum; }
+    bool seeNoFadeAll() const { return M_see_no_fade_all; }
+    bool seeNoiseFree() const { return M_see_noise_free; }
 };
 
 #endif

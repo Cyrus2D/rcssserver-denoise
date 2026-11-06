@@ -383,6 +383,10 @@ constexpr double DIST_NOISE_RATE = 0.0125;
 constexpr double FOCUS_DIST_NOISE_RATE = 0.0125;
 constexpr double LAND_DIST_NOISE_RATE = 0.00125;
 constexpr double LAND_FOCUS_DIST_NOISE_RATE = 0.00125;
+constexpr bool FULL_VIEW = false;
+constexpr bool SEE_NO_FADE_UNUM = false;
+constexpr bool SEE_NO_FADE_ALL = false;
+constexpr bool SEE_NOISE_FREE = false;
 }
 
 // XXX
@@ -957,6 +961,10 @@ ServerParam::addParams()
     addParam( "focus_dist_noise_rate", M_focus_dist_noise_rate, "", 19 );
     addParam( "land_dist_noise_rate", M_land_dist_noise_rate, "", 19 );
     addParam( "land_focus_dist_noise_rate", M_land_focus_dist_noise_rate, "", 19 );
+    addParam( "full_view", M_full_view, "", 19 );
+    addParam( "see_no_fade_unum", M_see_no_fade_unum, "", 19 );
+    addParam( "see_no_fade_all", M_see_no_fade_all, "", 19 );
+    addParam( "see_noise_free", M_see_noise_free, "", 19 );
 
     // XXX
     // addParam( "random_seed", M_random_seed, "", 999 );
@@ -1479,6 +1487,10 @@ ServerParam::setDefaults()
     M_focus_dist_noise_rate = FOCUS_DIST_NOISE_RATE;
     M_land_dist_noise_rate = LAND_DIST_NOISE_RATE;
     M_land_focus_dist_noise_rate = LAND_FOCUS_DIST_NOISE_RATE;
+    M_full_view = FULL_VIEW;
+    M_see_no_fade_unum = SEE_NO_FADE_UNUM;
+    M_see_no_fade_all = SEE_NO_FADE_ALL;
+    M_see_noise_free = SEE_NOISE_FREE;
 //     std::string module_dir = S_MODULE_DIR;
 //     for ( std::string::size_type pos = module_dir.find( "//" );
 //           pos != std::string::npos;

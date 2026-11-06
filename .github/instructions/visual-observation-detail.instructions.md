@@ -10,7 +10,8 @@ A `see` message is built by `VisualSenderPlayerV1::sendVisual()` as flags/goals 
 - **Open the full file when:** you parse/denoise `see`, change view width/cone, name/unum/team hiding, or velocity (`dist_chg`/`dir_chg`) info.
 - Cone: visible iff `|dir| < visible_angle/2` (strict) and true dist < max-observation (125.1 default = pitch diagonal, i.e. unlimited); else only objects within `visible_distance` (3.0) appear, as capitalized `(B) (P) (F) (G)` with noisy dist + dir.
 - Default (v18+, high quality): player team name is **always** given; unum drops w.p. `(d-20)/20` over 20..40 m; ball/flag `dist_chg,dir_chg` drop with the same ramp.
-- Hiding decisions use the **noisy** distance; each ramp draw is independent per object per message.
+- Hiding decisions use the **noisy** distance; each ramp draw is independent per object per message. Server params `see_no_fade_unum` / `see_no_fade_all` (default false) switch off the far-object ramps (see Distance-dependent information).
+- Server param `full_view` (default false): `visibleAngle()` becomes 360 deg and, for synch_see players, `visualSendInterval()` is 1 (a `see` every cycle) regardless of view width (`player.h` L338-341).
 - Lines are not Gaussian and not focus-dependent; inside the pitch exactly one line is sent.
 
 ## Message format (`see`)
@@ -38,7 +39,7 @@ Per object (high quality; `sendHigh*`, `visualsenderplayer.cpp` L500-690):
 1. `in_cone = |ang| < visibleAngle()*0.5` and `d_true < max_obs_length` (ball `ballMaxObservationLength`, flags `landMaxObservationLength`, players `playerMaxObservationLength`; all default `sqrt(105^2+68^2)=125.1`, `heteroplayer.cpp` L248-263) -> full info.
 2. else if `d_true <= visible_distance` (3.0, `serverparam.cpp` L195, param v7) -> capitalized close name + **noisy** distance + dir only.
 3. else not sent. Self is skipped; players need `isEnabled()` and `objectVersion() <= version`.
-- View cone angle (`player.cpp` L1795-1832, L2358-2373; `visible_angle` default 90, `serverparam.cpp` L194):
+- View cone angle (`player.cpp` L1795-1832, L2358-2373; `visible_angle` default 90, `serverparam.cpp` L194). With `full_view` the accessors `Player::visibleAngle()` / `visualSendInterval()` (`player.h`) override the table below: 360 deg every step (the client's view width setting is kept):
 
 | width | async (v<18) angle / period | synch (v18+) angle / period |
 |---|---|---|
@@ -62,6 +63,7 @@ Per object (high quality; `sendHigh*`, `visualsenderplayer.cpp` L500-690):
 | Player unum (+ dch, dirch, body, head) | `(nd-unumFar)/(unumTooFar-unumFar)` (`h` L745-750) | 20 / 40 | 20 / 40 |
 | Player team name | `(nd-teamFar)/(teamTooFar-teamFar)` (`h` L738-743) | 125.1 / 125.1 -> division by 0 gives -inf -> **never hidden** (fork change 2022-10-13, was 40/60) | 40 / 60 |
 
+- Fade flags (`visualsenderplayer.cpp` `sendHighFlag`, `sendHighBall`, `sendHighPlayer`, in-cone far path of v18+ high quality only): `see_no_fade_all` skips the flag/ball velocity ramps and the player team and unum ramps; `see_no_fade_unum` skips the team ramp and, when the unum ramp would hide, emits the full name (team + unum, `calcPlayerName`) but still WITHOUT dist_chg/dir_chg/body/head (those still fade at the unum ramp); `see_no_fade_all` additionally skips the unum ramp, so far players always carry full info; close (<=3 m, `(P)/(B)/(F)`) and low-quality paths are unchanged.
 - Order for players: team test first (hidden -> `(p)` form, no t/k flag), then unum test (hidden -> `(p "T")` + point + t/k), else full (`L642-690`).
 - Close/outside-cone objects never carry velocity or names.
 - A client should treat missing `dch/dirch` on ball/flags beyond 20 m as "unknown", not zero.

@@ -28,7 +28,7 @@ Server and player parameters are registered through `addParam` into a `rcss::con
 - **Version gate** (~L463): `M_builder->version()` must match `M_builder->parsedVersion()`, otherwise the file must be regenerated.
 - **Sub-modules:** `PlayerParam::init(builder)` (~L478, `src/playerparam.cpp` ~L165) and `CSVSaverParam::init` (~L485) register into the same builder. Player file is `player.conf` (`PLAYER_CONF`, `src/playerparam.cpp` ~L84-89).
 - **Registration:** `ServerParam::addParams()` (`src/serverparam.cpp` ~L625 onward) calls `addParam(name, member, desc, version)` or the setter/getter overload `addParam(name, setter, getter, desc, version)` (~L603-622). Both forward to `M_builder->addParam` and store `M_ver_map[name] = version`.
-- **Version numbers:** examples from `addParams()`: `goal_width` is 7, `port` / `text_log_compression` are 8, `kick_off_wait` is 9. Parameters added later use higher numbers (e.g. the Gaussian noise rates are registered at v19, see [noise-model](noise-model.instructions.md)).
+- **Version numbers:** examples from `addParams()`: `goal_width` is 7, `port` / `text_log_compression` are 8, `kick_off_wait` is 9. Parameters added later use higher numbers (e.g. the Gaussian noise rates and the bool params `full_view`, `see_no_fade_unum`, `see_no_fade_all`, `see_noise_free` (all default false; `constexpr` defaults near `serverparam.cpp` L386-389, `addParam` L964-967) are registered at v19, see [noise-model](noise-model.instructions.md)).
 - **Default ports** (`src/serverparam.cpp` ~L119-121): `DEFAULT_PORT_NUMBER = 6000`, `COACH_PORT_NUMBER = 6001`, `OLCOACH_PORT_NUMBER = 6002`; registered as `port`, `coach_port`, `olcoach_port` (~L726-728).
 
 ## Patterns & Conventions

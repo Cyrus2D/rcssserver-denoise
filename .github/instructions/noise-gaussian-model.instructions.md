@@ -16,7 +16,7 @@ applyTo: "src/{visualsenderplayer,player,serverparam,heteroplayer,random}*"
 ## Overview
 
 - Command: `Player::gaussian_see()` (`player.cpp` L2387-2391) sets `M_gaussian_see`, replies `(ok gaussian_see)`; grammar `player_command_parser.ypp` (rule ~L155, `gaussian_see_com` ~L376-378).
-- Selection: every `sendVisual()` (all sender versions, async and synch) does `if (self().isGaussianSee()) M_noisy_observation = new GaussianObservation(self())` (`visualsenderplayer.cpp` L377-380). Sticky: never reset by `change_view`, `synch_see`, reconnect-free life. Works for all protocol versions (manual agrees, L413). Interaction with synch/version: none beyond which focus is used (v<18: focus = self).
+- Selection: every `sendVisual()` (all sender versions, async and synch) does `if (self().isGaussianSee()) M_noisy_observation = new GaussianObservation(self())` (`visualsenderplayer.cpp` L418-421, checked AFTER `see_noise_free`: with that server param `ExactObservation` is used and `(gaussian_see)` has no effect on distance). Sticky: never reset by `change_view`, `synch_see`, reconnect-free life. Works for all protocol versions (manual agrees, L413). Interaction with synch/version: none beyond which focus is used (v<18: focus = self).
 - Class: `GaussianObservation` (`visualsenderplayer.cpp` L209-295). RNG `ndrand(mean, std)` = `std::normal_distribution` on `DefaultRNG` (`random.h` L98-104).
 
 ## Formula and parameters

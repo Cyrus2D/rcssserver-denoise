@@ -295,6 +295,43 @@ public:
 };
 
 
+/**
+ * @class ExactObservation
+ * @brief Noise-free distance observation (server param see_noise_free).
+ *
+ * Distances are the actual distances (no log-grid quantization, no rounding).
+ * The distance/direction change values are computed in the same way as the
+ * quantize model, using the actual distance as the noisy distance.
+ */
+class ExactObservation
+    : public QuantizeObservation {
+private:
+
+    ExactObservation() = delete;
+
+public:
+    explicit
+    ExactObservation( const Player & player )
+        : QuantizeObservation( player )
+      { }
+
+    virtual
+    ~ExactObservation() = default;
+
+    double calcDist( const double actual_dist,
+                     const double ) const override
+      {
+          return actual_dist;
+      }
+
+    double calcDistLandmark( const double actual_dist,
+                             const double ) const override
+      {
+          return actual_dist;
+      }
+};
+
+
 /*!
 //===================================================================
 //
@@ -374,7 +411,11 @@ VisualSenderPlayerV1::sendVisual()
         return;
     }
 
-    if ( self().isGaussianSee() )
+    if ( ServerParam::instance().seeNoiseFree() )
+    {
+        M_noisy_observation = std::shared_ptr< const NoisyObservation >( new ExactObservation( self() ) );
+    }
+    else if ( self().isGaussianSee() )
     {
         M_noisy_observation = std::shared_ptr< const NoisyObservation >( new GaussianObservation( self() ) );
     }
@@ -506,7 +547,8 @@ VisualSenderPlayerV1::sendHighFlag( const PObject & flag )
     if ( std::fabs( ang ) < self().visibleAngle() * 0.5
          && actual_dist < self().playerType()->landMaxObservationLength() )
     {
-        if ( decide( calcNoFlagVelProb( noisy_dist ) ) )
+        if ( ! ServerParam::instance().seeNoFadeAll()
+             && decide( calcNoFlagVelProb( noisy_dist ) ) )
         {
             serializer().serializeVisualObject( transport(),
                                                 calcName( flag ),
@@ -568,7 +610,8 @@ VisualSenderPlayerV1::sendHighBall( const MPObject & ball )
     if ( std::fabs( ang ) < self().visibleAngle() * 0.5
          && actual_dist < self().playerType()->ballMaxObservationLength() )
     {
-        if ( decide( calcNoBallVelProb( noisy_dist ) ) )
+        if ( ! ServerParam::instance().seeNoFadeAll()
+             && decide( calcNoBallVelProb( noisy_dist ) ) )
         {
             serializer().serializeVisualObject( transport(),
                                                 calcName( ball ),
@@ -644,11 +687,14 @@ VisualSenderPlayerV1::sendHighPlayer( const Player & player )
     const double ang = calcRadDir( player );
     const double actual_dist = self().pos().distance( player.pos() );
     const double noisy_dist = calcNoisyDist( player, actual_dist );
+    const bool no_fade_unum = ServerParam::instance().seeNoFadeUnum();
+    const bool no_fade_all = ServerParam::instance().seeNoFadeAll();
 
     if ( std::fabs( ang ) < self().visibleAngle() * 0.5
          && actual_dist < self().playerType()->playerMaxObservationLength() )
     {
-        if ( decide( calcNoTeamProb( noisy_dist ) ) )
+        if ( ! ( no_fade_unum || no_fade_all )
+             && decide( calcNoTeamProb( noisy_dist ) ) )
         {
             // no team information
             serializer().serializeVisualObject( transport(),
@@ -658,11 +704,12 @@ VisualSenderPlayerV1::sendHighPlayer( const Player & player )
         }
         else
         {
-            if ( decide( calcNoUnumProb( noisy_dist ) ) )
+            if ( ! no_fade_all
+                 && decide( calcNoUnumProb( noisy_dist ) ) )
             {
-                // no unum information
+                // no unum information (or, with see_no_fade_unum, keep team and unum)
                 serializePlayer( player,
-                                 calcUFarName( player ),
+                                 no_fade_unum ? calcPlayerName( player ) : calcUFarName( player ),
                                  noisy_dist,
                                  calcDegDir( ang ) );
             }
@@ -817,8 +864,10 @@ VisualSenderPlayerV1::serializeHighLine( const std::string & name,
                                          const double & sight_2_line_ang,
                                          const double & player_2_line )
 {
-    double dist = calcLineDist( sight_2_line_ang, player_2_line,
-                                self().landDistQStep() );
+    const double dist = ServerParam::instance().seeNoiseFree()
+        ? std::fabs( player_2_line / std::cos( sight_2_line_ang ) )
+        : calcLineDist( sight_2_line_ang, player_2_line,
+                        self().landDistQStep() );
     serializer().serializeVisualObject( transport(), name, dist, dir );
 }
 

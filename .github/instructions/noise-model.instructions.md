@@ -7,7 +7,7 @@ applyTo: "src/{player,object,heteroplayer,serverparam,visualsenderplayer,seriali
 ## TL;DR
 
 rcssserver adds noise in the **visual sensor** (quantization by default, Gaussian after `(gaussian_see)`) and in **actuators/physics**. Details of each visual model live in sibling files.
-- Default visual model = `QuantizeObservation`; `(gaussian_see)` swaps in `GaussianObservation` (sticky, all versions): `visualsenderplayer.cpp:377-380`, `player.cpp` `gaussian_see`.
+- Default visual model = `QuantizeObservation`; `(gaussian_see)` swaps in `GaussianObservation` (sticky, all versions); server param `see_noise_free` selects `ExactObservation` (exact distance) first, so it wins over Gaussian: `visualsenderplayer.cpp:414-421`, `player.cpp` `gaussian_see`.
 - Formulas: [noise-quantize-model](noise-quantize-model.instructions.md), [noise-gaussian-model](noise-gaussian-model.instructions.md).
 - Objects within `visible_distance` (3.0) are NOT noise free: they are sent as capitalized `(B)/(P)/(F)/(G)` with noisy dist/dir (high quality); low quality sends direction only.
 - Actuator noise: `ball_rand` 0.05, `player_rand` 0.1, `kick_rand` 0.1, `tackle_rand_factor` 2.0, `wind_rand` 0.
@@ -15,9 +15,10 @@ rcssserver adds noise in the **visual sensor** (quantization by default, Gaussia
 
 ## Model selection
 
-- `VisualSenderPlayer` ctor installs `QuantizeObservation`; `VisualSenderPlayerV1::sendVisual` replaces it with `GaussianObservation` when `isGaussianSee()` (`visualsenderplayer.cpp:377-380`). All sender versions V1..V18 inherit it.
+- `VisualSenderPlayer` ctor installs `QuantizeObservation`; `VisualSenderPlayerV1::sendVisual` replaces it (`visualsenderplayer.cpp:414-421`): `ExactObservation` if `ServerParam::seeNoiseFree()`, else `GaussianObservation` if `isGaussianSee()`. All sender versions V1..V18 inherit it.
+- `ExactObservation` (derived from `QuantizeObservation`, `:299-330`): `calcDist`/`calcDistLandmark` return the true distance; direction stays int degrees; `dist_chg`/`dir_chg` keep the quantize rounding (computed with the true distance as `nd`); lines get the exact `|p2l/cos(ang)|` in `serializeHighLine`. Details: [noise-quantize-model](noise-quantize-model.instructions.md).
 - v18+ is forced to synch_see (`player.cpp:376-387`), so low quality is reachable only by v<18 clients (`player.cpp:1846-1852`).
-- Lines never use Gaussian (`calcLineDist`, `visualsenderplayer.h:382-390`).
+- Lines never use Gaussian (`calcLineDist`, `visualsenderplayer.h:382-390`); they are exact only with `see_noise_free`.
 - Hiding ramps (team/unum/velocity) apply with either model, on the noisy distance.
 - `NEW_QSTEP` per-team steps are never compiled in.
 
@@ -32,6 +33,9 @@ rcssserver adds noise in the **visual sensor** (quantization by default, Gaussia
 | land_dist_noise_rate | 0.00125 | Gaussian, landmarks | `:384` |
 | land_focus_dist_noise_rate | 0.00125 | Gaussian, landmarks focus term | `:385` |
 | visible_angle / visible_distance | 90 / 3.0 | view cone, near-object rule | `:194-195` |
+| full_view | false | cone = 360 deg and a `see` every cycle for synch_see players (see [visual-observation-detail](visual-observation-detail.instructions.md)) | `serverparam.cpp` addParam v19 |
+| see_no_fade_unum / see_no_fade_all | false / false | disable the team/unum (and with `_all` also velocity/body/head) distance fade of far objects, v18+ high quality | same |
+| see_noise_free | false | `ExactObservation`: exact distance (wins over Gaussian) | same |
 | unum far / too-far | 20 / 40 | player number ramp | `heteroplayer.cpp:248-263` |
 | team far / too-far | 125.1 / 125.1 (fork) | team ramp (effectively never hidden) | same |
 

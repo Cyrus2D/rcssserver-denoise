@@ -27,6 +27,7 @@ Each `Player` owns observers (`M_observer` visual, `M_body_observer`, `M_init_ob
 
 - Throttle is `VisualSenderPlayerV1::sendVisual()` (`visualsenderplayer.cpp` L364-375): `++sendcnt >= interval` then reset. `Player::sendVisual()`/`sendSynchVisual()` are mutually exclusive on `M_synch_see` (`player.cpp` L2414-2429).
 - `Player::initObservationMode()` (L376-387) calls `synch_see()` for `version() >= 18`, called from `Stadium::initPlayer` (`stadium.cpp` ~L631). Synch is irreversible; `view_quality low` is rejected in synch (`player.cpp` L1785-1789).
+- `full_view` (server param, default false): for synch_see players `Player::visualSendInterval()` returns 1 and `visibleAngle()` is 360 deg, so a `see` is sent every step whatever the view width (`player.h` L338-341).
 - Defaults at player construction: async, interval 4, high quality, NORMAL width, visible angle = `visible_angle` (90 deg) (`player.cpp` L184-189).
 - `view_quality low` (async only): `M_high_quality=false`, interval halved (`player.cpp` L1846-1852), `see` contains **directions only, no distances** (see visual-observation-detail). Still reachable for v<18 clients; monitors report it (`dispsender.cpp`, `logger.cpp`).
 
