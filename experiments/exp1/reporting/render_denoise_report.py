@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 import numpy as np
 
-import denoise_hearing as heard
+from . import denoise_hearing as heard
 
 
 COLORS = ("#007c78", "#325db2", "#c55a28")
@@ -478,6 +478,8 @@ def write_report(output, logs, settings, coverage, rows):
     report = Report(rows)
     r = report
     name = escape(logs.name)
+    side = coverage.get("observer_side", "both")
+    scope = "" if side == "both" else f"<p><strong>Observers</strong> {side.capitalize()}-team players only. Both teams are included as observed targets.</p>"
     self_position = r.result("self", "All", "n_est_pos_d")
     self_card = f"{100 * self_position:.2f} cm" if self_position is not None else "—"
     cards = "".join(f"<div class='card'><strong>{value}</strong><span>{label}</span></div>" for value, label in (
@@ -491,6 +493,7 @@ def write_report(output, logs, settings, coverage, rows):
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Denoise report · {name}</title>
 <style>{STYLE}</style></head><body><main><header><div class="kicker">RoboCup 2D · Denoise experiment</div>
 <h1>{name} · Play-on report</h1><p class="lede">Sensor error, track freshness, communication, and one-cycle prediction.</p>
+{scope}
 <div class="cards">{cards}</div>
 <nav aria-label="Report sections"><a href="#self">Self</a><a href="#objects">Ball and players</a>
 <a href="#view">View and age</a><a href="#hear">Hearing</a><a href="#prediction">Predictions</a>

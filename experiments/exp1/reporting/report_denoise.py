@@ -15,7 +15,7 @@ import json
 import numpy as np
 import pandas as pd
 
-import denoise_hearing as hearing
+from . import denoise_hearing as hearing
 
 SELF = {
     "n_est_pos_d": ("Self position", "m"),
@@ -527,11 +527,13 @@ def run_game(directories):
     return summary
 
 
-def discover(logs):
+def discover(logs, side="both"):
     directories = {path.parent for suffix in (".csv.gz", ".csv")
                    for path in logs.rglob(f"agent_cycle{suffix}")}
     games = {}
     for directory in sorted(directories):
+        if side != "both" and not directory.name.startswith(side[0] + "_"):
+            continue
         games.setdefault(directory.parent, []).append(directory)
     if not games:
         raise ValueError(f"No agent_cycle logs found under {logs}")
@@ -541,15 +543,21 @@ def discover(logs):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("logs", type=Path, help="Experiment log root or a single game directory")
-    parser.add_argument("--output", type=Path, help="Output directory, defaults to experiments/reports/<log name>")
+    parser.add_argument("--output", type=Path, help="Output directory, defaults to the Exp1 reports directory")
+    parser.add_argument("--side", choices=("both", "left", "right"), default="both",
+                        help="Restrict samples to observers on the selected side")
     parser.add_argument("--workers", type=int, default=min(16, os.cpu_count() or 1))
     args = parser.parse_args()
     if args.workers < 1:
         parser.error("--workers must be at least 1")
     logs = args.logs.resolve()
-    output = args.output or Path(__file__).resolve().parent / "reports" / logs.name
+    reports = Path(__file__).resolve().parents[1] / "reports"
+    output = args.output or reports
+    if args.output is None and (logs.name != "exp1" or args.side != "both"):
+        suffix = "" if args.side == "both" else f"-{args.side}"
+        output /= logs.name + suffix
     try:
-        games = discover(logs)
+        games = discover(logs, args.side)
         summary = Summary()
         print(f"Found {len(games)} games and {sum(map(len, games.values()))} player logs", flush=True)
         if args.workers == 1 or len(games) == 1:
@@ -566,10 +574,11 @@ def main():
             raise ValueError(f"Mixed experiment settings; run each configuration separately: {summary.settings}")
         if summary.coverage["play_on_rows"] == summary.coverage["missing_truth"]:
             raise ValueError("No eligible play_on decisions with reference truth")
-        from render_denoise_report import write_report
+        from .render_denoise_report import write_report
         settings = dict(zip(SERVER_SETTINGS + CLIENT_SETTINGS, next(iter(summary.settings))))
         coverage = dict(summary.coverage) | {
             "games": len(games),
+            "observer_side": args.side,
             "logs_per_game": dict(sorted(Counter(map(len, games.values())).items())),
         }
         write_report(output.resolve(), logs, settings, coverage, list(summary.rows()))
