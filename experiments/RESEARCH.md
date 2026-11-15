@@ -12,7 +12,7 @@ isolate those factors.
 | Repository | Denoise code and integration |
 |---|---|
 | rcssserver-denoise | Protocol v19 experiment settings in [serverparam.cpp](../src/serverparam.cpp). [visualsenderplayer.cpp](../src/visualsenderplayer.cpp) selects the distance model and controls distance-based fading for high-quality observations. |
-| librcsc-denoise | Reads the server settings and adjusts observation timing and localization. `DenoiseLogger` writes per-agent schema-v2 logs. The self-position estimator hook runs before decision caches are built. |
+| librcsc-denoise | Reads the server settings and adjusts observation timing and localization. `DenoiseLogger` originally wrote schema-v2 logs; F4 schema 3 adds per-field application flags, original ages and isolated observation history. The self-position estimator hook runs before decision caches are built. |
 | helios-base-denoise | `start.sh` configures dataset logging and the Exp2 model modes. Helios loads the weights and owns inference, recurrent state and model logging. Behavior logs include `pre:`, `role:`, `plan:` and `exec:` labels. |
 
 See the server [noise-model notes](../.github/instructions/noise-model.instructions.md)
@@ -38,10 +38,26 @@ configuration. To suppress normal teammate payloads, set
 `server::say_msg_size=0`. The hearing-capacity settings control delivery
 limits.
 
+## Optional command-priority control
+
+For synchronous treatment-versus-stock trials, `randomize_player_commands=true`
+buffers complete player action batches and shuffles their execution with an
+independent per-cycle generator. It defaults to false. Configure
+`command_order_seed=-1` for an automatically selected, recorded game seed.
+`command_order_log=true` writes a CSV under `game_log_dir` even when ordinary
+logging is off. Missing `done`, malformed input or overflow aborts the match
+without a scored result. The underlying physics is unchanged, but this is
+a different scheduling condition from the standard server.
+
+[Exp4 implementation, settings and verification](exp4/reports/06-server-command-order.md).
+Client v19 parameter mirrors preserve the resolved order and simulator seeds
+in player metadata.
+
 ## Planned comparisons
 
 Exp1 supplies B0. Exp2 changes self-position estimation while keeping the
-standard visual configuration. Treat the other rows as proposed experiments
+standard visual configuration. [Exp3](exp3/README.md) combines V1, F1 and S0
+with quantization enabled. Treat the individual follow-up rows as proposed experiments
 until a completed run and report are linked from the [index](README.md).
 
 | ID | Change from B0 | Question |
@@ -103,3 +119,39 @@ clear match-result effect. The active team always played on the left.
 Keep that side assignment in mind when comparing scores across batches.
 See the [live results](exp2/reports/steps/07-live-100-games.md) and
 [comparison report](exp2/reports/comparison.html).
+
+
+## Action arrival order in live model tests
+
+Synchronous mode does not make all commands simultaneous. Some commands
+are handled immediately on arrival; an intentional foul can mark a victim's
+command done before its kick is handled. The [F4 60-game audit](exp4/reports/05-live-f4-60-games.md)
+records slower treatment decisions and many more same-cycle foul-suppressed
+kicks, despite lower perception error. Measure raw send timing, sense-body
+acknowledgements and charge expiry, and use a time-matched control when
+separating model benefit from computation cost. Do not silently change
+server physics to erase this effect. Fullstate supplies evaluation groups
+only; preserve causal observation-only inputs.
+
+## Exp4 closeout (2026-11-15)
+
+The [ball-stability closeout](exp4/reports/09-closeout-ball-stability.md)
+records observer left 9's cycles 784–802 and the saved stage-by-stage evidence.
+Quantized 360° vision still omits distant ball-motion fields when
+see_no_fade_all=false. The current ball model can provide an inaccurate
+valid velocity during those omissions and does not eliminate position
+jumps. Retain Step26 corrected player positions as the strongest accuracy
+candidate; ball correction remains experimental. Player velocity/body match
+benefit is not isolated. The then-available randomized batch contained 35
+finalized games, not the planned 200. No runtime change was made at closeout.
+
+## Exp3/Exp4 archive and next scope
+
+Use the [combined handoff](exp3-exp4/README.md) for numerical gains,
+game-result limits, source-branch locations and the proposed visual-gap
+experiment. Librcsc/Helios model implementations are preserved on
+denoise-exp3-exp4; their source checkouts were returned to denoise.
+Retrieve logging selectively and rebuild before new collection. The next
+focus is accurate visible measurements with finite views and prediction
+while targets are unseen. Existing see_noise_free is distance-only, so
+verify the observation model before calling that experiment noiseless.

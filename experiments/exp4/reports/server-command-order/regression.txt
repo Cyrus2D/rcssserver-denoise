@@ -1,0 +1,12 @@
+Randomized player command batches enabled; seed=42
+Command order trace: "/tmp/server-order-fixture/fixture.command-order.csv"
+Using given Simulator Random Seed: 12345
+CSVSaver: Ready
+STDOutSaver: Ready
+wind factor: rand: 0.000000, vector: (0.000000, 0.000000)
+Invalid or incomplete randomized command batch; aborting match
+Invalid or incomplete randomized command batch; aborting match
+syntax error
+Error parsing >(kick nope)(done)<
+Invalid or incomplete randomized command batch; aborting match
+REGRESSION PASS: 64 seeds x reversed UDP arrival; exact noisy physics; polling isolation; both priorities; legacy; command order; post-done drop; incomplete batch; overflow; malformed input. kick-first=34 foul-first=30

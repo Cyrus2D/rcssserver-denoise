@@ -101,5 +101,5 @@ main( int argc, char *argv[] )
 
     ServerParam::instance().clear();
 
-    return 0;
+    return Std.commandBatchFailed() ? 1 : 0;
 }

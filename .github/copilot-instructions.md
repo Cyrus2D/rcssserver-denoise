@@ -8,7 +8,7 @@ RoboCup Soccer Simulation 2D server (rcssserver 19.0.0, C++17, autotools + CMake
 - **Open the full file when:** you need build commands or to pick the right scoped instruction.
 
 ## Project Overview
-Runs a 2D soccer game: world simulation, referee, player/coach/monitor protocols, logging (rcg/rcl). Sibling repos: `../librcsc-denoise` (client library), `../helios-base-denoise` (sample client). Protocol/model docs: `../manual/source/` (Sphinx; not a Git repo). For denoise work, start with the [experiment index](../experiments/README.md) and [research guide](../experiments/RESEARCH.md).
+Runs a 2D soccer game: world simulation, referee, player/coach/monitor protocols, logging (rcg/rcl). Sibling repos: `../librcsc-denoise` (client library), `../helios-base-denoise` (sample client). Protocol/model docs: `../manual/source/` (Sphinx; not a Git repo). For denoise work, start with the [experiment index](../experiments/README.md) and [research guide](../experiments/RESEARCH.md). The [Exp3/Exp4 combined handoff](../experiments/exp3-exp4/README.md) records completed results and model code archived on the sibling repositories' denoise-exp3-exp4 branches.
 
 ## Architecture and Entry Points
 - `src/main.cpp` -> `Stadium` (`src/stadium.*`) main loop; players in `src/player.cpp`; senders/serializers per protocol version.

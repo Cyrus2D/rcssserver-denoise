@@ -961,13 +961,20 @@ ServerParam::addParams()
     addParam( "focus_dist_noise_rate", M_focus_dist_noise_rate, "", 19 );
     addParam( "land_dist_noise_rate", M_land_dist_noise_rate, "", 19 );
     addParam( "land_focus_dist_noise_rate", M_land_focus_dist_noise_rate, "", 19 );
+    addParam( "randomize_player_commands", M_randomize_player_commands,
+              "buffer synchronous player actions and execute uniformly shuffled batches", 19 );
+    addParam( "command_order_seed", M_command_order_seed,
+              "command shuffle seed; -1 selects and records an independent random seed", 19 );
+    addParam( "command_order_log", M_command_order_log,
+              "write a per-cycle .command-order.csv trace in game_log_dir", 19 );
     addParam( "full_view", M_full_view, "", 19 );
     addParam( "see_no_fade_unum", M_see_no_fade_unum, "", 19 );
     addParam( "see_no_fade_all", M_see_no_fade_all, "", 19 );
     addParam( "see_noise_free", M_see_noise_free, "", 19 );
 
     // XXX
-    // addParam( "random_seed", M_random_seed, "", 999 );
+    addParam( "random_seed", M_random_seed,
+              "simulator physics seed; -1 uses the normal time-based seed", 19 );
     // addParam( "long_kick_power_factor", M_long_kick_power_factor, "", 999 );
     // addParam( "long_kick_delay", M_long_kick_delay, "", 999 );
 }
@@ -1487,6 +1494,9 @@ ServerParam::setDefaults()
     M_focus_dist_noise_rate = FOCUS_DIST_NOISE_RATE;
     M_land_dist_noise_rate = LAND_DIST_NOISE_RATE;
     M_land_focus_dist_noise_rate = LAND_FOCUS_DIST_NOISE_RATE;
+    M_randomize_player_commands = false;
+    M_command_order_seed = -1;
+    M_command_order_log = true;
     M_full_view = FULL_VIEW;
     M_see_no_fade_unum = SEE_NO_FADE_UNUM;
     M_see_no_fade_all = SEE_NO_FADE_ALL;

@@ -1,0 +1,9 @@
+{
+  "counts": {
+    "paired_events": 141,
+    "kick_first": 71,
+    "tackle_first": 70,
+    "matches_execution_order": 141
+  },
+  "mismatches": []
+}

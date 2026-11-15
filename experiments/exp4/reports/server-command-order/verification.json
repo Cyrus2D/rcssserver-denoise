@@ -1,0 +1,54 @@
+{
+  "regression": "REGRESSION PASS: 64 seeds x reversed UDP arrival; exact noisy physics; polling isolation; both priorities; legacy; command order; post-done drop; incomplete batch; overflow; malformed input. kick-first=34 foul-first=30",
+  "installed_protocol": {
+    "async_rejected": {
+      "exit": 1,
+      "expected": "requires synch_mode=true"
+    },
+    "bad_seed_rejected": {
+      "exit": 1,
+      "expected": "must be -1 or nonnegative"
+    },
+    "timeout_aborted": {
+      "exit": 1,
+      "turn_counter_before_done": 0,
+      "scored_result": false
+    }
+  },
+  "smoke": [
+    {
+      "name": "random-order-02",
+      "agents": 22,
+      "finalized": 22,
+      "full_roster_rounds": 1348,
+      "left_first": 702,
+      "trace": true
+    },
+    {
+      "name": "random-order-right-01",
+      "agents": 22,
+      "finalized": 22,
+      "full_roster_rounds": 738,
+      "left_first": 375,
+      "trace": true
+    },
+    {
+      "name": "legacy-order-01",
+      "agents": 22,
+      "finalized": 22,
+      "full_roster_rounds": 0,
+      "left_first": 0,
+      "trace": false
+    },
+    {
+      "name": "random-order-installed-01",
+      "server": "/usr/local/bin/rcssserver",
+      "agents": 22,
+      "finalized": 22,
+      "full_roster_rounds": 308,
+      "left_first": 144,
+      "trace": true
+    }
+  ],
+  "installed_server_sha256": "899b74f8ca0435c3900c6cb09cef27a8d66f0324e9d197923cfd9ca5e679aae6"
+}

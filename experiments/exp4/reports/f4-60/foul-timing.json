@@ -1,0 +1,5705 @@
+{
+  "counts": {
+    "l": {
+      "paired_kicks": 33203,
+      "new_charge": 248,
+      "new_charge_kick_acked": 10,
+      "new_charge_kick_blocked": 238,
+      "new_charge_same_cycle_opponent_foul": 248
+    },
+    "r": {
+      "paired_kicks": 33615,
+      "new_charge": 276,
+      "new_charge_kick_acked": 244,
+      "new_charge_kick_blocked": 32,
+      "new_charge_same_cycle_opponent_foul": 276
+    }
+  },
+  "per_game": {
+    "202611141919_1097": {
+      "l": {
+        "paired_kicks": 508,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 465,
+        "new_charge": 5,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141919_12667": {
+      "l": {
+        "paired_kicks": 576,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 509,
+        "new_charge": 6,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141919_30705": {
+      "l": {
+        "paired_kicks": 555,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 499,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141919_31609": {
+      "l": {
+        "paired_kicks": 578,
+        "new_charge": 5,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 613,
+        "new_charge": 5,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141919_7446": {
+      "l": {
+        "paired_kicks": 556,
+        "new_charge": 2,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 2
+      },
+      "r": {
+        "paired_kicks": 552,
+        "new_charge": 6,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141922_14058": {
+      "l": {
+        "paired_kicks": 505,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 580,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141922_19889": {
+      "l": {
+        "paired_kicks": 604,
+        "new_charge": 6,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 6,
+        "new_charge_same_cycle_opponent_foul": 6
+      },
+      "r": {
+        "paired_kicks": 578,
+        "new_charge": 3,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 3
+      }
+    },
+    "202611141922_24425": {
+      "l": {
+        "paired_kicks": 612,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 505,
+        "new_charge": 2,
+        "new_charge_kick_acked": 2,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141922_24803": {
+      "l": {
+        "paired_kicks": 467,
+        "new_charge": 1,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 1
+      },
+      "r": {
+        "paired_kicks": 450,
+        "new_charge": 7,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 7
+      }
+    },
+    "202611141922_3923": {
+      "l": {
+        "paired_kicks": 634,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 573,
+        "new_charge": 8,
+        "new_charge_kick_acked": 7,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 8
+      }
+    },
+    "202611141926_21022": {
+      "l": {
+        "paired_kicks": 514,
+        "new_charge": 5,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 561,
+        "new_charge": 1,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 1
+      }
+    },
+    "202611141926_26705": {
+      "l": {
+        "paired_kicks": 479,
+        "new_charge": 1,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 1
+      },
+      "r": {
+        "paired_kicks": 612,
+        "new_charge": 5,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141926_27733": {
+      "l": {
+        "paired_kicks": 515,
+        "new_charge": 5,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 515,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141926_3624": {
+      "l": {
+        "paired_kicks": 685,
+        "new_charge": 0,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 0
+      },
+      "r": {
+        "paired_kicks": 534,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141926_5119": {
+      "l": {
+        "paired_kicks": 470,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 504,
+        "new_charge": 7,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 7
+      }
+    },
+    "202611141929_26234": {
+      "l": {
+        "paired_kicks": 542,
+        "new_charge": 2,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 2
+      },
+      "r": {
+        "paired_kicks": 523,
+        "new_charge": 7,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 7
+      }
+    },
+    "202611141929_3241": {
+      "l": {
+        "paired_kicks": 642,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 495,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141930_12036": {
+      "l": {
+        "paired_kicks": 612,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 635,
+        "new_charge": 5,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141930_24930": {
+      "l": {
+        "paired_kicks": 539,
+        "new_charge": 8,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 8,
+        "new_charge_same_cycle_opponent_foul": 8
+      },
+      "r": {
+        "paired_kicks": 529,
+        "new_charge": 2,
+        "new_charge_kick_acked": 2,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141930_28226": {
+      "l": {
+        "paired_kicks": 590,
+        "new_charge": 6,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 6,
+        "new_charge_same_cycle_opponent_foul": 6
+      },
+      "r": {
+        "paired_kicks": 631,
+        "new_charge": 3,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 3
+      }
+    },
+    "202611141933_14621": {
+      "l": {
+        "paired_kicks": 521,
+        "new_charge": 1,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 1
+      },
+      "r": {
+        "paired_kicks": 485,
+        "new_charge": 5,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141933_23420": {
+      "l": {
+        "paired_kicks": 564,
+        "new_charge": 6,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 6
+      },
+      "r": {
+        "paired_kicks": 606,
+        "new_charge": 7,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 7
+      }
+    },
+    "202611141933_25921": {
+      "l": {
+        "paired_kicks": 441,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 779,
+        "new_charge": 1,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 1
+      }
+    },
+    "202611141933_6086": {
+      "l": {
+        "paired_kicks": 552,
+        "new_charge": 2,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 2
+      },
+      "r": {
+        "paired_kicks": 651,
+        "new_charge": 11,
+        "new_charge_kick_acked": 9,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 11
+      }
+    },
+    "202611141933_6389": {
+      "l": {
+        "paired_kicks": 492,
+        "new_charge": 0,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 0
+      },
+      "r": {
+        "paired_kicks": 508,
+        "new_charge": 2,
+        "new_charge_kick_acked": 2,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141937_11210": {
+      "l": {
+        "paired_kicks": 536,
+        "new_charge": 7,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 7,
+        "new_charge_same_cycle_opponent_foul": 7
+      },
+      "r": {
+        "paired_kicks": 540,
+        "new_charge": 3,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 3
+      }
+    },
+    "202611141937_15957": {
+      "l": {
+        "paired_kicks": 508,
+        "new_charge": 8,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 8,
+        "new_charge_same_cycle_opponent_foul": 8
+      },
+      "r": {
+        "paired_kicks": 570,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141937_26291": {
+      "l": {
+        "paired_kicks": 525,
+        "new_charge": 5,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 526,
+        "new_charge": 2,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141937_790": {
+      "l": {
+        "paired_kicks": 614,
+        "new_charge": 4,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 506,
+        "new_charge": 7,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 7
+      }
+    },
+    "202611141937_9401": {
+      "l": {
+        "paired_kicks": 503,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 822,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141940_16151": {
+      "l": {
+        "paired_kicks": 692,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 550,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141940_170": {
+      "l": {
+        "paired_kicks": 615,
+        "new_charge": 7,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 7,
+        "new_charge_same_cycle_opponent_foul": 7
+      },
+      "r": {
+        "paired_kicks": 505,
+        "new_charge": 1,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 1
+      }
+    },
+    "202611141940_27878": {
+      "l": {
+        "paired_kicks": 568,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 560,
+        "new_charge": 2,
+        "new_charge_kick_acked": 2,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141940_3614": {
+      "l": {
+        "paired_kicks": 667,
+        "new_charge": 6,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 6
+      },
+      "r": {
+        "paired_kicks": 562,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141940_5933": {
+      "l": {
+        "paired_kicks": 500,
+        "new_charge": 6,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 6,
+        "new_charge_same_cycle_opponent_foul": 6
+      },
+      "r": {
+        "paired_kicks": 550,
+        "new_charge": 2,
+        "new_charge_kick_acked": 2,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141944_17543": {
+      "l": {
+        "paired_kicks": 540,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 526,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141944_25509": {
+      "l": {
+        "paired_kicks": 538,
+        "new_charge": 5,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 561,
+        "new_charge": 5,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141944_28483": {
+      "l": {
+        "paired_kicks": 536,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 535,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141944_30329": {
+      "l": {
+        "paired_kicks": 582,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 554,
+        "new_charge": 1,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 1
+      }
+    },
+    "202611141944_9212": {
+      "l": {
+        "paired_kicks": 417,
+        "new_charge": 2,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 2
+      },
+      "r": {
+        "paired_kicks": 566,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141947_17497": {
+      "l": {
+        "paired_kicks": 667,
+        "new_charge": 1,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 1
+      },
+      "r": {
+        "paired_kicks": 637,
+        "new_charge": 2,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141947_2091": {
+      "l": {
+        "paired_kicks": 554,
+        "new_charge": 6,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 6,
+        "new_charge_same_cycle_opponent_foul": 6
+      },
+      "r": {
+        "paired_kicks": 641,
+        "new_charge": 7,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 7
+      }
+    },
+    "202611141947_2612": {
+      "l": {
+        "paired_kicks": 470,
+        "new_charge": 8,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 8,
+        "new_charge_same_cycle_opponent_foul": 8
+      },
+      "r": {
+        "paired_kicks": 532,
+        "new_charge": 5,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141947_7578": {
+      "l": {
+        "paired_kicks": 506,
+        "new_charge": 2,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 2
+      },
+      "r": {
+        "paired_kicks": 690,
+        "new_charge": 4,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141948_28956": {
+      "l": {
+        "paired_kicks": 588,
+        "new_charge": 3,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 583,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141951_22347": {
+      "l": {
+        "paired_kicks": 573,
+        "new_charge": 7,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 7,
+        "new_charge_same_cycle_opponent_foul": 7
+      },
+      "r": {
+        "paired_kicks": 480,
+        "new_charge": 2,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141951_30103": {
+      "l": {
+        "paired_kicks": 624,
+        "new_charge": 5,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 473,
+        "new_charge": 5,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141951_31191": {
+      "l": {
+        "paired_kicks": 456,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 523,
+        "new_charge": 10,
+        "new_charge_kick_acked": 8,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 10
+      }
+    },
+    "202611141951_5370": {
+      "l": {
+        "paired_kicks": 592,
+        "new_charge": 8,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 8,
+        "new_charge_same_cycle_opponent_foul": 8
+      },
+      "r": {
+        "paired_kicks": 554,
+        "new_charge": 3,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 3
+      }
+    },
+    "202611141951_7082": {
+      "l": {
+        "paired_kicks": 609,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 628,
+        "new_charge": 3,
+        "new_charge_kick_acked": 2,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 3
+      }
+    },
+    "202611141954_16123": {
+      "l": {
+        "paired_kicks": 553,
+        "new_charge": 7,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 7,
+        "new_charge_same_cycle_opponent_foul": 7
+      },
+      "r": {
+        "paired_kicks": 615,
+        "new_charge": 5,
+        "new_charge_kick_acked": 5,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 5
+      }
+    },
+    "202611141954_3609": {
+      "l": {
+        "paired_kicks": 542,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 512,
+        "new_charge": 9,
+        "new_charge_kick_acked": 9,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 9
+      }
+    },
+    "202611141955_27878": {
+      "l": {
+        "paired_kicks": 516,
+        "new_charge": 9,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 9,
+        "new_charge_same_cycle_opponent_foul": 9
+      },
+      "r": {
+        "paired_kicks": 474,
+        "new_charge": 9,
+        "new_charge_kick_acked": 8,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 9
+      }
+    },
+    "202611141955_8148": {
+      "l": {
+        "paired_kicks": 493,
+        "new_charge": 5,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 486,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141955_9983": {
+      "l": {
+        "paired_kicks": 578,
+        "new_charge": 3,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 3,
+        "new_charge_same_cycle_opponent_foul": 3
+      },
+      "r": {
+        "paired_kicks": 479,
+        "new_charge": 2,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 2
+      }
+    },
+    "202611141958_10366": {
+      "l": {
+        "paired_kicks": 494,
+        "new_charge": 2,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 2,
+        "new_charge_same_cycle_opponent_foul": 2
+      },
+      "r": {
+        "paired_kicks": 685,
+        "new_charge": 4,
+        "new_charge_kick_acked": 4,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141958_14449": {
+      "l": {
+        "paired_kicks": 539,
+        "new_charge": 7,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 7,
+        "new_charge_same_cycle_opponent_foul": 7
+      },
+      "r": {
+        "paired_kicks": 650,
+        "new_charge": 4,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141958_1490": {
+      "l": {
+        "paired_kicks": 623,
+        "new_charge": 1,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 1
+      },
+      "r": {
+        "paired_kicks": 558,
+        "new_charge": 6,
+        "new_charge_kick_acked": 6,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 6
+      }
+    },
+    "202611141958_16382": {
+      "l": {
+        "paired_kicks": 521,
+        "new_charge": 4,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 4,
+        "new_charge_same_cycle_opponent_foul": 4
+      },
+      "r": {
+        "paired_kicks": 587,
+        "new_charge": 4,
+        "new_charge_kick_acked": 3,
+        "new_charge_kick_blocked": 1,
+        "new_charge_same_cycle_opponent_foul": 4
+      }
+    },
+    "202611141958_29024": {
+      "l": {
+        "paired_kicks": 611,
+        "new_charge": 5,
+        "new_charge_kick_acked": 0,
+        "new_charge_kick_blocked": 5,
+        "new_charge_same_cycle_opponent_foul": 5
+      },
+      "r": {
+        "paired_kicks": 503,
+        "new_charge": 1,
+        "new_charge_kick_acked": 1,
+        "new_charge_kick_blocked": 0,
+        "new_charge_same_cycle_opponent_foul": 1
+      }
+    }
+  },
+  "cases": [
+    {
+      "game": "202611141919_1097",
+      "cycle": 1606,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 650,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 3354,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 95,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 1501,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 4192,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 1929,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 1982,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 944,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 2195,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 350,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 80,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 1942,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 1051,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 2573,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 3892,
+      "victim": "r_4",
+      "acknowledged": false,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 614,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 4287,
+      "victim": "r_9",
+      "acknowledged": false,
+      "tacklers": [
+        "l_3",
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 802,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 2818,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 1723,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 3438,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 3034,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 5071,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 2173,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 4461,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 3080,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 1266,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 1387,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 2185,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 4981,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 2034,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 4626,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 4144,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 5408,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141919_31609",
+      "cycle": 3065,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 1284,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 204,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_8"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 222,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 654,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 1209,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 2127,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 2319,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 132,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 2448,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 770,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 2056,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 5290,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 870,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 1076,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 308,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141922_14058",
+      "cycle": 290,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 613,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 3263,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 3545,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 5575,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 1643,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 5283,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 5412,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 5493,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141922_19889",
+      "cycle": 5420,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141922_24425",
+      "cycle": 891,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141922_24425",
+      "cycle": 798,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141922_24425",
+      "cycle": 1959,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141922_24425",
+      "cycle": 4293,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141922_24425",
+      "cycle": 1347,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 3211,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 2151,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 3471,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 144,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 1323,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 3032,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 3715,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 938,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 4436,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 3584,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 1435,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 2145,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 267,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 1353,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 111,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 5401,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6",
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 221,
+      "victim": "r_9",
+      "acknowledged": false,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 3413,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141922_3923",
+      "cycle": 5277,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 34,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 208,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 287,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 4059,
+      "victim": "l_5",
+      "acknowledged": true,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 4579,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 5235,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141926_26705",
+      "cycle": 5122,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141926_26705",
+      "cycle": 1086,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141926_26705",
+      "cycle": 2189,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141926_26705",
+      "cycle": 4297,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141926_26705",
+      "cycle": 3600,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141926_26705",
+      "cycle": 3180,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 3776,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 5768,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 1617,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 4563,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 1151,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 1181,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 3110,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 3116,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 4844,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 764,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141926_27733",
+      "cycle": 5518,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141926_3624",
+      "cycle": 1902,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141926_3624",
+      "cycle": 2570,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141926_3624",
+      "cycle": 3049,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141926_3624",
+      "cycle": 5375,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 714,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 1918,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 2555,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 191,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 1765,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 3765,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 100,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 496,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 5517,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141926_5119",
+      "cycle": 2467,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 4175,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 4294,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 1007,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 2007,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 2439,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 3457,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 5554,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 5606,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141929_26234",
+      "cycle": 5366,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 36,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 46,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 5908,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 2451,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 692,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 5611,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 118,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 2039,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141929_3241",
+      "cycle": 188,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 916,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 4228,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 4497,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 476,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 1298,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 2249,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 2132,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 1410,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141930_12036",
+      "cycle": 938,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 5712,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 36,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 494,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 5671,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 5754,
+      "victim": "l_8",
+      "acknowledged": false,
+      "tacklers": [
+        "r_7"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 1317,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 1356,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 4293,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 5137,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141930_24930",
+      "cycle": 5077,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 3081,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 42,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 1183,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 3260,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 1984,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 2714,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 1471,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 3046,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141930_28226",
+      "cycle": 4305,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141933_14621",
+      "cycle": 4773,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141933_14621",
+      "cycle": 5067,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141933_14621",
+      "cycle": 5405,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141933_14621",
+      "cycle": 3372,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_14621",
+      "cycle": 3530,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141933_14621",
+      "cycle": 1066,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 55,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2",
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 885,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 2639,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 3165,
+      "victim": "l_11",
+      "acknowledged": true,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 3731,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 5833,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 5218,
+      "victim": "r_10",
+      "acknowledged": false,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 1491,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 3170,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 258,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 1183,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 4022,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 4715,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141933_25921",
+      "cycle": 37,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141933_25921",
+      "cycle": 2630,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141933_25921",
+      "cycle": 3124,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141933_25921",
+      "cycle": 3763,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141933_25921",
+      "cycle": 112,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 1299,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 1646,
+      "victim": "l_6",
+      "acknowledged": true,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 681,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 3046,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 4033,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 4944,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 3545,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 3274,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 4953,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 5105,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 777,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 808,
+      "victim": "r_8",
+      "acknowledged": false,
+      "tacklers": [
+        "l_6",
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 3628,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141933_6389",
+      "cycle": 780,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141933_6389",
+      "cycle": 5458,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 2037,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 1708,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 3899,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 4744,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 692,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 4046,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 3197,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 280,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 3233,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141937_11210",
+      "cycle": 3755,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 3217,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 583,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 1972,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 2509,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 1166,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 4524,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 616,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 3267,
+      "victim": "l_8",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 1358,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 3542,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 3793,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 5867,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 5386,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_15957",
+      "cycle": 3953,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 756,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 1181,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 3035,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 3419,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 2352,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 3868,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_26291",
+      "cycle": 3973,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 1996,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 4896,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 2453,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 5637,
+      "victim": "l_3",
+      "acknowledged": true,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 2678,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 1691,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 4518,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 979,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 123,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 4526,
+      "victim": "r_7",
+      "acknowledged": false,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141937_790",
+      "cycle": 2046,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 3118,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 3931,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 3333,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 3036,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 3941,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 5282,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 960,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 4172,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141937_9401",
+      "cycle": 4247,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 567,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 370,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 969,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 1197,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 4755,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 738,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 4082,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 4542,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141940_16151",
+      "cycle": 4819,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 3312,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 862,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 1543,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 4001,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 3152,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 1001,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 3252,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141940_170",
+      "cycle": 1026,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141940_27878",
+      "cycle": 32,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_27878",
+      "cycle": 2375,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3",
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141940_27878",
+      "cycle": 5426,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141940_27878",
+      "cycle": 2117,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141940_27878",
+      "cycle": 3404,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141940_27878",
+      "cycle": 661,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 1650,
+      "victim": "l_11",
+      "acknowledged": true,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 5026,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 5761,
+      "victim": "l_3",
+      "acknowledged": true,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 4055,
+      "victim": "l_4",
+      "acknowledged": true,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 3495,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 4173,
+      "victim": "l_8",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 1958,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 3431,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 140,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 261,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 1359,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141940_3614",
+      "cycle": 222,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 4507,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 5880,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 3819,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 4923,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 5257,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 5540,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 2583,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141940_5933",
+      "cycle": 5535,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 1222,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 2998,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 1953,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 695,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 3070,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 4656,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141944_17543",
+      "cycle": 407,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 3175,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 4730,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 378,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 1609,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 852,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 87,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 986,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 1207,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 1873,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141944_25509",
+      "cycle": 4958,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 1704,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 3230,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 3124,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 5601,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 674,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 4965,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 2573,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 4381,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141944_28483",
+      "cycle": 2024,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141944_30329",
+      "cycle": 37,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141944_30329",
+      "cycle": 4617,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141944_30329",
+      "cycle": 5710,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141944_30329",
+      "cycle": 634,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141944_9212",
+      "cycle": 647,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141944_9212",
+      "cycle": 226,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141944_9212",
+      "cycle": 1636,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141944_9212",
+      "cycle": 2211,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141944_9212",
+      "cycle": 2321,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141944_9212",
+      "cycle": 3653,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141947_17497",
+      "cycle": 4419,
+      "victim": "l_3",
+      "acknowledged": true,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141947_17497",
+      "cycle": 5066,
+      "victim": "r_5",
+      "acknowledged": false,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141947_17497",
+      "cycle": 2244,
+      "victim": "r_8",
+      "acknowledged": false,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 682,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 1009,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 2373,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 3562,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 4692,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 2490,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 907,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 5198,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 2100,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 5177,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 3918,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 4334,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141947_2091",
+      "cycle": 2020,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 33,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 1836,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 2207,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 2518,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 1464,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 4125,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 4313,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 492,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 1710,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 5486,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 3238,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 5395,
+      "victim": "r_5",
+      "acknowledged": false,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141947_2612",
+      "cycle": 1755,
+      "victim": "r_9",
+      "acknowledged": false,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141947_7578",
+      "cycle": 4439,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141947_7578",
+      "cycle": 5097,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141947_7578",
+      "cycle": 3335,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141947_7578",
+      "cycle": 4406,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141947_7578",
+      "cycle": 1097,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6",
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141947_7578",
+      "cycle": 1048,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 2321,
+      "victim": "l_11",
+      "acknowledged": true,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 3788,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 5753,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 3042,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 3634,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 4168,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141948_28956",
+      "cycle": 1632,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 587,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 864,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 4314,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 1432,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 3682,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 1508,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 5041,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 223,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141951_22347",
+      "cycle": 4524,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 2448,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 4715,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 3791,
+      "victim": "l_6",
+      "acknowledged": true,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 2317,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_8"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 1719,
+      "victim": "l_8",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 4343,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 4869,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 5717,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 346,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141951_30103",
+      "cycle": 3438,
+      "victim": "r_9",
+      "acknowledged": false,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 702,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 5481,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 1886,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 1183,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 1303,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 1381,
+      "victim": "r_10",
+      "acknowledged": false,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 2177,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 2619,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 3939,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 4309,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 5708,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 3038,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 3817,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141951_31191",
+      "cycle": 852,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 1089,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 1678,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 2246,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 3208,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 4568,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 4948,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 4984,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6",
+        "r_8"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 4904,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 5173,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 5101,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141951_5370",
+      "cycle": 1699,
+      "victim": "r_7",
+      "acknowledged": true,
+      "tacklers": [
+        "l_8"
+      ]
+    },
+    {
+      "game": "202611141951_7082",
+      "cycle": 1126,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141951_7082",
+      "cycle": 271,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141951_7082",
+      "cycle": 3350,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141951_7082",
+      "cycle": 3042,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141951_7082",
+      "cycle": 4804,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141951_7082",
+      "cycle": 1474,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 32,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 1067,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 3535,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 4555,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 1008,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 1931,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 4049,
+      "victim": "l_7",
+      "acknowledged": false,
+      "tacklers": [
+        "r_8"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 3034,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 4013,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 894,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 4480,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141954_16123",
+      "cycle": 2380,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 43,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 929,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 842,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 2540,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 1587,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 3423,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 89,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_2"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 922,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 3132,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 713,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 150,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 3219,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141954_3609",
+      "cycle": 4410,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 4819,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 48,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 1363,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 4148,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 1770,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 848,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 5772,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 2587,
+      "victim": "l_6",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 2796,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 4219,
+      "victim": "r_10",
+      "acknowledged": false,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 5118,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 456,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 2040,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 3045,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 3743,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 4307,
+      "victim": "r_8",
+      "acknowledged": true,
+      "tacklers": [
+        "l_7"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 93,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141955_27878",
+      "cycle": 5509,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 5285,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 670,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 2484,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 3510,
+      "victim": "l_8",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 3542,
+      "victim": "l_8",
+      "acknowledged": false,
+      "tacklers": [
+        "r_7"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 773,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 4245,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 5629,
+      "victim": "r_4",
+      "acknowledged": true,
+      "tacklers": [
+        "l_10"
+      ]
+    },
+    {
+      "game": "202611141955_8148",
+      "cycle": 5011,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141955_9983",
+      "cycle": 40,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141955_9983",
+      "cycle": 3926,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141955_9983",
+      "cycle": 5188,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141955_9983",
+      "cycle": 628,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141955_9983",
+      "cycle": 3721,
+      "victim": "r_9",
+      "acknowledged": false,
+      "tacklers": [
+        "l_5"
+      ]
+    },
+    {
+      "game": "202611141958_10366",
+      "cycle": 570,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141958_10366",
+      "cycle": 1041,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141958_10366",
+      "cycle": 610,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141958_10366",
+      "cycle": 5313,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141958_10366",
+      "cycle": 3135,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141958_10366",
+      "cycle": 1851,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 3189,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 3502,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 85,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 565,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 5777,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 186,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 2020,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_10"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 4946,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 1944,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 3493,
+      "victim": "r_2",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141958_14449",
+      "cycle": 3578,
+      "victim": "r_6",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 5568,
+      "victim": "l_10",
+      "acknowledged": false,
+      "tacklers": [
+        "r_4"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 5075,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 3037,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 5030,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 5510,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 2918,
+      "victim": "r_5",
+      "acknowledged": true,
+      "tacklers": [
+        "l_9"
+      ]
+    },
+    {
+      "game": "202611141958_1490",
+      "cycle": 173,
+      "victim": "r_9",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 4891,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_3"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 3280,
+      "victim": "l_4",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 4185,
+      "victim": "l_5",
+      "acknowledged": false,
+      "tacklers": [
+        "r_9"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 49,
+      "victim": "l_9",
+      "acknowledged": false,
+      "tacklers": [
+        "r_5"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 5323,
+      "victim": "r_10",
+      "acknowledged": true,
+      "tacklers": [
+        "l_4"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 732,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 3033,
+      "victim": "r_11",
+      "acknowledged": false,
+      "tacklers": [
+        "l_6"
+      ]
+    },
+    {
+      "game": "202611141958_16382",
+      "cycle": 3467,
+      "victim": "r_11",
+      "acknowledged": true,
+      "tacklers": [
+        "l_3"
+      ]
+    },
+    {
+      "game": "202611141958_29024",
+      "cycle": 1373,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141958_29024",
+      "cycle": 1669,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_2"
+      ]
+    },
+    {
+      "game": "202611141958_29024",
+      "cycle": 1814,
+      "victim": "l_11",
+      "acknowledged": false,
+      "tacklers": [
+        "r_6"
+      ]
+    },
+    {
+      "game": "202611141958_29024",
+      "cycle": 3117,
+      "victim": "l_2",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141958_29024",
+      "cycle": 720,
+      "victim": "l_3",
+      "acknowledged": false,
+      "tacklers": [
+        "r_11"
+      ]
+    },
+    {
+      "game": "202611141958_29024",
+      "cycle": 5314,
+      "victim": "r_3",
+      "acknowledged": true,
+      "tacklers": [
+        "l_11"
+      ]
+    }
+  ]
+}

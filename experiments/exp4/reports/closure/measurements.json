@@ -1,0 +1,110 @@
+{
+  "observer": "left 9",
+  "manual_metadata_final": false,
+  "source": "logs/exp4/debug/manual-01/dataset/manual-01/l_9",
+  "window": [
+    779,
+    805
+  ],
+  "velocity_missing_784_787": true,
+  "see_every_cycle": true,
+  "stock_velocity_invalid_784_787": true,
+  "forecast_applied": 0,
+  "jumps": {
+    "785": {
+      "dist": 40.4,
+      "true_dist": 42.140512,
+      "stock_move": 4.521192786201449,
+      "used_move": 4.898501816882382,
+      "true_move": 2.44950845885455,
+      "stock_pos_error": 1.6390032855366734,
+      "used_pos_error": 2.315556669572136,
+      "coast_error": 2.636515383986977
+    },
+    "790": {
+      "dist": 33.1,
+      "true_dist": 34.72078,
+      "stock_move": 3.6121697523787546,
+      "used_move": 3.3594787036086426,
+      "true_move": 1.7469203215945484,
+      "stock_pos_error": 1.5573282280880918,
+      "used_pos_error": 1.6462155903769096,
+      "coast_error": 0.4116087948525897
+    },
+    "793": {
+      "dist": 30.0,
+      "true_dist": 31.399907,
+      "stock_move": 3.288044555659183,
+      "used_move": 2.8344677189906395,
+      "true_move": 1.4794296198197459,
+      "stock_pos_error": 1.4008738451409528,
+      "used_pos_error": 1.2953523381690402,
+      "coast_error": 0.4543795109817342
+    },
+    "796": {
+      "dist": 30.0,
+      "true_dist": 29.186017,
+      "stock_move": 0.7142862731426373,
+      "used_move": 0.777616955833655,
+      "true_move": 1.2263546275038084,
+      "stock_pos_error": 0.8191769891787727,
+      "used_pos_error": 1.0141715740445487,
+      "coast_error": 0.3265776287500388
+    },
+    "801": {
+      "dist": 27.1,
+      "true_dist": 28.407808,
+      "stock_move": 2.5194393443780303,
+      "used_move": 2.2322575949025243,
+      "true_move": 0.8358484302790797,
+      "stock_pos_error": 1.262750271589754,
+      "used_pos_error": 1.3547009523876488,
+      "coast_error": 0.9140988449834078
+    },
+    "802": {
+      "dist": 27.1,
+      "true_dist": 27.982445,
+      "stock_move": 1.0611001696352667,
+      "used_move": 1.1379345235996696,
+      "true_move": 0.7841264359782807,
+      "stock_pos_error": 0.8415259380435051,
+      "used_pos_error": 0.7917440599082504,
+      "coast_error": 1.2721721488855202
+    }
+  },
+  "segments": {
+    "784-787": {
+      "stock_pos_error": 1.1271308987717106,
+      "used_pos_error": 1.1032805782710426,
+      "stock_vel_error": null,
+      "used_vel_error": 1.5884423608079379,
+      "velocity_direction_error": 39.7804834028637,
+      "position_regressions": 1,
+      "velocity_regressions_valid_stock": 0
+    },
+    "789-802": {
+      "stock_pos_error": 0.8792902789349814,
+      "used_pos_error": 0.7061307046606655,
+      "stock_vel_error": 0.12254390552676324,
+      "used_vel_error": 0.1251554778438014,
+      "velocity_direction_error": 4.5903404247835295,
+      "position_regressions": 4,
+      "velocity_regressions_valid_stock": 8
+    }
+  },
+  "scores": {
+    "games": 35,
+    "goals": [
+      122,
+      143
+    ],
+    "wins": 10,
+    "draws": 8,
+    "losses": 17,
+    "goal_margin": -0.6,
+    "goal_margin_bootstrap_95": [
+      -1.457142857142857,
+      0.2857142857142857
+    ]
+  }
+}

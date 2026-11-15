@@ -1,0 +1,214 @@
+{
+  "samples": [
+    {
+      "game": "202611141919_1097",
+      "cycle": 1606,
+      "victim": "l_10",
+      "tackler": "r_4",
+      "acknowledged": false,
+      "category": "l_unack",
+      "kick_send": {
+        "local_ms": 1794698409511,
+        "msg": "(kick 19.999 93.349)(turn_neck 4)(attentionto our 8)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698409504,
+        "msg": "(tackle 45 on)(turn_neck 10)(attentionto our 7)(done)"
+      },
+      "kick_minus_foul_ms": 7
+    },
+    {
+      "game": "202611141919_1097",
+      "cycle": 95,
+      "victim": "r_11",
+      "tackler": "l_3",
+      "acknowledged": true,
+      "category": "r_ack",
+      "kick_send": {
+        "local_ms": 1794698360753,
+        "msg": "(kick 10.045 9.39498)(turn_neck 0)(attentionto our 7)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698360756,
+        "msg": "(tackle 0 on)(turn_neck 41)(attentionto our 8)(done)"
+      },
+      "kick_minus_foul_ms": -3
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 944,
+      "victim": "l_10",
+      "tackler": "r_4",
+      "acknowledged": false,
+      "category": "l_unack",
+      "kick_send": {
+        "local_ms": 1794698387299,
+        "msg": "(kick 87.035 -159.85)(turn_neck 0)(attentionto our 6)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698387290,
+        "msg": "(tackle -36 on)(turn_neck -22)(attentionto our 7)(done)"
+      },
+      "kick_minus_foul_ms": 9
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 1942,
+      "victim": "r_10",
+      "tackler": "l_4",
+      "acknowledged": true,
+      "category": "r_ack",
+      "kick_send": {
+        "local_ms": 1794698423177,
+        "msg": "(kick 42.912 -18.3994)(turn_neck 0)(attentionto our 4)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698423188,
+        "msg": "(tackle 90 on)(turn_neck 27)(attentionto our 2)(done)"
+      },
+      "kick_minus_foul_ms": -11
+    },
+    {
+      "game": "202611141919_12667",
+      "cycle": 3892,
+      "victim": "r_4",
+      "tackler": "l_10",
+      "acknowledged": false,
+      "category": "r_unack",
+      "kick_send": {
+        "local_ms": 1794698490012,
+        "msg": "(kick 95.84 129.396)(turn_neck 104)(attentionto off)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698490012,
+        "msg": "(tackle 27 on)(turn_neck 2)(attentionto our 4)(done)"
+      },
+      "kick_minus_foul_ms": 0
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 802,
+      "victim": "l_10",
+      "tackler": "r_4",
+      "acknowledged": false,
+      "category": "l_unack",
+      "kick_send": {
+        "local_ms": 1794698381016,
+        "msg": "(kick 12.254 -0.618647)(turn_neck 15)(attentionto our 4)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698381005,
+        "msg": "(tackle 54 on)(turn_neck 4)(attentionto our 2)(done)"
+      },
+      "kick_minus_foul_ms": 11
+    },
+    {
+      "game": "202611141919_30705",
+      "cycle": 3034,
+      "victim": "r_11",
+      "tackler": "l_11",
+      "acknowledged": true,
+      "category": "r_ack",
+      "kick_send": {
+        "local_ms": 1794698456717,
+        "msg": "(kick 18.178 -98.9149)(turn_neck -180)(attentionto our 6)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698456721,
+        "msg": "(tackle -99 on)(turn_neck -98)(attentionto our 6)(done)"
+      },
+      "kick_minus_foul_ms": -4
+    },
+    {
+      "game": "202611141919_7446",
+      "cycle": 2319,
+      "victim": "r_11",
+      "tackler": "l_6",
+      "acknowledged": false,
+      "category": "r_unack",
+      "kick_send": {
+        "local_ms": 1794698438992,
+        "msg": "(kick 17.502 -29.2796)(turn_neck 0)(attentionto our 10)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698438990,
+        "msg": "(tackle 63 on)(turn_neck -33)(attentionto our 2)(done)"
+      },
+      "kick_minus_foul_ms": 2
+    },
+    {
+      "game": "202611141922_24803",
+      "cycle": 144,
+      "victim": "r_11",
+      "tackler": "l_6",
+      "acknowledged": false,
+      "category": "r_unack",
+      "kick_send": {
+        "local_ms": 1794698583170,
+        "msg": "(kick 45.198 -143.71)(turn_neck 176)(attentionto our 6)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698583165,
+        "msg": "(tackle -72 on)(turn_neck -73)(attentionto our 11)(done)"
+      },
+      "kick_minus_foul_ms": 5
+    },
+    {
+      "game": "202611141926_21022",
+      "cycle": 4059,
+      "victim": "l_5",
+      "tackler": "r_11",
+      "acknowledged": true,
+      "category": "l_ack",
+      "kick_send": {
+        "local_ms": 1794698920732,
+        "msg": "(kick 100 5.02979)(turn_neck 140)(attentionto our 8)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794698920734,
+        "msg": "(tackle 54 on)(turn_neck 95)(attentionto our 9)(done)"
+      },
+      "kick_minus_foul_ms": -2
+    },
+    {
+      "game": "202611141933_23420",
+      "cycle": 3165,
+      "victim": "l_11",
+      "tackler": "r_6",
+      "acknowledged": true,
+      "category": "l_ack",
+      "kick_send": {
+        "local_ms": 1794699343382,
+        "msg": "(kick 86.808 32.6419)(turn_neck -5)(attentionto our 7)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794699343382,
+        "msg": "(tackle 36 on)(turn_neck 2)(attentionto our 11)(done)"
+      },
+      "kick_minus_foul_ms": 0
+    },
+    {
+      "game": "202611141933_6086",
+      "cycle": 1646,
+      "victim": "l_6",
+      "tackler": "r_11",
+      "acknowledged": true,
+      "category": "l_ack",
+      "kick_send": {
+        "local_ms": 1794699284889,
+        "msg": "(kick 100 -173.248)(turn_neck 0)(attentionto our 2)(done)"
+      },
+      "foul_send": {
+        "local_ms": 1794699284901,
+        "msg": "(tackle -99 on)(turn_neck 45)(attentionto our 8)(done)"
+      },
+      "kick_minus_foul_ms": -12
+    }
+  ],
+  "categories": {
+    "l_unack": 3,
+    "r_ack": 3,
+    "r_unack": 3,
+    "l_ack": 3
+  }
+}

@@ -53,6 +53,8 @@
 #include <algorithm>
 #include <chrono>
 #include <thread>
+#include <filesystem>
+#include <random>
 
 #include <cmath>
 #include <cstdio>
@@ -178,6 +180,49 @@ bool
 Stadium::init()
 {
     M_start_time = std::time( 0 );
+    auto & command_params = ServerParam::instance();
+    if ( command_params.randomizePlayerCommands() && ! command_params.synchMode() )
+    {
+        std::cerr << "randomize_player_commands requires synch_mode=true" << std::endl;
+        return false;
+    }
+    if ( command_params.commandOrderSeed() < -1 )
+    {
+        std::cerr << "command_order_seed must be -1 or nonnegative" << std::endl;
+        return false;
+    }
+    if ( command_params.randomizePlayerCommands() )
+    {
+        if ( command_params.commandOrderSeed() < 0 )
+        {
+            std::random_device entropy;
+            command_params.setCommandOrderSeed( static_cast<int>( entropy() & 0x7fffffffU ) );
+        }
+        std::cout << "Randomized player command batches enabled; seed="
+                  << command_params.commandOrderSeed() << std::endl;
+        if ( command_params.commandOrderLog() )
+        {
+            try
+            {
+                const std::filesystem::path directory( command_params.gameLogDir() );
+                std::filesystem::create_directories( directory );
+                const std::string basename = command_params.gameLogFixed()
+                    ? command_params.gameLogFixedName()
+                    : "server-" + std::to_string( command_params.playerPort() ) + "-"
+                      + std::to_string( std::chrono::system_clock::now().time_since_epoch().count() );
+                const auto trace = directory / ( basename + ".command-order.csv" );
+                M_command_order_stream.open( trace );
+                if ( ! M_command_order_stream ) throw std::runtime_error( "cannot open command-order trace" );
+                M_command_order_stream << "cycle,stopped,round,seed,order,command_counts\n";
+                std::cout << "Command order trace: " << trace << std::endl;
+            }
+            catch ( const std::exception & error )
+            {
+                std::cerr << "Command order logging failed: " << error.what() << std::endl;
+                return false;
+            }
+        }
+    }
 
     if ( ServerParam::instance().randomSeed() >= 0 )
     {
@@ -2390,6 +2435,55 @@ Stadium::doSendCoachMessages()
 }
 
 bool
+Stadium::applyQueuedPlayerCommands()
+{
+    PlayerCont players;
+    for ( auto * player : M_players )
+    {
+        if ( ! player->commandCycleOpen() ) continue;
+        if ( player->commandQueueFailed() || ! player->doneReceived() )
+        {
+            std::cerr << "Invalid or incomplete randomized command batch; aborting match" << std::endl;
+            for ( auto * p : M_players ) p->discardQueuedCommands();
+            return false;
+        }
+        if ( player->isEnabled() && player->connected() ) players.push_back( player );
+    }
+    // Starting from identity order is essential: recv order must not seed the shuffle.
+    std::sort( players.begin(), players.end(), []( const Player * a, const Player * b ) {
+        return a->side() == b->side() ? a->unum() < b->unum() : a->side() == LEFT;
+    } );
+    const auto & params = ServerParam::instance();
+    std::seed_seq seed{ static_cast<unsigned>( params.commandOrderSeed() ),
+                        static_cast<unsigned>( time() ), static_cast<unsigned>( stoppageTime() ),
+                        0x434d4421U };
+    std::mt19937 order_rng( seed );
+    std::shuffle( players.begin(), players.end(), order_rng );
+    ++M_command_round;
+    std::ostringstream order, sizes;
+    for ( const auto * player : players )
+    {
+        if ( order.tellp() > 0 ) { order << ' '; sizes << ' '; }
+        order << ( player->side() == LEFT ? "l_" : "r_" ) << player->unum();
+        sizes << player->queuedCommandCount();
+    }
+    for ( auto * player : players ) player->executeQueuedCommands();
+    if ( M_command_order_stream.is_open() )
+    {
+        M_command_order_stream << time() << ',' << stoppageTime() << ',' << M_command_round << ','
+                               << params.commandOrderSeed() << ",\"" << order.str() << "\",\""
+                               << sizes.str() << "\"\n";
+        M_command_order_stream.flush();
+        if ( ! M_command_order_stream )
+        {
+            std::cerr << "Command order trace write failed; aborting match" << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+bool
 Stadium::doSendThink()
 {
     const char * think_command = "(think)";
@@ -2433,6 +2527,15 @@ Stadium::doSendThink()
     }
 
     bool wait_trainer = M_coach->isEyeOn();
+
+    if ( ServerParam::instance().randomizePlayerCommands() )
+    {
+        for ( int i = 0; i < MAX_PLAYER*2; ++i )
+        {
+            M_players[i]->discardQueuedCommands();
+            if ( wait_players[i] && M_players[i]->connected() ) M_players[i]->beginCommandCollection();
+        }
+    }
 
     //tell the clients they should start thinking
     for ( int i = 0; i < MAX_PLAYER*2; ++i )
@@ -2533,6 +2636,20 @@ Stadium::doSendThink()
     }
     while ( done == DS_FALSE );
 
+    if ( ServerParam::instance().randomizePlayerCommands() )
+    {
+        if ( done == DS_TRUE_BUT_INCOMPLETE )
+        {
+            std::cerr << "Randomized command cycle incomplete at " << time() << ':'
+                      << stoppageTime() << "; discarding all actions and aborting match" << std::endl;
+            for ( auto * player : M_players ) player->discardQueuedCommands();
+            shutdown = true;
+        }
+        else if ( ! applyQueuedPlayerCommands() )
+        {
+            shutdown = true;
+        }
+    }
     if ( done != DS_TRUE_BUT_INCOMPLETE )
     {
         cycles_missed = 0;
@@ -2547,6 +2664,7 @@ Stadium::doSendThink()
 
     if ( shutdown )
     {
+        if ( ServerParam::instance().randomizePlayerCommands() ) M_command_batch_failed = true;
         M_alive = false;
     }
 
@@ -2560,8 +2678,10 @@ template < class T >
 void
 recv_from_clients( std::vector< T > & clients )
 {
-    std::shuffle( clients.begin(), clients.end(),
-                  DefaultRNG::instance() );
+    // In queued mode polling frequency must not consume the physics RNG.
+    // All game actions are shuffled once, after the complete done barrier.
+    if ( ! ServerParam::instance().randomizePlayerCommands() )
+        std::shuffle( clients.begin(), clients.end(), DefaultRNG::instance() );
 
     for ( typename std::vector< T >::iterator i = clients.begin();
           i != clients.end(); )
@@ -3145,7 +3265,8 @@ Stadium::finalize( const std::string & msg )
         killTeams();
         std::cout << '\n' << msg << '\n';
         Logger::instance().close( *this );
-        saveResults();
+        if ( ! M_command_batch_failed ) saveResults();
+        else std::cerr << "Aborted randomized-command experiment: no scored result saved" << std::endl;
         disable();
     }
 }

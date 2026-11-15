@@ -32,6 +32,8 @@
 #include "serverparam.h"
 #include "heteroplayer.h"
 #include <string>
+#include <functional>
+#include <vector>
 
 class Stadium;
 class HeteroPlayer;
@@ -163,6 +165,11 @@ private:
     bool M_command_done;
     bool M_turn_neck_done;
     bool M_done_received; //pfr:SYNCH
+    bool M_parsing_commands = false;
+    bool M_command_cycle_open = false;
+    bool M_command_queue_failed = false;
+    std::vector< std::function< void() > > M_pending_commands;
+    bool deferCommand( std::function< void() > command );
 
     int M_goalie_catch_ban;
     int M_goalie_moves_since_catch;
@@ -395,6 +402,12 @@ public:
     // command state
     //
     bool doneReceived() const { return M_done_received; }
+    void beginCommandCollection();
+    void discardQueuedCommands();
+    void executeQueuedCommands();
+    std::size_t queuedCommandCount() const { return M_pending_commands.size(); }
+    bool commandQueueFailed() const { return M_command_queue_failed; }
+    bool commandCycleOpen() const { return M_command_cycle_open; }
 
     bool kicked() const { return M_kick_cycles >= 0; }
     bool dashed() const { return M_dash_cycles >= 0; }

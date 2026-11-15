@@ -1,0 +1,434 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp4 · Live data report</title><style>
+body{margin:0;background:#eef2f7;color:#172b4d;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:35px auto;background:white;padding:42px 48px;border-radius:14px}
+h1{font-size:32px;line-height:1.2}h2{margin-top:46px;border-top:1px solid #dce4ed;padding-top:22px}h3{margin-top:30px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th{background:#edf3f8;text-align:left}
+td,th{padding:11px 12px;border-bottom:1px solid #dce4ed}td:last-child{text-align:right}
+code{overflow-wrap:anywhere;font-size:.87em;background:#edf3f8;padding:2px 4px;border-radius:3px}
+pre{background:#edf3f8;padding:18px;overflow:auto}pre code{white-space:pre;overflow-wrap:normal}
+svg{max-width:100%;height:auto;margin:22px 0;border:1px solid #dce4ed;border-radius:8px}
+a{color:#075ea8}strong{font-weight:700}
+@media(max-width:700px){main{padding:22px 15px;margin:0}table{font-size:12px;display:block;overflow:auto}}
+@media print{main{margin:0;padding:0}h2{break-after:avoid}table,svg{break-inside:avoid}}
+</style><main><h1>Exp4 Step 05 — F4 audit of the first 60 scored games</h1>
+<p><strong>Noise reduction is real, but the team has a command-order disadvantage and remaining control errors.</strong> Ball velocity improves 32.49 → 24.64 cm/cycle and player position 78.42 → 52.22 cm. Added decision time leaves kicks vulnerable to earlier foul commands: among simultaneous kicks with a new foul charge, 238/248 left kicks were blocked versus 32/276 right kicks. Better average positions also cause more misses of opponents who physically can kick.</p>
+<p>This report freezes the exact 60 games matching the supplied result: <strong>222–225 goals; 24 wins, 11 draws, 25 losses; 83–86 points</strong>. Later games are excluded. The live code and running jobs were not changed by this audit.</p>
+<h2>1. Scope and configuration</h2>
+<p>All 1,320 finalized agent metadata files match F4: left Step26 corrected routing plus Exp4 player/ball apply, right off. Both sides use quantized high-quality 360° vision, preserved uniform numbers, ordinary motion/body fading, no hearing and reference-only fullstate. Forecasts are log-only.</p>
+<p>The audit reads all 11 treatment observers and all 22 agents' command counters per game. It covers 3,042,366 paired ball estimates, 63,889,686 player-state estimates and 63,885,066 position corrections. Every logged PlayOn decision uses a see update. All 67,665,654 eligible player tracks have position count zero; velocity/body fields can still be missing.</p>
+<p>There are zero current-state write mismatches, range-guard violations, reported body angles overwritten or learned forecasts applied.</p>
+<p>Each eligible observer–target–cycle gets equal weight. “Stock” is before correction on the same treatment row; “applied” is the actual tracked state used for the decision. Fullstate supplies labels and evaluation groups only. Invalid stock velocity falls back to zero, and unavailable body to estimated movement direction, matching the offline evaluator.</p>
+<h2>2. Match outcome and a concrete command-order disadvantage</h2>
+<p>The goal margin is −0.05 goals/game, with a whole-game bootstrap 95% interval of <strong>−0.65 to +0.57</strong>. The points-difference interval is <strong>−0.75 to +0.65 points/game</strong>. This snapshot is close to a tie and supplies no reliable match advantage; it does not establish the estimates' causal effect on win rate.</p>
+<table>
+<thead>
+<tr>
+<th>Sense-body to decision</th>
+<th style="text-align: right;">Left, models applied</th>
+<th style="text-align: right;">Right, stock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median</td>
+<td style="text-align: right;">20.5 ms</td>
+<td style="text-align: right;">10.5 ms</td>
+</tr>
+<tr>
+<td>p95</td>
+<td style="text-align: right;">31.5 ms</td>
+<td style="text-align: right;">20.5 ms</td>
+</tr>
+<tr>
+<td>p99</td>
+<td style="text-align: right;">35.5 ms</td>
+<td style="text-align: right;">24.5 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Finishing within a nominal cycle does not eliminate timing effects: the server handles some actions immediately on receipt.</p>
+<h3>A foul can suppress a later kick in the same cycle</h3>
+<p>The source establishes the mechanism:</p>
+<ul>
+<li><code>src/player.cpp:1305</code>: a kick returns if the player is already marked command-done.</li>
+<li><code>src/referee.cpp:835</code>: a successful intentional-foul path charges a currently kickable opponent.</li>
+<li><code>src/player.cpp:2792</code>: that charge marks the victim command-done.</li>
+<li>A kick already executed before the foul is not undone afterward.</li>
+</ul>
+<p>Successful kicks are identified by the next consecutive sense-body kick-counter increment. The following restricts to players uncharged before the action who receive a <strong>new charge</strong> by the next cycle, with PlayOn in both rows.</p>
+<table>
+<thead>
+<tr>
+<th>Same-cycle kick plus new foul charge</th>
+<th style="text-align: right;">Left</th>
+<th style="text-align: right;">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Such kick events</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">276</td>
+</tr>
+<tr>
+<td>Kick executed</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">244</td>
+</tr>
+<tr>
+<td>Kick blocked</td>
+<td style="text-align: right;"><strong>238</strong></td>
+<td style="text-align: right;"><strong>32</strong></td>
+</tr>
+<tr>
+<td>Blocked share</td>
+<td style="text-align: right;"><strong>95.97%</strong></td>
+<td style="text-align: right;"><strong>11.59%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Every event has an opponent's intentional-foul command in the same cycle. Intentional foul attempts are similar overall: 737 left and 709 right. Here “charge” means the server's temporary victim freeze, including undetected fouls; it does not necessarily mean a referee awarded a free kick.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 261" role="img" aria-label="A new foul charge in the kick cycle: was the kick blocked?"><rect width="1080" height="261" fill="#f7fafc"/><text x="22" y="31" font-size="22" font-family="sans-serif" fill="#172b4d">A new foul charge in the kick cycle: was the kick blocked?</text><text x="320" y="59" font-size="14" font-family="sans-serif" fill="#42526e">Actual blocked share · Left applies models; right is stock</text><text x="22" y="103" font-size="15" font-family="sans-serif" fill="#172b4d">Left · 238 blocked / 248</text><rect x="320" y="83" width="595.00" height="19" rx="3" fill="#b33434"/><text x="922.00" y="98" font-size="14" font-family="sans-serif" fill="#172b4d">95.97</text><text x="22" y="176" font-size="15" font-family="sans-serif" fill="#172b4d">Right · 32 blocked / 276</text><rect x="320" y="156" width="71.88" height="19" rx="3" fill="#b33434"/><text x="398.88" y="171" font-size="14" font-family="sans-serif" fill="#172b4d">11.59</text></svg></p>
+<p>Twelve illustrative raw-send traces restricted to these verified charge events agree with the mechanism. Failed kicks were sent after the foul command, or within the same millisecond; successful kicks were sent before it, or within the same millisecond. Same-millisecond traces cannot establish ordering.</p>
+<p>Example: game <code>202611141919_1097</code>, cycle 1606. Left player 10 was 0.729 m from the ball, inside its 1.037 m kickable radius. Right player 4 sent an intentional tackle <strong>7 ms before</strong> the left kick. The next sense body shows charge expiry 4 and no kick-counter increment. The ball was not out of range.</p>
+<p>Across all paired kick commands:</p>
+<table>
+<thead>
+<tr>
+<th>No successful-kick acknowledgement</th>
+<th style="text-align: right;">Left</th>
+<th style="text-align: right;">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total</td>
+<td style="text-align: right;">245 / 33,203</td>
+<td style="text-align: right;">44 / 33,615</td>
+</tr>
+<tr>
+<td>Associated with a new foul charge</td>
+<td style="text-align: right;">238</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr>
+<td>Physically outside kicking range</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+<p>Dash/turn acknowledgements are overwhelmingly present: 24/2 left/right dash misses and 6/0 turn misses among millions. A broad deadline or packet-loss failure is not supported by these counts.</p>
+<p><strong>Interpretation:</strong> extra computation creates a strong within-cycle ordering vulnerability. Decisions also change positions and tackle probabilities; a time-matched control or faster inference is needed to isolate the full effect. These counts cannot be converted directly into lost goals.</p>
+<p>The retained 100 F2 games already show a smaller asymmetry. Step26-only left had 283/55,889 unacknowledged kicks versus 177/54,098 right. Among simultaneous foul <strong>attempts</strong> and physically in-range kicks, blocked shares were 60.0% left and 31.2% right; F4 gives 83.5% and 10.0%. This broader comparison includes unsuccessful foul attempts, unlike the new-charge table above. Different batches limit causal comparison.</p>
+<h2>3. Average noise: the deployment repair is holding</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Unit</th>
+<th style="text-align: right;">Mean stock → applied</th>
+<th style="text-align: right;">p90 stock → applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player position, observer-relative</td>
+<td>cm</td>
+<td style="text-align: right;">78.42 → 52.22</td>
+<td style="text-align: right;">165.75 → 119.75</td>
+</tr>
+<tr>
+<td>Player velocity</td>
+<td>cm/cycle</td>
+<td style="text-align: right;">10.43 → 7.57</td>
+<td style="text-align: right;">25.25 → 14.75</td>
+</tr>
+<tr>
+<td>Player body</td>
+<td>degrees</td>
+<td style="text-align: right;">25.17 → 16.98</td>
+<td style="text-align: right;">90.55 → 57.35</td>
+</tr>
+<tr>
+<td>Ball position</td>
+<td>cm</td>
+<td style="text-align: right;">75.17 → 69.92</td>
+<td style="text-align: right;">163.25 → 150.75</td>
+</tr>
+<tr>
+<td>Ball velocity</td>
+<td>cm/cycle</td>
+<td style="text-align: right;">32.49 → 24.64</td>
+<td style="text-align: right;">76.75 → 51.25</td>
+</tr>
+</tbody>
+</table>
+<p>Each overall mean improves in <strong>all 60 games</strong>. F3's saved report had ball velocity worsening 31.84 → 32.80 cm/cycle; F4 now improves 32.49 → 24.64. Player-position improvement remains similar. These are different games, so paired within-batch effects are the defensible comparison.</p>
+<p>Individual corrections still worsen ball position on 42.3% of rows, ball velocity on 37.5%, player position on 32.7% and player velocity on 35.6%. Position error increases above 50 cm occur on 3.64% of ball rows and 3.73% of player rows.</p>
+<h2>4. Ball near the observer: what matters for kicking</h2>
+<p>When the observer estimates it can kick, F4 retains stock ball state:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity at the foot</th>
+<th style="text-align: right;">Current mean error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global ball position</td>
+<td style="text-align: right;">3.14 cm</td>
+</tr>
+<tr>
+<td>Ball–self range</td>
+<td style="text-align: right;">2.57 cm</td>
+</tr>
+<tr>
+<td>Ball bearing relative to body</td>
+<td style="text-align: right;">0.457°</td>
+</tr>
+<tr>
+<td>Ball velocity</td>
+<td style="text-align: right;">3.81 cm/cycle</td>
+</tr>
+</tbody>
+</table>
+<p>Self-position error is 1.52 cm in this 360° batch and is unchanged by F4; it contributes to global ball coordinates. The relative range and bearing are more direct kick-geometry measures.</p>
+<p>These applied values are unchanged. The ungated velocity candidate would worsen error to <strong>5.39 cm/cycle</strong>. The close-range guard is useful.</p>
+<p>Range and body-relative bearing drive kick efficiency more directly than global position. A separate observer-2 diagnostic on 579 estimated-kickable rows gives <strong>1.20% mean relative kick-efficiency error</strong> from geometry, with no error above 5% in that subset. This is an evaluation, not a learned gain.</p>
+<p>The actual command-aware next-ball prediction after an observer sends a kick has <strong>16.01 cm position error and 13.45 cm/cycle velocity error</strong> on 31,333 eligible paired rows. It includes the queued kick. Actuator randomness, collisions, simultaneous actions and suppressed kicks affect this residual.</p>
+<p>Distant-observer denoising does not directly improve these already accurate foot estimates, or prevent an earlier foul from blocking the command.</p>
+<h2>5. Distance: the largest ball gains are far away</h2>
+<p>Position is cm; velocity is cm/cycle.</p>
+<table>
+<thead>
+<tr>
+<th>True observer–ball distance</th>
+<th style="text-align: right;">Position stock → applied</th>
+<th style="text-align: right;">Velocity stock → applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Under 2 m</td>
+<td style="text-align: right;">3.72 → 3.72</td>
+<td style="text-align: right;">4.20 → 4.20</td>
+</tr>
+<tr>
+<td>2–5 m</td>
+<td style="text-align: right;">9.60 → 9.74</td>
+<td style="text-align: right;">4.30 → 4.39</td>
+</tr>
+<tr>
+<td>5–10 m</td>
+<td style="text-align: right;">20.34 → 20.58</td>
+<td style="text-align: right;">4.96 → 5.59</td>
+</tr>
+<tr>
+<td>10–20 m</td>
+<td style="text-align: right;">41.84 → 40.50</td>
+<td style="text-align: right;">8.37 → 8.59</td>
+</tr>
+<tr>
+<td>20–40 m</td>
+<td style="text-align: right;">77.83 → 71.89</td>
+<td style="text-align: right;">28.21 → 25.24</td>
+</tr>
+<tr>
+<td>40 m or farther</td>
+<td style="text-align: right;">140.94 → 129.75</td>
+<td style="text-align: right;">81.92 → 51.74</td>
+</tr>
+</tbody>
+</table>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 553" role="img" aria-label="Ball velocity: gains concentrate on distant observations"><rect width="1080" height="553" fill="#f7fafc"/><text x="22" y="31" font-size="22" font-family="sans-serif" fill="#172b4d">Ball velocity: gains concentrate on distant observations</text><text x="320" y="59" font-size="14" font-family="sans-serif" fill="#42526e">Blue: stock · Teal: applied · cm/cycle</text><text x="22" y="103" font-size="15" font-family="sans-serif" fill="#172b4d">Under 2 m</text><rect x="320" y="83" width="28.92" height="19" rx="3" fill="#537ab7"/><text x="355.92" y="98" font-size="14" font-family="sans-serif" fill="#172b4d">4.20</text><rect x="320" y="108" width="28.92" height="19" rx="3" fill="#00897b"/><text x="355.92" y="123" font-size="14" font-family="sans-serif" fill="#172b4d">4.20</text><text x="22" y="176" font-size="15" font-family="sans-serif" fill="#172b4d">2–5 m</text><rect x="320" y="156" width="29.64" height="19" rx="3" fill="#537ab7"/><text x="356.64" y="171" font-size="14" font-family="sans-serif" fill="#172b4d">4.30</text><rect x="320" y="181" width="30.25" height="19" rx="3" fill="#00897b"/><text x="357.25" y="196" font-size="14" font-family="sans-serif" fill="#172b4d">4.39</text><text x="22" y="249" font-size="15" font-family="sans-serif" fill="#172b4d">5–10 m</text><rect x="320" y="229" width="34.16" height="19" rx="3" fill="#537ab7"/><text x="361.16" y="244" font-size="14" font-family="sans-serif" fill="#172b4d">4.96</text><rect x="320" y="254" width="38.49" height="19" rx="3" fill="#00897b"/><text x="365.49" y="269" font-size="14" font-family="sans-serif" fill="#172b4d">5.59</text><text x="22" y="322" font-size="15" font-family="sans-serif" fill="#172b4d">10–20 m</text><rect x="320" y="302" width="57.66" height="19" rx="3" fill="#537ab7"/><text x="384.66" y="317" font-size="14" font-family="sans-serif" fill="#172b4d">8.37</text><rect x="320" y="327" width="59.19" height="19" rx="3" fill="#00897b"/><text x="386.19" y="342" font-size="14" font-family="sans-serif" fill="#172b4d">8.59</text><text x="22" y="395" font-size="15" font-family="sans-serif" fill="#172b4d">20–40 m</text><rect x="320" y="375" width="194.37" height="19" rx="3" fill="#537ab7"/><text x="521.37" y="390" font-size="14" font-family="sans-serif" fill="#172b4d">28.21</text><rect x="320" y="400" width="173.87" height="19" rx="3" fill="#00897b"/><text x="500.87" y="415" font-size="14" font-family="sans-serif" fill="#172b4d">25.24</text><text x="22" y="468" font-size="15" font-family="sans-serif" fill="#172b4d">40 m or farther</text><rect x="320" y="448" width="564.35" height="19" rx="3" fill="#537ab7"/><text x="891.35" y="463" font-size="14" font-family="sans-serif" fill="#172b4d">81.92</text><rect x="320" y="473" width="356.46" height="19" rx="3" fill="#00897b"/><text x="683.46" y="488" font-size="14" font-family="sans-serif" fill="#172b4d">51.74</text></svg></p>
+<p>Current velocity slightly worsens at <strong>5–20 m</strong>; position slightly worsens at 5–10 m. Without raw motion, velocity improves <strong>65.94 → 46.53 cm/cycle</strong>. With raw motion, it changes <strong>9.49 → 9.58</strong>. Much of the global gain fills missing distant motion while disturbing some accurate measured velocities.</p>
+<p>Evaluation bins use true distance. The guard uses rounded observed distance; a few true 2–5 m rows cross its raw 5 m boundary and are corrected. That explains their small changes without a guard violation.</p>
+<h2>6. Other players controlling or kicking the ball</h2>
+<p>“Physically in range” uses reference geometry and the player's heterogeneous kickable radius. It does not assert intent to kick. Groups overlap.</p>
+<p>A kick event comes from the kicker's own counter. “First observation after” means the observation where the result of that accepted command first appears. Another kick or a cycle gap resets the age.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: right;">Ball position stock → applied, cm</th>
+<th style="text-align: right;">Ball velocity stock → applied, cm/cycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opponent physically in kicking range</td>
+<td style="text-align: right;">67.63 → 66.03</td>
+<td style="text-align: right;">24.40 → 21.04</td>
+</tr>
+<tr>
+<td>Another teammate physically in range</td>
+<td style="text-align: right;">89.75 → 78.51</td>
+<td style="text-align: right;">30.87 → 24.76</td>
+</tr>
+<tr>
+<td>Nobody physically in range</td>
+<td style="text-align: right;">75.31 → 70.35</td>
+<td style="text-align: right;">35.06 → 25.80</td>
+</tr>
+<tr>
+<td>First observation after another player kicks</td>
+<td style="text-align: right;">77.05 → 71.41</td>
+<td style="text-align: right;">38.53 → 32.59</td>
+</tr>
+<tr>
+<td>One further cycle after that kick</td>
+<td style="text-align: right;">78.02 → 71.48</td>
+<td style="text-align: right;">35.44 → 26.52</td>
+</tr>
+<tr>
+<td>Two–three further cycles</td>
+<td style="text-align: right;">77.32 → 70.68</td>
+<td style="text-align: right;">31.77 → 22.62</td>
+</tr>
+<tr>
+<td>First after kick, observer within 10 m</td>
+<td style="text-align: right;">17.87 → 18.31</td>
+<td style="text-align: right;">4.80 → 5.56</td>
+</tr>
+<tr>
+<td>First after kick, observer 10 m or farther</td>
+<td style="text-align: right;">84.24 → 77.86</td>
+<td style="text-align: right;">42.62 → 35.88</td>
+</tr>
+</tbody>
+</table>
+<p>First-post-kick estimates improve overall, but less than subsequent cycles. Within 10 m at that first observation, velocity instead worsens <strong>4.80 → 5.56 cm/cycle</strong>. This is a small absolute regression in a tactically relevant group.</p>
+<p>For extrapolation to the next cycle:</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: right;">Stock coast → applied-state coast position error, cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All paired next cycles</td>
+<td style="text-align: right;">94.50 → 87.07</td>
+</tr>
+<tr>
+<td>Opponent physically in kicking range now</td>
+<td style="text-align: right;">107.97 → 104.40</td>
+</tr>
+<tr>
+<td>Another player actually kicks next cycle</td>
+<td style="text-align: right;">125.16 → 116.94</td>
+</tr>
+<tr>
+<td>No other player kicks next cycle</td>
+<td style="text-align: right;">86.09 → 78.88</td>
+</tr>
+</tbody>
+</table>
+<p>These are errors against the actual future, not pure sensor noise. An unknown future kick can dominate them. Current-state denoising cannot remove all that uncertainty. These coasting diagnostics also omit the observer's own queued action; use the command-aware measure in section 4 for its kick behavior.</p>
+<p>The learned next-position candidate is <strong>87.75 cm</strong> overall versus <strong>87.07 cm</strong> for coasting from the actual current state. It stays log-only; restoring its old global inertia override is not justified by these means.</p>
+<h2>7. Players, ball carriers and confidence</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: right;">Position error, cm</th>
+<th style="text-align: right;">Velocity error, cm/cycle</th>
+<th style="text-align: right;">Body error, degrees</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observer–target below 10 m</td>
+<td style="text-align: right;">18.04 → 13.54</td>
+<td style="text-align: right;">3.33 → 3.32</td>
+<td style="text-align: right;">0.33 → 0.33</td>
+</tr>
+<tr>
+<td>10–40 m</td>
+<td style="text-align: right;">64.12 → 43.88</td>
+<td style="text-align: right;">10.53 → 7.34</td>
+<td style="text-align: right;">13.57 → 9.68</td>
+</tr>
+<tr>
+<td>40 m or farther</td>
+<td style="text-align: right;">139.10 → 88.78</td>
+<td style="text-align: right;">12.57 → 9.67</td>
+<td style="text-align: right;">66.17 → 43.14</td>
+</tr>
+<tr>
+<td>Target within 2 m of ball</td>
+<td style="text-align: right;">76.41 → 55.01</td>
+<td style="text-align: right;">13.65 → 9.92</td>
+<td style="text-align: right;">18.26 → 13.12</td>
+</tr>
+<tr>
+<td>Target physically kickable</td>
+<td style="text-align: right;">75.64 → 55.41</td>
+<td style="text-align: right;">13.30 → 10.05</td>
+<td style="text-align: right;">19.17 → 14.59</td>
+</tr>
+<tr>
+<td>Target just kicked</td>
+<td style="text-align: right;">74.76 → 54.68</td>
+<td style="text-align: right;">8.86 → 7.88</td>
+<td style="text-align: right;">22.15 → 16.17</td>
+</tr>
+</tbody>
+</table>
+<p>Reported body readings remain about 0.33°. Without a raw body reading, error improves <strong>55.92 → 37.59°</strong>, still substantial uncertainty.</p>
+<p>In the observer-2 diagnostic, 214,200 rows change from unavailable stock body to valid inferred direction. This subset has <strong>59.54° mean error</strong>, with <strong>49.4% above 45°</strong>. It represents 3.69% of that diagnostic's target rows, not all inferred directions. A temporary decision age of one should not imply sensor-like confidence for this subset.</p>
+<h2>8. Better positions can miss who is able to kick</h2>
+<p>This test compares stock/corrected player–ball geometry using actual heterogeneous radii. It is a physical-range proxy, not a replay of planner buffers, player-type uncertainty or all tactical rules.</p>
+<p>For opponents within 2 m of the true ball:</p>
+<table>
+<thead>
+<tr>
+<th>Classification error</th>
+<th style="text-align: right;">Stock</th>
+<th style="text-align: right;">Applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Miss a truly kickable opponent</td>
+<td style="text-align: right;"><strong>24.72%</strong></td>
+<td style="text-align: right;"><strong>37.17%</strong></td>
+</tr>
+<tr>
+<td>False alarm on an out-of-range opponent</td>
+<td style="text-align: right;">27.79%</td>
+<td style="text-align: right;"><strong>17.55%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The first percentage is conditional on truly kickable opponents; the second on the other nearby opponents. Across all players, misses rise 217,058 → 347,038 while false alarms fall 424,673 → 254,980.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 261" role="img" aria-label="Opponents within 2 m of the ball: the control tradeoff"><rect width="1080" height="261" fill="#f7fafc"/><text x="22" y="31" font-size="22" font-family="sans-serif" fill="#172b4d">Opponents within 2 m of the ball: the control tradeoff</text><text x="320" y="59" font-size="14" font-family="sans-serif" fill="#42526e">Blue: stock · Teal: applied · % within its reference class</text><text x="22" y="103" font-size="15" font-family="sans-serif" fill="#172b4d">Misses a truly kickable opponent</text><rect x="320" y="83" width="340.56" height="19" rx="3" fill="#537ab7"/><text x="667.56" y="98" font-size="14" font-family="sans-serif" fill="#172b4d">24.72</text><rect x="320" y="108" width="512.13" height="19" rx="3" fill="#00897b"/><text x="839.13" y="123" font-size="14" font-family="sans-serif" fill="#172b4d">37.17</text><text x="22" y="176" font-size="15" font-family="sans-serif" fill="#172b4d">False alarm outside kicking range</text><rect x="320" y="156" width="382.91" height="19" rx="3" fill="#537ab7"/><text x="709.91" y="171" font-size="14" font-family="sans-serif" fill="#172b4d">27.79</text><rect x="320" y="181" width="241.76" height="19" rx="3" fill="#00897b"/><text x="568.76" y="196" font-size="14" font-family="sans-serif" fill="#172b4d">17.55</text></svg></p>
+<p>Mean relative player–ball geometry improves 87.24 → 74.98 cm for targets within 2 m of the ball, yet boundary decisions improve little. Within 30 cm of the kicking boundary, total misclassification changes only <strong>37.13% → 36.67%</strong>.</p>
+<p>In the observer-2 diagnostic, when a target truly can kick, estimated player–ball distance has positive bias <strong>17.41 cm stock versus 29.46 cm applied</strong>. The corrected point estimate more often places a real carrier outside the control radius. Joint relative geometry or calibrated control probability is a more useful next objective than global x/y error alone.</p>
+<h2>9. Recommended priorities</h2>
+<ol>
+<li><strong>Address action timing first.</strong> Make inference cheaper and measure arrival order. A dedicated time-matched stock-decision control can separate perception benefit from computation cost. Changing the official server's foul rules tests a different game.</li>
+<li>Validate ball gates for <strong>5–20 m and the first post-kick observation</strong>, preserving measured motion where already accurate.</li>
+<li>Calibrate <strong>joint ball-control decisions and missed threats</strong>, including uncertainty or control probability.</li>
+<li>Keep newly inferred, unreliable body directions uncertain.</li>
+<li>Repeat component tests with treatment sides swapped, reporting command execution and control mistakes alongside noise and goals.</li>
+</ol>
+<p>A bigger network could worsen the timing problem. The next improvement should target the measured failure mechanisms.</p>
+<h2>Reproduction and retained evidence</h2>
+<p>Evidence: <a href="f4-60/selection.json">frozen selection</a>, <a href="f4-60/situations.json">all-observer metrics</a>, <a href="f4-60/control-geometry.json">control/validity diagnostic</a>, <a href="f4-60/kick-commands.json">kick commands</a>, <a href="f4-60/foul-timing.json">new foul charges</a>, <a href="f4-60/arrival-order.json">raw-send traces</a>, <a href="f4-60/f2-kick-commands.json">F2 comparison</a>.</p>
+<p>From the workspace root in the existing Python environment:</p>
+<pre><code class="language-sh">code=rcssserver-denoise/experiments/exp4/reporting
+# Use a new filename to freeze later completed games; incomplete games are skipped.
+python3 &quot;$code/select_completed.py&quot; logs/exp3-f4-logs AutoTest2D/out/exp3-f4-logs logs/exp4/f4-new-selection.json
+
+python3 &quot;$code/audit_situations.py&quot; logs/exp3-f4-logs logs/exp4/f4-60-selection.json logs/exp4/f4-60-situations.json --workers 16
+python3 &quot;$code/audit_control_geometry.py&quot; logs/exp3-f4-logs logs/exp4/f4-60-selection.json logs/exp4/f4-60-control-geometry.json
+python3 &quot;$code/audit_kick_commands.py&quot; logs/exp3-f4-logs logs/exp4/f4-60-kick-commands.json --selection logs/exp4/f4-60-selection.json
+python3 &quot;$code/audit_foul_timing.py&quot; logs/exp3-f4-logs logs/exp4/f4-60-selection.json logs/exp4/f4-60-foul-timing.json
+python3 &quot;$code/trace_action_order.py&quot; logs/exp3-f4-logs logs/exp4/f4-60-selection.json logs/exp4/f4-60-arrival-order.json --events logs/exp4/f4-60-foul-timing.json --per-category 3
+</code></pre>
+<p>Means/counts are accumulated directly. p90 values use 0.5 cm spatial and 0.1° angular bins. Decision latency uses 1 ms bins. Counter comparisons require consecutive PlayOn command/next rows. New-charge analysis excludes already-charged victims. Raw traces are illustrative, not a randomized estimate of all packet arrivals; equal-millisecond clock values are unresolved.</p>
+<p><a href="04-live-f4-fix.md">Previous F4 repair</a> · <a href="03-live-f3-audit.md">F3 investigation</a></p></main></html>

@@ -466,8 +466,8 @@ CLIENT_SETTINGS = ("version", "gaussian_see", "use_fullstate", "debug_fullstate"
 
 def summarize_agent(summary, directory):
     meta = json.loads((directory / "meta.json").read_text())
-    if meta["schema_version"] != 2:
-        raise ValueError(f"{directory}: expected schema version 2")
+    if meta["schema_version"] not in (2, 3):
+        raise ValueError(f"{directory}: expected schema version 2 or 3")
     if not meta["final"] or meta["status"] != "ok":
         raise ValueError(f"{directory}: the agent log did not finalize successfully")
     if meta["config"]["use_fullstate"]:

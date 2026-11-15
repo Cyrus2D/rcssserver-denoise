@@ -1,0 +1,668 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp3–Exp4 · Results and handoff</title><style>
+body{margin:0;background:#eef2f7;color:#172b4d;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:35px auto;background:white;padding:42px 48px;border-radius:14px}
+h1{font-size:32px;line-height:1.2}h2{margin-top:46px;border-top:1px solid #dce4ed;padding-top:22px}h3{margin-top:30px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th{background:#edf3f8;text-align:left}
+td,th{padding:11px 12px;border-bottom:1px solid #dce4ed}td:last-child{text-align:right}
+code{overflow-wrap:anywhere;font-size:.87em;background:#edf3f8;padding:2px 4px;border-radius:3px}
+pre{background:#edf3f8;padding:18px;overflow:auto}pre code{white-space:pre;overflow-wrap:normal}
+svg{max-width:100%;height:auto;margin:22px 0;border:1px solid #dce4ed;border-radius:8px}
+a{color:#075ea8}strong{font-weight:700}
+@media(max-width:700px){main{padding:22px 15px;margin:0}table{font-size:12px;display:block;overflow:auto}}
+@media print{main{margin:0;padding:0}h2{break-after:avoid}table,svg{break-inside:avoid}}
+</style><main><h1>Exp3–Exp4 · What we achieved and what to keep</h1>
+<p>2026-11-15 · Research archive and handoff</p>
+<h2>Summary</h2>
+<p><strong>We reduced estimation error, especially player position. We did not
+establish a reliable match-performance advantage.</strong> Retain the Step26
+player-position model as the strongest accuracy result. Keep player
+velocity/body as separately testable candidates. Archive ball correction
+as experimental because its average gain did not resolve kick-time motion
+errors or temporal instability.</p>
+<p>This directory summarizes the completed work. The original Exp3/Exp4
+scripts, individual steps and evidence remain at their original locations.</p>
+<h2>What we did</h2>
+<ol>
+<li>Collected 200 baseline games with quantized 360° observations, persistent
+   uniform numbers, no teammate payloads and reference-only fullstate.</li>
+<li>Tested geometry/reachability filters, temporal GRUs, nearby-player/ball
+   context, uniform-number embeddings, masked neighbor pooling, range/bearing
+   readouts and single/multiple movement hypotheses.</li>
+<li>Selected Step26 for live player-position correction: eight-cycle
+   recurrent history, masked nearby-player context and a bounded range/bearing
+   correction consistent with the quantized observation.</li>
+<li>Trained Exp4 models for player velocity/body, current ball position/velocity
+   and one-cycle ball state. Tested estimated kicker identity and controlled
+   versus free-ball forecast heads.</li>
+<li>Integrated models, audited live logs, repaired observation-history feedback
+   and ball-path inconsistencies, and added close-range guards.</li>
+<li>Added opt-in synchronous random command priority to remove the identified
+   receive-speed advantage. Built before/after visualization and inspected
+   observer 9's ball failures.</li>
+</ol>
+<p>Exp1 → Exp3's broad player-track mean changed <strong>159.5 → 80.0 cm</strong>, mainly
+under a combined change in coverage and age distribution. That is not a
+neural-model gain. Fresh raw error at 10–20 m stayed essentially unchanged:
+39.60 versus 39.54 cm. The model comparisons below pair the same samples.</p>
+<p><a href="../exp3/README.md">Configuration and baseline diagnostics</a> ·
+<a href="../exp3/reports/step-summary.md">All research steps</a></p>
+<h2>How much error we removed</h2>
+<h3>Offline held-out results</h3>
+<p>Each row compares the stated method with its own matched baseline. The
+rows have different target/cohort definitions; their improvements cannot
+be added together.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th style="text-align: right;">Stock → selected model</th>
+<th style="text-align: right;">Reduction</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player relative position</td>
+<td style="text-align: right;">72.79 → 48.16 cm</td>
+<td style="text-align: right;">33.8%</td>
+<td>Exp3 Step26: bounded range and bearing, recurrent masked context</td>
+</tr>
+<tr>
+<td>Player velocity</td>
+<td style="text-align: right;">9.59 → 7.24 cm/cycle</td>
+<td style="text-align: right;">24.5%</td>
+<td>Exp4 context GRU with gated body policy</td>
+</tr>
+<tr>
+<td>Player body direction</td>
+<td style="text-align: right;">21.97 → 14.74 degrees</td>
+<td style="text-align: right;">32.9%</td>
+<td>Exp4 context GRU with validation-selected body gate</td>
+</tr>
+<tr>
+<td>Ball current position</td>
+<td style="text-align: right;">68.75 → 63.98 cm</td>
+<td style="text-align: right;">6.9%</td>
+<td>Quantization-constrained current-state model</td>
+</tr>
+<tr>
+<td>Ball current velocity</td>
+<td style="text-align: right;">27.63 → 21.66 cm/cycle</td>
+<td style="text-align: right;">21.6%</td>
+<td>Same quantization-constrained current-state model</td>
+</tr>
+<tr>
+<td>Ball next position</td>
+<td style="text-align: right;">87.02 → 80.81 cm</td>
+<td style="text-align: right;">7.1%</td>
+<td>Controlled/free-ball forecast heads; not final live policy</td>
+</tr>
+<tr>
+<td>Ball next velocity</td>
+<td style="text-align: right;">40.59 → 33.97 cm/cycle</td>
+<td style="text-align: right;">16.3%</td>
+<td>Controlled/free-ball forecast heads; log-only in F4</td>
+</tr>
+</tbody>
+</table>
+<p>Step26's player-position mean improved in 19 of 20 held-out 360° games.
+The preceding masked-context range-only model reached <strong>48.48 cm</strong>;
+the bounded-bearing addition reached <strong>48.16 cm</strong>, with a small p90
+regression. Extra forecast heads and the mixture model did not beat Step26
+for fresh position correction.</p>
+<p>For velocity alone, the history-only player GRU scored 7.18 cm/cycle,
+slightly below the selected context policy's 7.24. The lowest individual
+ball-velocity result was 21.50 cm/cycle from the controlled/free-head
+candidate; the selected quantization-constrained current-state model
+scored 21.66. These are alternative policies, not additional additive gains.</p>
+<p>For player body, preserving observed angles mattered: raw observed body
+was already about 0.33° error, while ungated model replacement raised it
+to 3.25°. Estimated kicker identity helped the ball model numerically,
+but that cue is not a known action or true possession label.</p>
+<p><a href="../exp3/reports/26-bounded-bearing.md">Step26</a> ·
+<a href="../exp3/reports/28-mixture-forecast.md">Forecast comparison</a> ·
+<a href="../exp4/reports/01-state-models.md">Exp4 offline state models</a></p>
+<h3>Live paired accuracy after the F4 integration repair</h3>
+<p>The following is one consistent cohort: the original F4 first 60 games,
+all treatment observers, PlayOn only. Each eligible observer–target–cycle
+has equal weight. Stock and applied estimates are scored against the same
+truth on the same row. These games predate the scheduling control; that
+confounds game outcomes, not the definition of these paired errors.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th style="text-align: right;">Stock → applied</th>
+<th style="text-align: right;">Reduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player relative position</td>
+<td style="text-align: right;">78.42 → 52.22 cm</td>
+<td style="text-align: right;">33.4%</td>
+</tr>
+<tr>
+<td>Player velocity</td>
+<td style="text-align: right;">10.43 → 7.57 cm/cycle</td>
+<td style="text-align: right;">27.4%</td>
+</tr>
+<tr>
+<td>Player body direction</td>
+<td style="text-align: right;">25.17 → 16.98 degrees</td>
+<td style="text-align: right;">32.5%</td>
+</tr>
+<tr>
+<td>Ball position</td>
+<td style="text-align: right;">75.17 → 69.92 cm</td>
+<td style="text-align: right;">7.0%</td>
+</tr>
+<tr>
+<td>Ball velocity</td>
+<td style="text-align: right;">32.49 → 24.64 cm/cycle</td>
+<td style="text-align: right;">24.2%</td>
+</tr>
+</tbody>
+</table>
+<p><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="662.4pt" height="273.6pt" viewBox="0 0 662.4 273.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-15T02:34:49.681794</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 273.6 
+L 662.4 273.6 
+L 662.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 145.6 229.12 
+L 650.52 229.12 
+L 650.52 27.96 
+L 145.6 27.96 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 145.6 229.12 
+L 145.6 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m82c2b7f9ef" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="145.6" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="145.6" y="244.478281" transform="rotate(-0 145.6 244.478281)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 204.311628 229.12 
+L 204.311628 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="204.311628" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="204.311628" y="244.478281" transform="rotate(-0 204.311628 244.478281)">5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 263.023256 229.12 
+L 263.023256 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="263.023256" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="263.023256" y="244.478281" transform="rotate(-0 263.023256 244.478281)">10</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 321.734884 229.12 
+L 321.734884 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="321.734884" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="321.734884" y="244.478281" transform="rotate(-0 321.734884 244.478281)">15</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 380.446512 229.12 
+L 380.446512 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="380.446512" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="380.446512" y="244.478281" transform="rotate(-0 380.446512 244.478281)">20</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 439.15814 229.12 
+L 439.15814 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="439.15814" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="439.15814" y="244.478281" transform="rotate(-0 439.15814 244.478281)">25</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 497.869767 229.12 
+L 497.869767 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="497.869767" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="497.869767" y="244.478281" transform="rotate(-0 497.869767 244.478281)">30</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 556.581395 229.12 
+L 556.581395 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="556.581395" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="556.581395" y="244.478281" transform="rotate(-0 556.581395 244.478281)">35</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <path d="M 615.293023 229.12 
+L 615.293023 27.96 
+" clip-path="url(#p1753e8077a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m82c2b7f9ef" x="615.293023" y="229.12" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="615.293023" y="244.478281" transform="rotate(-0 615.293023 244.478281)">40</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="398.06" y="259.124219" transform="rotate(-0 398.06 259.124219)">Reduction in mean error (%)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_19">
+      <defs>
+       <path id="mf6916b749b" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mf6916b749b" x="145.6" y="52.34303" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="138.6" y="56.522171" transform="rotate(-0 138.6 56.522171)">Player relative position</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#mf6916b749b" x="145.6" y="90.441515" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="138.6" y="94.620656" transform="rotate(-0 138.6 94.620656)">Player velocity</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#mf6916b749b" x="145.6" y="128.54" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="138.6" y="132.719141" transform="rotate(-0 138.6 132.719141)">Player body direction</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#mf6916b749b" x="145.6" y="166.638485" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="138.6" y="170.817625" transform="rotate(-0 138.6 170.817625)">Ball position</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#mf6916b749b" x="145.6" y="204.73697" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="138.6" y="208.91611" transform="rotate(-0 138.6 208.91611)">Ball velocity</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 145.6 37.103636 
+L 537.909271 37.103636 
+L 537.909271 67.582424 
+L 145.6 67.582424 
+z
+" clip-path="url(#p1753e8077a)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 145.6 75.202121 
+L 467.58515 75.202121 
+L 467.58515 105.680909 
+L 145.6 105.680909 
+z
+" clip-path="url(#p1753e8077a)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 145.6 113.300606 
+L 527.680439 113.300606 
+L 527.680439 143.779394 
+L 145.6 143.779394 
+z
+" clip-path="url(#p1753e8077a)" style="fill: #087f8c"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 145.6 151.399091 
+L 227.610389 151.399091 
+L 227.610389 181.877879 
+L 145.6 181.877879 
+z
+" clip-path="url(#p1753e8077a)" style="fill: #b57021"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 145.6 189.497576 
+L 429.309621 189.497576 
+L 429.309621 219.976364 
+L 145.6 219.976364 
+z
+" clip-path="url(#p1753e8077a)" style="fill: #b57021"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 145.6 229.12 
+L 145.6 27.96 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 145.6 229.12 
+L 650.52 229.12 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_16">
+    <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="546.128899" y="55.378343" transform="rotate(-0 546.128899 55.378343)">33.4%</text>
+   </g>
+   <g id="text_17">
+    <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="475.804778" y="93.476828" transform="rotate(-0 475.804778 93.476828)">27.4%</text>
+   </g>
+   <g id="text_18">
+    <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="535.900067" y="131.575312" transform="rotate(-0 535.900067 131.575312)">32.5%</text>
+   </g>
+   <g id="text_19">
+    <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="235.830017" y="169.673797" transform="rotate(-0 235.830017 169.673797)">7.0%</text>
+   </g>
+   <g id="text_20">
+    <text style="font: 11px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="437.529249" y="207.772282" transform="rotate(-0 437.529249 207.772282)">24.2%</text>
+   </g>
+   <g id="text_21">
+    <text style="font: 12px 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="398.06" y="21.96" transform="rotate(-0 398.06 21.96)">F4 live accuracy: player gains are larger; match benefit remains unproven</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1753e8077a">
+   <rect x="145.6" y="27.96" width="504.92" height="201.16"/>
+  </clipPath>
+ </defs>
+</svg>
+</p>
+<p>These are mean gains, not an improvement on every frame. In that cohort,
+ball position worsened on 42.3% of rows, ball velocity on 37.5%, player
+position on 32.7% and player velocity on 35.6%. F4 preserves stock ball
+state below 5 m observer range, player velocity below 10 m, and directly
+observed body direction. Learned ball forecasts remain log-only.</p>
+<p>The later randomized-priority first-15 sample was consistent: player
+relative position <strong>78.91 → 52.96 cm</strong> and ball velocity
+<strong>32.41 → 24.83 cm/cycle</strong>. That was a three-observer-per-game health sample,
+not a complete final-batch accuracy audit.</p>
+<p><a href="../exp4/reports/05-live-f4-60-games.md">Full 60-game accuracy audit</a> ·
+<a href="../exp4/reports/07-random-order-first15.md">Random-priority first 15</a></p>
+<h2>What happened in actual games</h2>
+<p>Every treatment in this table played on the left. Separate batches have
+different trajectories and configurations, so scores are not a controlled
+ball-on/ball-off comparison.</p>
+<table>
+<thead>
+<tr>
+<th>Batch</th>
+<th>Treatment</th>
+<th style="text-align: right;">Games</th>
+<th style="text-align: right;">Goals, left–right</th>
+<th style="text-align: right;">Left W–D–L</th>
+<th style="text-align: right;">Mean goal margin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exp3 baseline</td>
+<td>Stock versus stock</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">795–796</td>
+<td style="text-align: right;">81–38–81</td>
+<td style="text-align: right;">−0.005</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Player position, legacy routing</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">816–807</td>
+<td style="text-align: right;">85–34–81</td>
+<td style="text-align: right;">+0.045</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Player position, corrected routing</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">386–359</td>
+<td style="text-align: right;">43–17–40</td>
+<td style="text-align: right;">+0.270</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Combined player/ball state, initial integration</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">671–671</td>
+<td style="text-align: right;">59–22–74</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td>F4 original snapshot</td>
+<td>Combined state after integration repair</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">222–225</td>
+<td style="text-align: right;">24–11–25</td>
+<td style="text-align: right;">−0.050</td>
+</tr>
+<tr>
+<td>Random-priority snapshot</td>
+<td>Combined state with new scheduling</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">122–143</td>
+<td style="text-align: right;">10–8–17</td>
+<td style="text-align: right;">−0.600</td>
+</tr>
+</tbody>
+</table>
+<p>F2 is the most favorable recorded player-position-only score margin here,
+but its 95% game-bootstrap interval is <strong>−0.24 to +0.80 goals/game</strong>.
+F1's interval is <strong>−0.33 to +0.43</strong>. Neither establishes a reliable benefit.</p>
+<p>The randomized snapshot's interval is <strong>−1.46 to +0.29</strong>. It contained
+35 finalized games at closeout, not the planned 200 completed games.
+Do not describe it as a completed 200-game result.</p>
+<p>One concrete live problem was fixed: before random scheduling, newly
+charged simultaneous kicks were blocked 96.0% on the treatment side and
+11.6% on the stock side. In the verified first-15 randomized snapshot,
+the corresponding rates were 49.3% and 50.0%. This verifies the scheduling
+control; it does not itself prove a model-related win-rate improvement.</p>
+<p><a href="../exp3/reports/31-live-results.md">Player-position game results</a> ·
+<a href="../exp4/reports/09-closeout-ball-stability.md">Combined-state closeout and exact game selection</a></p>
+<h2>Why we are not keeping ball correction as the default</h2>
+<p>Observer left 9's replay confirmed two failure modes:</p>
+<ul>
+<li>At cycles 784–787, the ball was seen but motion fields were omitted at
+  reported ranges 40.4–44.7 m. Stock velocity was invalid; the model
+  supplied an almost horizontal velocity after player 10's kicks, while
+  the real ball moved diagonally. Fresh motion at 788 restored the direction.</li>
+<li>At cycles 789–802, range-bin transitions already caused stock position
+  jumps. The model reduced the mean position error <strong>0.879 → 0.706 m</strong>,
+  but worsened four of 14 individual positions and did not eliminate jitter.
+  At 790, coasting the previous applied state would have 0.41 m error,
+  versus 1.65 m after the fresh correction. Other cycles favored the fresh
+  update, so this is not an always-coast rule.</li>
+</ul>
+<p>The experiment therefore does not show that ball modeling is impossible,
+or that all instability was introduced by the model. It shows that this
+model and integration are not sufficiently reliable in the important
+situations we inspected.</p>
+<p><a href="../exp4/reports/09-closeout-ball-stability.html">Plots, screenshots and per-cycle evidence</a></p>
+<h2>What is archived and reusable</h2>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>Preserved source</th>
+<th>What it contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>librcsc-denoise</td>
+<td>denoise-exp3-exp4, b0894ef</td>
+<td>Model hooks/history, guarded state application, schema-3 records, snapshots, debug helpers and server-parameter mirrors</td>
+</tr>
+<tr>
+<td>helios-base-denoise</td>
+<td>denoise-exp3-exp4, ba8fe96</td>
+<td>Weight loading/inference, model flags, corrected decision routing and debug overlays</td>
+</tr>
+<tr>
+<td>rcssserver-denoise</td>
+<td>denoise</td>
+<td>Experiment controls, reports/scripts and optional random command batching</td>
+</tr>
+</tbody>
+</table>
+<p>The lib/base archive commits match their local origin-tracking refs.
+Both source working trees are on denoise. No branch switch, commit or push
+is required to create this summary. Server changes remain uncommitted for
+the user's commit.</p>
+<p>For later experiments, retrieve only instrumentation that is needed.
+Do not inadvertently enable the old models by importing an entire live
+integration stack. Existing build/bin and build-debug/bin executables do
+not change when the source branch is switched; rebuild before new data
+collection.</p>
+<p>Known archived visualization limitation: requested circle colors are
+dropped by CirclePrinter's inverted empty-string condition. Coordinates
+and numeric annotations were checked, but some outlines appear orange.
+This is documented and remains unchanged.</p>
+<h2>Handoff: isolate prediction during visual gaps</h2>
+<p>The next question is: <strong>given accurate information when a player is
+visible, how well can we estimate its position while it is outside the
+current view?</strong></p>
+<p>Start with separate 60°/120°/180° view conditions and then standard
+adaptive view control. Keep visual identity, motion-field availability,
+hearing and observation cadence explicit. With a finite view cone,
+visibility and update frequency are separate causes of gaps. Record
+actual view width and observation ages every cycle.</p>
+<p>Before collecting data:</p>
+<ol>
+<li>Define and verify what “no observation noise” includes. Current
+   server::see_noise_free removes distance quantization; bearing and motion
+   rounding remain. Self-localization error can also affect global positions.
+   Do not label that existing flag alone a fully noiseless observation model.</li>
+<li>Retain reference fullstate strictly for labels and evaluation. If exact
+   visible-only measurements are used in a controlled experiment, specify
+   that visibility mask and ensure unseen truth cannot enter model inputs.</li>
+<li>Preserve position/velocity ages, actual observations, view settings and
+   action/context history in the logs. Test the logger before choosing
+   which archived instrumentation to bring back.</li>
+<li>Compare stock librcsc with simple motion baselines before training.
+   Score all eligible unseen-player cycles by gap age, distance, velocity
+   availability and context, with whole-game splits and equal sample weights.</li>
+</ol>
+<p>The 360° Step26 model required eight consecutive sightings; its normal-view
+replay covered only <strong>0.93%</strong> of fresh identified observations. It is not
+already a solution for this next question. Exp3's gap-aware filters,
+motion-path and likelihood reports contain reusable negative findings;
+read those before repeating work.</p>
+<p><a href="../exp3/reports/08-normal-view.md">Normal-view coverage</a> ·
+<a href="../exp3/reports/09-gap-aware-history.md">Earlier gap-aware study</a> ·
+<a href="../exp3/reports/18-motion-paths.md">Motion-path limitations</a></p>
+<p>This archive step does not start the next dataset, alter sensing behavior,
+or train a new model.</p></main></html>

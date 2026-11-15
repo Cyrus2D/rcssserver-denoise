@@ -1,0 +1,3116 @@
+{
+  "source": "/home/nader/workspace/denoise/logs/exp3-logs",
+  "games": 200,
+  "coverage": {
+    "skipped": 0,
+    "play": 21539323,
+    "truth": 21539323,
+    "see": 21539323,
+    "one_see": 21539323,
+    "full_view": 21539323,
+    "high_quality": 21539323,
+    "say": 0,
+    "teammate_payload": 0
+  },
+  "settings": [
+    {
+      "players": 4400,
+      "synch_mode": "true",
+      "full_view": "true",
+      "see_no_fade_unum": "true",
+      "see_no_fade_all": "false",
+      "see_noise_free": "false",
+      "say_msg_size": "0",
+      "gaussian_see": "False"
+    }
+  ],
+  "metrics": [
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "seen_share",
+      "n": 2688473,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "known_share",
+      "n": 2688473,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "motion_share",
+      "n": 2688473,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "body_share",
+      "n": 2688473,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "head_share",
+      "n": 2688473,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "track_position",
+      "n": 2688473,
+      "mean": 0.05527534708475779
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "track_velocity",
+      "n": 2688473,
+      "mean": 0.011103175745860202
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "raw_range",
+      "n": 2688473,
+      "mean": 0.05209275045313821
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "raw_bearing",
+      "n": 2688473,
+      "mean": 0.25004591449830416
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "raw_position",
+      "n": 2688473,
+      "mean": 0.0537794567767999
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "exact_range_position",
+      "n": 2688473,
+      "mean": 0.008488797746923326
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "exact_bearing_position",
+      "n": 2688473,
+      "mean": 0.05209275045313821
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "n_dist_chg",
+      "n": 2688473,
+      "mean": 0.009877108556418459
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "n_dir_chg",
+      "n": 2688473,
+      "mean": 0.024559400866960537
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "n_body_rel",
+      "n": 2688473,
+      "mean": 0.250037248133792
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "n_head_rel",
+      "n": 2688473,
+      "mean": 0.2500372481349079
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "visual_relative",
+      "n": 2688473,
+      "mean": 0.051892871689989066
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "visual_global",
+      "n": 2688473,
+      "mean": 0.05527534708475779
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "visual_velocity",
+      "n": 2688473,
+      "mean": 0.011103175745860202
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "paired_visual",
+      "n": 2688473,
+      "mean": 0.05527534708475779
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "paired_track",
+      "n": 2688473,
+      "mean": 0.05527534708475779
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "seen_share",
+      "n": 34853610,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "known_share",
+      "n": 34853610,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "motion_share",
+      "n": 34853610,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "body_share",
+      "n": 34853610,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "head_share",
+      "n": 34853610,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "track_position",
+      "n": 34853610,
+      "mean": 0.19560730853111052
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "track_velocity",
+      "n": 34853610,
+      "mean": 0.03472379384861423
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "raw_range",
+      "n": 34853610,
+      "mean": 0.1872068886589078
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "raw_bearing",
+      "n": 34853610,
+      "mean": 0.2500235030090139
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "raw_position",
+      "n": 34853610,
+      "mean": 0.19334103012617918
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "exact_range_position",
+      "n": 34853610,
+      "mean": 0.03224542410676034
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "exact_bearing_position",
+      "n": 34853610,
+      "mean": 0.1872068886589078
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "n_dist_chg",
+      "n": 34853610,
+      "mean": 0.03388165255883106
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "n_dir_chg",
+      "n": 34853610,
+      "mean": 0.02418076790203369
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "n_body_rel",
+      "n": 34853610,
+      "mean": 0.24996286215964414
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "n_head_rel",
+      "n": 34853610,
+      "mean": 0.24996286216064842
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "visual_relative",
+      "n": 34853610,
+      "mean": 0.19478532871470122
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "visual_global",
+      "n": 34853610,
+      "mean": 0.19560730853111052
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "visual_velocity",
+      "n": 34853610,
+      "mean": 0.03472379384861423
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "paired_visual",
+      "n": 34853610,
+      "mean": 0.19560730853111052
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "paired_track",
+      "n": 34853610,
+      "mean": 0.19560730853111052
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "seen_share",
+      "n": 106273720,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "known_share",
+      "n": 106273720,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "motion_share",
+      "n": 106273720,
+      "mean": 0.9995354166580411
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "body_share",
+      "n": 106273720,
+      "mean": 0.9995354166580411
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "head_share",
+      "n": 106273720,
+      "mean": 0.9995354166580411
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "track_position",
+      "n": 106273720,
+      "mean": 0.40591521107688733
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "track_velocity",
+      "n": 106273720,
+      "mean": 0.06564137739176722
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "raw_range",
+      "n": 106273720,
+      "mean": 0.38317349170933374
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "raw_bearing",
+      "n": 106273720,
+      "mean": 0.2499804240528891
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "raw_position",
+      "n": 106273720,
+      "mean": 0.39537639039108474
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "exact_range_position",
+      "n": 106273720,
+      "mean": 0.06607251082015875
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "exact_bearing_position",
+      "n": 106273720,
+      "mean": 0.38317349170933374
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "n_dist_chg",
+      "n": 106224347,
+      "mean": 0.06445255771135977
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "n_dir_chg",
+      "n": 106224347,
+      "mean": 0.02414320978261226
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "n_body_rel",
+      "n": 106224347,
+      "mean": 0.24994488027564907
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "n_head_rel",
+      "n": 106224347,
+      "mean": 0.24994488027529124
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "visual_relative",
+      "n": 106273720,
+      "mean": 0.40550299889611496
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "visual_global",
+      "n": 106273720,
+      "mean": 0.40591521107688733
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "visual_velocity",
+      "n": 106224347,
+      "mean": 0.06560638525464418
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "paired_visual",
+      "n": 106273720,
+      "mean": 0.40591521107688733
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "paired_track",
+      "n": 106273720,
+      "mean": 0.40591521107688733
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "seen_share",
+      "n": 111568979,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "known_share",
+      "n": 111568979,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "motion_share",
+      "n": 111568979,
+      "mean": 0.7563212530608531
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "body_share",
+      "n": 111568979,
+      "mean": 0.7563212530608531
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "head_share",
+      "n": 111568979,
+      "mean": 0.7563212530608531
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "track_position",
+      "n": 111568979,
+      "mean": 0.6549270197490472
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "track_velocity",
+      "n": 111568979,
+      "mean": 0.10742048664837202
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "raw_range",
+      "n": 111568979,
+      "mean": 0.6193191833914246
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "raw_bearing",
+      "n": 111568979,
+      "mean": 0.250002819082202
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "raw_position",
+      "n": 111568979,
+      "mean": 0.6403274328235229
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "exact_range_position",
+      "n": 111568979,
+      "mean": 0.10843318557481116
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "exact_bearing_position",
+      "n": 111568979,
+      "mean": 0.6193191833914246
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "n_dist_chg",
+      "n": 84381990,
+      "mean": 0.09253249001464657
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "n_dir_chg",
+      "n": 84381990,
+      "mean": 0.024126474756509045
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "n_body_rel",
+      "n": 84381990,
+      "mean": 0.24996884179204587
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "n_head_rel",
+      "n": 84381990,
+      "mean": 0.24996884179101478
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "visual_relative",
+      "n": 111568979,
+      "mean": 0.6546474523061558
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "visual_global",
+      "n": 111568979,
+      "mean": 0.6549270197490472
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "visual_velocity",
+      "n": 84381990,
+      "mean": 0.09437259809964185
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "paired_visual",
+      "n": 111568979,
+      "mean": 0.6549270197490472
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "paired_track",
+      "n": 111568979,
+      "mean": 0.6549270197490472
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "seen_share",
+      "n": 88522578,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "known_share",
+      "n": 88522578,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "motion_share",
+      "n": 88522578,
+      "mean": 0.2680119980238262
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "body_share",
+      "n": 88522578,
+      "mean": 0.2680119980238262
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "head_share",
+      "n": 88522578,
+      "mean": 0.2680119980238262
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "track_position",
+      "n": 88522578,
+      "mean": 0.9484214085836274
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "track_velocity",
+      "n": 77633765,
+      "mean": 0.14371586080349194
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "raw_range",
+      "n": 88522578,
+      "mean": 0.8885809227466467
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "raw_bearing",
+      "n": 88522578,
+      "mean": 0.2500140176355349
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "raw_position",
+      "n": 88522578,
+      "mean": 0.9157473991976052
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "exact_range_position",
+      "n": 88522578,
+      "mean": 0.1513238753214732
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "exact_bearing_position",
+      "n": 88522578,
+      "mean": 0.8885809227466467
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "n_dist_chg",
+      "n": 23725113,
+      "mean": 0.10674560101972963
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "n_dir_chg",
+      "n": 23725113,
+      "mean": 0.024086126270167797
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "n_body_rel",
+      "n": 23725113,
+      "mean": 0.2500851390561133
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "n_head_rel",
+      "n": 23725113,
+      "mean": 0.2500851390553123
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "visual_relative",
+      "n": 88522578,
+      "mean": 0.9482272045341693
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "visual_global",
+      "n": 88522578,
+      "mean": 0.9484214085836274
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "visual_velocity",
+      "n": 23725113,
+      "mean": 0.10948400166237349
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "paired_visual",
+      "n": 88522578,
+      "mean": 0.9484214085836274
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "paired_track",
+      "n": 88522578,
+      "mean": 0.9484214085836274
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "seen_share",
+      "n": 78243123,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "known_share",
+      "n": 78243123,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "motion_share",
+      "n": 78243123,
+      "mean": 0.0
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "body_share",
+      "n": 78243123,
+      "mean": 0.0
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "head_share",
+      "n": 78243123,
+      "mean": 0.0
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "track_position",
+      "n": 78243123,
+      "mean": 1.2352205128611742
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "track_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "raw_range",
+      "n": 78243123,
+      "mean": 1.1690979450028214
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "raw_bearing",
+      "n": 78243123,
+      "mean": 0.24999932835520894
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "raw_position",
+      "n": 78243123,
+      "mean": 1.2095953193333455
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "exact_range_position",
+      "n": 78243123,
+      "mean": 0.20698072683628677
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "exact_bearing_position",
+      "n": 78243123,
+      "mean": 1.1690979450028214
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "n_dist_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "n_dir_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "n_body_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "n_head_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "visual_relative",
+      "n": 78243123,
+      "mean": 1.2350500638925157
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "visual_global",
+      "n": 78243123,
+      "mean": 1.2352205128611742
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "visual_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "paired_visual",
+      "n": 78243123,
+      "mean": 1.2352205128611742
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "paired_track",
+      "n": 78243123,
+      "mean": 1.2352205128611742
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "seen_share",
+      "n": 30175300,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "known_share",
+      "n": 30175300,
+      "mean": 1.0
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "motion_share",
+      "n": 30175300,
+      "mean": 0.0
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "body_share",
+      "n": 30175300,
+      "mean": 0.0
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "head_share",
+      "n": 30175300,
+      "mean": 0.0
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "track_position",
+      "n": 30175300,
+      "mean": 1.9313206792981668
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "track_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "raw_range",
+      "n": 30175300,
+      "mean": 1.8224849007567123
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "raw_bearing",
+      "n": 30175300,
+      "mean": 0.24996424356960822
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "raw_position",
+      "n": 30175300,
+      "mean": 1.8922619995239718
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "exact_range_position",
+      "n": 30175300,
+      "mean": 0.33221350045453707
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "exact_bearing_position",
+      "n": 30175300,
+      "mean": 1.8224849007567123
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "n_dist_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "n_dir_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "n_body_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "n_head_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "visual_relative",
+      "n": 30175300,
+      "mean": 1.9311761892907109
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "visual_global",
+      "n": 30175300,
+      "mean": 1.9313206792981668
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "visual_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "paired_visual",
+      "n": 30175300,
+      "mean": 1.9313206792981668
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "paired_track",
+      "n": 30175300,
+      "mean": 1.9313206792981668
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "seen_share",
+      "n": 307231,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "known_share",
+      "n": 307231,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "motion_share",
+      "n": 307231,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "body_share",
+      "n": 307231,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "head_share",
+      "n": 307231,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "track_position",
+      "n": 307231,
+      "mean": 0.05670445841402725
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "track_velocity",
+      "n": 307231,
+      "mean": 0.011619949539597248
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "raw_range",
+      "n": 307231,
+      "mean": 0.05354015330158743
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "raw_bearing",
+      "n": 307231,
+      "mean": 0.25011851725574563
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "raw_position",
+      "n": 307231,
+      "mean": 0.05526953957449925
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "exact_range_position",
+      "n": 307231,
+      "mean": 0.008765920803861037
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "exact_bearing_position",
+      "n": 307231,
+      "mean": 0.05354015330158743
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "n_dist_chg",
+      "n": 307231,
+      "mean": 0.010295800003905859
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "n_dir_chg",
+      "n": 307231,
+      "mean": 0.024376905393661455
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "n_body_rel",
+      "n": 307231,
+      "mean": 0.2498567529415979
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "n_head_rel",
+      "n": 307231,
+      "mean": 0.2498567529415979
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "visual_relative",
+      "n": 307231,
+      "mean": 0.053500094980649754
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "visual_global",
+      "n": 307231,
+      "mean": 0.05670445841402725
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "visual_velocity",
+      "n": 307231,
+      "mean": 0.011619949539597248
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "paired_visual",
+      "n": 307231,
+      "mean": 0.05670445841402725
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "paired_track",
+      "n": 307231,
+      "mean": 0.05670445841402725
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "seen_share",
+      "n": 15212227,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "known_share",
+      "n": 15212227,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "motion_share",
+      "n": 15212227,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "body_share",
+      "n": 15212227,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "head_share",
+      "n": 15212227,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "track_position",
+      "n": 15212227,
+      "mean": 0.20500808191279307
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "track_velocity",
+      "n": 15212227,
+      "mean": 0.03565011869248335
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "raw_range",
+      "n": 15212227,
+      "mean": 0.19646614347925517
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "raw_bearing",
+      "n": 15212227,
+      "mean": 0.24997998771120108
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "raw_position",
+      "n": 15212227,
+      "mean": 0.2029142749740859
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "exact_range_position",
+      "n": 15212227,
+      "mean": 0.03385593785242261
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "exact_bearing_position",
+      "n": 15212227,
+      "mean": 0.19646614347925517
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "n_dist_chg",
+      "n": 15212227,
+      "mean": 0.034819567892393405
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "n_dir_chg",
+      "n": 15212227,
+      "mean": 0.023973224126421465
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "n_body_rel",
+      "n": 15212227,
+      "mean": 0.2498472909452377
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "n_head_rel",
+      "n": 15212227,
+      "mean": 0.24984729094504038
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "visual_relative",
+      "n": 15212227,
+      "mean": 0.20427357583284822
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "visual_global",
+      "n": 15212227,
+      "mean": 0.20500808191279307
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "visual_velocity",
+      "n": 15212227,
+      "mean": 0.03565011869248335
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "paired_visual",
+      "n": 15212227,
+      "mean": 0.20500808191279307
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "paired_track",
+      "n": 15212227,
+      "mean": 0.20500808191279307
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "seen_share",
+      "n": 54542277,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "known_share",
+      "n": 54542277,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "motion_share",
+      "n": 54542277,
+      "mean": 0.9995482586838096
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "body_share",
+      "n": 54542277,
+      "mean": 0.9995482586838096
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "head_share",
+      "n": 54542277,
+      "mean": 0.9995482586838096
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "track_position",
+      "n": 54542277,
+      "mean": 0.40213063858335063
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "track_velocity",
+      "n": 54542277,
+      "mean": 0.06450126039479427
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "raw_range",
+      "n": 54542277,
+      "mean": 0.3793137473937878
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "raw_bearing",
+      "n": 54542277,
+      "mean": 0.24998114203328922
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "raw_position",
+      "n": 54542277,
+      "mean": 0.39143540003177035
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "exact_range_position",
+      "n": 54542277,
+      "mean": 0.06551712445775325
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "exact_bearing_position",
+      "n": 54542277,
+      "mean": 0.3793137473937878
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "n_dist_chg",
+      "n": 54517638,
+      "mean": 0.06332728876869168
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "n_dir_chg",
+      "n": 54517638,
+      "mean": 0.02404284288222464
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "n_body_rel",
+      "n": 54517638,
+      "mean": 0.24986326644296306
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "n_head_rel",
+      "n": 54517638,
+      "mean": 0.24986326644318296
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "visual_relative",
+      "n": 54542277,
+      "mean": 0.4017145225806944
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "visual_global",
+      "n": 54542277,
+      "mean": 0.40213063858335063
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "visual_velocity",
+      "n": 54517638,
+      "mean": 0.06446759285059266
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "paired_visual",
+      "n": 54542277,
+      "mean": 0.40213063858335063
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "paired_track",
+      "n": 54542277,
+      "mean": 0.40213063858335063
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "seen_share",
+      "n": 55560073,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "known_share",
+      "n": 55560073,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "motion_share",
+      "n": 55560073,
+      "mean": 0.758198175873527
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "body_share",
+      "n": 55560073,
+      "mean": 0.758198175873527
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "head_share",
+      "n": 55560073,
+      "mean": 0.758198175873527
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "track_position",
+      "n": 55560073,
+      "mean": 0.6537549327594655
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "track_velocity",
+      "n": 55560073,
+      "mean": 0.10739853197986259
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "raw_range",
+      "n": 55560073,
+      "mean": 0.6181163309704794
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "raw_bearing",
+      "n": 55560073,
+      "mean": 0.2500005363859761
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "raw_position",
+      "n": 55560073,
+      "mean": 0.6390969564305443
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "exact_range_position",
+      "n": 55560073,
+      "mean": 0.10827227556837393
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "exact_bearing_position",
+      "n": 55560073,
+      "mean": 0.6181163309704794
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "n_dist_chg",
+      "n": 42125546,
+      "mean": 0.09272094308529555
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "n_dir_chg",
+      "n": 42125546,
+      "mean": 0.024127548816934012
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "n_body_rel",
+      "n": 42125546,
+      "mean": 0.25004358441566565
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "n_head_rel",
+      "n": 42125546,
+      "mean": 0.2500435844147873
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "visual_relative",
+      "n": 55560073,
+      "mean": 0.6534765650668599
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "visual_global",
+      "n": 55560073,
+      "mean": 0.6537549327594655
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "visual_velocity",
+      "n": 42125546,
+      "mean": 0.0945570816281645
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "paired_visual",
+      "n": 55560073,
+      "mean": 0.6537549327594655
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "paired_track",
+      "n": 55560073,
+      "mean": 0.6537549327594655
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "seen_share",
+      "n": 41394464,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "known_share",
+      "n": 41394464,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "motion_share",
+      "n": 41394464,
+      "mean": 0.27215380781352794
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "body_share",
+      "n": 41394464,
+      "mean": 0.27215380781352794
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "head_share",
+      "n": 41394464,
+      "mean": 0.27215380781352794
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "track_position",
+      "n": 41394464,
+      "mean": 0.9447669394453085
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "track_velocity",
+      "n": 36572712,
+      "mean": 0.14217953299722486
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "raw_range",
+      "n": 41394464,
+      "mean": 0.8852075615708421
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "raw_bearing",
+      "n": 41394464,
+      "mean": 0.25000325486845293
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "raw_position",
+      "n": 41394464,
+      "mean": 0.9123777030383752
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "exact_range_position",
+      "n": 41394464,
+      "mean": 0.15095025425050423
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "exact_bearing_position",
+      "n": 41394464,
+      "mean": 0.8852075615708421
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "n_dist_chg",
+      "n": 11265661,
+      "mean": 0.10615575166543711
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "n_dir_chg",
+      "n": 11265661,
+      "mean": 0.02398239157462663
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "n_body_rel",
+      "n": 11265661,
+      "mean": 0.2500046668957106
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "n_head_rel",
+      "n": 11265661,
+      "mean": 0.2500046668957994
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "visual_relative",
+      "n": 41394464,
+      "mean": 0.9445698878303634
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "visual_global",
+      "n": 41394464,
+      "mean": 0.9447669394453085
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "visual_velocity",
+      "n": 11265661,
+      "mean": 0.10888773391672273
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "paired_visual",
+      "n": 41394464,
+      "mean": 0.9447669394453085
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "paired_track",
+      "n": 41394464,
+      "mean": 0.9447669394453085
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "seen_share",
+      "n": 37601682,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "known_share",
+      "n": 37601682,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "motion_share",
+      "n": 37601682,
+      "mean": 0.0
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "body_share",
+      "n": 37601682,
+      "mean": 0.0
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "head_share",
+      "n": 37601682,
+      "mean": 0.0
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "track_position",
+      "n": 37601682,
+      "mean": 1.233676471327771
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "track_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "raw_range",
+      "n": 37601682,
+      "mean": 1.167099931065318
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "raw_bearing",
+      "n": 37601682,
+      "mean": 0.24999241022457458
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "raw_position",
+      "n": 37601682,
+      "mean": 1.207813042497964
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "exact_range_position",
+      "n": 37601682,
+      "mean": 0.20725258497735688
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "exact_bearing_position",
+      "n": 37601682,
+      "mean": 1.167099931065318
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "n_dist_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "n_dir_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "n_body_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "n_head_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "visual_relative",
+      "n": 37601682,
+      "mean": 1.2335037388248227
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "visual_global",
+      "n": 37601682,
+      "mean": 1.233676471327771
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "visual_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "paired_visual",
+      "n": 37601682,
+      "mean": 1.233676471327771
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "paired_track",
+      "n": 37601682,
+      "mean": 1.233676471327771
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "seen_share",
+      "n": 10775276,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "known_share",
+      "n": 10775276,
+      "mean": 1.0
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "motion_share",
+      "n": 10775276,
+      "mean": 0.0
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "body_share",
+      "n": 10775276,
+      "mean": 0.0
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "head_share",
+      "n": 10775276,
+      "mean": 0.0
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "track_position",
+      "n": 10775276,
+      "mean": 1.9855296222488417
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "track_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "raw_range",
+      "n": 10775276,
+      "mean": 1.8884938768342459
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "raw_bearing",
+      "n": 10775276,
+      "mean": 0.24998322969973114
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "raw_position",
+      "n": 10775276,
+      "mean": 1.9506701837980416
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "exact_range_position",
+      "n": 10775276,
+      "mean": 0.32578206685929
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "exact_bearing_position",
+      "n": 10775276,
+      "mean": 1.8884938768342459
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "n_dist_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "n_dir_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "n_body_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "n_head_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "visual_relative",
+      "n": 10775276,
+      "mean": 1.9853997533786616
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "visual_global",
+      "n": 10775276,
+      "mean": 1.9855296222488417
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "visual_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "paired_visual",
+      "n": 10775276,
+      "mean": 1.9855296222488417
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "paired_track",
+      "n": 10775276,
+      "mean": 1.9855296222488417
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "seen_share",
+      "n": 2381242,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "known_share",
+      "n": 2381242,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "motion_share",
+      "n": 2381242,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "body_share",
+      "n": 2381242,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "head_share",
+      "n": 2381242,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "track_position",
+      "n": 2381242,
+      "mean": 0.05509096124627402
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "track_velocity",
+      "n": 2381242,
+      "mean": 0.011036500905829812
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "raw_range",
+      "n": 2381242,
+      "mean": 0.05190600461859817
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "raw_bearing",
+      "n": 2381242,
+      "mean": 0.2500365471942792
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "raw_position",
+      "n": 2381242,
+      "mean": 0.05358720431862055
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "exact_range_position",
+      "n": 2381242,
+      "mean": 0.008453042962694744
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "exact_bearing_position",
+      "n": 2381242,
+      "mean": 0.05190600461859817
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "n_dist_chg",
+      "n": 2381242,
+      "mean": 0.009823088430743287
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "n_dir_chg",
+      "n": 2381242,
+      "mean": 0.024582946674886454
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "n_body_rel",
+      "n": 2381242,
+      "mean": 0.25006053586279764
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "n_head_rel",
+      "n": 2381242,
+      "mean": 0.25006053586405746
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "visual_relative",
+      "n": 2381242,
+      "mean": 0.05168550561009758
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "visual_global",
+      "n": 2381242,
+      "mean": 0.05509096124627402
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "visual_velocity",
+      "n": 2381242,
+      "mean": 0.011036500905829812
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "paired_visual",
+      "n": 2381242,
+      "mean": 0.05509096124627402
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "paired_track",
+      "n": 2381242,
+      "mean": 0.05509096124627402
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "seen_share",
+      "n": 19641383,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "known_share",
+      "n": 19641383,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "motion_share",
+      "n": 19641383,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "body_share",
+      "n": 19641383,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "head_share",
+      "n": 19641383,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "track_position",
+      "n": 19641383,
+      "mean": 0.1883264210977912
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "track_velocity",
+      "n": 19641383,
+      "mean": 0.034006356395219206
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "raw_range",
+      "n": 19641383,
+      "mean": 0.18003560717745803
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "raw_bearing",
+      "n": 19641383,
+      "mean": 0.25005720555370253
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "raw_position",
+      "n": 19641383,
+      "mean": 0.18592656375418598
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "exact_range_position",
+      "n": 19641383,
+      "mean": 0.03099808318959403
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "exact_bearing_position",
+      "n": 19641383,
+      "mean": 0.18003560717745803
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "n_dist_chg",
+      "n": 19641383,
+      "mean": 0.03315523828540991
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "n_dir_chg",
+      "n": 19641383,
+      "mean": 0.02434151030123488
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "n_body_rel",
+      "n": 19641383,
+      "mean": 0.25005237192319896
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "n_head_rel",
+      "n": 19641383,
+      "mean": 0.25005237192513374
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "visual_relative",
+      "n": 19641383,
+      "mean": 0.1874366929799698
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "visual_global",
+      "n": 19641383,
+      "mean": 0.1883264210977912
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "visual_velocity",
+      "n": 19641383,
+      "mean": 0.034006356395219206
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "paired_visual",
+      "n": 19641383,
+      "mean": 0.1883264210977912
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "paired_track",
+      "n": 19641383,
+      "mean": 0.1883264210977912
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "seen_share",
+      "n": 51731443,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "known_share",
+      "n": 51731443,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "motion_share",
+      "n": 51731443,
+      "mean": 0.9995218768593019
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "body_share",
+      "n": 51731443,
+      "mean": 0.9995218768593019
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "head_share",
+      "n": 51731443,
+      "mean": 0.9995218768593019
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "track_position",
+      "n": 51731443,
+      "mean": 0.4099054187590709
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "track_velocity",
+      "n": 51731443,
+      "mean": 0.06684344277898836
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "raw_range",
+      "n": 51731443,
+      "mean": 0.3872429556832586
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "raw_bearing",
+      "n": 51731443,
+      "mean": 0.2499796670609402
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "raw_position",
+      "n": 51731443,
+      "mean": 0.3995315149220603
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "exact_range_position",
+      "n": 51731443,
+      "mean": 0.06665807416546013
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "exact_bearing_position",
+      "n": 51731443,
+      "mean": 0.3872429556832586
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "n_dist_chg",
+      "n": 51706709,
+      "mean": 0.06563899958815791
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "n_dir_chg",
+      "n": 51706709,
+      "mean": 0.024249032923329156
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "n_body_rel",
+      "n": 51706709,
+      "mean": 0.25003093087666817
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "n_head_rel",
+      "n": 51706709,
+      "mean": 0.2500309308757012
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "visual_relative",
+      "n": 51731443,
+      "mean": 0.4094973225148002
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "visual_global",
+      "n": 51731443,
+      "mean": 0.4099054187590709
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "visual_velocity",
+      "n": 51706709,
+      "mean": 0.06680708576801891
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "paired_visual",
+      "n": 51731443,
+      "mean": 0.4099054187590709
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "paired_track",
+      "n": 51731443,
+      "mean": 0.4099054187590709
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "seen_share",
+      "n": 56008906,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "known_share",
+      "n": 56008906,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "motion_share",
+      "n": 56008906,
+      "mean": 0.7544593711578655
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "body_share",
+      "n": 56008906,
+      "mean": 0.7544593711578655
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "head_share",
+      "n": 56008906,
+      "mean": 0.7544593711578655
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "track_position",
+      "n": 56008906,
+      "mean": 0.6560897141016822
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "track_velocity",
+      "n": 56008906,
+      "mean": 0.10744226538093778
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "raw_range",
+      "n": 56008906,
+      "mean": 0.620512396633546
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "raw_bearing",
+      "n": 56008906,
+      "mean": 0.25000508348581213
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "raw_position",
+      "n": 56008906,
+      "mean": 0.6415480486702002
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "exact_range_position",
+      "n": 56008906,
+      "mean": 0.10859280611273202
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "exact_bearing_position",
+      "n": 56008906,
+      "mean": 0.620512396633546
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "n_dist_chg",
+      "n": 42256444,
+      "mean": 0.09234462071602614
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "n_dir_chg",
+      "n": 42256444,
+      "mean": 0.02412540402320651
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "n_body_rel",
+      "n": 42256444,
+      "mean": 0.249894330699029
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "n_head_rel",
+      "n": 42256444,
+      "mean": 0.24989433069784586
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "visual_relative",
+      "n": 56008906,
+      "mean": 0.6558089565228256
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "visual_global",
+      "n": 56008906,
+      "mean": 0.6560897141016822
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "visual_velocity",
+      "n": 42256444,
+      "mean": 0.09418868604667725
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "paired_visual",
+      "n": 56008906,
+      "mean": 0.6560897141016822
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "paired_track",
+      "n": 56008906,
+      "mean": 0.6560897141016822
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "seen_share",
+      "n": 47128114,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "known_share",
+      "n": 47128114,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "motion_share",
+      "n": 47128114,
+      "mean": 0.2643740846493454
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "body_share",
+      "n": 47128114,
+      "mean": 0.2643740846493454
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "head_share",
+      "n": 47128114,
+      "mean": 0.2643740846493454
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "track_position",
+      "n": 47128114,
+      "mean": 0.9516312716217542
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "track_velocity",
+      "n": 41061053,
+      "mean": 0.14508425421503438
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "raw_range",
+      "n": 47128114,
+      "mean": 0.8915438776773456
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "raw_bearing",
+      "n": 47128114,
+      "mean": 0.25002347099440464
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "raw_position",
+      "n": 47128114,
+      "mean": 0.9187071350010396
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "exact_range_position",
+      "n": 47128114,
+      "mean": 0.1516520413068948
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "exact_bearing_position",
+      "n": 47128114,
+      "mean": 0.8915438776773456
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "n_dist_chg",
+      "n": 12459452,
+      "mean": 0.10727893449752043
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "n_dir_chg",
+      "n": 12459452,
+      "mean": 0.024179921720714547
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "n_body_rel",
+      "n": 12459452,
+      "mean": 0.25015790085005357
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "n_head_rel",
+      "n": 12459452,
+      "mean": 0.25015790084844847
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "visual_relative",
+      "n": 47128114,
+      "mean": 0.9514395687003303
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "visual_global",
+      "n": 47128114,
+      "mean": 0.9516312716217542
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "visual_velocity",
+      "n": 12459452,
+      "mean": 0.11002313855922399
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "paired_visual",
+      "n": 47128114,
+      "mean": 0.9516312716217542
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "paired_track",
+      "n": 47128114,
+      "mean": 0.9516312716217542
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "seen_share",
+      "n": 40641441,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "known_share",
+      "n": 40641441,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "motion_share",
+      "n": 40641441,
+      "mean": 0.0
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "body_share",
+      "n": 40641441,
+      "mean": 0.0
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "head_share",
+      "n": 40641441,
+      "mean": 0.0
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "track_position",
+      "n": 40641441,
+      "mean": 1.236649068475968
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "track_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "raw_range",
+      "n": 40641441,
+      "mean": 1.1709465183521173
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "raw_bearing",
+      "n": 40641441,
+      "mean": 0.25000572904725493
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "raw_position",
+      "n": 40641441,
+      "mean": 1.2112442915437542
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "exact_range_position",
+      "n": 40641441,
+      "mean": 0.2067292022072845
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "exact_bearing_position",
+      "n": 40641441,
+      "mean": 1.1709465183521173
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "n_dist_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "n_dir_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "n_body_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "n_head_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "visual_relative",
+      "n": 40641441,
+      "mean": 1.2364807322456406
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "visual_global",
+      "n": 40641441,
+      "mean": 1.236649068475968
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "visual_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "paired_visual",
+      "n": 40641441,
+      "mean": 1.236649068475968
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "paired_track",
+      "n": 40641441,
+      "mean": 1.236649068475968
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "seen_share",
+      "n": 19400024,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "known_share",
+      "n": 19400024,
+      "mean": 1.0
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "motion_share",
+      "n": 19400024,
+      "mean": 0.0
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "body_share",
+      "n": 19400024,
+      "mean": 0.0
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "head_share",
+      "n": 19400024,
+      "mean": 0.0
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "track_position",
+      "n": 19400024,
+      "mean": 1.9012116277855635
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "track_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "raw_range",
+      "n": 19400024,
+      "mean": 1.785821805096996
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "raw_bearing",
+      "n": 19400024,
+      "mean": 0.2499536981809919
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "raw_position",
+      "n": 19400024,
+      "mean": 1.859820580574598
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "exact_range_position",
+      "n": 19400024,
+      "mean": 0.33578568531701314
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "exact_bearing_position",
+      "n": 19400024,
+      "mean": 1.785821805096996
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "n_dist_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "n_dir_chg",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "n_body_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "n_head_rel",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "visual_relative",
+      "n": 19400024,
+      "mean": 1.9010590168196164
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "visual_global",
+      "n": 19400024,
+      "mean": 1.9012116277855635
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "visual_velocity",
+      "n": 0,
+      "mean": null
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "paired_visual",
+      "n": 19400024,
+      "mean": 1.9012116277855635
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "paired_track",
+      "n": 19400024,
+      "mean": 1.9012116277855635
+    }
+  ]
+}

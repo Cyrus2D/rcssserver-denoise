@@ -1,0 +1,128 @@
+{
+  "status": "research phase closed",
+  "date": "2026-11-15",
+  "code_archive": {
+    "librcsc": {
+      "branch": "denoise-exp3-exp4",
+      "commit": "b0894ef"
+    },
+    "helios": {
+      "branch": "denoise-exp3-exp4",
+      "commit": "ba8fe96"
+    },
+    "server_branch": "denoise"
+  },
+  "offline": [
+    {
+      "metric": "Player relative position",
+      "unit": "cm",
+      "stock": 72.79,
+      "model": 48.16,
+      "reduction_percent": 33.83706553097954,
+      "method": "Exp3 Step26: bounded range and bearing, recurrent masked context",
+      "source": "../exp3/reports/26-bounded-bearing.md"
+    },
+    {
+      "metric": "Player velocity",
+      "unit": "cm/cycle",
+      "stock": 9.59,
+      "model": 7.24,
+      "reduction_percent": 24.504692387904058,
+      "method": "Exp4 context GRU with gated body policy",
+      "source": "../exp4/reports/01-state-models.md"
+    },
+    {
+      "metric": "Player body direction",
+      "unit": "degrees",
+      "stock": 21.97,
+      "model": 14.74,
+      "reduction_percent": 32.908511606736454,
+      "method": "Exp4 context GRU with validation-selected body gate",
+      "source": "../exp4/reports/01-state-models.md"
+    },
+    {
+      "metric": "Ball current position",
+      "unit": "cm",
+      "stock": 68.75,
+      "model": 63.98,
+      "reduction_percent": 6.938181818181821,
+      "method": "Quantization-constrained current-state model",
+      "source": "../exp4/reports/01-state-models.md"
+    },
+    {
+      "metric": "Ball current velocity",
+      "unit": "cm/cycle",
+      "stock": 27.63,
+      "model": 21.66,
+      "reduction_percent": 21.606948968512484,
+      "method": "Same quantization-constrained current-state model",
+      "source": "../exp4/reports/01-state-models.md"
+    },
+    {
+      "metric": "Ball next position",
+      "unit": "cm",
+      "stock": 87.02,
+      "model": 80.81,
+      "reduction_percent": 7.1362905079292,
+      "method": "Controlled/free-ball forecast heads; not final live policy",
+      "source": "../exp4/reports/01-state-models.md"
+    },
+    {
+      "metric": "Ball next velocity",
+      "unit": "cm/cycle",
+      "stock": 40.59,
+      "model": 33.97,
+      "reduction_percent": 16.309435821630956,
+      "method": "Controlled/free-ball forecast heads; log-only in F4",
+      "source": "../exp4/reports/01-state-models.md"
+    }
+  ],
+  "live": {
+    "cohort": "F4 first 60 games, paired PlayOn rows from all treatment observers; before scheduling control",
+    "source": "../exp4/reports/05-live-f4-60-games.md",
+    "metrics": [
+      {
+        "metric": "Player relative position",
+        "unit": "cm",
+        "stock": 78.42,
+        "model": 52.22,
+        "reduction_percent": 33.40984442744198,
+        "method": "Step26 bounded range/bearing GRU with masked player context"
+      },
+      {
+        "metric": "Player velocity",
+        "unit": "cm/cycle",
+        "stock": 10.43,
+        "model": 7.57,
+        "reduction_percent": 27.420901246404593,
+        "method": "Context GRU; retain stock velocity below 10 m"
+      },
+      {
+        "metric": "Player body direction",
+        "unit": "degrees",
+        "stock": 25.17,
+        "model": 16.98,
+        "reduction_percent": 32.53873659117998,
+        "method": "Context GRU for missing body; preserve observed body"
+      },
+      {
+        "metric": "Ball position",
+        "unit": "cm",
+        "stock": 75.17,
+        "model": 69.92,
+        "reduction_percent": 6.9841692164427265,
+        "method": "Quantization-constrained context model; retain stock below 5 m"
+      },
+      {
+        "metric": "Ball velocity",
+        "unit": "cm/cycle",
+        "stock": 32.49,
+        "model": 24.64,
+        "reduction_percent": 24.161280393967377,
+        "method": "Context ball model; retain stock below 5 m"
+      }
+    ]
+  },
+  "outcome_conclusion": "No reliable match-performance gain established; ball effect not isolated",
+  "next_focus": "Predict unseen player position under controlled finite-view, observation-noise-free conditions; not implemented here"
+}

@@ -459,6 +459,7 @@ Player::resetState()
 void
 Player::disable()
 {
+    discardQueuedCommands();
     if ( M_enable )
     {
         std::cout << "A player disconnected : ("
@@ -539,6 +540,9 @@ Player::parseMsg( char * msg,
     }
     Logger::instance().writePlayerLog( M_stadium, *this, command, RECV );
 
+    // Control/handshake commands remain immediate. Game actions enqueue only
+    // while parsing network input, never when called by physics or queue replay.
+    M_parsing_commands = true;
     /** Call the PlayerCommandParser */
     if (
 #ifndef __CYGWIN__
@@ -549,9 +553,57 @@ Player::parseMsg( char * msg,
 #endif
         )
     {
+        if ( ServerParam::instance().randomizePlayerCommands() ) M_command_queue_failed = true;
         send( "(error illegal_command_form)" );
         std::cerr << "Error parsing >" << command << "<\n";
     }
+    M_parsing_commands = false;
+}
+
+bool
+Player::deferCommand( std::function< void() > command )
+{
+    if ( ! M_parsing_commands || ! ServerParam::instance().randomizePlayerCommands() ) return false;
+    if ( ! M_command_cycle_open || M_done_received )
+    {
+        send( "(warning action_outside_command_cycle)" );
+        return true;
+    }
+    constexpr std::size_t MAX_QUEUED_COMMANDS = 128;
+    if ( M_pending_commands.size() >= MAX_QUEUED_COMMANDS )
+    {
+        M_command_queue_failed = true;
+        send( "(error command_queue_overflow)" );
+        return true;
+    }
+    M_pending_commands.push_back( std::move( command ) );
+    return true;
+}
+
+void
+Player::beginCommandCollection()
+{
+    M_pending_commands.clear();
+    M_command_queue_failed = false;
+    M_done_received = false;
+    M_command_cycle_open = true;
+}
+
+void
+Player::discardQueuedCommands()
+{
+    M_pending_commands.clear();
+    M_command_cycle_open = false;
+}
+
+void
+Player::executeQueuedCommands()
+{
+    M_command_cycle_open = false;
+    auto commands = std::move( M_pending_commands );
+    M_pending_commands.clear();
+    // Parser is not active here: existing handlers and nested calls execute normally.
+    for ( auto & command : commands ) command();
 }
 
 bool
@@ -1045,6 +1097,9 @@ Player::send( const char * msg )
 void
 Player::dash( double power )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { dash( power ); } ) ) return;
+
     dash( power, 0.0 );
 
     //     if ( ! M_command_done )
@@ -1094,6 +1149,9 @@ void
 Player::dash( double power,
               double dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { dash( power, dir ); } ) ) return;
+
     if ( ! M_command_done )
     {
 #if 1
@@ -1166,6 +1224,9 @@ void
 Player::dashLeftLeg( double power,
                      double dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { dashLeftLeg( power, dir ); } ) ) return;
+
     if ( M_left_leg.commandDone() )
     {
         return;
@@ -1182,6 +1243,9 @@ void
 Player::dashRightLeg( double power,
                       double dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { dashRightLeg( power, dir ); } ) ) return;
+
     if ( M_right_leg.commandDone() )
     {
         return;
@@ -1262,6 +1326,9 @@ Player::applyDashEffect()
 void
 Player::turn( double moment )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { turn( moment ); } ) ) return;
+
     if ( ! M_command_done )
     {
         M_left_leg.turn();
@@ -1279,6 +1346,9 @@ Player::turn( double moment )
 void
 Player::turn_neck( double moment )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { turn_neck( moment ); } ) ) return;
+
     if ( ! M_turn_neck_done )
     {
         M_angle_neck = NormalizeNeckAngle( angleNeckCommitted()
@@ -1291,6 +1361,9 @@ Player::turn_neck( double moment )
 void
 Player::change_focus( double moment_dist, double moment_dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { change_focus( moment_dist, moment_dir ); } ) ) return;
+
     M_focus_dist = rcss::bound( 0.0,
                                 M_focus_dist + moment_dist,
                                 40.0 );
@@ -1305,6 +1378,9 @@ void
 Player::kick( double power,
               double dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { kick( power, dir ); } ) ) return;
+
     if ( M_command_done )
     {
         return;
@@ -1422,6 +1498,9 @@ void
 Player::long_kick( double power,
                    double dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { long_kick( power, dir ); } ) ) return;
+
     return;
 
     if ( M_command_done )
@@ -1522,6 +1601,9 @@ Player::doLongKick()
 void
 Player::goalieCatch( double dir )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { goalieCatch( dir ); } ) ) return;
+
     if ( M_command_done )
     {
         return;
@@ -1703,6 +1785,9 @@ Player::goalieCatch( double dir )
 void
 Player::say( std::string message )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { say( message ); } ) ) return;
+
     if ( message.length() > ServerParam::instance().sayMsgSize() )
     {
         return;
@@ -1728,6 +1813,9 @@ void
 Player::move( double x,
               double y )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { move( x, y ); } ) ) return;
+
     if ( M_command_done )
     {
         return;
@@ -1782,6 +1870,9 @@ void
 Player::change_view( rcss::pcom::VIEW_WIDTH viewWidth,
                      rcss::pcom::VIEW_QUALITY viewQuality )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { change_view( viewWidth, viewQuality ); } ) ) return;
+
     if ( M_synch_see
          && viewQuality != rcss::pcom::HIGH  )
     {
@@ -1867,6 +1958,9 @@ Player::change_view( rcss::pcom::VIEW_WIDTH viewWidth,
 void
 Player::change_view( rcss::pcom::VIEW_WIDTH viewWidth )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { change_view( viewWidth ); } ) ) return;
+
     const double DEFAULT_VISIBLE_ANGLE = Deg2Rad( ServerParam::instance().visibleAngleDegree() );
 
     if ( viewWidth == rcss::pcom::NARROW )
@@ -1955,12 +2049,20 @@ Player::bye()
 void
 Player::done()
 {
+    if ( ServerParam::instance().randomizePlayerCommands() && ! M_command_cycle_open )
+    {
+        send( "(warning done_outside_command_cycle)" );
+        return;
+    }
     M_done_received = true;
 }
 
 void
 Player::pointto( bool on, double dist, double head )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { pointto( on, dist, head ); } ) ) return;
+
     if ( on == false )
     {
         M_arm.stopPointing();
@@ -1979,6 +2081,9 @@ Player::attentionto( bool on,
                      std::string team_name,
                      int at_unum )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { attentionto( on, team_side, team_name, at_unum ); } ) ) return;
+
     if ( on == false )
     {
         // turn attention to off
@@ -2059,6 +2164,9 @@ Player::attentionto( bool on,
 void
 Player::tackle( double power_or_angle )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { tackle( power_or_angle ); } ) ) return;
+
     tackle( power_or_angle, false );
 }
 
@@ -2066,6 +2174,9 @@ void
 Player::tackle( double power_or_angle,
                 bool foul )
 {
+    if ( M_parsing_commands && ServerParam::instance().randomizePlayerCommands()
+         && deferCommand( [=] { tackle( power_or_angle, foul ); } ) ) return;
+
     if ( M_command_done )
     {
         return;

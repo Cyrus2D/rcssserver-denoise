@@ -1,0 +1,390 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp4 · Live data report</title><style>
+body{margin:0;background:#eef2f7;color:#172b4d;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:35px auto;background:white;padding:42px 48px;border-radius:14px}
+h1{font-size:32px;line-height:1.2}h2{margin-top:46px;border-top:1px solid #dce4ed;padding-top:22px}h3{margin-top:30px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th{background:#edf3f8;text-align:left}
+td,th{padding:11px 12px;border-bottom:1px solid #dce4ed}td:last-child{text-align:right}
+code{overflow-wrap:anywhere;font-size:.87em;background:#edf3f8;padding:2px 4px;border-radius:3px}
+pre{background:#edf3f8;padding:18px;overflow:auto}pre code{white-space:pre;overflow-wrap:normal}
+svg{max-width:100%;height:auto;margin:22px 0;border:1px solid #dce4ed;border-radius:8px}
+a{color:#075ea8}strong{font-weight:700}
+@media(max-width:700px){main{padding:22px 15px;margin:0}table{font-size:12px;display:block;overflow:auto}}
+@media print{main{margin:0;padding:0}h2{break-after:avoid}table,svg{break-inside:avoid}}
+</style><main><h1>Exp4 Step 03 — F3 live audit: real player gains, unsafe combined ball integration</h1>
+<p><strong>The player improvements reached the live team. The combined Exp4 treatment is not validated as an upgrade.</strong> Ball velocity became worse in every one of the 155 scored games, close-control estimates regressed, and different parts of interception use different ball trajectories. Increasing the network size or simply running more matches is not the next useful step.</p>
+<p>This audit checks all 155 completed F3 games and all 11 observers on each side. It uses PlayOn decisions only, with one equal weight per eligible observer–target–cycle. Fullstate is an evaluation reference, never a model input. Runtime code, model weights and launcher flags were not changed by this investigation.</p>
+<h2>1. What actually ran</h2>
+<p>Source player logs: <code>/home/nader/workspace/denoise/logs/exp3-f3-logs</code>. Score files: <code>/home/nader/workspace/denoise/AutoTest2D/out/exp3-f3-logs/result.d</code>.</p>
+<p>There are 160 player-log game directories, of which 155 have a completed scored result; five unscored directories are excluded. All 3,410 agent metadata files in the scored games are final and marked OK. The configuration checks found no discrepancy:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Verified live setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left team</td>
+<td>Step 26 position apply + corrected routing + Exp4 state apply</td>
+</tr>
+<tr>
+<td>Right team</td>
+<td>Both model systems off; default legacy routing is inert</td>
+</tr>
+<tr>
+<td>Vision</td>
+<td>Quantized, high quality, 360° every cycle</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>Uniform-number fading disabled; ordinary motion/body fading retained</td>
+</tr>
+<tr>
+<td>Hearing</td>
+<td>Disabled, say message size 0</td>
+</tr>
+<tr>
+<td>Quantization</td>
+<td>Distance step 0.1; noise-free and Gaussian modes off</td>
+</tr>
+<tr>
+<td>Fullstate</td>
+<td>Reference logging; not used for decisions</td>
+</tr>
+</tbody>
+</table>
+<p>Every logged PlayOn decision used a see update: 8,294,280 left and 8,296,475 right decisions. This does <strong>not</strong> mean every field is visible: 44.6% of eligible player rows lacked a raw body/motion reading. Seeing a player at age zero does not guarantee receiving its velocity and body.</p>
+<p>The left side applied 164,430,735 player-position corrections, 164,446,296 player-state estimates and 7,830,776 ball-state estimates. The right side applied none. On eligible records, applied velocities and ball positions matched the final tracked fields within 0.0002 of their units; no reported visual body angle was overwritten. The models were active.</p>
+<h2>2. Match results and previous batches</h2>
+<table>
+<thead>
+<tr>
+<th>Batch</th>
+<th>Left treatment vs stock right</th>
+<th style="text-align: right;">Games</th>
+<th style="text-align: right;">Goals</th>
+<th style="text-align: right;">W–D–L</th>
+<th style="text-align: right;">Left share of decisive wins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original Exp3</td>
+<td>Stock</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">795–796</td>
+<td style="text-align: right;">81–38–81</td>
+<td style="text-align: right;">50.0%</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Step 26, legacy routing</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">816–807</td>
+<td style="text-align: right;">85–34–81</td>
+<td style="text-align: right;">51.2%</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Step 26, corrected routing</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">386–359</td>
+<td style="text-align: right;">43–17–40</td>
+<td style="text-align: right;">51.8%</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Step 26 corrected + all Exp4 outputs</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">671–671</td>
+<td style="text-align: right;">59–22–74</td>
+<td style="text-align: right;">44.4%</td>
+</tr>
+</tbody>
+</table>
+<p>F3 reproduces the supplied score exactly: points 199–244. Equal goals do not imply equal results: there were 32 one-goal losses but only 14 one-goal wins. The team's wins were larger on average, masking the greater number of losses.</p>
+<p>For F3, a whole-game bootstrap gives a goal-margin interval of −0.426 to +0.426 goals/game, and a points-difference interval of −0.735 to +0.155 points/game. These include zero. The observed result is disappointing and supplies no evidence of a match advantage; it does not establish the exact causal win-rate penalty. Target rows are correlated within games and must not be treated as millions of independent match trials.</p>
+<p>Earlier batches use saved reports where raw logs were removed. The batches are different matches, treatment was always left, and F3 enabled several components together. Differences between F2 and F3 cannot isolate which component changed the score.</p>
+<h2>3. The player denoising result survived live deployment</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Unit</th>
+<th style="text-align: right;">Mean: baseline → applied</th>
+<th style="text-align: right;">p90: baseline → applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player position, observer relative</td>
+<td>cm</td>
+<td style="text-align: right;">78.41 → 52.12</td>
+<td style="text-align: right;">166.25 → 119.25</td>
+</tr>
+<tr>
+<td>Player position, global</td>
+<td>cm</td>
+<td style="text-align: right;">80.29 → 54.63</td>
+<td style="text-align: right;">168.25 → 121.75</td>
+</tr>
+<tr>
+<td>Player velocity</td>
+<td>cm/cycle</td>
+<td style="text-align: right;">10.39 → 7.69</td>
+<td style="text-align: right;">25.25 → 14.75</td>
+</tr>
+<tr>
+<td>Player body, reported + inferred</td>
+<td>degrees</td>
+<td style="text-align: right;">24.21 → 16.83</td>
+<td style="text-align: right;">89.65 → 56.95</td>
+</tr>
+<tr>
+<td>Player body, no visual body reading</td>
+<td>degrees</td>
+<td style="text-align: right;">53.86 → 37.32</td>
+<td style="text-align: right;">137.65 → 101.45</td>
+</tr>
+<tr>
+<td>Player body, visual body reported</td>
+<td>degrees</td>
+<td style="text-align: right;">0.33 → 0.33</td>
+<td style="text-align: right;">0.65 → 0.65</td>
+</tr>
+</tbody>
+</table>
+<p>The relative-position metric evaluates the target offset from the observer in the observer's estimated looking frame; the global metric also includes observer pose error. Both compare paired estimates to the same cycle's reference. For missing stock velocity the evaluation fallback is zero; for unavailable stock body it is estimated movement direction, matching the offline evaluator.</p>
+<p>Player relative error improved by <strong>33.5%</strong>, closely matching F1's 78.66 → 52.33 cm and F2's 79.06 → 52.75 cm. Position, player velocity and gated body mean errors improved in <strong>all 155 games</strong>. The primary player-position model has not stopped working.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="1080" height="472" viewBox="0 0 1080 472" role="img" aria-label="F3: which estimates improved in live play?"><rect width="100%" height="100%" fill="#f7fafc"/><text x="24" y="30" font-size="22" font-family="sans-serif" fill="#172b4d">F3: which estimates improved in live play?</text><text x="360" y="58" font-size="13" font-family="sans-serif" fill="#42526e">Mean error after correction / mean baseline error. Below 100% is better.</text><text x="24" y="100" font-size="15" font-family="sans-serif" fill="#172b4d">Player position · observer relative</text><rect x="365" y="82" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="82" width="265.92" height="26" rx="3" fill="#007f73"/><line x1="765.0" y1="75" x2="765.0" y2="116" stroke="#172b4d" stroke-dasharray="4 3"/><text x="637.92" y="100" font-size="15" font-family="sans-serif" fill="#172b4d">66.5%</text><text x="24" y="162" font-size="15" font-family="sans-serif" fill="#172b4d">Player velocity · all tracks</text><rect x="365" y="144" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="144" width="295.94" height="26" rx="3" fill="#007f73"/><line x1="765.0" y1="137" x2="765.0" y2="178" stroke="#172b4d" stroke-dasharray="4 3"/><text x="667.94" y="162" font-size="15" font-family="sans-serif" fill="#172b4d">74.0%</text><text x="24" y="224" font-size="15" font-family="sans-serif" fill="#172b4d">Player body · missing visual body</text><rect x="365" y="206" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="206" width="277.14" height="26" rx="3" fill="#007f73"/><line x1="765.0" y1="199" x2="765.0" y2="240" stroke="#172b4d" stroke-dasharray="4 3"/><text x="649.14" y="224" font-size="15" font-family="sans-serif" fill="#172b4d">69.3%</text><text x="24" y="286" font-size="15" font-family="sans-serif" fill="#172b4d">Ball current position</text><rect x="365" y="268" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="268" width="379.99" height="26" rx="3" fill="#007f73"/><line x1="765.0" y1="261" x2="765.0" y2="302" stroke="#172b4d" stroke-dasharray="4 3"/><text x="751.99" y="286" font-size="15" font-family="sans-serif" fill="#172b4d">95.0%</text><text x="24" y="348" font-size="15" font-family="sans-serif" fill="#172b4d">Ball current velocity</text><rect x="365" y="330" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="330" width="412.08" height="26" rx="3" fill="#b33434"/><line x1="765.0" y1="323" x2="765.0" y2="364" stroke="#172b4d" stroke-dasharray="4 3"/><text x="784.08" y="348" font-size="15" font-family="sans-serif" fill="#172b4d">103.0%</text><text x="24" y="410" font-size="15" font-family="sans-serif" fill="#172b4d">Ball next position · stock coast baseline</text><rect x="365" y="392" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="392" width="383.88" height="26" rx="3" fill="#007f73"/><line x1="765.0" y1="385" x2="765.0" y2="426" stroke="#172b4d" stroke-dasharray="4 3"/><text x="755.88" y="410" font-size="15" font-family="sans-serif" fill="#172b4d">96.0%</text><text x="745.0" y="462" font-size="13" font-family="sans-serif" fill="#172b4d">100%</text></svg></p>
+<p>A lower mean is not a guarantee on each sample. Player position became worse on 32.6% of corrections, by more than 50 cm on 3.74%, and by more than 1 m on 0.56%. Player velocity became worse on 40.6%; for inferred body, 35.1% became worse. These figures explain why a mean-error objective needs action-sensitive safeguards.</p>
+<h2>4. Close interactions reveal important regressions</h2>
+<p>Velocity entries below are cm/cycle.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: right;">Mean baseline → applied</th>
+<th style="text-align: right;">Individual rows made worse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player velocity, observer–target &lt;10 m</td>
+<td style="text-align: right;">3.32 → 4.20</td>
+<td style="text-align: right;">62.3%</td>
+</tr>
+<tr>
+<td>Player velocity, 10–40 m</td>
+<td style="text-align: right;">10.47 → 7.32</td>
+<td style="text-align: right;">33.9%</td>
+</tr>
+<tr>
+<td>Player velocity, ≥40 m</td>
+<td style="text-align: right;">12.57 → 9.91</td>
+<td style="text-align: right;">52.1%</td>
+</tr>
+<tr>
+<td>Player velocity, target &lt;2 m from ball</td>
+<td style="text-align: right;">13.72 → 10.24</td>
+<td style="text-align: right;">40.7%</td>
+</tr>
+<tr>
+<td>Ball velocity, observer–ball &lt;5 m</td>
+<td style="text-align: right;">4.23 → 5.03</td>
+<td style="text-align: right;">62.8%</td>
+</tr>
+<tr>
+<td>Ball velocity, observer can kick</td>
+<td style="text-align: right;">3.81 → 5.41</td>
+<td style="text-align: right;">72.1%</td>
+</tr>
+</tbody>
+</table>
+<p>Under 10 m, player velocity was already accurate and worsened by 26.3%. Body readings in this distance group were preserved and remain about 0.33° error. At longer distances the velocity and missing-body models help substantially.</p>
+<p>For the ball, the observer-kickable velocity error increased <strong>41.9%</strong>, with 72.1% of those corrections making the estimate worse. Current ball-position error in that group changed only 3.16 → 3.20 cm. The critical regression is velocity, rather than a large positional shift at the foot.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="1080" height="410" viewBox="0 0 1080 410" role="img" aria-label="F3: close-control regressions hidden by the average"><rect width="100%" height="100%" fill="#f7fafc"/><text x="24" y="30" font-size="22" font-family="sans-serif" fill="#172b4d">F3: close-control regressions hidden by the average</text><text x="360" y="58" font-size="13" font-family="sans-serif" fill="#42526e">Mean error after correction / mean baseline error. Below 100% is better.</text><text x="24" y="100" font-size="15" font-family="sans-serif" fill="#172b4d">Player velocity · target within 10 m</text><rect x="365" y="82" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="82" width="505.39" height="26" rx="3" fill="#b33434"/><line x1="765.0" y1="75" x2="765.0" y2="116" stroke="#172b4d" stroke-dasharray="4 3"/><text x="877.39" y="100" font-size="15" font-family="sans-serif" fill="#172b4d">126.3%</text><text x="24" y="162" font-size="15" font-family="sans-serif" fill="#172b4d">Ball velocity · within 5 m</text><rect x="365" y="144" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="144" width="474.77" height="26" rx="3" fill="#b33434"/><line x1="765.0" y1="137" x2="765.0" y2="178" stroke="#172b4d" stroke-dasharray="4 3"/><text x="846.77" y="162" font-size="15" font-family="sans-serif" fill="#172b4d">118.7%</text><text x="24" y="224" font-size="15" font-family="sans-serif" fill="#172b4d">Ball velocity · observer kickable</text><rect x="365" y="206" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="206" width="567.58" height="26" rx="3" fill="#b33434"/><line x1="765.0" y1="199" x2="765.0" y2="240" stroke="#172b4d" stroke-dasharray="4 3"/><text x="939.58" y="224" font-size="15" font-family="sans-serif" fill="#172b4d">141.9%</text><text x="24" y="286" font-size="15" font-family="sans-serif" fill="#172b4d">Ball next position · within 5 m</text><rect x="365" y="268" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="268" width="407.79" height="26" rx="3" fill="#b33434"/><line x1="765.0" y1="261" x2="765.0" y2="302" stroke="#172b4d" stroke-dasharray="4 3"/><text x="779.79" y="286" font-size="15" font-family="sans-serif" fill="#172b4d">101.9%</text><text x="24" y="348" font-size="15" font-family="sans-serif" fill="#172b4d">Ball forecast · corrected coast baseline</text><rect x="365" y="330" width="600" height="26" rx="3" fill="#e3eaf1"/><rect x="365" y="330" width="400.69" height="26" rx="3" fill="#b33434"/><line x1="765.0" y1="323" x2="765.0" y2="364" stroke="#172b4d" stroke-dasharray="4 3"/><text x="772.69" y="348" font-size="15" font-family="sans-serif" fill="#172b4d">100.2%</text><text x="745.0" y="400" font-size="13" font-family="sans-serif" fill="#172b4d">100%</text></svg></p>
+<p>A separate geometric-control diagnostic on eight evenly spaced scored games, observer 2 on the left, covers 775,257 target rows. It uses each target's player-type kickable radius and fullstate geometry; it is not the planner's buffered kickability rule.</p>
+<table>
+<thead>
+<tr>
+<th>Geometric classification error</th>
+<th style="text-align: right;">Before corrections</th>
+<th style="text-align: right;">After player + ball corrections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Falsely says another player is in kicking range</td>
+<td style="text-align: right;">5,564</td>
+<td style="text-align: right;">3,168</td>
+</tr>
+<tr>
+<td>Misses a player truly in kicking range</td>
+<td style="text-align: right;">2,553</td>
+<td style="text-align: right;">4,392</td>
+</tr>
+</tbody>
+</table>
+<p>Corrections reduce false alarms but increase misses. Of 5,131 classification changes, 2,844 fix a wrong label and 2,287 break a correct one. This is a real tradeoff in the user's earlier concern about moving a player across the ball-control boundary. It does not tell us which specific goals resulted.</p>
+<h2>5. The live ball gains are much smaller than the offline report</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Unit</th>
+<th style="text-align: right;">Mean baseline → applied</th>
+<th style="text-align: right;">p90 baseline → applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current ball position</td>
+<td>cm</td>
+<td style="text-align: right;">75.18 → 71.42</td>
+<td style="text-align: right;">163.25 → 152.75</td>
+</tr>
+<tr>
+<td>Current ball velocity</td>
+<td>cm/cycle</td>
+<td style="text-align: right;">31.84 → 32.80</td>
+<td style="text-align: right;">88.25 → 92.25</td>
+</tr>
+<tr>
+<td>Next-cycle ball position</td>
+<td>cm</td>
+<td style="text-align: right;">93.87 → 90.09</td>
+<td style="text-align: right;">205.75 → 198.75</td>
+</tr>
+<tr>
+<td>Next-cycle ball velocity</td>
+<td>cm/cycle</td>
+<td style="text-align: right;">43.02 → 41.81</td>
+<td style="text-align: right;">125.75 → 115.25</td>
+</tr>
+</tbody>
+</table>
+<p>The next-cycle baseline here is the <strong>pre-apply current state extrapolated by ordinary ball decay</strong>, evaluated against the actual next consecutive PlayOn cycle. There are 7,765,920 paired forecasts. Current-state metrics use 7,830,776 eligible rows.</p>
+<p>Offline, the selected ball models had reduced position 68.75 → 63.98 cm, velocity 27.63 → 21.50 cm/cycle, next position 87.02 → 80.81 cm and next velocity 40.59 → 33.97 cm/cycle. Live current velocity instead became <strong>3.0% worse</strong>. This happened in <strong>every one of the 155 games</strong>, so it is not an isolated bad match.</p>
+<p>The fairer test of the <em>extra forecast head</em> compares it with simply coasting from the already corrected current position and velocity:</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: right;">Corrected-current coast → learned next position, cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All paired next cycles</td>
+<td style="text-align: right;">89.94 → 90.09</td>
+</tr>
+<tr>
+<td>Estimated free ball</td>
+<td style="text-align: right;">81.73 → 83.26</td>
+</tr>
+<tr>
+<td>Estimated possible kicker</td>
+<td style="text-align: right;">104.59 → 102.28</td>
+</tr>
+<tr>
+<td>Next step actually coasts</td>
+<td style="text-align: right;">81.35 → 82.62</td>
+</tr>
+<tr>
+<td>Next step has a velocity impulse</td>
+<td style="text-align: right;">128.97 → 124.03</td>
+</tr>
+<tr>
+<td>Observer–ball &lt;5 m</td>
+<td style="text-align: right;">31.09 → 31.79</td>
+</tr>
+</tbody>
+</table>
+<p>Overall the next-position head adds no average gain over corrected-current coasting: <strong>89.93 → 90.09 cm</strong>. It helps on actual impulses and estimated possible-control situations, but hurts on ordinary coasting, estimated free-ball situations and close to the observer. The velocity-impulse categories use a reference change above 0.2 m/cycle and include collisions and tackles as well as kicks. They are evaluation categories, not information available before the event.</p>
+<h2>6. Why offline success did not transfer: additional replay checks</h2>
+<p>The existing frozen Python models were replayed on eight evenly spaced new F3 games, using untreated right observer 2. This is 36,620 ball rows and 96,934 sampled player rows; player sampling uses stride eight.</p>
+<table>
+<thead>
+<tr>
+<th>Untreated F3 replay</th>
+<th style="text-align: right;">Baseline → frozen model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player velocity</td>
+<td style="text-align: right;">10.14 → 7.43 cm/cycle</td>
+</tr>
+<tr>
+<td>Gated player body</td>
+<td style="text-align: right;">22.96 → 15.26°</td>
+</tr>
+<tr>
+<td>Ball position, quantized model</td>
+<td style="text-align: right;">68.91 → 62.51 cm</td>
+</tr>
+<tr>
+<td>Ball velocity, expert model</td>
+<td style="text-align: right;">26.82 → 21.66 cm/cycle</td>
+</tr>
+<tr>
+<td>Ball next position, expert model</td>
+<td style="text-align: right;">86.15 → 78.08 cm</td>
+</tr>
+<tr>
+<td>Ball next velocity, expert model</td>
+<td style="text-align: right;">39.18 → 33.33 cm/cycle</td>
+</tr>
+</tbody>
+</table>
+<p>Thus the saved models still work offline on new matches from this batch. The historical offline improvement was real, but it measured stock-input histories rather than the full applied system.</p>
+<p>An approximate replay of the same eight games' <strong>left pre-apply snapshots</strong> gives ball expert velocity <strong>28.41 → 28.80 cm/cycle</strong>, reproducing the wrong direction. Mean differences between this Python reconstruction and logged C++ output are 0.55 cm/cycle for current velocity, 0.80 cm for next position and 0.50 cm/cycle for next velocity. Estimate ages and the observer kickability cue are logged after application, so this reconstruction is not an exact parity test and should not be presented as one.</p>
+<p>In that left sample, ball velocity with raw motion available is 9.96 → 9.97 cm/cycle; without raw motion it is 57.19 → 58.67 cm/cycle. The live pipeline fails precisely where it hoped to reconstruct missing information.</p>
+<p>A separate feature-builder check on 4,989 continuous windows from one untreated right observer found features within 0.000001 and baselines within 0.000004 of Python. Context/owner choices differed on eight windows, consistent with a nearest-neighbor boundary sensitive to precision. This check excludes the quantizer geometry and does not establish exact parity for every live field. Together with the earlier 900-input network check, it argues against a large universal export/sign/units error. Closed-loop state feedback remains a stronger explanation.</p>
+<h2>7. Concrete code problems and design weaknesses</h2>
+<h3>A. The interception pipeline uses two ball trajectories</h3>
+<p>The active self-intercept solver is <code>InterceptSimulatorSelfV17</code>. It computes reach candidates from current <code>ball.pos()</code>, current velocity and decay, with its existing opponent-control special case. However <code>BallObject::inertiaPoint()</code> switches to the learned next-position/velocity forecast, and both the Helios intercept evaluator and <code>Body_Intercept2018::doFirstTurn()</code> use that function.</p>
+<p>Consequently an action can be simulated for trajectory A, ranked for trajectory B and turned toward B. This inconsistency should have been resolved before treating the combined integration as ready for a scored test.</p>
+<p>Across paired live rows, learned next position differs from corrected-current coasting by <strong>23.52 cm on average</strong>. The two corresponding five-cycle coasting paths differ by <strong>44.64 cm on average</strong>. These are path disagreements, not errors versus future fullstate; intentional action anticipation can create a difference, but the reach solver and action executor must agree on the path being tested.</p>
+<p>Source anchors:</p>
+<ul>
+<li><code>librcsc-denoise/rcsc/player/intercept_table.cpp:67</code>: active self solver.</li>
+<li><code>librcsc-denoise/rcsc/player/intercept_simulator_self_v17.cpp:217</code>, <code>:1067</code>, <code>:1331</code>: current-state extrapolation.</li>
+<li><code>librcsc-denoise/rcsc/player/ball_object.h:458</code>: learned forecast in inertia queries.</li>
+<li><code>helios-base-denoise/src/player/intercept_evaluator_sample.cpp:121</code>: candidate evaluation.</li>
+<li><code>helios-base-denoise/src/player/basic_actions/body_intercept2018.cpp:223</code>: first-turn target.</li>
+</ul>
+<h3>B. Corrected state feeds later estimation, unlike the offline training histories</h3>
+<p><code>world_model.cpp:2928</code> writes corrected ball position, relative position and velocity into the ordinary BallObject. Later localization uses previous relative positions and velocities, including <code>estimateBallVelByPosDiff()</code> at lines 2584 and 2623. In player state, inferred velocity/body are also written back and their ages capped at one at lines 2943–2949.</p>
+<p>The variable called “stock” is therefore only <strong>before this cycle's correction</strong>. It is not the result of an untouched librcsc observer running in parallel. Earlier corrections can already have changed it. This creates an input distribution absent from stock-data training and can make inferred estimates appear more recent/valid in subsequent cycles.</p>
+<p>The eight-game replay contrast supports this feedback concern. Match behavior and viewing geometry also change, so the logs alone cannot apportion the regression exactly between feedback and changed trajectories. An independent stock estimator or a deterministic closed-loop replay is needed for that attribution.</p>
+<h3>C. The ball is assembled from independently trained outputs</h3>
+<p><code>sample_player.cpp:252–257</code> takes current ball position from the quantization model and current velocity plus future state from the expert model. Those outputs were not trained jointly with the self-intercept and kick planner. There is no constraint ensuring that the selected current and next states describe a consistent motion hypothesis.</p>
+<p>The ball correction also replaces relative ball position by corrected global position minus estimated self position. Near the ball this changes inputs to kick rate and kickability (<code>self_object.cpp:1056–1068</code>) and can feed back into the next velocity estimate. The measured near-ball regressions justify guarding this path even though mean global position improved.</p>
+<h3>D. Better average estimates do not calibrate decision safety</h3>
+<p>The pass/dribble safety margins remain the stock ones, and point estimates do not communicate uncertainty. Lower mean player error does not mean each defender is reliably closer or farther, or that a learned future action will happen. The geometric miss/false-alarm tradeoff above is measurable evidence; a specific claim that margins caused lost games would require action-level analysis.</p>
+<p>Decision latency also rises: left median/p95/p99 are approximately <strong>19.5/30.5/34.5 ms</strong>, versus right <strong>10.5/19.5/23.5 ms</strong>. These are 1 ms histogram estimates of sense-body-to-decision time, not network-only inference timings. The logs show all sampled PlayOn decisions used see updates; they do not by themselves prove every command met the server deadline.</p>
+<h2>8. Recommended next step</h2>
+<ol>
+<li><strong>Keep Step 26 as the established player-position result.</strong> Do not describe the full F3 package as the best validated live solution.</li>
+<li><strong>Repair the integration before training a larger model.</strong> Give interception one consistent trajectory. The safest diagnostic is to stop overriding ordinary inertia queries with learned forecasts while continuing to log the candidates.</li>
+<li><strong>Separate sensor history from applied decision state.</strong> Reconstruct models from an immutable stock observation history, or train/evaluate the actual feedback loop. Preserve observed body angles; do not equate a neural estimate with a fresh sensor measurement.</li>
+<li><strong>Guard already accurate close-range estimates.</strong> Ball current velocity near the kicking player and player velocity under 10 m should remain stock until a validated gate demonstrates benefit. A held-out gate must be evaluated by range, raw-motion availability and action regime.</li>
+<li><strong>Run component ablations with sides swapped.</strong> Start Step 26 alone, then guarded player velocity/body; test ball position separately; test ball velocity and forecasting last. Log interception reach residuals, successful kicks, possession-boundary mistakes and action deadlines alongside noise. Compare identical configurations and, where possible, common initial seeds.</li>
+</ol>
+<p>A reduction from 78 to 52 cm player error does not imply a 75% win rate: much of the average comes from distant targets, and decisive close-control errors can regress while the global average improves. The available evidence supports a useful player denoiser, a failed live ball-velocity transfer, and an inconsistent combined planning integration. It does not support solving this by match count alone.</p>
+<h2>Reproduce and retained evidence</h2>
+<p>Run from the server repository using the existing Exp2/Exp4 Python environment:</p>
+<pre><code class="language-sh">python3 experiments/exp4/reporting/audit_live.py   ../logs/exp3-f3-logs ../AutoTest2D/out/exp3-f3-logs   ../logs/exp4/f3-audit.json --workers 24
+
+python3 experiments/exp4/reporting/replay_control.py   ../logs/exp3-f3-logs ../AutoTest2D/out/exp3-f3-logs   ../logs/exp4/runs ../logs/exp4/f3-control-replay.json
+
+python3 experiments/exp4/reporting/replay_applied.py   ../logs/exp3-f3-logs ../logs/exp4/f3-control-replay.json   ../logs/exp4/runs ../logs/exp4/f3-apply-diagnostics.json
+</code></pre>
+<p>To regenerate the HTML after editing the Markdown, run:</p>
+<pre><code class="language-sh">python3 experiments/exp4/reporting/render_report.py experiments/exp4/reports/03-live-f3-audit.md
+</code></pre>
+<p>Retained lightweight evidence: <a href="f3/live-metrics.json">all-game metrics</a>, <a href="f3/control-replay.json">untreated replay</a>, <a href="f3/applied-replay.json">applied replay and geometry</a>, <a href="f3/feature-parity.txt">feature check</a>. p90 live values use histograms (0.5 cm bins, 0.1° angle bins). Means and event counts are accumulated directly. No raw logs or datasets are duplicated into the report.</p>
+<p>Previous evidence: <a href="../../exp3/reports/31-live-results.md">Exp3 F1/F2 live results</a>, <a href="01-state-models.md">Exp4 offline models</a>, <a href="02-live-integration.md">integration design</a>.</p></main></html>

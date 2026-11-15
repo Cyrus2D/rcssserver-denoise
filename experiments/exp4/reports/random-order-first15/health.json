@@ -1,0 +1,342 @@
+{
+  "selection": "/home/nader/workspace/denoise/logs/exp4/checks/random-order-first15-selection.json",
+  "sample_observers_per_game": 3,
+  "totals": {
+    "finalized_agents": 330,
+    "full_roster_rounds": 102640,
+    "left_first": 51544,
+    "l_goals": 56,
+    "r_goals": 63,
+    "games": 15
+  },
+  "issues": [],
+  "per_game": [
+    {
+      "game": "202611142253_10215",
+      "score": [
+        5,
+        6
+      ],
+      "seed": "1772907748",
+      "trace_rounds": 7202,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6978,
+      "left_first": 3532,
+      "mean_rank": {
+        "l": 11.493342713463091,
+        "r": 11.506657286536909
+      }
+    },
+    {
+      "game": "202611142253_15549",
+      "score": [
+        3,
+        3
+      ],
+      "seed": "1181983398",
+      "trace_rounds": 6980,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6758,
+      "left_first": 3330,
+      "mean_rank": {
+        "l": 11.497928381177863,
+        "r": 11.502071618822137
+      }
+    },
+    {
+      "game": "202611142253_16883",
+      "score": [
+        4,
+        3
+      ],
+      "seed": "1990134844",
+      "trace_rounds": 6822,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6598,
+      "left_first": 3314,
+      "mean_rank": {
+        "l": 11.5165752707432,
+        "r": 11.4834247292568
+      }
+    },
+    {
+      "game": "202611142253_18646",
+      "score": [
+        5,
+        3
+      ],
+      "seed": "1376718213",
+      "trace_rounds": 7052,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6828,
+      "left_first": 3485,
+      "mean_rank": {
+        "l": 11.497496937742984,
+        "r": 11.502503062257016
+      }
+    },
+    {
+      "game": "202611142253_3803",
+      "score": [
+        3,
+        2
+      ],
+      "seed": "1500110707",
+      "trace_rounds": 6902,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6678,
+      "left_first": 3383,
+      "mean_rank": {
+        "l": 11.482261972828011,
+        "r": 11.517738027171989
+      }
+    },
+    {
+      "game": "202611142257_13958",
+      "score": [
+        2,
+        6
+      ],
+      "seed": "1333774249",
+      "trace_rounds": 6961,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6738,
+      "left_first": 3374,
+      "mean_rank": {
+        "l": 11.471504897595725,
+        "r": 11.528495102404275
+      }
+    },
+    {
+      "game": "202611142257_15434",
+      "score": [
+        2,
+        4
+      ],
+      "seed": "422465104",
+      "trace_rounds": 7101,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6878,
+      "left_first": 3495,
+      "mean_rank": {
+        "l": 11.481667503766952,
+        "r": 11.518332496233048
+      }
+    },
+    {
+      "game": "202611142257_25850",
+      "score": [
+        5,
+        5
+      ],
+      "seed": "1961198139",
+      "trace_rounds": 7181,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6958,
+      "left_first": 3514,
+      "mean_rank": {
+        "l": 11.484321513496564,
+        "r": 11.515678486503436
+      }
+    },
+    {
+      "game": "202611142257_32463",
+      "score": [
+        2,
+        5
+      ],
+      "seed": "1364219321",
+      "trace_rounds": 7061,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6838,
+      "left_first": 3420,
+      "mean_rank": {
+        "l": 11.483448110824536,
+        "r": 11.516551889175464
+      }
+    },
+    {
+      "game": "202611142257_7992",
+      "score": [
+        3,
+        4
+      ],
+      "seed": "1964684222",
+      "trace_rounds": 7061,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6838,
+      "left_first": 3391,
+      "mean_rank": {
+        "l": 11.491903533728628,
+        "r": 11.508096466271372
+      }
+    },
+    {
+      "game": "202611142300_1716",
+      "score": [
+        5,
+        0
+      ],
+      "seed": "1578339442",
+      "trace_rounds": 7080,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6858,
+      "left_first": 3361,
+      "mean_rank": {
+        "l": 11.48038124022376,
+        "r": 11.51961875977624
+      }
+    },
+    {
+      "game": "202611142300_29436",
+      "score": [
+        2,
+        7
+      ],
+      "seed": "1129135455",
+      "trace_rounds": 7251,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 7028,
+      "left_first": 3544,
+      "mean_rank": {
+        "l": 11.51393128783567,
+        "r": 11.48606871216433
+      }
+    },
+    {
+      "game": "202611142300_29487",
+      "score": [
+        2,
+        6
+      ],
+      "seed": "2110843966",
+      "trace_rounds": 7111,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6888,
+      "left_first": 3422,
+      "mean_rank": {
+        "l": 11.518767817548305,
+        "r": 11.481232182451695
+      }
+    },
+    {
+      "game": "202611142300_3823",
+      "score": [
+        3,
+        4
+      ],
+      "seed": "887596454",
+      "trace_rounds": 7001,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6778,
+      "left_first": 3466,
+      "mean_rank": {
+        "l": 11.46251240644867,
+        "r": 11.53748759355133
+      }
+    },
+    {
+      "game": "202611142300_4251",
+      "score": [
+        10,
+        5
+      ],
+      "seed": "493349849",
+      "trace_rounds": 7221,
+      "last": [
+        6000,
+        98
+      ],
+      "full_roster_rounds": 6998,
+      "left_first": 3513,
+      "mean_rank": {
+        "l": 11.481111486398712,
+        "r": 11.518888513601288
+      }
+    }
+  ],
+  "configs": {
+    "l": {
+      "version=19": 165,
+      "gaussian_see=False": 165,
+      "use_fullstate=False": 165,
+      "debug_fullstate=True": 165,
+      "synch_see=True": 165,
+      "denoise_log_landmarks=True": 165,
+      "denoise_log_raw=True": 165,
+      "player_position_routing=corrected": 165,
+      "exp4_state=apply": 165,
+      "exp4_integration=f4-isolated-observations": 165,
+      "exp4_player_state=apply": 165,
+      "exp4_ball_state=apply": 165,
+      "exp4_forecast_state=shadow": 165,
+      "exp4_player_velocity_min_dist=10": 165,
+      "exp4_ball_position_min_dist=5": 165,
+      "exp4_ball_velocity_min_dist=5": 165,
+      "full_view=True": 165,
+      "see_noise_free=False": 165
+    },
+    "r": {
+      "version=19": 165,
+      "gaussian_see=False": 165,
+      "use_fullstate=False": 165,
+      "debug_fullstate=True": 165,
+      "synch_see=True": 165,
+      "denoise_log_landmarks=True": 165,
+      "denoise_log_raw=True": 165,
+      "player_position_routing=legacy": 165,
+      "exp4_state=off": 165,
+      "exp4_integration=f4-isolated-observations": 165,
+      "exp4_player_state=off": 165,
+      "exp4_ball_state=off": 165,
+      "exp4_forecast_state=off": 165,
+      "exp4_player_velocity_min_dist=10": 165,
+      "exp4_ball_position_min_dist=5": 165,
+      "exp4_ball_velocity_min_dist=5": 165,
+      "full_view=True": 165,
+      "see_noise_free=False": 165
+    }
+  }
+}

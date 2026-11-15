@@ -1,0 +1,24 @@
+{
+  "side": "l",
+  "packets": 620,
+  "max_packet_bytes": 6321,
+  "matched_fields": {
+    "USED_pos": 1240,
+    "USED_vel": 1240,
+    "TRUTH_pos": 1240,
+    "TRUTH_vel": 1240,
+    "USED_body": 620,
+    "TRUTH_body": 620,
+    "STOCK_pos": 894,
+    "STOCK_vel": 885,
+    "STOCK_body": 447
+  },
+  "status": {
+    "unavailable:warmup/ineligible": 528,
+    "unavailable": 173,
+    "observed:preserved": 571,
+    "applied": 1634,
+    "protected:range<10.000": 120,
+    "protected:range<5.000": 74
+  }
+}

@@ -22,6 +22,8 @@
 #ifndef RCSSSERVER_STADIUM_H
 #define RCSSSERVER_STADIUM_H
 
+#include <fstream>
+
 #include "timeable.h"
 
 
@@ -63,6 +65,7 @@ class Msg;
  *Part: Stadium Class
  *===================================================================
  */
+
 class Stadium
     : public virtual Timeable {
 public:
@@ -86,6 +89,10 @@ protected:
 
 protected:
     bool M_alive;
+    std::ofstream M_command_order_stream;
+    unsigned long long M_command_round = 0;
+    bool M_command_batch_failed = false;
+    bool applyQueuedPlayerCommands();
 
     rcss::net::UDPSocket M_player_socket;
     rcss::net::UDPSocket M_offline_coach_socket;
@@ -139,6 +146,8 @@ protected:
     std::list< ResultSaver::Ptr > M_savers;
 
 public:
+
+    bool commandBatchFailed() const { return M_command_batch_failed; }
 
     Stadium();
 

@@ -65,3 +65,18 @@ Server and player parameters are registered through `addParam` into a `rcss::con
 - [noise-model](noise-model.instructions.md) — noise parameters and their registration
 - [net-logging](net-logging.instructions.md) — log directory and compression parameters
 - [player-protocol](player-protocol.instructions.md) — protocol versions that gate parameter visibility
+
+## Exp4 scheduling and replay parameters (v19)
+
+- `randomize_player_commands=false`: optional complete synchronous player
+  batches; Stadium rejects enabling it without synch_mode.
+- `command_order_seed=-1`: Stadium resolves an independent automatic
+  nonnegative seed at init; values below -1 are rejected.
+- `command_order_log=true`: when batching is on, writes
+  `game_log_dir/<fixed_name>.command-order.csv` (or a unique generated name).
+- `random_seed=-1`: exposes the existing simulator RNG seed; omitted/default
+  retains time seeding. Its resolved value and the command-order parameters
+  are sent to v19 clients.
+
+Keep librcsc's ServerParam mirror in sync so dataset metadata retains these
+settings. See `experiments/exp4/reports/06-server-command-order.md`.

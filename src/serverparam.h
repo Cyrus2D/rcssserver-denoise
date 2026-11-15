@@ -631,6 +631,9 @@ private:
     double M_focus_dist_noise_rate;
     double M_land_dist_noise_rate;
     double M_land_focus_dist_noise_rate;
+    bool M_randomize_player_commands;
+    int M_command_order_seed;
+    bool M_command_order_log;
     bool M_full_view;
     bool M_see_no_fade_unum;
     bool M_see_no_fade_all;
@@ -999,6 +1002,10 @@ public:
     double focusDistNoiseRate() const { return M_focus_dist_noise_rate; }
     double landDistNoiseRate() const { return M_land_dist_noise_rate; }
     double landFocusDistNoiseRate() const { return M_land_focus_dist_noise_rate; }
+    bool randomizePlayerCommands() const { return M_randomize_player_commands; }
+    int commandOrderSeed() const { return M_command_order_seed; }
+    void setCommandOrderSeed( int seed ) { M_command_order_seed = seed; }
+    bool commandOrderLog() const { return M_command_order_log; }
     bool fullView() const { return M_full_view; }
     bool seeNoFadeUnum() const { return M_see_no_fade_unum; }
     bool seeNoFadeAll() const { return M_see_no_fade_all; }

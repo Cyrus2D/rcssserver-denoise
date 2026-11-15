@@ -94,3 +94,20 @@ Per-cycle command rules use flags: `M_command_done` (one movement command per cy
 - [server-core](server-core.instructions.md) — player lifecycle in `Stadium`
 - [config-params](config-params.instructions.md)
 - [../copilot-instructions.md](../copilot-instructions.md)
+
+## Optional synchronous command batching (Exp4)
+
+`randomize_player_commands` defaults false. While parsing network input,
+gameplay handlers defer captured values into a bounded (128-handler) Player
+queue only inside the current think collection window. `done` is immediate
+and seals that player's queue. Queries/handshake options stay immediate.
+Do not defer internal calls such as long-kick replay. Both normal parsing
+and the Cygwin fallback use these same handler guards.
+
+Stadium opens the window before think and commits only after the complete
+barrier. Post-done/out-of-window actions are dropped; parse/overflow faults
+invalidate the batch. Disable discards pending actions. Replay moves the
+queue into a local vector so a referee-triggered disable cannot invalidate
+its iteration. Preserve per-player command order and existing action limits.
+See `experiments/exp4/reports/06-server-command-order.md` for tests and the
+legacy UDP cycle-identification limitation.

@@ -1,0 +1,254 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp4 · Live data report</title><style>
+body{margin:0;background:#eef2f7;color:#172b4d;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:35px auto;background:white;padding:42px 48px;border-radius:14px}
+h1{font-size:32px;line-height:1.2}h2{margin-top:46px;border-top:1px solid #dce4ed;padding-top:22px}h3{margin-top:30px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th{background:#edf3f8;text-align:left}
+td,th{padding:11px 12px;border-bottom:1px solid #dce4ed}td:last-child{text-align:right}
+code{overflow-wrap:anywhere;font-size:.87em;background:#edf3f8;padding:2px 4px;border-radius:3px}
+pre{background:#edf3f8;padding:18px;overflow:auto}pre code{white-space:pre;overflow-wrap:normal}
+svg{max-width:100%;height:auto;margin:22px 0;border:1px solid #dce4ed;border-radius:8px}
+a{color:#075ea8}strong{font-weight:700}
+@media(max-width:700px){main{padding:22px 15px;margin:0}table{font-size:12px;display:block;overflow:auto}}
+@media print{main{margin:0;padding:0}h2{break-after:avoid}table,svg{break-inside:avoid}}
+</style><main><h1>Exp4 step 08 · Inspect stock and corrected state in Soccer Window</h1>
+<h2>Ready to use</h2>
+<p>The inspector is implemented and built in
+<code>/home/nader/workspace/denoise/helios-base-denoise/build-debug/bin</code>.
+Its private librcsc is installed under <code>/home/nader/local-denoise-debug</code>.
+The original <code>build/bin</code> and <code>/home/nader/local/lib</code> runtime remain separate,
+so the current batch keeps its original executables and library.</p>
+<p>The models, guards, forecasts and decisions are unchanged by this work.
+Normal <code>start.sh</code> defaults to inspector off. <code>start-debug.sh</code> now enables
+the focus inspector and saves <code>.dcl</code> replay files as well as ordinary
+offline/debug logs. Run an inspection game separately from the scored batch.</p>
+<h2>Known display limitation discovered during live inspection</h2>
+<p>Circle colors are currently omitted by librcsc's CirclePrinter for nonempty
+color strings, so several outlines can appear in the viewer's default
+color. The table below is the intended legend. Coordinates and numeric
+annotations were validated; styling was not. See the
+<a href="09-closeout-ball-stability.md">closeout audit</a>. No runtime fix was made
+during that read-only audit.</p>
+<h2>What the colors mean</h2>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gray</td>
+<td>Stock WM state captured immediately before decision overrides</td>
+</tr>
+<tr>
+<td>Cyan</td>
+<td>Final WM state actually used for this decision</td>
+</tr>
+<tr>
+<td>Purple</td>
+<td>Available model prediction for a field that was not applied</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>Current server truth, only with reference fullstate</td>
+</tr>
+<tr>
+<td>Orange connector</td>
+<td>Position displacement between stock and used</td>
+</tr>
+</tbody>
+</table>
+<p>Circles show positions. Arrows show velocity multiplied by three cycles by
+default, for visibility; they are <strong>not learned next-cycle forecasts</strong>.
+Short direction lines show body angle. The positions themselves are not
+magnified: zoom in to see small corrections.</p>
+<p>The banner shows exact stock/used position and velocity, body angle and
+ages, position displacement, raw observation distance, error against truth,
+and field application reasons. Units are metres, metres/cycle and degrees.
+<code>ep</code>, <code>ev</code>, <code>eb</code> mean position distance error, velocity distance error and
+wrapped body-angle error. No invalid field is silently displayed as zero.</p>
+<p>Reasons include <code>applied</code>, <code>shadow</code>, <code>protected:range&lt;5.000</code>,
+<code>protected:range&lt;10.000</code>, <code>observed:preserved</code>, and
+<code>unavailable:warmup/ineligible</code>. The last covers insufficient history,
+non-PlayOn or an unsupported observation configuration.</p>
+<p>The inspector always details the ball and optionally one target player.
+For that player it also shows the stock-to-used ball distance and nominal
+kicking radius. The self kickable flag is shown before and after overrides.
+Geometric proximity alone is not proof that an opponent will kick.</p>
+<h2>Launch</h2>
+<p>Use the same server experiment settings, including reference fullstate.
+Open Soccer Window and enable its debug-server listener. With the standard
+game port 6000, the default debug port is 6032.</p>
+<p>Example left team with the current models:</p>
+<pre><code class="language-sh">cd /home/nader/workspace/denoise/helios-base-denoise/build-debug/bin
+
+DEBUG_DIR=/home/nader/workspace/denoise/logs/exp4/debug/manual-01
+mkdir -p &quot;$DEBUG_DIR&quot;
+
+./start-debug.sh -p 6000 -P 6002 -t lt --fullstate reference \
+  --player-position-denoise apply \
+  --player-position-model /home/nader/workspace/denoise/logs/exp3-context-runs/step26-polar/player-position.weights \
+  --player-position-routing corrected \
+  --exp4-state apply --exp4-model-dir /home/nader/workspace/denoise/logs/exp4/weights \
+  --denoise-debug-observer 6 \
+  --denoise-debug-target opponent:7 \
+  --debug-server-host localhost --debug-server-port 6032 \
+  --log-dir &quot;$DEBUG_DIR&quot; \
+  --denoise-log-dir &quot;$DEBUG_DIR/dataset&quot; --denoise-game-id manual-01
+</code></pre>
+<p>Launch the right team normally with its original settings. In Soccer Window,
+select <strong>left player 6's debug view</strong>. It shows how that observer estimates
+the ball and opponent 7; selecting player 7's own view is a different
+observer. Retain the matching server game log for replay.</p>
+<p>If adapting your runner, change the inspection team's BASE_PATH to
+<code>.../helios-base-denoise/build-debug/bin</code>, use <code>start-debug.sh</code>, keep all
+model flags, and append the inspector options above. For a nonstandard game
+port, set the debug host/port to the viewer listener explicitly; the script's
+automatic debug port is game port + 32.</p>
+<h2>Controls</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values and default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--denoise-debug</code></td>
+<td><code>off</code>, <code>focus</code>, <code>overview</code>; normal start defaults off, debug wrapper defaults focus</td>
+</tr>
+<tr>
+<td><code>--denoise-debug-observer</code></td>
+<td>Agent unum 1–11; 0 means every observer, the default</td>
+</tr>
+<tr>
+<td><code>--denoise-debug-target</code></td>
+<td><code>nearest</code> (player nearest the estimated ball), <code>ball</code>, <code>teammate:N</code>, <code>opponent:N</code>; default nearest</td>
+</tr>
+<tr>
+<td><code>--denoise-debug-velocity-scale</code></td>
+<td>Positive value up to 10; default 3</td>
+</tr>
+</tbody>
+</table>
+<p><code>focus</code> draws detailed ball and target state. <code>overview</code> additionally
+draws stock/used positions of all known players, while keeping numeric
+detail restricted to the ball and target. If the target is unavailable,
+the banner says so.</p>
+<p>This dedicated inspector replaces planner geometry and its banner to keep
+the display readable. Ordinary behavior debug logs remain available.
+Pass <code>--denoise-debug off</code> to the debug wrapper to restore the ordinary
+debug view.</p>
+<p>With position apply, the inspector requires corrected routing: legacy routing
+can apply position during visual processing before the baseline capture.
+Invalid options are rejected before launching players.</p>
+<h2>Replay and interpretation</h2>
+<p><code>start-debug.sh</code> now saves <code>&lt;team&gt;-&lt;unum&gt;.dcl</code> under <code>--log-dir</code>, using
+the existing viewer format, and ordinary agent <code>.log</code> and offline files.
+The <code>.dcl</code> contains the overlays; point Soccer Window's debug-log directory
+to that folder and use the matching game log. Full detail is also emitted
+on Logger::WORLD when that category is enabled.</p>
+<p>Stock means <strong>the same observer's pre-override WM this cycle</strong>. It is not
+the raw visual localization and is not a separately simulated original
+team. Subsequent normal WM processing is included in the final used state;
+application labels identify fields actually supplied by a model.
+Fullstate is read only to annotate the inspector and never feeds the models
+or decisions.</p>
+<p>The library keeps optional baseline snapshots even during model warmup,
+guarded cycles and when models are off. The snapshot is timestamped by
+cycle and stopped count. Inspection packets preserve stopped counts during
+BeforeKickOff, avoiding the legacy display's collapsed startup times.</p>
+<h2>Validation</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>librcsc build/install to private prefix; separate Helios build</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Snapshot immutability, player identity mapping, invalid-field masks</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Existing F4 restoration, guards, body preservation and forecast-path fixture</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Oversized banner/comments and complete packet serialization</td>
+<td>Passed actual viewer parser</td>
+</tr>
+<tr>
+<td>Left apply / right stock, overview, 600 scheduled cycles</td>
+<td>22 finalized agents</td>
+</tr>
+<tr>
+<td>Right apply / left stock, focus on opponent 7, 600 scheduled cycles</td>
+<td>22 finalized agents</td>
+</tr>
+<tr>
+<td>Actual Soccer Window parser: captured UDP plus saved DCL</td>
+<td>2,618 packets/replay entries accepted</td>
+</tr>
+<tr>
+<td>Numeric parity with corresponding CSVs, both sides</td>
+<td>17,902 position/velocity/body fields matched within 0.00056 units</td>
+</tr>
+<tr>
+<td>Largest left overview / right focus UDP packet</td>
+<td>6,321 / 4,167 bytes, including NUL</td>
+</tr>
+<tr>
+<td>Model-write mismatches, range-guard violations, observed-body overwrites, applied forecasts</td>
+<td>Zero in both matches</td>
+</tr>
+<tr>
+<td>Invalid mode, target, observer, arrow scale and missing value</td>
+<td>Rejected</td>
+</tr>
+</tbody>
+</table>
+<p>Both matches exercised warmup/ineligible cases, applied corrections,
+observed-body preservation and the 5 m / 10 m guards. Right-side parity
+includes coordinate and angle conversion to the server-frame CSVs.</p>
+<p>The viewer has separate limits: 8,192-byte receive buffer, 1,023-character
+message, 256-character object comments. Inspector packets cap total size
+at 7,800 bytes and use shorter text/comment limits, removing complete
+optional elements instead of truncating protocol syntax. Unusually dense
+data is marked <code>TEXT CLIPPED</code> or <code>OVERLAY CLIPPED</code>. The normal inspector
+matches required neither marker.</p>
+<p>These tests validate data and parser compatibility. They are not a new
+match-performance experiment or a manual GUI inspection.</p>
+<p><a href="debug-overlay/verification.json">Saved verification</a> ·
+<a href="debug-overlay/l-parity.json">Left parity</a> ·
+<a href="debug-overlay/r-parity.json">Right parity</a></p>
+<h2>Code and reproduction</h2>
+<ul>
+<li>librcsc: optional WorldModel snapshot before the decision overrides;
+  DebugClient inspection helpers and opt-in protocol limits.</li>
+<li>Helios: <code>src/player/denoise/debug_overlay.*</code> owns presentation, selection
+  and truth annotations. No network weights or rendering logic moved into
+  librcsc.</li>
+<li>Both CMake and autotools source lists include the new helper.</li>
+<li>Test sources: <code>verification/debug_snapshot.cpp</code>,
+  <code>debug_viewer_parse.cpp</code>, <code>debug_overlay_parity.py</code>; the existing
+  <code>run_smoke.py</code> accepts <code>--base</code>, <code>--debug-overlay</code>,
+  <code>--debug-target</code> and <code>--debug-observer</code>.</li>
+</ul>
+<p>Build the private debug runtime from the workspace:</p>
+<pre><code class="language-sh">cmake --build librcsc-denoise/build -j4
+cmake --install librcsc-denoise/build --prefix /home/nader/local-denoise-debug
+cmake -S helios-base-denoise -B helios-base-denoise/build-debug \
+  -DLIBRCSC_INSTALL_DIR=/home/nader/local-denoise-debug -DCMAKE_BUILD_TYPE=Release
+cmake --build helios-base-denoise/build-debug -j4
+</code></pre>
+<p>Do not replace the runtime under an ongoing scored batch. After switching
+the normal installation to these changed headers/library, rebuild all
+linked agents together.</p></main></html>

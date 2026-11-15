@@ -1,0 +1,747 @@
+{
+  "smokes": {
+    "apply-01": {
+      "games": 1,
+      "observers": 22,
+      "counts": {
+        "l": {
+          "decisions": 10615,
+          "see_updates": 10615,
+          "step26_position_applied": 211596,
+          "player_velocity_write_mismatch": 0,
+          "player_velocity_guard_violations": 0,
+          "reported_body_overwritten": 0,
+          "player_candidates": 211596,
+          "player_velocity_applied": 195741,
+          "player_body_applied": 93200,
+          "ball_velocity_write_mismatch": 0,
+          "ball_position_write_mismatch": 0,
+          "ball_position_guard_violations": 0,
+          "ball_velocity_guard_violations": 0,
+          "ball_candidates": 10076,
+          "ball_position_applied": 9542,
+          "ball_velocity_applied": 9542,
+          "ball_body_applied": 0,
+          "forecast_applied": 0
+        },
+        "r": {
+          "decisions": 10615,
+          "see_updates": 10615,
+          "step26_position_applied": 0,
+          "forecast_applied": 0
+        }
+      },
+      "metrics": {
+        "l/player_position_relative/all": {
+          "n": 211596,
+          "mean_stock": 0.7834851105862729,
+          "mean_candidate": 0.5140434379089145,
+          "mean_applied": 0.5140434379089145,
+          "worse_applied_share": 0.32053535983666986,
+          "worse_candidate_share": 0.32053535983666986
+        },
+        "l/player_position_global/all": {
+          "n": 211596,
+          "mean_stock": 0.8024258420955528,
+          "mean_candidate": 0.5394604433541493,
+          "mean_applied": 0.5394604433541493,
+          "worse_applied_share": 0.3170806631505321,
+          "worse_candidate_share": 0.3170806631505321
+        },
+        "l/player_velocity/all": {
+          "n": 211596,
+          "mean_stock": 0.10516054605071186,
+          "mean_candidate": 0.07549635861814558,
+          "mean_applied": 0.07480156852623861,
+          "worse_applied_share": 0.34378721714966254,
+          "worse_candidate_share": 0.39176071381311556
+        },
+        "l/player_velocity/under_10m": {
+          "n": 15855,
+          "mean_stock": 0.03188932841687946,
+          "mean_candidate": 0.041161785325561154,
+          "mean_applied": 0.03188932841687946,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.6402396720277514
+        },
+        "l/player_velocity/at_least_10m": {
+          "n": 195741,
+          "mean_stock": 0.11109550681817709,
+          "mean_candidate": 0.07827745537127306,
+          "mean_applied": 0.07827745537127306,
+          "worse_applied_share": 0.37163394485570217,
+          "worse_candidate_share": 0.37163394485570217
+        },
+        "l/player_body/all": {
+          "n": 211596,
+          "mean_stock": 25.2997085830539,
+          "mean_candidate": 16.70994730003403,
+          "mean_applied": 16.70994730003403,
+          "worse_applied_share": 0.14552732565833001,
+          "worse_candidate_share": 0.14552732565833001
+        },
+        "l/ball_velocity/all": {
+          "n": 10076,
+          "mean_stock": 0.3023932822346866,
+          "mean_candidate": 0.2246607387313458,
+          "mean_applied": 0.2241526661444518,
+          "worse_applied_share": 0.3616514489876935,
+          "worse_candidate_share": 0.3962882096069869
+        },
+        "l/ball_velocity/under_5m": {
+          "n": 534,
+          "mean_stock": 0.04185548399320199,
+          "mean_candidate": 0.051442261868752746,
+          "mean_applied": 0.04185548399320199,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.653558052434457
+        },
+        "l/ball_velocity/at_least_5m": {
+          "n": 9542,
+          "mean_stock": 0.3169737878164255,
+          "mean_candidate": 0.2343545834855509,
+          "mean_applied": 0.2343545834855509,
+          "worse_applied_share": 0.3818905889750576,
+          "worse_candidate_share": 0.3818905889750576
+        },
+        "l/ball_position/all": {
+          "n": 10076,
+          "mean_stock": 0.7065462774744545,
+          "mean_candidate": 0.6544285963006005,
+          "mean_applied": 0.654413793157208,
+          "worse_applied_share": 0.41574037316395396,
+          "worse_candidate_share": 0.4407502977371973
+        },
+        "l/ball_position/under_5m": {
+          "n": 534,
+          "mean_stock": 0.056318198463463164,
+          "mean_candidate": 0.056597517700956175,
+          "mean_applied": 0.056318198463463164,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.47191011235955055
+        },
+        "l/ball_position/at_least_5m": {
+          "n": 9542,
+          "mean_stock": 0.7429350632837051,
+          "mean_candidate": 0.6878850829881094,
+          "mean_applied": 0.6878850829881094,
+          "worse_applied_share": 0.43900649758960386,
+          "worse_candidate_share": 0.43900649758960386
+        },
+        "l/ball_next_position/all": {
+          "n": 9999,
+          "mean_stock": 0.902965912777142,
+          "mean_candidate": 0.8291770241025518,
+          "mean_applied": 0.8293910161211423,
+          "worse_applied_share": 0.38833883388338836,
+          "worse_candidate_share": 0.42954295429542955
+        },
+        "l/ball_next_velocity/all": {
+          "n": 9999,
+          "mean_stock": 0.42888046056777,
+          "mean_candidate": 0.33946034684587895,
+          "mean_applied": 0.3502952507406439,
+          "worse_applied_share": 0.33733373337333733,
+          "worse_candidate_share": 0.38923892389238923
+        }
+      },
+      "future_note": "Candidate is learned forecast; applied is ordinary coasting from the actually gated current state."
+    },
+    "apply-right-01": {
+      "games": 1,
+      "observers": 22,
+      "counts": {
+        "l": {
+          "decisions": 11913,
+          "see_updates": 11913,
+          "step26_position_applied": 0,
+          "forecast_applied": 0
+        },
+        "r": {
+          "decisions": 11909,
+          "see_updates": 11909,
+          "step26_position_applied": 238749,
+          "player_velocity_write_mismatch": 0,
+          "player_velocity_guard_violations": 0,
+          "reported_body_overwritten": 0,
+          "player_candidates": 238770,
+          "player_velocity_applied": 223411,
+          "player_body_applied": 112009,
+          "ball_velocity_write_mismatch": 0,
+          "ball_position_write_mismatch": 0,
+          "ball_position_guard_violations": 0,
+          "ball_velocity_guard_violations": 0,
+          "ball_candidates": 11370,
+          "ball_position_applied": 10722,
+          "ball_velocity_applied": 10722,
+          "ball_body_applied": 0,
+          "forecast_applied": 0
+        }
+      },
+      "metrics": {
+        "r/player_position_relative/all": {
+          "n": 238749,
+          "mean_stock": 0.8166685971656804,
+          "mean_candidate": 0.5399174560236388,
+          "mean_applied": 0.5399174560236388,
+          "worse_applied_share": 0.3168767199024917,
+          "worse_candidate_share": 0.3168767199024917
+        },
+        "r/player_position_global/all": {
+          "n": 238749,
+          "mean_stock": 0.8343967352183012,
+          "mean_candidate": 0.5624168473774649,
+          "mean_applied": 0.5624168473774649,
+          "worse_applied_share": 0.31236989474301463,
+          "worse_candidate_share": 0.31236989474301463
+        },
+        "r/player_velocity/all": {
+          "n": 238770,
+          "mean_stock": 0.10837120770974909,
+          "mean_candidate": 0.0781235484064183,
+          "mean_applied": 0.0775652923132694,
+          "worse_applied_share": 0.3485823177116053,
+          "worse_candidate_share": 0.38990241655149305
+        },
+        "r/player_velocity/under_10m": {
+          "n": 15359,
+          "mean_stock": 0.03115085274522859,
+          "mean_candidate": 0.03982946511329697,
+          "mean_applied": 0.03115085274522859,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.6423595286151442
+        },
+        "r/player_velocity/at_least_10m": {
+          "n": 223411,
+          "mean_stock": 0.11367993213200259,
+          "mean_candidate": 0.08075617985831211,
+          "mean_applied": 0.08075617985831211,
+          "worse_applied_share": 0.3725465621656946,
+          "worse_candidate_share": 0.3725465621656946
+        },
+        "r/player_body/all": {
+          "n": 238770,
+          "mean_stock": 26.740664289413985,
+          "mean_candidate": 16.634241501909784,
+          "mean_applied": 16.634241501909784,
+          "worse_applied_share": 0.1500439753737907,
+          "worse_candidate_share": 0.1500439753737907
+        },
+        "r/ball_velocity/all": {
+          "n": 11370,
+          "mean_stock": 0.32917095028226073,
+          "mean_candidate": 0.2294105765425422,
+          "mean_applied": 0.22903582164149183,
+          "worse_applied_share": 0.3546174142480211,
+          "worse_candidate_share": 0.39120492524186457
+        },
+        "r/ball_velocity/under_5m": {
+          "n": 648,
+          "mean_stock": 0.041191164253628496,
+          "mean_candidate": 0.047766724785947026,
+          "mean_applied": 0.041191164253628496,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.6419753086419753
+        },
+        "r/ball_velocity/at_least_5m": {
+          "n": 10722,
+          "mean_stock": 0.3465754365111876,
+          "mean_candidate": 0.2403884925972217,
+          "mean_applied": 0.2403884925972217,
+          "worse_applied_share": 0.37604924454392835,
+          "worse_candidate_share": 0.37604924454392835
+        },
+        "r/ball_position/all": {
+          "n": 11370,
+          "mean_stock": 0.8049853265480246,
+          "mean_candidate": 0.7448108384577,
+          "mean_applied": 0.7448054915911612,
+          "worse_applied_share": 0.4255936675461741,
+          "worse_candidate_share": 0.45277044854881265
+        },
+        "r/ball_position/under_5m": {
+          "n": 648,
+          "mean_stock": 0.05833808860350661,
+          "mean_candidate": 0.058431906308054025,
+          "mean_applied": 0.05833808860350661,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.47685185185185186
+        },
+        "r/ball_position/at_least_5m": {
+          "n": 10722,
+          "mean_stock": 0.8501100616896071,
+          "mean_candidate": 0.786293168996123,
+          "mean_applied": 0.786293168996123,
+          "worse_applied_share": 0.45131505316172355,
+          "worse_candidate_share": 0.45131505316172355
+        },
+        "r/ball_next_position/all": {
+          "n": 11293,
+          "mean_stock": 0.9495089934120388,
+          "mean_candidate": 0.8686602925828574,
+          "mean_applied": 0.8642967430187696,
+          "worse_applied_share": 0.4027273532276632,
+          "worse_candidate_share": 0.4365536172850438
+        },
+        "r/ball_next_velocity/all": {
+          "n": 11293,
+          "mean_stock": 0.4118926280882736,
+          "mean_candidate": 0.30796484423899784,
+          "mean_applied": 0.31359841546978623,
+          "worse_applied_share": 0.3391481448685026,
+          "worse_candidate_share": 0.3914814486850261
+        }
+      },
+      "future_note": "Candidate is learned forecast; applied is ordinary coasting from the actually gated current state."
+    },
+    "ball-only-01": {
+      "games": 1,
+      "observers": 22,
+      "counts": {
+        "l": {
+          "decisions": 5228,
+          "see_updates": 5228,
+          "step26_position_applied": 101241,
+          "ball_velocity_write_mismatch": 0,
+          "ball_position_write_mismatch": 0,
+          "ball_position_guard_violations": 0,
+          "ball_velocity_guard_violations": 0,
+          "ball_candidates": 4821,
+          "ball_position_applied": 4540,
+          "ball_velocity_applied": 4540,
+          "ball_body_applied": 0,
+          "forecast_applied": 0
+        },
+        "r": {
+          "decisions": 5236,
+          "see_updates": 5236,
+          "step26_position_applied": 0,
+          "forecast_applied": 0
+        }
+      },
+      "metrics": {
+        "l/player_position_relative/all": {
+          "n": 101241,
+          "mean_stock": 0.7594771925859505,
+          "mean_candidate": 0.5000975928480228,
+          "mean_applied": 0.5000975928480228,
+          "worse_applied_share": 0.325698086743513,
+          "worse_candidate_share": 0.325698086743513
+        },
+        "l/player_position_global/all": {
+          "n": 101241,
+          "mean_stock": 0.7807685592951353,
+          "mean_candidate": 0.5286875368214689,
+          "mean_applied": 0.5286875368214689,
+          "worse_applied_share": 0.32349542181527247,
+          "worse_candidate_share": 0.32349542181527247
+        },
+        "l/ball_velocity/all": {
+          "n": 4821,
+          "mean_stock": 0.3086638825264389,
+          "mean_candidate": 0.21991188720799576,
+          "mean_applied": 0.219493648989276,
+          "worse_applied_share": 0.36610661688446383,
+          "worse_candidate_share": 0.40261356565028
+        },
+        "l/ball_velocity/under_5m": {
+          "n": 281,
+          "mean_stock": 0.0440518518397435,
+          "mean_candidate": 0.051227390816425536,
+          "mean_applied": 0.0440518518397435,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.6263345195729537
+        },
+        "l/ball_velocity/at_least_5m": {
+          "n": 4540,
+          "mean_stock": 0.3250418518266505,
+          "mean_candidate": 0.23035249150007311,
+          "mean_applied": 0.23035249150007311,
+          "worse_applied_share": 0.38876651982378857,
+          "worse_candidate_share": 0.38876651982378857
+        },
+        "l/ball_position/all": {
+          "n": 4821,
+          "mean_stock": 0.7626149163172963,
+          "mean_candidate": 0.6897495606119058,
+          "mean_applied": 0.6897256196816545,
+          "worse_applied_share": 0.41609624559220076,
+          "worse_candidate_share": 0.4451358639286455
+        },
+        "l/ball_position/under_5m": {
+          "n": 281,
+          "mean_stock": 0.05887901858087019,
+          "mean_candidate": 0.05928976315290466,
+          "mean_applied": 0.05887901858087019,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.498220640569395
+        },
+        "l/ball_position/at_least_5m": {
+          "n": 4540,
+          "mean_stock": 0.8061721381815994,
+          "mean_candidate": 0.7287714115119012,
+          "mean_applied": 0.7287714115119012,
+          "worse_applied_share": 0.4418502202643172,
+          "worse_candidate_share": 0.4418502202643172
+        },
+        "l/ball_next_position/all": {
+          "n": 4766,
+          "mean_stock": 0.9368779556779948,
+          "mean_candidate": 0.8743312060707262,
+          "mean_applied": 0.8514139676823024,
+          "worse_applied_share": 0.3961393201846412,
+          "worse_candidate_share": 0.45300041963911036
+        },
+        "l/ball_next_velocity/all": {
+          "n": 4766,
+          "mean_stock": 0.4325104750989491,
+          "mean_candidate": 0.33983520771291525,
+          "mean_applied": 0.34553733419800026,
+          "worse_applied_share": 0.34704154427192613,
+          "worse_candidate_share": 0.41565253881661773
+        }
+      },
+      "future_note": "Candidate is learned forecast; applied is ordinary coasting from the actually gated current state."
+    },
+    "shadow-01": {
+      "games": 1,
+      "observers": 22,
+      "counts": {
+        "l": {
+          "decisions": 5027,
+          "see_updates": 5027,
+          "step26_position_applied": 93786,
+          "player_velocity_write_mismatch": 0,
+          "player_velocity_guard_violations": 0,
+          "reported_body_overwritten": 0,
+          "player_candidates": 93786,
+          "player_velocity_applied": 0,
+          "player_body_applied": 0,
+          "ball_velocity_write_mismatch": 0,
+          "ball_position_write_mismatch": 0,
+          "ball_position_guard_violations": 0,
+          "ball_velocity_guard_violations": 0,
+          "ball_candidates": 4466,
+          "ball_position_applied": 0,
+          "ball_velocity_applied": 0,
+          "ball_body_applied": 0,
+          "forecast_applied": 0
+        },
+        "r": {
+          "decisions": 5027,
+          "see_updates": 5027,
+          "step26_position_applied": 93786,
+          "player_velocity_write_mismatch": 0,
+          "player_velocity_guard_violations": 0,
+          "reported_body_overwritten": 0,
+          "player_candidates": 93786,
+          "player_velocity_applied": 0,
+          "player_body_applied": 0,
+          "ball_velocity_write_mismatch": 0,
+          "ball_position_write_mismatch": 0,
+          "ball_position_guard_violations": 0,
+          "ball_velocity_guard_violations": 0,
+          "ball_candidates": 4466,
+          "ball_position_applied": 0,
+          "ball_velocity_applied": 0,
+          "ball_body_applied": 0,
+          "forecast_applied": 0
+        }
+      },
+      "metrics": {
+        "l/player_position_relative/all": {
+          "n": 93786,
+          "mean_stock": 0.7383552713189867,
+          "mean_candidate": 0.47877105525858565,
+          "mean_applied": 0.47877105525858565,
+          "worse_applied_share": 0.3250058644147314,
+          "worse_candidate_share": 0.3250058644147314
+        },
+        "l/player_position_global/all": {
+          "n": 93786,
+          "mean_stock": 0.755207229667563,
+          "mean_candidate": 0.5024546225746148,
+          "mean_applied": 0.5024546225746148,
+          "worse_applied_share": 0.3240888832021837,
+          "worse_candidate_share": 0.3240888832021837
+        },
+        "l/player_velocity/all": {
+          "n": 93786,
+          "mean_stock": 0.10513952466957997,
+          "mean_candidate": 0.07455885651157407,
+          "mean_applied": 0.10513952466957997,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.3720917834218327
+        },
+        "l/player_velocity/under_10m": {
+          "n": 7518,
+          "mean_stock": 0.03358236451184679,
+          "mean_candidate": 0.04072702808698738,
+          "mean_applied": 0.03358236451184679,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.5985634477254589
+        },
+        "l/player_velocity/at_least_10m": {
+          "n": 86268,
+          "mean_stock": 0.11137551866579916,
+          "mean_candidate": 0.07750719988450541,
+          "mean_applied": 0.11137551866579916,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.3523554504567163
+        },
+        "l/player_body/all": {
+          "n": 93786,
+          "mean_stock": 22.39414564389032,
+          "mean_candidate": 14.816033668959118,
+          "mean_applied": 22.39414564389032,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.1327383618024012
+        },
+        "l/ball_velocity/all": {
+          "n": 4466,
+          "mean_stock": 0.26770045079459825,
+          "mean_candidate": 0.18725465861771584,
+          "mean_applied": 0.26770045079459825,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.40080609046126286
+        },
+        "l/ball_velocity/under_5m": {
+          "n": 248,
+          "mean_stock": 0.04287997493831108,
+          "mean_candidate": 0.04879774036170197,
+          "mean_applied": 0.04287997493831108,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.6169354838709677
+        },
+        "l/ball_velocity/at_least_5m": {
+          "n": 4218,
+          "mean_stock": 0.2809189140502548,
+          "mean_candidate": 0.19539532142650945,
+          "mean_applied": 0.2809189140502548,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.3880986249407302
+        },
+        "l/ball_position/all": {
+          "n": 4466,
+          "mean_stock": 0.7176566109828478,
+          "mean_candidate": 0.6506969981502493,
+          "mean_applied": 0.7176566109828478,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.4272279444693238
+        },
+        "l/ball_position/under_5m": {
+          "n": 248,
+          "mean_stock": 0.05392141430876017,
+          "mean_candidate": 0.0524827586407656,
+          "mean_applied": 0.05392141430876017,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.43548387096774194
+        },
+        "l/ball_position/at_least_5m": {
+          "n": 4218,
+          "mean_stock": 0.7566813451637804,
+          "mean_candidate": 0.685869385869157,
+          "mean_applied": 0.7566813451637804,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.4267425320056899
+        },
+        "l/ball_next_position/all": {
+          "n": 4389,
+          "mean_stock": 0.8542105228757997,
+          "mean_candidate": 0.7816572872295865,
+          "mean_applied": 0.8542105228757997,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.430622009569378
+        },
+        "l/ball_next_velocity/all": {
+          "n": 4389,
+          "mean_stock": 0.3577076228827633,
+          "mean_candidate": 0.26774347142097354,
+          "mean_applied": 0.3577076228827633,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.3752563226247437
+        },
+        "r/player_position_relative/all": {
+          "n": 93786,
+          "mean_stock": 0.7979657364663867,
+          "mean_candidate": 0.5145191248399373,
+          "mean_applied": 0.5145191248399373,
+          "worse_applied_share": 0.3200264431791525,
+          "worse_candidate_share": 0.3200264431791525
+        },
+        "r/player_position_global/all": {
+          "n": 93786,
+          "mean_stock": 0.8136137444491109,
+          "mean_candidate": 0.5361015954334396,
+          "mean_applied": 0.5361015954334396,
+          "worse_applied_share": 0.31868295907704774,
+          "worse_candidate_share": 0.31868295907704774
+        },
+        "r/player_velocity/all": {
+          "n": 93786,
+          "mean_stock": 0.10935681924657964,
+          "mean_candidate": 0.07465767405997162,
+          "mean_applied": 0.10935681924657964,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.35969121190796066
+        },
+        "r/player_velocity/under_10m": {
+          "n": 5868,
+          "mean_stock": 0.032919929972914375,
+          "mean_candidate": 0.040094155514724644,
+          "mean_applied": 0.032919929972914375,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.5874233128834356
+        },
+        "r/player_velocity/at_least_10m": {
+          "n": 87918,
+          "mean_stock": 0.11445852386062759,
+          "mean_candidate": 0.07696458193803425,
+          "mean_applied": 0.11445852386062759,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.3444914579494529
+        },
+        "r/player_body/all": {
+          "n": 93786,
+          "mean_stock": 26.072808878256218,
+          "mean_candidate": 16.38699294275265,
+          "mean_applied": 26.072808878256218,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.14021282494188897
+        },
+        "r/ball_velocity/all": {
+          "n": 4466,
+          "mean_stock": 0.31772243338758893,
+          "mean_candidate": 0.2109201158805667,
+          "mean_applied": 0.31772243338758893,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.358038513210927
+        },
+        "r/ball_velocity/under_5m": {
+          "n": 252,
+          "mean_stock": 0.04499477700459671,
+          "mean_candidate": 0.05188898975329672,
+          "mean_applied": 0.04499477700459671,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.5753968253968254
+        },
+        "r/ball_velocity/at_least_5m": {
+          "n": 4214,
+          "mean_stock": 0.3340317284536815,
+          "mean_candidate": 0.2204302828914998,
+          "mean_applied": 0.3340317284536815,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.34504034171808257
+        },
+        "r/ball_position/all": {
+          "n": 4466,
+          "mean_stock": 0.783403900572746,
+          "mean_candidate": 0.6984912354395844,
+          "mean_applied": 0.783403900572746,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.4231974921630094
+        },
+        "r/ball_position/under_5m": {
+          "n": 252,
+          "mean_stock": 0.0524444413580377,
+          "mean_candidate": 0.05274259640076359,
+          "mean_applied": 0.0524444413580377,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.49206349206349204
+        },
+        "r/ball_position/at_least_5m": {
+          "n": 4214,
+          "mean_stock": 0.827115761921134,
+          "mean_candidate": 0.737107433122969,
+          "mean_applied": 0.827115761921134,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.4190792596108211
+        },
+        "r/ball_next_position/all": {
+          "n": 4389,
+          "mean_stock": 0.9366906196919152,
+          "mean_candidate": 0.8495613054737016,
+          "mean_applied": 0.9366906196919152,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.41854636591478694
+        },
+        "r/ball_next_velocity/all": {
+          "n": 4389,
+          "mean_stock": 0.3970695553764821,
+          "mean_candidate": 0.28764143607142273,
+          "mean_applied": 0.3970695553764821,
+          "worse_applied_share": 0.0,
+          "worse_candidate_share": 0.39097744360902253
+        }
+      },
+      "future_note": "Candidate is learned forecast; applied is ordinary coasting from the actually gated current state."
+    }
+  },
+  "replay": {
+    "apply-01": {
+      "source": "logs/exp4/live-f4/apply-01/dataset/apply-01/l_2",
+      "n": 867,
+      "mean_cpp_difference": [
+        8.479282273447508e-05,
+        5.551461231876072e-05,
+        8.668020866871192e-05,
+        5.37412310026655e-05
+      ],
+      "max_cpp_difference": [
+        0.024348224365639323,
+        0.006129521542276704,
+        0.014981598296541184,
+        0.00540725234022064
+      ],
+      "p99_cpp_difference": [
+        0.00012251197930112642,
+        0.00010751917274932431,
+        0.00015421568111115576,
+        0.0001001540729748341
+      ],
+      "mean_error_stock_then_candidate": [
+        0.5786946415901184,
+        0.22140836715698242,
+        0.746820867061615,
+        0.35877087712287903,
+        0.5296947360038757,
+        0.16217771172523499,
+        0.6752296686172485,
+        0.2892296016216278
+      ]
+    },
+    "apply-right-01": {
+      "source": "logs/exp4/live-f4/apply-right-01/dataset/apply-right-01/r_2",
+      "n": 977,
+      "mean_cpp_difference": [
+        0.0001619428656636551,
+        0.0001386288775988438,
+        0.0001039097757259768,
+        0.0001301553169267933
+      ],
+      "max_cpp_difference": [
+        0.08619455067514142,
+        0.053363660216599176,
+        0.023164206053643503,
+        0.05082523767963083
+      ],
+      "p99_cpp_difference": [
+        0.00011405580441254472,
+        0.00010326279821912704,
+        0.00012734211005007253,
+        9.560565330306178e-05
+      ],
+      "mean_error_stock_then_candidate": [
+        0.8493509292602539,
+        0.31298762559890747,
+        0.9680249691009521,
+        0.3757106065750122,
+        0.7440899014472961,
+        0.22917602956295013,
+        0.8248328566551208,
+        0.28544145822525024
+      ]
+    }
+  },
+  "regression": "PASS: stock restoration, missing masks, physical inertia, guards, raw body preservation, gaps, unsupported noise, shadow, component modes and setplay restart"
+}

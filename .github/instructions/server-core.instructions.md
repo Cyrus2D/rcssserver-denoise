@@ -97,3 +97,19 @@ The server is a single-process, timer-driven simulator: `main()` builds a global
 - [net-logging](net-logging.instructions.md) — sockets, monitors, logs
 - [build-system](build-system.instructions.md)
 - [../copilot-instructions.md](../copilot-instructions.md)
+
+## Optional arrival-independent scheduling (Exp4)
+
+With `randomize_player_commands=true` (requires `synch_mode`), doSendThink
+opens participant queues, waits for the existing complete done barrier,
+then calls applyQueuedPlayerCommands. Canonical side/unum sorting precedes
+the shuffle. An independent mt19937 seeded by order seed + cycle + stopped
+count chooses priority; polling frequency and startup round counter must
+not affect it. In this mode recv_from_clients skips its shared-RNG shuffle.
+The general DefaultRNG convention above still applies to physics.
+
+Incomplete/invalid batches discard all actions, set commandBatchFailed,
+and terminate. finalize skips saveResults and main exits 1. Do not continue
+a timed-out experiment with potentially stale, untagged UDP commands.
+The independent CSV trace records execution order, unlike RCL receive order.
+See Exp4 step 06 for the build-linked UDP regression and full-team probes.

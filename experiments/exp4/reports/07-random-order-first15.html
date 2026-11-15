@@ -1,0 +1,187 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp4 · Live data report</title><style>
+body{margin:0;background:#eef2f7;color:#172b4d;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:35px auto;background:white;padding:42px 48px;border-radius:14px}
+h1{font-size:32px;line-height:1.2}h2{margin-top:46px;border-top:1px solid #dce4ed;padding-top:22px}h3{margin-top:30px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th{background:#edf3f8;text-align:left}
+td,th{padding:11px 12px;border-bottom:1px solid #dce4ed}td:last-child{text-align:right}
+code{overflow-wrap:anywhere;font-size:.87em;background:#edf3f8;padding:2px 4px;border-radius:3px}
+pre{background:#edf3f8;padding:18px;overflow:auto}pre code{white-space:pre;overflow-wrap:normal}
+svg{max-width:100%;height:auto;margin:22px 0;border:1px solid #dce4ed;border-radius:8px}
+a{color:#075ea8}strong{font-weight:700}
+@media(max-width:700px){main{padding:22px 15px;margin:0}table{font-size:12px;display:block;overflow:auto}}
+@media print{main{margin:0;padding:0}h2{break-after:avoid}table,svg{break-inside:avoid}}
+</style><main><h1>Exp4 step 07 · First 15 games with random command priority</h1>
+<h2>Conclusion</h2>
+<p><strong>Continue the batch.</strong> The new run in <code>logs/exp3-f4-logs</code> is configured
+correctly. No server scheduling or sampled model-integration fault was found.
+This directory name has been reused after deleting the earlier logs; this
+snapshot identifies the new games explicitly.</p>
+<p>All 15 selected games have scored results and <strong>330 finalized, status-ok
+schema-3 player logs</strong>. Five unfinished/unscored game directories were
+excluded when freezing the selection. A later scan found 20 scored games
+and no scheduling errors in any current server result file; the tables
+below remain frozen to the selected 15.</p>
+<p><a href="random-order-first15/selection.json">Selected game IDs</a> ·
+<a href="random-order-first15/health.json">Configuration and trace checks</a></p>
+<h2>Configuration and action ordering</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left team</td>
+<td>Corrected player positions; Exp4 player and ball state apply</td>
+</tr>
+<tr>
+<td>Right team</td>
+<td>Original estimates; learned state off</td>
+</tr>
+<tr>
+<td>Forecast</td>
+<td>Left shadow only; no learned forecast applied</td>
+</tr>
+<tr>
+<td>Fullstate</td>
+<td>Reference/scoring only on both sides</td>
+</tr>
+<tr>
+<td>Visual settings</td>
+<td>Quantized, 360°, uniform numbers retained; motion/body fading retained</td>
+</tr>
+<tr>
+<td>Teammate payloads</td>
+<td>Disabled, say_msg_size=0</td>
+</tr>
+<tr>
+<td>New server mode</td>
+<td>Enabled for every agent in all 15 games</td>
+</tr>
+<tr>
+<td>Order seeds</td>
+<td>15 distinct seeds; consistent between metadata and each game's trace</td>
+</tr>
+<tr>
+<td>Full-roster rounds after cycle 0</td>
+<td>102,640</td>
+</tr>
+<tr>
+<td>Left player first</td>
+<td>51,544, or 50.22%</td>
+</tr>
+<tr>
+<td>Server/player error scan</td>
+<td>No batch abort, malformed batch, queue overflow, out-of-window action, model load failure or crash marker</td>
+</tr>
+</tbody>
+</table>
+<p>The CSV files were read from
+<code>AutoTest2D/out/exp3-f4-logs/log.d</code>. Order and command-count lengths,
+unique player identities, consecutive round numbers and seed consistency
+passed. Startup rounds with an incomplete roster were excluded from the
+left-first statistic.</p>
+<h2>Does the previous foul/kick bias remain?</h2>
+<p>Every selected game's 22 player command logs were checked on paired PlayOn
+cycles. These rows select kicks with a new same-cycle foul charge.</p>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th style="text-align: right;">Left kicks blocked</th>
+<th style="text-align: right;">Right kicks blocked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Previous F4 60-game audit</td>
+<td style="text-align: right;">238 / 248 (96.0%)</td>
+<td style="text-align: right;">32 / 276 (11.6%)</td>
+</tr>
+<tr>
+<td>New random-priority first 15 games</td>
+<td style="text-align: right;">33 / 67 (49.3%)</td>
+<td style="text-align: right;">37 / 74 (50.0%)</td>
+</tr>
+</tbody>
+</table>
+<p>The strong previous asymmetry is absent in this snapshot. These are
+conditional foul-overlap groups, not the fraction of all kicks blocked.</p>
+<p>There were 36 unacknowledged kicks out of 8,812 on the left (0.41%) and
+38 out of 8,286 on the right (0.46%). New charges account for 33 and 37;
+the remaining 3 and 1 commands were outside true kicking range.</p>
+<p>For the 141 new-charge events with exactly one logged
+opponent foul tackler, the recorded execution priority agrees with whether
+the kick was acknowledged in 141 events.
+Multi-tackler cases, if any, are counted separately in the saved data.</p>
+<p><a href="random-order-first15/kicks.json">Kick audit</a> ·
+<a href="random-order-first15/fouls.json">Foul audit</a> ·
+<a href="random-order-first15/order-vs-fouls.json">Execution-order cross-check</a></p>
+<h2>Do the models still reduce error?</h2>
+<p>The noise scan uses <strong>two rotating left observers and one rotating right
+observer per game</strong>: 45 observer logs across 15 games. It includes all eligible
+PlayOn samples in those logs and weights each sample equally. This is a
+health sample, not the complete 330-observer final experiment report.
+The comparisons below pair the left observer's stock and actually applied
+estimates against the same truth on the same rows.</p>
+<table>
+<thead>
+<tr>
+<th>Mean error</th>
+<th>Stock → applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player position relative to observer</td>
+<td>78.91 → 52.96 cm</td>
+</tr>
+<tr>
+<td>Player position in server coordinates</td>
+<td>80.81 → 55.44 cm</td>
+</tr>
+<tr>
+<td>Player velocity</td>
+<td>10.14 → 7.48 cm/cycle</td>
+</tr>
+<tr>
+<td>Player body direction</td>
+<td>25.63 → 17.17 degrees</td>
+</tr>
+<tr>
+<td>Ball position</td>
+<td>76.78 → 71.72 cm</td>
+</tr>
+<tr>
+<td>Ball velocity</td>
+<td>32.41 → 24.83 cm/cycle</td>
+</tr>
+<tr>
+<td>Ball velocity within 5 m</td>
+<td>4.24 → 4.24 cm/cycle</td>
+</tr>
+</tbody>
+</table>
+<p>The player-relative position result includes 2,916,438
+tracks; current ball results include 138,878
+tracks. All 146,840 sampled left PlayOn decisions
+used a see update. That does not imply every object's motion fields are
+always reported.</p>
+<p>All sampled field-write mismatches, close-range guard violations and
+overwritten observed body directions were zero. The right observers
+recorded zero learned player-position applications. Learned forecasts
+remained unapplied.</p>
+<p>The mean improvement does not mean every estimate improves: applied player
+relative position is worse than its paired stock estimate on 33.0% of
+eligible tracks, and ball velocity on 38.2%. The protected ball state within
+5 m and player velocity within 10 m remain stock.</p>
+<p><a href="random-order-first15/noise-sample.json">Sampled noise and wiring measurements</a></p>
+<h2>Scores and next action</h2>
+<p>The selected games finished <strong>56–63</strong>
+in goals, with left wins/draws/losses <strong>5/2/8</strong>. Fifteen games
+cannot establish a match-performance benefit.</p>
+<p>Keep the current configuration for the planned 200 completed games. Preserve
+both the player logs and server command-order CSVs. No implementation change
+is indicated by these checks.</p></main></html>

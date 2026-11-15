@@ -1,0 +1,176 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp4 · Live data report</title><style>
+body{margin:0;background:#eef2f7;color:#172b4d;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1080px;margin:35px auto;background:white;padding:42px 48px;border-radius:14px}
+h1{font-size:32px;line-height:1.2}h2{margin-top:46px;border-top:1px solid #dce4ed;padding-top:22px}h3{margin-top:30px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th{background:#edf3f8;text-align:left}
+td,th{padding:11px 12px;border-bottom:1px solid #dce4ed}td:last-child{text-align:right}
+code{overflow-wrap:anywhere;font-size:.87em;background:#edf3f8;padding:2px 4px;border-radius:3px}
+pre{background:#edf3f8;padding:18px;overflow:auto}pre code{white-space:pre;overflow-wrap:normal}
+svg{max-width:100%;height:auto;margin:22px 0;border:1px solid #dce4ed;border-radius:8px}
+a{color:#075ea8}strong{font-weight:700}
+@media(max-width:700px){main{padding:22px 15px;margin:0}table{font-size:12px;display:block;overflow:auto}}
+@media print{main{margin:0;padding:0}h2{break-after:avoid}table,svg{break-inside:avoid}}
+</style><main><h1>Exp4 step 06 · Remove command arrival priority</h1>
+<h2>Result</h2>
+<p>The optional server mode is implemented, built and installed at
+<code>/usr/local/bin/rcssserver</code>. Models and physics equations are unchanged.
+The next 200 games can test perception improvements without giving the
+faster team's player actions first priority.</p>
+<p>The previous 60-game audit found that new foul charges blocked 238 of 248
+left kicks, versus 32 of 276 right kicks in that selected foul-overlap group.
+Those counts describe that group, not all kicks. The treatment took longer
+to decide, and ordinary receive-time execution could penalize its later kick.</p>
+<h2>What changes</h2>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>New optional mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gameplay handlers execute as UDP messages are processed.</td>
+<td>The server collects each participating player's actions until its <code>done</code>.</td>
+</tr>
+<tr>
+<td>A faster response can kick before a later foul or tackle.</td>
+<td>After every participant finishes, the server shuffles the player batches once and executes them.</td>
+</tr>
+<tr>
+<td>Receive polling consumes the shared random generator.</td>
+<td>Receive polling does not consume physics randomness; command ordering uses its own generator.</td>
+</tr>
+<tr>
+<td>A synchronous timeout can continue with missing commands.</td>
+<td>An incomplete batch is discarded and the match exits with failure, without saving a scored result.</td>
+</tr>
+</tbody>
+</table>
+<p>The server preserves each player's command sequence and existing action
+limits. It randomizes <strong>player priority</strong>, rather than individual commands.
+The mode defaults to off and requires synchronous play.</p>
+<p>A cycle's order depends on the configured order seed, simulation cycle,
+stopped-cycle count and participating player identities. It does not depend
+on receive order or number of polling calls. A new automatically selected
+seed is recorded for each game when <code>command_order_seed=-1</code>.</p>
+<h2>Verification</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build server, rebuild/install client parameter mirror and rebuild Helios</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>64 seeds, each with left-first and right-first real UDP delivery, a 2 ms delay and 0 versus 43 extra receive polls</td>
+<td>Exact equality of noisy ball physics, neck angles and action counters for all 128 cases</td>
+</tr>
+<tr>
+<td>Both contested-action priorities exercised</td>
+<td>34 seeds kick-first; 30 seeds foul-first</td>
+</tr>
+<tr>
+<td>Mode off control</td>
+<td>Original arrival-order behavior reproduced</td>
+</tr>
+<tr>
+<td>Per-player command sequence, post-done actions, incomplete batch, overflow and malformed input</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Installed executable: incompatible mode and invalid seed</td>
+<td>Rejected with failure</td>
+</tr>
+<tr>
+<td>Installed executable: action without <code>done</code></td>
+<td>Action stayed unapplied; timed-out match exited 1 and saved no score</td>
+</tr>
+<tr>
+<td>Left models / right stock, 1,200 scheduled cycles</td>
+<td>22 finalized agents; 1,348 full-roster rounds including stopped time; left first in 702</td>
+</tr>
+<tr>
+<td>Left stock / right models, 600 scheduled cycles</td>
+<td>22 finalized agents; 738 full-roster rounds including stopped time; left first in 375</td>
+</tr>
+<tr>
+<td>Installed server, left models / right stock, 300 scheduled cycles</td>
+<td>22 finalized agents; no action-window warnings or batch aborts</td>
+</tr>
+<tr>
+<td>Mode off, 300 scheduled cycles</td>
+<td>22 finalized agents; no command-order trace</td>
+</tr>
+</tbody>
+</table>
+<p>The final left-apply smoke log has no field-write mismatches, close-range
+guard violations, overwritten observed body angles or applied ball forecasts.
+The action-window warnings and batch-abort messages were absent from the
+successful full-team matches.</p>
+<p>These are wiring and scheduling tests. Their short-match scores do not
+measure a win-rate benefit. Random scheduling removes this identified
+latency-to-priority path; it does not establish that the remaining decision
+uncertainty or nearby post-kick errors are solved.</p>
+<p><a href="server-command-order/verification.json">Saved verification</a> ·
+<a href="server-command-order/regression.txt">Regression output</a></p>
+<h2>Run the next 200 games</h2>
+<p>Keep the current quantized 360° experiment settings, left-side model flags
+and stock right-side launch. Add these <strong>server</strong> arguments in the game runner:</p>
+<pre><code class="language-sh">-server::synch_mode=true \
+-server::randomize_player_commands=true \
+-server::command_order_seed=-1 \
+-server::command_order_log=true
+</code></pre>
+<p>The plain <code>server::name=value</code> form also works when invoking the server directly.
+Use a new player log directory, for example
+<code>/home/nader/workspace/denoise/logs/exp3-f5-logs</code>, and a separate game result
+directory. Keep unique game IDs and the runner's existing
+<code>game_log_fixed=true</code> and <code>game_log_fixed_name=$GAME_ID</code>.
+There is no new <code>start.sh</code> option.</p>
+<p>The server writes <code>&lt;game_log_dir&gt;/&lt;GAME_ID&gt;.command-order.csv</code> even when
+ordinary game/text logging is off. Columns record cycle, stopped count,
+round, resolved seed, execution order and queued handler counts. Counts
+exclude <code>done</code> and immediate protocol queries. Received-command RCL order is
+still receive order; use the CSV for actual execution priority.</p>
+<p>For reproducible controlled probes, set nonnegative <code>command_order_seed</code>
+and <code>random_seed</code>. Normal batches can retain automatic seeds. Both seeds
+and the scheduling flags are mirrored into v19 player metadata.</p>
+<h2>Implementation notes for future work</h2>
+<ul>
+<li>Gameplay actions, including neck, view, attention and say, queue only
+  during parsing in an open think window. Physics/internal handler calls
+  execute normally. Both generated parsing and the Cygwin fallback reach
+  the same guarded handlers; no grammar change was needed.</li>
+<li>Queries, initialization, transport options and coach/trainer commands
+  retain immediate semantics. The existing coach/trainer done barrier
+  remains. Trainer interventions are outside the tested player-order
+  invariant.</li>
+<li>Each queue is bounded at 128 handlers. A malformed command, overflow or
+  missing barrier response invalidates the experiment instead of committing
+  a partial batch. New connections join at the next collection window.</li>
+<li>Actions after <code>done</code> or outside a collection window are dropped. Legacy
+  UDP messages have no cycle identifier: an arbitrarily delayed duplicate
+  arriving inside a later open window cannot be identified perfectly
+  without a protocol extension.</li>
+<li>A match that times out must be rerun to count toward 200 completed games.
+  The existing synchronous wait limit is retained.</li>
+<li>This is an opt-in research scheduling rule. Compare both teams under
+  this same rule; keep standard-server results as a separate condition.</li>
+</ul>
+<h2>Reproduce verification</h2>
+<p>From <code>/home/nader/workspace/denoise</code>:</p>
+<pre><code class="language-sh">exp=rcssserver-denoise/experiments/exp4
+.venv-exp2/bin/python &quot;$exp/verification/build_order_test.py&quot; rcssserver-denoise/build /tmp/server-command-order-test
+RCSS_CONF_DIR=/tmp/server-order-fixture-conf /tmp/server-command-order-test /tmp/server-order-fixture
+.venv-exp2/bin/python &quot;$exp/verification/order_protocol.py&quot; /usr/local/bin/rcssserver logs/exp4/server-order-protocol-repeat.json
+.venv-exp2/bin/python &quot;$exp/verification/run_smoke.py&quot; random-order-repeat --half-time 60 --randomize-commands --order-seed 4242 --server /usr/local/bin/rcssserver
+</code></pre>
+<p>Use a fresh smoke name and free port (<code>--port</code>) for a repeat. Regression
+fixtures use test-only access to actual production CMake objects; their
+controlled player settings do not change the server defaults.</p></main></html>
