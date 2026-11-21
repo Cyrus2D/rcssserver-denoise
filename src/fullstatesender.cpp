@@ -141,10 +141,15 @@ FullStateSenderPlayerV5::~FullStateSenderPlayerV5()
 void
 FullStateSenderPlayerV5::sendFullState()
 {
+    const auto old_precision = transport().precision();
+    if ( ServerParam::instance().seeNoQuantization() && self().version() >= 19.0 )
+        transport().precision(12);
     static const char * playmode_string[] = PLAYMODE_STRINGS;
 
     // send begining of FS
     serializer().serializeFSBegin( transport(), stadium().time() );
+    if ( ServerParam::instance().seeNoQuantization() && self().version() >= 19.0 )
+        transport().precision(12);
 
     if ( stadium().playmode() == PM_FreeKick_Left
          && stadium().ballCatcher() )
@@ -191,6 +196,7 @@ FullStateSenderPlayerV5::sendFullState()
     serializer().serializeFSEnd( transport() );
 
     transport() << std::ends << std::flush;
+    transport().precision(old_precision);
 }
 
 void

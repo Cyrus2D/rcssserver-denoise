@@ -971,6 +971,8 @@ ServerParam::addParams()
     addParam( "see_no_fade_unum", M_see_no_fade_unum, "", 19 );
     addParam( "see_no_fade_all", M_see_no_fade_all, "", 19 );
     addParam( "see_noise_free", M_see_noise_free, "", 19 );
+    addParam( "see_no_quantization", M_see_no_quantization,
+              "v19 exact visual distance, bearing, motion and body/head; visibility unchanged", 19 );
 
     // XXX
     addParam( "random_seed", M_random_seed,
@@ -1501,6 +1503,7 @@ ServerParam::setDefaults()
     M_see_no_fade_unum = SEE_NO_FADE_UNUM;
     M_see_no_fade_all = SEE_NO_FADE_ALL;
     M_see_noise_free = SEE_NOISE_FREE;
+    M_see_no_quantization = false;
 //     std::string module_dir = S_MODULE_DIR;
 //     for ( std::string::size_type pos = module_dir.find( "//" );
 //           pos != std::string::npos;

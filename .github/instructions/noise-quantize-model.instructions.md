@@ -82,3 +82,11 @@ Rule of thumb: `|err| <= d*(e^0.05 - 1) + 0.05 = 0.0513 d + 0.05` (movable), `0.
 - [visual-observation-detail](visual-observation-detail.instructions.md)
 - [observation-sensors](observation-sensors.instructions.md)
 - [config-params](config-params.instructions.md)
+
+## Exp5 opt-out
+
+see_no_quantization is distinct from see_noise_free: v19 exact visual
+kinematics plus sense-body speed/direction/neck, without the legacy angular
+or motion bins. It defaults off. The legacy rules above remain for normal
+mode; pointing and unrelated fields are outside the exact kinematic scope.
+The new mode does not remove physical randomness or change what is visible.

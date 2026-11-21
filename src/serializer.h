@@ -342,7 +342,7 @@ public:
 
     void serializeVisualObject( std::ostream & strm,
                                 const std::string & name,
-                                const int dir ) const
+                                const double dir ) const
       {
           strm << " (" << name << ' ' << dir << ')';
       }
@@ -350,7 +350,7 @@ public:
     void serializeVisualObject( std::ostream & strm,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir ) const
+                                const double dir ) const
       {
           strm << " (" << name << ' ' << dist << ' ' << dir << ')';
       }
@@ -358,7 +358,7 @@ public:
     void serializeVisualObject( std::ostream & strm,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir,
+                                const double dir,
                                 const double & dist_chg,
                                 const double & dir_chg ) const
       {
@@ -370,10 +370,10 @@ public:
     void serializeVisualObject( std::ostream & strm,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir,
+                                const double dir,
                                 const double & dist_chg,
                                 const double & dir_chg,
-                                const int body_dir ) const
+                                const double body_dir ) const
       {
           strm << " (" << name << ' ' << dist << ' ' << dir
                << ' ' << dist_chg << ' ' << dir_chg
@@ -384,11 +384,11 @@ public:
     void serializeVisualObject( std::ostream & strm,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir,
+                                const double dir,
                                 const double & dist_chg,
                                 const double & dir_chg,
-                                const int body_dir,
-                                const int head_dir ) const
+                                const double body_dir,
+                                const double head_dir ) const
       {
           strm << " (" << name << ' ' << dist << ' ' << dir
                << ' ' << dist_chg << ' ' << dir_chg
@@ -401,7 +401,7 @@ public:
                                 const Player &, /* player */
                                 const std::string &, /* name */
                                 const double &, /* dist */
-                                const int /* dir */ ) const
+                                const double /* dir */ ) const
       { }
 
     virtual
@@ -409,7 +409,7 @@ public:
                                 const Player &, /* player */
                                 const std::string &, /* name */
                                 const double &, /* dist */
-                                const int, /* dir */
+                                const double, /* dir */
                                 const int /* point_dir */ ) const
       { }
 
@@ -418,11 +418,11 @@ public:
                                 const Player &, /* player */
                                 const std::string &, /* name */
                                 const double &, /* dist */
-                                const int, /* dir */
+                                const double, /* dir */
                                 const double &, /* dist_chg */
                                 const double &, /* dir_chg */
-                                const int, /* body_dir */
-                                const int /* head_dir */ ) const
+                                const double, /* body_dir */
+                                const double /* head_dir */ ) const
       { }
 
     virtual
@@ -430,11 +430,11 @@ public:
                                 const Player &, /* player */
                                 const std::string &, /* name */
                                 const double &, /* dist */
-                                const int, /* dir */
+                                const double, /* dir */
                                 const double &, /* dist_chg */
                                 const double &, /* dir_chg */
-                                const int, /* body_dir */
-                                const int, /* head_dir */
+                                const double, /* body_dir */
+                                const double, /* head_dir */
                                 const int /* point_dir */ ) const
       { }
 
@@ -468,7 +468,7 @@ public:
     virtual
     void serializeBodyVelocity( std::ostream &,
                                 const double &,
-                                const int ) const
+                                const double ) const
       { }
 
     virtual
@@ -478,7 +478,7 @@ public:
 
     virtual
     void serializeNeckAngle( std::ostream &,
-                             const int ) const
+                             const double ) const
       { }
 
     virtual

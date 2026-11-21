@@ -45,7 +45,7 @@ SerializerPlayerStdv8::serializeVisualPlayer( std::ostream & strm,
                                               const Player & player,
                                               const std::string & name,
                                               const double & dist,
-                                              const int dir ) const
+                                              const double dir ) const
 {
     strm << " (" << name << ' ' << dist << ' ' << dir;
     if ( player.isTackling() ) strm << " t";
@@ -58,7 +58,7 @@ SerializerPlayerStdv8::serializeVisualPlayer( std::ostream & strm,
                                               const Player & player,
                                               const std::string & name,
                                               const double & dist,
-                                              const int dir,
+                                              const double dir,
                                               const int point_dir ) const
 {
     strm << " (" << name << ' ' << dist << ' ' << dir
@@ -73,11 +73,11 @@ SerializerPlayerStdv8::serializeVisualPlayer( std::ostream & strm,
                                               const Player & player,
                                               const std::string & name,
                                               const double & dist,
-                                              const int dir,
+                                              const double dir,
                                               const double & dist_chg,
                                               const double & dir_chg,
-                                              const int body_dir,
-                                              const int head_dir ) const
+                                              const double body_dir,
+                                              const double head_dir ) const
 {
     strm << " (" << name << ' ' << dist << ' ' << dir
          << ' ' << dist_chg << ' ' << dir_chg
@@ -92,11 +92,11 @@ SerializerPlayerStdv8::serializeVisualPlayer( std::ostream & strm,
                                               const Player & player,
                                               const std::string & name,
                                               const double & dist,
-                                              const int dir,
+                                              const double dir,
                                               const double & dist_chg,
                                               const double & dir_chg,
-                                              const int body_dir,
-                                              const int head_dir,
+                                              const double body_dir,
+                                              const double head_dir,
                                               const int point_dir ) const
 {
     strm << " (" << name << ' ' << dist << ' ' << dir

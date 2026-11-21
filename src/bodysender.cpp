@@ -108,10 +108,14 @@ BodySenderPlayerV1::~BodySenderPlayerV1()
 void
 BodySenderPlayerV1::sendBody()
 {
+    const auto old_precision = transport().precision();
+    if ( ServerParam::instance().seeNoQuantization() && self().version() >= 19.0 )
+        transport().precision(12);
     serializer().serializeBodyBegin( transport(), self().stadium().time() );
     sendBodyData();
     serializer().serializeBodyEnd( transport() );
     transport() << std::ends << std::flush;
+    transport().precision(old_precision);
 }
 
 void
@@ -185,7 +189,8 @@ BodySenderPlayerV5::~BodySenderPlayerV5()
 void
 BodySenderPlayerV5::sendNeck()
 {
-    int ang = Rad2IDeg( self().angleNeckCommitted() );
+    const double ang = ServerParam::instance().seeNoQuantization() && self().version() >= 19.0
+        ? Rad2Deg(self().angleNeckCommitted()) : Rad2IDeg(self().angleNeckCommitted());
     serializer().serializeNeckAngle( transport(),
                                      ang );
 }
@@ -215,11 +220,11 @@ BodySenderPlayerV6::~BodySenderPlayerV6()
 void
 BodySenderPlayerV6::sendVelocity()
 {
-    double mag = Quantize( self().vel().r(), 0.01 );
-    int head =  Rad2IDeg( normalize_angle
-                          ( self().vel().th()
-                            - self().angleBodyCommitted()
-                            - self().angleNeckCommitted() ) );
+    const bool exact = ServerParam::instance().seeNoQuantization() && self().version() >= 19.0;
+    double mag = exact ? self().vel().r() : Quantize( self().vel().r(), 0.01 );
+    const double relative = normalize_angle(self().vel().th() - self().angleBodyCommitted()
+                                            - self().angleNeckCommitted());
+    double head = exact ? Rad2Deg(relative) : Rad2IDeg(relative);
     serializer().serializeBodyVelocity( transport(), mag, head );
 }
 

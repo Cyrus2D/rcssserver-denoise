@@ -46,14 +46,14 @@ public:
                                 const Player & player,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir ) const override;
+                                const double dir ) const override;
 
     virtual
     void serializeVisualPlayer( std::ostream & strm,
                                 const Player & player,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir,
+                                const double dir,
                                 const int point_dir ) const override;
 
     virtual
@@ -61,22 +61,22 @@ public:
                                 const Player & player,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir,
+                                const double dir,
                                 const double & dist_chg,
                                 const double & dir_chg,
-                                const int body_dir,
-                                const int head_dir ) const override;
+                                const double body_dir,
+                                const double head_dir ) const override;
 
     virtual
     void serializeVisualPlayer( std::ostream & strm,
                                 const Player & player,
                                 const std::string & name,
                                 const double & dist,
-                                const int dir,
+                                const double dir,
                                 const double & dist_chg,
                                 const double & dir_chg,
-                                const int body_dir,
-                                const int head_dir,
+                                const double body_dir,
+                                const double head_dir,
                                 const int point_dir ) const override;
 
     virtual

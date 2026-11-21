@@ -638,6 +638,7 @@ private:
     bool M_see_no_fade_unum;
     bool M_see_no_fade_all;
     bool M_see_noise_free;
+    bool M_see_no_quantization;
 
 private:
 
@@ -1010,6 +1011,7 @@ public:
     bool seeNoFadeUnum() const { return M_see_no_fade_unum; }
     bool seeNoFadeAll() const { return M_see_no_fade_all; }
     bool seeNoiseFree() const { return M_see_noise_free; }
+    bool seeNoQuantization() const { return M_see_no_quantization; }
 };
 
 #endif

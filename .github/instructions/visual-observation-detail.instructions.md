@@ -108,3 +108,18 @@ View width changes only cone angle and period (table above), not the columns. `(
 - [noise-gaussian-model](noise-gaussian-model.instructions.md)
 - [communication-hearing](communication-hearing.instructions.md)
 - [player-protocol](player-protocol.instructions.md)
+
+## Exp5 exact kinematic observation mode
+
+server::see_no_quantization defaults false, is sent at v19, and applies only
+to v19 clients. It supersedes Gaussian/distance-only modes with exact visible
+distance, bearing, radial/angular change, body/head and line geometry. Shared
+player serializers accept double angles; ordinary modes still explicitly
+round/truncate before serialization, preserving their wire values. The
+private serializeLine dispatcher must also retain double precision.
+
+The mode leaves FOV, visual cadence, near-field anonymity and fading rules
+unchanged. Exp5 sets full_view=false and see_no_fade_all=true independently.
+Visual and body kinematic output uses 12 significant digits, restoring stream
+precision afterward. Fullstate precision is set after serializeFSBegin,
+which otherwise resets it. See experiments/exp5 for verified presets.

@@ -146,7 +146,7 @@ SerializerPlayerStdv1::serializeBodyVelocity( std::ostream & strm,
 void
 SerializerPlayerStdv1::serializeBodyVelocity( std::ostream & strm,
                                               const double & mag,
-                                              const int head ) const
+                                              const double head ) const
 {
     strm << " (speed " << mag << ' ' << head << ')';
 }
@@ -194,7 +194,7 @@ SerializerPlayerStdv1::serializeBodyCounts( std::ostream & strm,
 
 void
 SerializerPlayerStdv1::serializeNeckAngle( std::ostream & strm,
-                                           const int ang ) const
+                                           const double ang ) const
 {
     strm << " (head_angle " << ang << ')';
 }

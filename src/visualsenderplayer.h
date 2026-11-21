@@ -244,7 +244,7 @@ private:
       }
 
     void serializeLine( const std::string & name,
-                        const int dir,
+                        const double dir,
                         const double & sight_2_line_ang,
                         const double & player_2_line )
       {
@@ -319,12 +319,12 @@ protected:
     bool sendLine( const PObject & line );
 
     void serializeLowLine( const std::string & name,
-                           const int dir,
+                           const double dir,
                            const double &,
                            const double & );
 
     void serializeHighLine( const std::string & name,
-                            const int dir,
+                            const double dir,
                             const double & sight_2_line_ang,
                             const double & player_2_line );
 
@@ -334,9 +334,14 @@ protected:
                                   - self().angleNeckCommitted() );
       }
 
-    int calcDegDir( const double & rad_dir ) const
+    bool exactVisual() const
       {
-          return rad2Deg( rad_dir );
+          return ServerParam::instance().seeNoQuantization() && self().version() >= 19.0;
+      }
+
+    double calcDegDir( const double & rad_dir ) const
+      {
+          return exactVisual() ? Rad2Deg( rad_dir ) : rad2Deg( rad_dir );
       }
 
 private:
@@ -348,7 +353,7 @@ private:
                                   - self().angleNeckCommitted() );
       }
 
-    int calcLineDir( const double & sight_2_line_ang ) const
+    double calcLineDir( const double & sight_2_line_ang ) const
       {
           if ( sight_2_line_ang > 0 )
               return calcDegDir( sight_2_line_ang - M_PI*0.5 );
@@ -383,6 +388,7 @@ protected:
                          const double & player_2_line,
                          const double & qstep ) const
       {
+          if ( exactVisual() ) return std::fabs( player_2_line / std::cos( sight_2_line_ang ) );
           return Quantize( std::exp( Quantize( std::log( std::fabs( player_2_line
                                                                     / std::cos( sight_2_line_ang ) )
                                                          + EPS ),
@@ -408,7 +414,7 @@ protected:
     void serializePlayer( const Player & player,
                           const std::string & name,
                           const double & dist,
-                          const int dir,
+                          const double dir,
                           const double & dist_chg,
                           const double & dir_chg );
 
@@ -416,7 +422,7 @@ protected:
     void serializePlayer( const Player & player,
                           const std::string & name,
                           const double & dist,
-                          const int dir );
+                          const double dir );
 
     virtual
     int rad2Deg( const double & rad ) const
@@ -489,14 +495,14 @@ protected:
     void serializePlayer( const Player & player,
                           const std::string & name,
                           const double & dist,
-                          const int dir,
+                          const double dir,
                           const double & dist_chg,
                           const double & dir_chg ) override;
 
 
-    int calcBodyDir( const Player & player ) const
+    double calcBodyDir( const Player & player ) const
       {
-          return rad2Deg( normalize_angle( player.angleBodyCommitted()
+          return calcDegDir( normalize_angle( player.angleBodyCommitted()
                                            - self().angleBodyCommitted()
                                            - self().angleNeckCommitted() ) );
       }
@@ -527,13 +533,13 @@ protected:
     void serializePlayer( const Player & player,
                           const std::string & name,
                           const double & dist,
-                          const int dir,
+                          const double dir,
                           const double & dist_chg,
                           const double & dir_chg ) override;
 
-    int calcHeadDir( const Player & player ) const
+    double calcHeadDir( const Player & player ) const
       {
-          return rad2Deg( normalize_angle( player.angleNeckCommitted()
+          return calcDegDir( normalize_angle( player.angleNeckCommitted()
                                            + player.angleBodyCommitted()
                                            - self().angleBodyCommitted()
                                            - self().angleNeckCommitted() ) );
@@ -662,7 +668,7 @@ protected:
     void serializePlayer( const Player & player,
                           const std::string & name,
                           const double & dist,
-                          const int dir,
+                          const double dir,
                           const double & dist_chg,
                           const double & dir_chg ) override;
 
@@ -670,7 +676,7 @@ protected:
     void serializePlayer( const Player & player,
                           const std::string & name,
                           const double & dist,
-                          const int dir ) override;
+                          const double dir ) override;
 };
 
 

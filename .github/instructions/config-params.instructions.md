@@ -80,3 +80,12 @@ Server and player parameters are registered through `addParam` into a `rcss::con
 
 Keep librcsc's ServerParam mirror in sync so dataset metadata retains these
 settings. See `experiments/exp4/reports/06-server-command-order.md`.
+
+## Exp5 sensor control
+
+server::see_no_quantization (v19, default false) enables exact visual and
+proprioceptive kinematics for v19 clients. It does not imply full_view or
+disable fading/hearing. Exp5's separate config selects finite view, all-fade
+suppression, disabled teammate payloads and reference fullstate.
+Keep the librcsc parameter mirror synchronized. The older see_noise_free
+retains its distance-only behavior.

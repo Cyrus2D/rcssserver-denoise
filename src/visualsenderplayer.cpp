@@ -331,6 +331,24 @@ public:
       }
 };
 
+// Controlled visual-gap experiments: exact visible measurements, no truth shortcut.
+class UnquantizedObservation : public ExactObservation {
+public:
+    explicit UnquantizedObservation( const Player & player ) : ExactObservation(player) {}
+    void calcVel( const PVector & obj_vel, const PVector & obj_pos,
+                  const double actual_dist, const double,
+                  double * dist_chg, double * dir_chg ) const override
+    {
+        if ( actual_dist <= 0.0 ) { *dist_chg = *dir_chg = 0.0; return; }
+        const PVector relative = obj_vel - observer().vel();
+        PVector ray = obj_pos - observer().pos();
+        ray /= actual_dist;
+        *dist_chg = relative.x * ray.x + relative.y * ray.y;
+        *dir_chg = RAD2DEG * (relative.y * ray.x - relative.x * ray.y) / actual_dist;
+    }
+};
+
+
 
 /*!
 //===================================================================
@@ -411,7 +429,11 @@ VisualSenderPlayerV1::sendVisual()
         return;
     }
 
-    if ( ServerParam::instance().seeNoiseFree() )
+    if ( exactVisual() )
+    {
+        M_noisy_observation = std::make_shared<UnquantizedObservation>( self() );
+    }
+    else if ( ServerParam::instance().seeNoiseFree() )
     {
         M_noisy_observation = std::shared_ptr< const NoisyObservation >( new ExactObservation( self() ) );
     }
@@ -422,6 +444,8 @@ VisualSenderPlayerV1::sendVisual()
 
     updateCache();
 
+    const auto saved_precision = transport().precision();
+    if ( exactVisual() ) transport().precision(12);
     serializer().serializeVisualBegin( transport(), stadium().time() );
     sendFlags();
     sendBalls();
@@ -429,6 +453,7 @@ VisualSenderPlayerV1::sendVisual()
     sendLines();
     serializer().serializeVisualEnd( transport() );
     transport() << std::ends << std::flush;
+    transport().precision(saved_precision);
 }
 
 void
@@ -852,7 +877,7 @@ VisualSenderPlayerV1::sendLine( const PObject & line )
 
 void
 VisualSenderPlayerV1::serializeLowLine( const std::string & name,
-                                        const int dir,
+                                        const double dir,
                                         const double &, const double & )
 {
     serializer().serializeVisualObject( transport(), name, dir );
@@ -860,7 +885,7 @@ VisualSenderPlayerV1::serializeLowLine( const std::string & name,
 
 void
 VisualSenderPlayerV1::serializeHighLine( const std::string & name,
-                                         const int dir,
+                                         const double dir,
                                          const double & sight_2_line_ang,
                                          const double & player_2_line )
 {
@@ -936,7 +961,7 @@ void
 VisualSenderPlayerV1::serializePlayer( const Player &,
                                        const std::string & name,
                                        const double & dist,
-                                       const int dir,
+                                       const double dir,
                                        const double & dist_chg,
                                        const double & dir_chg )
 {
@@ -950,7 +975,7 @@ void
 VisualSenderPlayerV1::serializePlayer( const Player &,
                                        const std::string & name,
                                        const double & dist,
-                                       const int dir )
+                                       const double dir )
 {
     serializer().serializeVisualObject( transport(),
                                         name,
@@ -1013,7 +1038,7 @@ void
 VisualSenderPlayerV4::serializePlayer( const Player & player,
                                        const std::string & name,
                                        const double & dist,
-                                       const int dir,
+                                       const double dir,
                                        const double & dist_chg,
                                        const double & dir_chg )
 {
@@ -1060,7 +1085,7 @@ void
 VisualSenderPlayerV5::serializePlayer( const Player & player,
                                        const std::string & name,
                                        const double & dist,
-                                       const int dir,
+                                       const double dir,
                                        const double & dist_chg,
                                        const double & dir_chg )
 {
@@ -1197,7 +1222,7 @@ VisualSenderPlayerV8::calcPointDir( const Player & player )
 // VisualSenderPlayerV8::serializePlayer( const Player & player,
 //                                        const std::string & name,
 //                                        const double & dist,
-//                                        const int dir,
+//                                        const double dir,
 //                                        const double & dist_chg,
 //                                        const double & dir_chg )
 // {
@@ -1229,7 +1254,7 @@ VisualSenderPlayerV8::calcPointDir( const Player & player )
 // VisualSenderPlayerV8::serializePlayer( const Player & player,
 //                                        const std::string & name,
 //                                        const double & dist,
-//                                        const int dir )
+//                                        const double dir )
 // {
 //     if ( player.arm().isPointing() )
 //     {
@@ -1255,7 +1280,7 @@ void
 VisualSenderPlayerV8::serializePlayer( const Player & player,
                                        const std::string & name,
                                        const double & dist,
-                                       const int dir,
+                                       const double dir,
                                        const double & dist_chg,
                                        const double & dir_chg )
 {
@@ -1287,7 +1312,7 @@ void
 VisualSenderPlayerV8::serializePlayer( const Player & player,
                                        const std::string & name,
                                        const double & dist,
-                                       const int dir )
+                                       const double dir )
 {
     if ( player.arm().isPointing() )
     {

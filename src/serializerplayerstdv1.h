@@ -101,7 +101,7 @@ public:
     virtual
     void serializeBodyVelocity( std::ostream & strm,
                                 const double & mag,
-                                const int head ) const override;
+                                const double head ) const override;
 
     virtual
     void serializeBodyCounts( std::ostream & strm,
@@ -109,7 +109,7 @@ public:
 
     virtual
     void serializeNeckAngle( std::ostream & strm,
-                             const int ang ) const override;
+                             const double ang ) const override;
 
     virtual
     void serializeArm( std::ostream & strm,
