@@ -1,0 +1,517 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp5-S1 live batch audit</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:1140px;margin:35px auto;padding:0 24px;color:#193343;background:#f7f9fb}h1{font-size:30px}h2{margin-top:38px}table{border-collapse:collapse;display:block;overflow:auto;background:white}td,th{padding:9px 13px;border:1px solid #d8e1e8}th{background:#dfedf2}img{width:100%;background:white}pre{background:#193343;color:#eef7fa;padding:20px;overflow:auto}a{color:#05698b}code{font-size:.9em}</style></head><body><h1>Exp5-S1: 200 live games, position-count policy preserve</h1>
+<blockquote>
+<p><strong>Later integration finding:</strong> the earlier apply path duplicated derived
+player-cache entries and could repeat identity inference. The current cache-v2
+build fixes this. These historical match outcomes are not a clean gameplay
+evaluation of the intended prediction policy. See the
+<a href="../../../reports/final/report.html">final report</a>.</p>
+</blockquote>
+<p><strong>Position accuracy improved, but the recorded game results worsened.</strong> The
+application is active and consistent with offline accuracy. This batch does
+not establish that lower average position error makes the team stronger.</p>
+<p>Generated 2026-11-17 02:16 UTC.
+All 200 games and 4,400 observer logs finalized. Primary
+accuracy uses true observer-target distance <strong>below50m</strong>, PlayOn, valid
+identified stale tracks and confirmed named-sighting age1–30. Fullstate is
+labels only. Every eligible target-cycle has equal weight; games are not
+given equal weight for position averages.</p>
+<h2>1. Main results</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left/right goals</td>
+<td style="text-align: right;">628 / 705</td>
+</tr>
+<tr>
+<td>Left wins / draws / losses</td>
+<td style="text-align: right;">75 / 30 / 95</td>
+</tr>
+<tr>
+<td>Paired stale target-cycles below50m</td>
+<td style="text-align: right;">116,211,295</td>
+</tr>
+<tr>
+<td>Original WM mean position error</td>
+<td style="text-align: right;">141.55cm</td>
+</tr>
+<tr>
+<td>Used mean position error</td>
+<td style="text-align: right;"><strong>52.62cm</strong></td>
+</tr>
+<tr>
+<td>Reduction in mean position error</td>
+<td style="text-align: right;">62.83%</td>
+</tr>
+<tr>
+<td>Games with lower position-error mean</td>
+<td style="text-align: right;">200 / 200</td>
+</tr>
+<tr>
+<td>Improved by &gt;1cm</td>
+<td style="text-align: right;">54.94%</td>
+</tr>
+<tr>
+<td>Added error &gt;1cm</td>
+<td style="text-align: right;">5.37%</td>
+</tr>
+<tr>
+<td>Added error &gt;25cm</td>
+<td style="text-align: right;">3.70%</td>
+</tr>
+<tr>
+<td>Added error &gt;50cm</td>
+<td style="text-align: right;">1.57%</td>
+</tr>
+<tr>
+<td>Added error &gt;1m</td>
+<td style="text-align: right;">0.72%</td>
+</tr>
+<tr>
+<td>Maximum added error</td>
+<td style="text-align: right;">14.77m</td>
+</tr>
+</tbody>
+</table>
+<p>“Added error” means used error minus original WM error on the same target and
+cycle; it is not absolute position error. Unselected rows retain WM and stay
+in the denominator. Fresh and unsupported tracks are excluded from these paired
+accuracy figures. Selected positions below50m: 70,284,076; applied positions
+across all distances: 75,329,530. The frozen offline confirmation
+was134.98→52.30cm, with3.64% adding &gt;25cm and1.70% adding &gt;50cm.</p>
+<p><img alt="Error by age and distance" src="accuracy.svg" /></p>
+<h3>By time since confirmed named sighting</h3>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Original mean cm</th>
+<th style="text-align: right;">Used mean cm</th>
+<th style="text-align: right;">Mean reduction</th>
+<th style="text-align: right;">Added error &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">48,121,579</td>
+<td style="text-align: right;">25.38</td>
+<td style="text-align: right;">13.57</td>
+<td style="text-align: right;">46.6%</td>
+<td style="text-align: right;">3.19%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">22,530,159</td>
+<td style="text-align: right;">50.38</td>
+<td style="text-align: right;">25.27</td>
+<td style="text-align: right;">49.8%</td>
+<td style="text-align: right;">3.23%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">9,385,765</td>
+<td style="text-align: right;">75.50</td>
+<td style="text-align: right;">40.14</td>
+<td style="text-align: right;">46.8%</td>
+<td style="text-align: right;">3.41%</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td style="text-align: right;">8,569,019</td>
+<td style="text-align: right;">106.87</td>
+<td style="text-align: right;">60.25</td>
+<td style="text-align: right;">43.6%</td>
+<td style="text-align: right;">4.41%</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td style="text-align: right;">10,658,088</td>
+<td style="text-align: right;">215.74</td>
+<td style="text-align: right;">93.72</td>
+<td style="text-align: right;">56.6%</td>
+<td style="text-align: right;">5.38%</td>
+</tr>
+<tr>
+<td>11–20</td>
+<td style="text-align: right;">10,999,453</td>
+<td style="text-align: right;">477.10</td>
+<td style="text-align: right;">150.94</td>
+<td style="text-align: right;">68.4%</td>
+<td style="text-align: right;">4.66%</td>
+</tr>
+<tr>
+<td>21–30</td>
+<td style="text-align: right;">5,947,232</td>
+<td style="text-align: right;">827.63</td>
+<td style="text-align: right;">225.43</td>
+<td style="text-align: right;">72.8%</td>
+<td style="text-align: right;">4.25%</td>
+</tr>
+</tbody>
+</table>
+<h3>By observer distance</h3>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Original mean cm</th>
+<th style="text-align: right;">Used mean cm</th>
+<th style="text-align: right;">Mean reduction</th>
+<th style="text-align: right;">Added error &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–10</td>
+<td style="text-align: right;">10,868,133</td>
+<td style="text-align: right;">182.42</td>
+<td style="text-align: right;">68.42</td>
+<td style="text-align: right;">62.5%</td>
+<td style="text-align: right;">3.62%</td>
+</tr>
+<tr>
+<td>10–20</td>
+<td style="text-align: right;">30,636,993</td>
+<td style="text-align: right;">173.09</td>
+<td style="text-align: right;">61.95</td>
+<td style="text-align: right;">64.2%</td>
+<td style="text-align: right;">3.94%</td>
+</tr>
+<tr>
+<td>20–35</td>
+<td style="text-align: right;">46,574,646</td>
+<td style="text-align: right;">141.70</td>
+<td style="text-align: right;">51.10</td>
+<td style="text-align: right;">63.9%</td>
+<td style="text-align: right;">3.85%</td>
+</tr>
+<tr>
+<td>35–50</td>
+<td style="text-align: right;">28,131,523</td>
+<td style="text-align: right;">91.17</td>
+<td style="text-align: right;">38.87</td>
+<td style="text-align: right;">57.4%</td>
+<td style="text-align: right;">3.22%</td>
+</tr>
+</tbody>
+</table>
+<h3>Teammates and opponents</h3>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Original mean cm</th>
+<th style="text-align: right;">Used mean cm</th>
+<th style="text-align: right;">Mean reduction</th>
+<th style="text-align: right;">Added error &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>teammates</td>
+<td style="text-align: right;">56,559,461</td>
+<td style="text-align: right;">139.46</td>
+<td style="text-align: right;">51.98</td>
+<td style="text-align: right;">62.7%</td>
+<td style="text-align: right;">3.69%</td>
+</tr>
+<tr>
+<td>opponents</td>
+<td style="text-align: right;">59,651,834</td>
+<td style="text-align: right;">143.54</td>
+<td style="text-align: right;">53.22</td>
+<td style="text-align: right;">62.9%</td>
+<td style="text-align: right;">3.71%</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Why preserve-count and better positions can still interact badly</h2>
+<p>About <strong>14.50%</strong> of applied positions below50m still had original
+<code>posCount≥15</code>. The current librcsc player-intercept simulator returns1000 for
+such a player before simulating it. Other paths also use position age to skip
+players or expand their effective reach. Better coordinates do not remove
+those gates when the age is preserved.</p>
+<p>These counters measure exposure to code gates, not how often a particular
+decision actually entered each branch. Observations alone do not prove these
+branches caused the match losses.</p>
+<table>
+<thead>
+<tr>
+<th>Original count condition</th>
+<th style="text-align: right;">Applied positions below50m</th>
+<th style="text-align: right;">Share of applied positions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥4</td>
+<td style="text-align: right;">27,550,877</td>
+<td style="text-align: right;">39.20%</td>
+</tr>
+<tr>
+<td>≥6</td>
+<td style="text-align: right;">22,533,621</td>
+<td style="text-align: right;">32.06%</td>
+</tr>
+<tr>
+<td>≥11</td>
+<td style="text-align: right;">14,606,286</td>
+<td style="text-align: right;">20.78%</td>
+</tr>
+<tr>
+<td>≥15</td>
+<td style="text-align: right;">10,194,343</td>
+<td style="text-align: right;">14.50%</td>
+</tr>
+</tbody>
+</table>
+<p>Code checked in the current checkout:</p>
+<ul>
+<li><code>librcsc-denoise/rcsc/player/intercept_simulator_player.cpp</code>: the <code>posCount≥15</code>
+  gate; prediction routing through decisionPos is present.</li>
+<li><code>helios-base-denoise/src/player/planner/strict_check_pass_generator.cpp</code>:
+  skips stale opponents above10 and uses age-based opponent reach bonuses.</li>
+<li><code>planner/short_dribble_generator.cpp</code>: opponent bonus up to8 or4 cycles.</li>
+<li><code>planner/field_analyzer.cpp</code>: virtual dash distance depends on the smaller
+  of seenPosCount and posCount.</li>
+</ul>
+<p>For the next batch use <strong><code>--player-gap-pos-count zero</code></strong> on the left only.
+It makes effective posCount zero only on accepted overlays and preserves raw
+tracking/visual ages. It therefore tests age-based decision behavior while
+keeping the same model and threshold.</p>
+<p>Zero does <strong>not</strong> remove every stale-data effect: the player-intercept bonus
+still reads seenPosCount/heardPosCount, and velocity/body ages remain original.
+An accurate current point also does not establish accurate future motion.
+Zero may help or may make the agent too optimistic about bad predictions;
+its performance has not yet been measured.</p>
+<p><img alt="Regression risk and retained ages" src="risks-and-counts.svg" /></p>
+<h2>3. When WM was already accurate</h2>
+<p>For 24,280,560 eligible rows with original WM error below10cm,
+the mean changed <strong>1.43→4.84cm</strong>.
+7.80% of this subgroup added &gt;25cm error.
+The mean remains small, but rare severe regressions are hidden by that average.
+These are truth-defined diagnostic groups, not deployable oracle gates.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Original mean cm</th>
+<th style="text-align: right;">Used mean cm</th>
+<th style="text-align: right;">Mean reduction</th>
+<th style="text-align: right;">Added error &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–10cm</td>
+<td style="text-align: right;">24,280,560</td>
+<td style="text-align: right;">1.43</td>
+<td style="text-align: right;">4.84</td>
+<td style="text-align: right;">-238.0%</td>
+<td style="text-align: right;">7.80%</td>
+</tr>
+<tr>
+<td>10–25cm</td>
+<td style="text-align: right;">10,582,122</td>
+<td style="text-align: right;">17.33</td>
+<td style="text-align: right;">16.87</td>
+<td style="text-align: right;">2.6%</td>
+<td style="text-align: right;">6.63%</td>
+</tr>
+<tr>
+<td>25–50cm</td>
+<td style="text-align: right;">31,799,328</td>
+<td style="text-align: right;">39.83</td>
+<td style="text-align: right;">22.11</td>
+<td style="text-align: right;">44.5%</td>
+<td style="text-align: right;">1.75%</td>
+</tr>
+<tr>
+<td>50–100cm</td>
+<td style="text-align: right;">17,975,115</td>
+<td style="text-align: right;">74.85</td>
+<td style="text-align: right;">40.81</td>
+<td style="text-align: right;">45.5%</td>
+<td style="text-align: right;">2.44%</td>
+</tr>
+<tr>
+<td>1–2m</td>
+<td style="text-align: right;">11,534,656</td>
+<td style="text-align: right;">140.51</td>
+<td style="text-align: right;">75.50</td>
+<td style="text-align: right;">46.3%</td>
+<td style="text-align: right;">3.03%</td>
+</tr>
+<tr>
+<td>2m+</td>
+<td style="text-align: right;">20,039,514</td>
+<td style="text-align: right;">598.78</td>
+<td style="text-align: right;">175.23</td>
+<td style="text-align: right;">70.7%</td>
+<td style="text-align: right;">1.79%</td>
+</tr>
+</tbody>
+</table>
+<p>Worst overall below50m regression: <code>202611161920_12839/l_11</code>,
+cycle1547, object21. Named age29,
+original count29, observer distance46.50m.
+Original error <strong>3.04m</strong>, used error
+<strong>17.82m</strong>, added <strong>14.77m</strong>.
+Its routing score0.976 is not a calibrated correctness probability.</p>
+<p>The worst-error cycle and a separate already-accurate-WM failure were replayed
+through the original PyTorch pipeline. Across36 eligible outputs in those
+cycles, position differences stayed below0.000066m, including CSV rounding,
+with zero routing disagreements. The severe model proposals reproduce in
+Python; they are not explained by a different C++ calculation in these cases.</p>
+<h2>4. Important situations near the ball</h2>
+<p>This section uses <strong>10 evenly spaced game IDs /110 left observers</strong>, selected
+without looking at game outcomes. These are descriptive sampled-game results,
+not all200 games. Distances to the ball use truth for reporting only.</p>
+<p><img alt="Error near the ball" src="ball-context.svg" /></p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Original mean cm</th>
+<th style="text-align: right;">Used mean cm</th>
+<th style="text-align: right;">Mean reduction</th>
+<th style="text-align: right;">Added error &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_ball_under2m</td>
+<td style="text-align: right;">163,978</td>
+<td style="text-align: right;">47.22</td>
+<td style="text-align: right;">33.34</td>
+<td style="text-align: right;">29.4%</td>
+<td style="text-align: right;">1.65%</td>
+</tr>
+<tr>
+<td>target_ball_2to5m</td>
+<td style="text-align: right;">127,170</td>
+<td style="text-align: right;">48.64</td>
+<td style="text-align: right;">32.69</td>
+<td style="text-align: right;">32.8%</td>
+<td style="text-align: right;">4.22%</td>
+</tr>
+<tr>
+<td>target_ball_5mplus</td>
+<td style="text-align: right;">5,538,261</td>
+<td style="text-align: right;">147.02</td>
+<td style="text-align: right;">53.29</td>
+<td style="text-align: right;">63.8%</td>
+<td style="text-align: right;">3.64%</td>
+</tr>
+<tr>
+<td>observer_ball_under3m</td>
+<td style="text-align: right;">240,118</td>
+<td style="text-align: right;">210.66</td>
+<td style="text-align: right;">69.39</td>
+<td style="text-align: right;">67.1%</td>
+<td style="text-align: right;">3.88%</td>
+</tr>
+<tr>
+<td>observer_ball_3mplus</td>
+<td style="text-align: right;">5,589,291</td>
+<td style="text-align: right;">139.12</td>
+<td style="text-align: right;">51.54</td>
+<td style="text-align: right;">63.0%</td>
+<td style="text-align: right;">3.59%</td>
+</tr>
+</tbody>
+</table>
+<p>The largest average gains are away from the ball. For stale targets within2m
+of it, mean error changed <strong>47.22→33.34cm</strong>
+(29.4% reduction), compared with
+63.8% for targets at least5m from it.
+Only2.81% of the eligible stale rows in this sample
+were within2m of the ball. Fresh rows are excluded, so this percentage must
+not be interpreted as the fraction of all players near the ball. Large gains
+on many less immediate states do not translate directly into goals.</p>
+<h3>One-step motion with unchanged velocity</h3>
+<p>For 4,235,177 rows with
+valid current WM velocity and consecutive PlayOn truth, evaluate
+<code>current_position + current_WM_velocity</code> against the true next-cycle position.
+The same velocity is used for original and corrected positions. Mean one-step
+error changed <strong>69.01→
+45.90cm</strong>.
+This simple forecast improved on that matched subset; it is not the complete
+intercept/planner simulation and does not validate stale velocity/body estimates.</p>
+<h2>5. Integration and scheduling checks</h2>
+<ul>
+<li>4,400 finalized logs; all expected server parameters and
+  reference-only fullstate settings matched. Left uses apply/preserve/adaptive;
+  right is model-off/adaptive. All left logs use the same expected bundle.</li>
+<li>No fresh/ineligible/unselected/out-of-horizon or stopped rows were applied.
+  All selected rows applied, effective counts matched policy, and used errors
+  matched their recorded original/predicted path.</li>
+<li>0 missing-decision placeholders
+  in30,301,683 recorded decisions. This does not measure
+  the full CPU action duration.</li>
+<li>
+<p>Per-game inference medians were13.55–
+  15.03ms; per-game p95s were
+  22.85–25.21ms.
+  Largest recorded inference was85.90ms.
+  Per-game percentiles are kept separate; they were not averaged into a global p95.</p>
+</li>
+<li>
+<p>No model/runtime/unknown-column errors in the team console logs. All expected
+  console and command-order files were found.</p>
+</li>
+<li>1,381,049 nonempty randomized command rounds: left first690,878
+  (50.03%), right first690,171
+  (49.97%). No fixed first-command advantage is visible.</li>
+</ul>
+<h2>6. Gameplay interpretation and next trial</h2>
+<p>The earlier all-stock Exp5 batch (200 games) had goals
+678–660 and wins/draws/losses
+87/44/69 for the left side. This batch has
+628–705 and75/30/95.
+The batch means of left-minus-right goals changed from+0.09 to−0.385 per game.
+An independent-game bootstrap95% interval for that change was approximately
+[-0.925,
+-0.015] goals/game. This is an
+unpaired, historical-batch comparison, not a matched-seed causal estimate.</p>
+<p>Among decisive games in the current batch, the left win rate is
+44.12%, Wilson95% interval
+[36.87%,51.63%]. This differs from the ordinary75/200 win rate:
+draws must be handled consistently when comparing with50%.</p>
+<p>The recorded gameplay direction is worse and should be taken seriously.
+Position-error reduction is not an adequate success criterion by itself.
+The data identify retained age gates, occasional destruction of already-good
+WM states, and smaller gains on immediate ball-near targets as concrete issues;
+they do not isolate a single cause of the losses.</p>
+<p>For the zero-count trial keep the model, threshold and server/view configuration
+fixed. Use left-only <code>--player-gap-pos-count zero</code> and a separate
+<code>logs/exp5-live-zero</code> directory. Compare gameplay, position accuracy, regression
+tails and count-gate exposure with this preserve batch. A zero-count result is
+still pending; no benefit is promised from that switch.</p>
+<h2>Reproduce</h2>
+<pre><code class="language-bash">cd /home/nader/workspace/denoise
+exp=rcssserver-denoise/experiments/exp5/exp5-s1
+.venv-exp5-s1/bin/python &quot;$exp/code/audit_player_gap_batch.py&quot; \
+  logs/exp5-live-preserve logs/exp5-s1/live-analysis/preserve-200 --workers 6
+.venv-exp5-s1/bin/python &quot;$exp/code/audit_player_gap_context.py&quot; \
+  logs/exp5-live-preserve logs/exp5-s1/live-analysis/preserve-200/summary.json \
+  logs/exp5-s1/live-analysis/preserve-200/context --workers 6
+.venv-exp5-s1/bin/python &quot;$exp/code/report_player_gap_live.py&quot; \
+  logs/exp5-s1/live-analysis/preserve-200 &quot;$exp/reports/live-preserve-200&quot;
+</code></pre>
+<p>Per-game summaries and detailed context observer caches are under logs/exp5-s1,
+outside Git. Means and worsening rates aggregate exact sample counts and sums;
+per-game p95 values are retained separately. Runtime/baseline bootstrap evidence
+is in runtime.json. Severe-cycle PyTorch checks are in the two output-check
+JSONs. Current runtime inference/model/weights were not changed by this audit.</p></body></html>

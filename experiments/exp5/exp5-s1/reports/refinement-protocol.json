@@ -1,0 +1,127 @@
+{
+  "split": {
+    "selection": [
+      "202611151202_8681",
+      "202611151208_16220",
+      "202611151215_16097",
+      "202611151221_21405",
+      "202611151228_14710",
+      "202611151235_18092",
+      "202611151236_15682",
+      "202611151242_10097",
+      "202611151253_30498",
+      "202611151300_29780"
+    ],
+    "calibration": [
+      "202611151202_28622",
+      "202611151206_13367",
+      "202611151214_12127",
+      "202611151220_18299",
+      "202611151221_9065",
+      "202611151233_17129",
+      "202611151235_18683",
+      "202611151238_31709",
+      "202611151244_1055",
+      "202611151300_13276"
+    ],
+    "test": [
+      "202611151200_24922",
+      "202611151200_4418",
+      "202611151202_7329",
+      "202611151208_1720",
+      "202611151212_7698",
+      "202611151212_7937",
+      "202611151217_14804",
+      "202611151218_11800",
+      "202611151220_19155",
+      "202611151224_9156",
+      "202611151238_27968",
+      "202611151247_13458",
+      "202611151248_6879",
+      "202611151251_14006",
+      "202611151251_22310",
+      "202611151256_5484",
+      "202611151256_9370",
+      "202611151258_7051",
+      "202611151259_7284",
+      "202611151300_28464"
+    ]
+  },
+  "dataset_sha256": "5770bc118e0fd750fa5bf5082574b70e5603b6a4e4461a093b8acdf054b23661",
+  "note": "Old inspected test20 reused exploratorily. True distance is a report filter only; runtime gates use WM-estimated distance.",
+  "variants": [
+    {
+      "name": "continue128",
+      "seed": 50501,
+      "penalty": 0.0,
+      "hard_weight": 0.0,
+      "fresh": false
+    },
+    {
+      "name": "harm128_l1",
+      "seed": 50501,
+      "penalty": 1.0,
+      "hard_weight": 0.0,
+      "fresh": false
+    },
+    {
+      "name": "harm128_l3",
+      "seed": 50501,
+      "penalty": 3.0,
+      "hard_weight": 0.0,
+      "fresh": false
+    },
+    {
+      "name": "hard128_l1",
+      "seed": 50501,
+      "penalty": 1.0,
+      "hard_weight": 3.0,
+      "fresh": false
+    },
+    {
+      "name": "seed128_50511",
+      "seed": 50511,
+      "penalty": 0.0,
+      "hard_weight": 0.0,
+      "fresh": true
+    },
+    {
+      "name": "seed128_50521",
+      "seed": 50521,
+      "penalty": 0.0,
+      "hard_weight": 0.0,
+      "fresh": true
+    }
+  ],
+  "fit_samples": 250000,
+  "history": 32,
+  "epochs": 10,
+  "steps": 800,
+  "batch": 256,
+  "confirmation_protocol": {
+    "designated_practical_objective": "near50_risk",
+    "alternate_objectives": [
+      "mean",
+      "risk",
+      "harm1",
+      "harm3",
+      "cap25",
+      "cap50"
+    ],
+    "fresh_games": 10,
+    "rule": "Evaluate every frozen policy on new games. Do not use fresh-game performance to retune or select another threshold.",
+    "amendments": [
+      "WM-centered residual candidate",
+      "Adaptive correction caps growing with named-sighting age"
+    ],
+    "fixed_safety_sensitivity": {
+      "policy": "near50_risk",
+      "extra_cap_m": [
+        1,
+        2,
+        4
+      ],
+      "rule": "Same frozen selector and acceptance. No fitting or threshold selection. Declared before any fresh-game prediction scoring."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "total": 28180368,
+  "anonymous_current": 118201,
+  "unnamed_wm_refresh": 120650,
+  "overlap": 116031,
+  "excluded_union": 122820,
+  "excluded_pct": 0.4358353304683601,
+  "remaining": 28057548,
+  "models": {
+    "point": {
+      "all_samples": {
+        "n": 28180368,
+        "mean": 0.572202150489293,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.7221142945132611,
+        "gain_pct": 55.79117049013755,
+        "hurt_over_1cm_pct": 27.866850425799978,
+        "max_added_error": 16.5617618560791
+      },
+      "exclude_both": {
+        "n": 28057548,
+        "mean": 0.5706538166284794,
+        "baseline_mean": 1.2977647251915079,
+        "gain": 0.7271109085630276,
+        "gain_pct": 56.02794516207317,
+        "hurt_over_1cm_pct": 27.57633347005234,
+        "max_added_error": 15.275013148784637
+      },
+      "keep_wm_for_both": {
+        "n": 28180368,
+        "mean": 0.5703745426707353,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.723941902331818,
+        "gain_pct": 55.93237303960785,
+        "hurt_over_1cm_pct": 27.45614606594208,
+        "max_added_error": 15.275013148784637
+      }
+    },
+    "gaussian": {
+      "all_samples": {
+        "n": 28180368,
+        "mean": 0.6547043727274012,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.6396120722751544,
+        "gain_pct": 49.416977953478245,
+        "hurt_over_1cm_pct": 32.28242441688483,
+        "max_added_error": 15.970011234283447
+      },
+      "exclude_both": {
+        "n": 28057548,
+        "mean": 0.6527271126748376,
+        "baseline_mean": 1.2977647251915079,
+        "gain": 0.6450376125166667,
+        "gain_pct": 49.70374059300157,
+        "hurt_over_1cm_pct": 32.00998889853098,
+        "max_added_error": 15.970011234283447
+      },
+      "keep_wm_for_both": {
+        "n": 28180368,
+        "mean": 0.6520901342960449,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.6422263107065098,
+        "gain_pct": 49.61895625959103,
+        "hurt_over_1cm_pct": 31.87047805763218,
+        "max_added_error": 15.970011234283447
+      }
+    },
+    "mixture": {
+      "all_samples": {
+        "n": 28180368,
+        "mean": 0.7368328147967803,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.5574836302057757,
+        "gain_pct": 43.07166399362844,
+        "hurt_over_1cm_pct": 33.224661934861885,
+        "max_added_error": 21.410334338863322
+      },
+      "exclude_both": {
+        "n": 28057548,
+        "mean": 0.7346554913448179,
+        "baseline_mean": 1.2977647251915079,
+        "gain": 0.5631092338466885,
+        "gain_pct": 43.390702714900186,
+        "hurt_over_1cm_pct": 32.956033791691276,
+        "max_added_error": 20.60500928759575
+      },
+      "keep_wm_for_both": {
+        "n": 28180368,
+        "mean": 0.7336614401461004,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.5606550048564559,
+        "gain_pct": 43.31668712247186,
+        "hurt_over_1cm_pct": 32.812399752905996,
+        "max_added_error": 20.60500928759575
+      }
+    }
+  },
+  "training_changed": false,
+  "classification": "Post-hoc diagnostic; no retraining or test-driven weight/gate tuning.",
+  "filter_definition": "Union of anonymous_current and unnamed_wm_refresh. In this paired no-current-named-sighting cohort, unnamed_wm_refresh equals WM position count 0.",
+  "limitation": "Anonymous entries are attached to true target IDs by the evaluation logger. Exact target-level union fallback is a diagnostic, not a directly deployable identity rule. WM position count is observable."
+}

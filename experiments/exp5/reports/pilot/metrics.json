@@ -1,0 +1,469 @@
+{
+  "games": [
+    "exact-adaptive-03"
+  ],
+  "skipped": [],
+  "counts": {
+    "observers": 22,
+    "decisions": 9592,
+    "see_updates": 6129,
+    "player_rows": 201432,
+    "view_wide": 2425,
+    "view_normal": 3681,
+    "view_narrow": 3486,
+    "history_rows": 194243,
+    "wm_missing_with_history": 16599,
+    "anonymous_sighting_rows_omitted": 743,
+    "paired_rows": 176901,
+    "unseen_paired_rows": 123700
+  },
+  "metrics": {
+    "sensor/n_est_pos_d": {
+      "n": 9592,
+      "mean": 0.006359898248540451,
+      "max": 0.13519,
+      "p90_histogram": 0.025
+    },
+    "sensor/n_est_vel_d": {
+      "n": 9592,
+      "mean": 0.0004261757714762303,
+      "max": 0.043635,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_est_face": {
+      "n": 9592,
+      "mean": 0.3252883902210174,
+      "max": 16.764917,
+      "p90_histogram": 0.075
+    },
+    "sensor/n_dist": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_dir": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_dist_chg": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_dir_chg": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_body_rel": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_ls_pos_d": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "sensor/n_ls_rpos_d": {
+      "n": 53201,
+      "mean": 0.0,
+      "max": 0.0,
+      "p90_histogram": 0.005
+    },
+    "wm/all": {
+      "n": 176901,
+      "mean": 0.8610578420557734,
+      "max": 32.59440510365251,
+      "p90_histogram": 2.355
+    },
+    "wm/unseen": {
+      "n": 123700,
+      "mean": 1.231365886416713,
+      "max": 32.59440510365251,
+      "p90_histogram": 3.575
+    },
+    "wm/age/0": {
+      "n": 53201,
+      "mean": 3.8216720757047424e-05,
+      "max": 7.07106781175479e-05,
+      "p90_histogram": 0.005
+    },
+    "wm/age/1": {
+      "n": 45551,
+      "mean": 0.2351620576387558,
+      "max": 0.647241925893248,
+      "p90_histogram": 0.455
+    },
+    "wm/age/2": {
+      "n": 25645,
+      "mean": 0.4794784119043805,
+      "max": 1.4921618370786738,
+      "p90_histogram": 0.925
+    },
+    "wm/view/wide": {
+      "n": 34222,
+      "mean": 0.6491054257056207,
+      "max": 17.14614698146441,
+      "p90_histogram": 1.2750000000000001
+    },
+    "wm/distance/20-40": {
+      "n": 52737,
+      "mean": 1.2042749135104656,
+      "max": 29.29973746847313,
+      "p90_histogram": 3.515
+    },
+    "hold/all": {
+      "n": 176901,
+      "mean": 1.079214609471066,
+      "max": 45.75954149010312,
+      "p90_histogram": 3.005
+    },
+    "hold/unseen": {
+      "n": 123700,
+      "mean": 1.54334769977591,
+      "max": 45.75954149010312,
+      "p90_histogram": 4.195
+    },
+    "hold/age/0": {
+      "n": 53201,
+      "mean": 3.8216720757047424e-05,
+      "max": 7.07106781175479e-05,
+      "p90_histogram": 0.005
+    },
+    "hold/age/1": {
+      "n": 45551,
+      "mean": 0.3844929213820881,
+      "max": 1.0976017802103806,
+      "p90_histogram": 0.705
+    },
+    "hold/age/2": {
+      "n": 25645,
+      "mean": 0.7387816979738969,
+      "max": 2.134239393631837,
+      "p90_histogram": 1.375
+    },
+    "hold/view/wide": {
+      "n": 34222,
+      "mean": 0.9022605786901323,
+      "max": 18.94244075086656,
+      "p90_histogram": 1.815
+    },
+    "hold/distance/20-40": {
+      "n": 52737,
+      "mean": 1.5041467801249713,
+      "max": 18.77305588599259,
+      "p90_histogram": 4.065
+    },
+    "constant_velocity/all": {
+      "n": 176901,
+      "mean": 0.7740326189744581,
+      "max": 78.84315362563781,
+      "p90_histogram": 2.105
+    },
+    "constant_velocity/unseen": {
+      "n": 123700,
+      "mean": 1.1069127822266749,
+      "max": 78.84315362563781,
+      "p90_histogram": 3.015
+    },
+    "constant_velocity/age/0": {
+      "n": 53201,
+      "mean": 3.8216720757047424e-05,
+      "max": 7.07106781175479e-05,
+      "p90_histogram": 0.005
+    },
+    "constant_velocity/age/1": {
+      "n": 45551,
+      "mean": 0.23516244685361656,
+      "max": 0.6472419258932472,
+      "p90_histogram": 0.455
+    },
+    "constant_velocity/age/2": {
+      "n": 25645,
+      "mean": 0.4795648309103707,
+      "max": 1.4921618370786738,
+      "p90_histogram": 0.925
+    },
+    "constant_velocity/view/wide": {
+      "n": 34222,
+      "mean": 0.609756076889164,
+      "max": 15.453723942134141,
+      "p90_histogram": 1.2550000000000001
+    },
+    "constant_velocity/distance/20-40": {
+      "n": 52737,
+      "mean": 1.0650973590249486,
+      "max": 23.752958813455745,
+      "p90_histogram": 2.9050000000000002
+    },
+    "decay/all": {
+      "n": 176901,
+      "mean": 0.9587491476858524,
+      "max": 45.797973479722415,
+      "p90_histogram": 2.815
+    },
+    "decay/unseen": {
+      "n": 123700,
+      "mean": 1.3710723509055294,
+      "max": 45.797973479722415,
+      "p90_histogram": 3.995
+    },
+    "decay/age/0": {
+      "n": 53201,
+      "mean": 3.8216720757047424e-05,
+      "max": 7.07106781175479e-05,
+      "p90_histogram": 0.005
+    },
+    "decay/age/1": {
+      "n": 45551,
+      "mean": 0.23516244685361656,
+      "max": 0.6472419258932472,
+      "p90_histogram": 0.455
+    },
+    "decay/age/2": {
+      "n": 25645,
+      "mean": 0.5423059676243277,
+      "max": 1.5814138033421232,
+      "p90_histogram": 1.025
+    },
+    "decay/view/wide": {
+      "n": 34222,
+      "mean": 0.7283993472738703,
+      "max": 18.798845157304537,
+      "p90_histogram": 1.565
+    },
+    "decay/distance/20-40": {
+      "n": 52737,
+      "mean": 1.3248743197997026,
+      "max": 18.043168002666675,
+      "p90_histogram": 3.835
+    },
+    "wm/distance/40+": {
+      "n": 28282,
+      "mean": 0.527001867910675,
+      "max": 32.59440510365251,
+      "p90_histogram": 1.0150000000000001
+    },
+    "hold/distance/40+": {
+      "n": 28282,
+      "mean": 0.692783776929699,
+      "max": 17.607719268887607,
+      "p90_histogram": 1.445
+    },
+    "constant_velocity/distance/40+": {
+      "n": 28282,
+      "mean": 0.48750929788311986,
+      "max": 16.134867005288765,
+      "p90_histogram": 1.0150000000000001
+    },
+    "decay/distance/40+": {
+      "n": 28282,
+      "mean": 0.5663694757346361,
+      "max": 17.51034477924309,
+      "p90_histogram": 1.125
+    },
+    "wm/age/3-5": {
+      "n": 22711,
+      "mean": 0.8433950489168814,
+      "max": 4.488669086463158,
+      "p90_histogram": 1.705
+    },
+    "wm/age/6-10": {
+      "n": 12239,
+      "mean": 1.8891925301920391,
+      "max": 7.630043054484296,
+      "p90_histogram": 3.825
+    },
+    "wm/age/11-20": {
+      "n": 11599,
+      "mean": 3.992222266370026,
+      "max": 15.799084395564003,
+      "p90_histogram": 7.745
+    },
+    "wm/view/narrow": {
+      "n": 43506,
+      "mean": 1.811913279387495,
+      "max": 21.800148615744735,
+      "p90_histogram": 5.4750000000000005
+    },
+    "wm/view/normal": {
+      "n": 45972,
+      "mean": 1.115400137871254,
+      "max": 32.59440510365251,
+      "p90_histogram": 3.115
+    },
+    "wm/distance/0-10": {
+      "n": 10864,
+      "mean": 1.944811854438952,
+      "max": 21.800148615744735,
+      "p90_histogram": 5.825
+    },
+    "wm/distance/10-20": {
+      "n": 31817,
+      "mean": 1.6587676783188694,
+      "max": 21.20564874053185,
+      "p90_histogram": 5.005
+    },
+    "hold/age/3-5": {
+      "n": 22711,
+      "mean": 1.2488515479240427,
+      "max": 4.929031211047968,
+      "p90_histogram": 2.4250000000000003
+    },
+    "hold/age/6-10": {
+      "n": 12239,
+      "mean": 2.3863021005004286,
+      "max": 9.462402492500729,
+      "p90_histogram": 4.595
+    },
+    "hold/age/11-20": {
+      "n": 11599,
+      "mean": 4.4978171864597805,
+      "max": 17.494368984780362,
+      "p90_histogram": 8.595
+    },
+    "hold/view/narrow": {
+      "n": 43506,
+      "mean": 2.1850229493917714,
+      "max": 26.205632661378374,
+      "p90_histogram": 6.105
+    },
+    "hold/view/normal": {
+      "n": 45972,
+      "mean": 1.413324208259548,
+      "max": 45.75954149010312,
+      "p90_histogram": 3.6950000000000003
+    },
+    "hold/distance/0-10": {
+      "n": 10864,
+      "mean": 2.5573223585448264,
+      "max": 45.75954149010312,
+      "p90_histogram": 6.9350000000000005
+    },
+    "hold/distance/10-20": {
+      "n": 31817,
+      "mean": 2.0181620151639907,
+      "max": 23.000933557349555,
+      "p90_histogram": 5.525
+    },
+    "constant_velocity/age/3-5": {
+      "n": 22711,
+      "mean": 0.8456555096542308,
+      "max": 4.488669086463158,
+      "p90_histogram": 1.705
+    },
+    "constant_velocity/age/6-10": {
+      "n": 12239,
+      "mean": 1.7039078193077275,
+      "max": 8.319043292429845,
+      "p90_histogram": 3.505
+    },
+    "constant_velocity/age/11-20": {
+      "n": 11599,
+      "mean": 3.3405002702395934,
+      "max": 16.34681557634468,
+      "p90_histogram": 6.565
+    },
+    "constant_velocity/view/narrow": {
+      "n": 43506,
+      "mean": 1.601014577487321,
+      "max": 49.251336262155384,
+      "p90_histogram": 4.565
+    },
+    "constant_velocity/view/normal": {
+      "n": 45972,
+      "mean": 1.0094035171403306,
+      "max": 78.84315362563781,
+      "p90_histogram": 2.715
+    },
+    "constant_velocity/distance/0-10": {
+      "n": 10864,
+      "mean": 1.8894701104068137,
+      "max": 78.84315362563781,
+      "p90_histogram": 5.095
+    },
+    "constant_velocity/distance/10-20": {
+      "n": 31817,
+      "mean": 1.4596011722145685,
+      "max": 21.603118394965968,
+      "p90_histogram": 4.095
+    },
+    "decay/age/3-5": {
+      "n": 22711,
+      "mean": 1.0495756868946648,
+      "max": 4.488669086463158,
+      "p90_histogram": 2.185
+    },
+    "decay/age/6-10": {
+      "n": 12239,
+      "mean": 2.2098173183635472,
+      "max": 8.851561916853267,
+      "p90_histogram": 4.315
+    },
+    "decay/age/11-20": {
+      "n": 11599,
+      "mean": 4.333380306847544,
+      "max": 16.883510408370324,
+      "p90_histogram": 8.295
+    },
+    "decay/view/narrow": {
+      "n": 43506,
+      "mean": 2.014467247701973,
+      "max": 26.67892523706661,
+      "p90_histogram": 5.905
+    },
+    "decay/view/normal": {
+      "n": 45972,
+      "mean": 1.2406020026556508,
+      "max": 45.797973479722415,
+      "p90_histogram": 3.515
+    },
+    "decay/distance/0-10": {
+      "n": 10864,
+      "mean": 2.357583203115436,
+      "max": 45.797973479722415,
+      "p90_histogram": 6.695
+    },
+    "decay/distance/10-20": {
+      "n": 31817,
+      "mean": 1.8260963438527824,
+      "max": 22.390646299473627,
+      "p90_histogram": 5.365
+    },
+    "wm/age/21+": {
+      "n": 5955,
+      "mean": 6.839615615173631,
+      "max": 32.59440510365251,
+      "p90_histogram": 12.625
+    },
+    "hold/age/21+": {
+      "n": 5955,
+      "mean": 7.5085165906279245,
+      "max": 45.75954149010312,
+      "p90_histogram": 13.795
+    },
+    "constant_velocity/age/21+": {
+      "n": 5955,
+      "mean": 5.895636228604627,
+      "max": 78.84315362563781,
+      "p90_histogram": 11.195
+    },
+    "decay/age/21+": {
+      "n": 5955,
+      "mean": 7.361306949961066,
+      "max": 45.797973479722415,
+      "p90_histogram": 13.545
+    }
+  },
+  "method": "Equal weight per paired target-cycle; all four methods use the same rows. Baseline velocity falls back to zero when unavailable at the last identified sighting. Decay uses the server default, not fullstate player type.",
+  "gap_age": "Cycles since last unambiguous identified visual localization inside the same uninterrupted PlayOn block. Anonymous close sightings do not refresh labeled history and are omitted from scored gap rows.",
+  "p90_note": "Histogram approximation with 1 cm position bins; sensor means are exact aggregates. No future sightings are used."
+}

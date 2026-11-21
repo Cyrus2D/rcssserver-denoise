@@ -1,0 +1,48 @@
+Loaded 220/3960 observers into RAM
+Loaded 440/3960 observers into RAM
+Loaded 660/3960 observers into RAM
+Loaded 880/3960 observers into RAM
+Loaded 1100/3960 observers into RAM
+Loaded 1320/3960 observers into RAM
+Loaded 1540/3960 observers into RAM
+Loaded 1760/3960 observers into RAM
+Loaded 1980/3960 observers into RAM
+Loaded 2200/3960 observers into RAM
+Loaded 2420/3960 observers into RAM
+Loaded 2640/3960 observers into RAM
+Loaded 2860/3960 observers into RAM
+Loaded 3080/3960 observers into RAM
+Loaded 3300/3960 observers into RAM
+Loaded 3520/3960 observers into RAM
+Loaded 3740/3960 observers into RAM
+Loaded 3960/3960 observers into RAM
+point epoch 1/10: position 70.822 cm, mean/map {'mean': 0.7082150844573974, 'map': 0.7082150844573974}, loss 0.7988, elapsed 10.9s
+point epoch 2/10: position 66.052 cm, mean/map {'mean': 0.6605152823638916, 'map': 0.6605152823638916}, loss 0.6974, elapsed 20.3s
+point epoch 3/10: position 64.574 cm, mean/map {'mean': 0.6457392901611329, 'map': 0.6457392901611329}, loss 0.6656, elapsed 30.1s
+point epoch 4/10: position 62.830 cm, mean/map {'mean': 0.6282956785583496, 'map': 0.6282956785583496}, loss 0.6408, elapsed 38.9s
+point epoch 5/10: position 61.124 cm, mean/map {'mean': 0.6112425019073486, 'map': 0.6112425019073486}, loss 0.6288, elapsed 48.1s
+point epoch 6/10: position 59.515 cm, mean/map {'mean': 0.5951523317718506, 'map': 0.5951523317718506}, loss 0.6075, elapsed 58.3s
+point epoch 7/10: position 58.108 cm, mean/map {'mean': 0.5810846981048584, 'map': 0.5810846981048584}, loss 0.5968, elapsed 68.5s
+point epoch 8/10: position 57.329 cm, mean/map {'mean': 0.5732888664245606, 'map': 0.5732888664245606}, loss 0.5858, elapsed 78.8s
+point epoch 9/10: position 56.839 cm, mean/map {'mean': 0.5683855452728271, 'map': 0.5683855452728271}, loss 0.5793, elapsed 88.5s
+point epoch 10/10: position 56.410 cm, mean/map {'mean': 0.5640979051971435, 'map': 0.5640979051971435}, loss 0.5746, elapsed 97.8s
+gaussian epoch 1/10: position 77.589 cm, mean/map {'mean': 0.7758881452178955, 'map': 0.7758881452178955}, loss 0.7468, elapsed 13.7s
+gaussian epoch 2/10: position 73.411 cm, mean/map {'mean': 0.7341091110229492, 'map': 0.7341091110229492}, loss 0.3462, elapsed 28.5s
+gaussian epoch 3/10: position 69.916 cm, mean/map {'mean': 0.6991551503753662, 'map': 0.6991551503753662}, loss 0.2148, elapsed 41.1s
+gaussian epoch 4/10: position 68.567 cm, mean/map {'mean': 0.6856673608398437, 'map': 0.6856673608398437}, loss 0.1130, elapsed 54.1s
+gaussian epoch 5/10: position 67.666 cm, mean/map {'mean': 0.676660740814209, 'map': 0.676660740814209}, loss 0.0961, elapsed 69.4s
+gaussian epoch 6/10: position 65.937 cm, mean/map {'mean': 0.6593717013549805, 'map': 0.6593717013549805}, loss 0.0053, elapsed 83.4s
+gaussian epoch 7/10: position 65.053 cm, mean/map {'mean': 0.6505329681396484, 'map': 0.6505329681396484}, loss -0.0329, elapsed 95.5s
+gaussian epoch 8/10: position 64.677 cm, mean/map {'mean': 0.6467653997802735, 'map': 0.6467653997802735}, loss -0.0531, elapsed 110.2s
+gaussian epoch 9/10: position 64.538 cm, mean/map {'mean': 0.6453827653503418, 'map': 0.6453827653503418}, loss -0.0864, elapsed 125.4s
+gaussian epoch 10/10: position 64.557 cm, mean/map {'mean': 0.6455685725402832, 'map': 0.6455685725402832}, loss -0.1553, elapsed 140.3s
+mixture epoch 1/10: position 86.589 cm, mean/map {'mean': 0.8658904056549073, 'map': 0.9067071858215332}, loss 0.4443, elapsed 14.6s
+mixture epoch 2/10: position 85.335 cm, mean/map {'mean': 0.8533530984497071, 'map': 0.8845869999694824}, loss 0.1134, elapsed 27.5s
+mixture epoch 3/10: position 82.886 cm, mean/map {'mean': 0.828861941833496, 'map': 0.8459615421295166}, loss -0.0720, elapsed 40.9s
+mixture epoch 4/10: position 82.108 cm, mean/map {'mean': 0.8210805415344238, 'map': 0.8291506542205811}, loss -0.2417, elapsed 56.1s
+mixture epoch 5/10: position 81.080 cm, mean/map {'mean': 0.8108030394744873, 'map': 0.8206935236358642}, loss -0.3340, elapsed 70.3s
+mixture epoch 6/10: position 79.084 cm, mean/map {'mean': 0.7908432360839843, 'map': 0.8045312013244629}, loss -0.5393, elapsed 85.2s
+mixture epoch 7/10: position 76.904 cm, mean/map {'mean': 0.7690417681884766, 'map': 0.7782310652160644}, loss -0.6011, elapsed 100.1s
+mixture epoch 8/10: position 75.070 cm, mean/map {'mean': 0.7507002637481689, 'map': 0.7515637464904785}, loss -0.7047, elapsed 113.8s
+mixture epoch 9/10: position 73.787 cm, mean/map {'mean': 0.7378697983551026, 'map': 0.7500860928344727}, loss -0.8013, elapsed 127.9s
+mixture epoch 10/10: position 72.825 cm, mean/map {'mean': 0.7282547399139404, 'map': 0.7398214937591553}, loss -0.8674, elapsed 142.2s

@@ -1,0 +1,12 @@
+{
+  "accurate-wm-damaged": {
+    "frames": 41,
+    "native_parser": true,
+    "focus_cycle": 5202
+  },
+  "largest-added-error": {
+    "frames": 41,
+    "native_parser": true,
+    "focus_cycle": 5036
+  }
+}

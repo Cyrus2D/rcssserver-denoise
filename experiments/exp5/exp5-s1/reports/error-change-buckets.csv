@@ -1,0 +1,43 @@
+model,policy,change,samples,percentage
+Single position,Use full model prediction,Better (any decrease),18909434,67.10144452336463
+Single position,Use full model prediction,No change,794,0.00281756434124636
+Single position,Use full model prediction,Worse by up to 1 cm,1417962,5.031736987962684
+Single position,Use full model prediction,Worse by >1 to 5 cm,1887527,6.698021118815766
+Single position,Use full model prediction,Worse by >5 to 25 cm,3184128,11.299100139501371
+Single position,Use full model prediction,Worse by >25 to 50 cm,1541905,5.471557362203361
+Single position,Use full model prediction,Worse by >50 cm,1238618,4.395322303810937
+Single position,Move at most 25 cm from librcsc (with gates),Better (any decrease),20124436,71.41296380515683
+Single position,Move at most 25 cm from librcsc (with gates),No change,791,0.002806918632148452
+Single position,Move at most 25 cm from librcsc (with gates),Worse by up to 1 cm,1418146,5.032389924787355
+Single position,Move at most 25 cm from librcsc (with gates),Worse by >1 to 5 cm,1889495,6.7050047039839935
+Single position,Move at most 25 cm from librcsc (with gates),Worse by >5 to 25 cm,4747500,16.846834647439664
+Single position,Move at most 25 cm from librcsc (with gates),Worse by >25 to 50 cm,0,0.0
+Single position,Move at most 25 cm from librcsc (with gates),Worse by >50 cm,0,0.0
+Position + uncertainty,Use full model prediction,Better (any decrease),18465872,65.52743385040252
+Position + uncertainty,Use full model prediction,No change,290,0.0010290852127977888
+Position + uncertainty,Use full model prediction,Worse by up to 1 cm,617538,2.191376634968003
+Position + uncertainty,Use full model prediction,Worse by >1 to 5 cm,2028702,7.198990446114827
+Position + uncertainty,Use full model prediction,Worse by >5 to 25 cm,3756550,13.330379503915633
+Position + uncertainty,Use full model prediction,Worse by >25 to 50 cm,1777702,6.3082994515898445
+Position + uncertainty,Use full model prediction,Worse by >50 cm,1533714,5.442491027796373
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),Better (any decrease),19673140,69.81150849414031
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),No change,619905,2.199776099446253
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),Worse by up to 1 cm,613423,2.1767742706553728
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),Worse by >1 to 5 cm,1998628,7.092270760977997
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),Worse by >5 to 25 cm,5275272,18.71967037478006
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),Worse by >25 to 50 cm,0,0.0
+Position + uncertainty,Move at most 25 cm from librcsc (with gates),Worse by >50 cm,0,0.0
+Three possible positions,Use full model prediction,Better (any decrease),18131224,64.33991209767026
+Three possible positions,Use full model prediction,No change,337,0.0011958679886650168
+Three possible positions,Use full model prediction,Worse by up to 1 cm,686829,2.437260578002388
+Three possible positions,Use full model prediction,Worse by >1 to 5 cm,1969383,6.988492840121889
+Three possible positions,Use full model prediction,Worse by >5 to 25 cm,3819329,13.55315516106816
+Three possible positions,Use full model prediction,Worse by >25 to 50 cm,1887316,6.6972723706092125
+Three possible positions,Use full model prediction,Worse by >50 cm,1685950,5.982711084539421
+Three possible positions,Move at most 25 cm from librcsc (with gates),Better (any decrease),19723471,69.99011155567592
+Three possible positions,Move at most 25 cm from librcsc (with gates),No change,318,0.001128445164378265
+Three possible positions,Move at most 25 cm from librcsc (with gates),Worse by up to 1 cm,674539,2.3936486563979575
+Three possible positions,Move at most 25 cm from librcsc (with gates),Worse by >1 to 5 cm,1933734,6.861989878911446
+Three possible positions,Move at most 25 cm from librcsc (with gates),Worse by >5 to 25 cm,5848306,20.753121463850295
+Three possible positions,Move at most 25 cm from librcsc (with gates),Worse by >25 to 50 cm,0,0.0
+Three possible positions,Move at most 25 cm from librcsc (with gates),Worse by >50 cm,0,0.0

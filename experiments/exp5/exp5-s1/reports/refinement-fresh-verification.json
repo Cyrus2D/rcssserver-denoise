@@ -1,0 +1,28 @@
+{
+  "games": [
+    "fresh-01",
+    "fresh-02",
+    "fresh-03",
+    "fresh-04",
+    "fresh-05",
+    "fresh-06",
+    "fresh-07",
+    "fresh-08",
+    "fresh-09",
+    "fresh-10"
+  ],
+  "counts": {
+    "hear_rows": 0,
+    "content_rows": 0,
+    "hear_files": 220,
+    "metadata_files": 220,
+    "status_ok_final": 220
+  },
+  "fullstate_as_input_violations": [],
+  "schema_versions": [
+    2
+  ],
+  "view_policies": [
+    "adaptive"
+  ]
+}

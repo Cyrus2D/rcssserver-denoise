@@ -1,0 +1,88 @@
+{
+  "current": {
+    "games": 200,
+    "goals_left": 704,
+    "goals_right": 715,
+    "wins": 85,
+    "draws": 30,
+    "losses": 85,
+    "mean_goal_difference": -0.055
+  },
+  "command_order": {
+    "nonempty_rounds": 1386937,
+    "left_first": 692998,
+    "right_first": 693939
+  },
+  "command_batch_sizes": {
+    "1": 271,
+    "2": 3630,
+    "11": 27,
+    "13": 5,
+    "22": 1382693,
+    "15": 1,
+    "4": 1,
+    "7": 17,
+    "6": 9,
+    "12": 180,
+    "16": 2,
+    "19": 4,
+    "8": 15,
+    "9": 17,
+    "5": 6,
+    "21": 21,
+    "20": 13,
+    "17": 4,
+    "10": 19,
+    "14": 1,
+    "18": 1
+  },
+  "runtime_errors": [],
+  "missing_files": [],
+  "score_mismatches": [],
+  "goal_diff_bootstrap95": [
+    -0.405,
+    0.3
+  ],
+  "references": {
+    "preserve": {
+      "games": 200,
+      "goals_left": 628,
+      "goals_right": 705,
+      "wins": 75,
+      "draws": 30,
+      "losses": 95,
+      "mean_goal_difference": -0.385,
+      "change_in_mean_goal_difference": 0.33,
+      "independent_game_bootstrap95_for_change": [
+        -0.16499999999999992,
+        0.815
+      ],
+      "overlapping_simulator_and_order_seed_pairs": 0,
+      "paired": false,
+      "goal_diff_bootstrap95": [
+        -0.725,
+        -0.045
+      ]
+    },
+    "baseline": {
+      "games": 200,
+      "goals_left": 678,
+      "goals_right": 660,
+      "wins": 87,
+      "draws": 44,
+      "losses": 69,
+      "mean_goal_difference": 0.09,
+      "change_in_mean_goal_difference": -0.145,
+      "independent_game_bootstrap95_for_change": [
+        -0.615,
+        0.325
+      ],
+      "overlapping_simulator_and_order_seed_pairs": 0,
+      "paired": false,
+      "goal_diff_bootstrap95": [
+        -0.215,
+        0.39
+      ]
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "continue128": {
+    "selector": "tree74_cost3",
+    "threshold": 0.5,
+    "original_nodes": 15,
+    "pruned_nodes": 7,
+    "validation_equivalence_rows": 500000,
+    "mismatches": 0,
+    "tree": {
+      "feature": 53,
+      "name": "correction_norm",
+      "threshold": 0.7445694804191589,
+      "left": {
+        "feature": 54,
+        "name": "correction_per_cycle",
+        "threshold": 0.07150320336222649,
+        "left": {
+          "use_model": false
+        },
+        "right": {
+          "feature": 72,
+          "name": "wm_ball_distance",
+          "threshold": 1.282128095626831,
+          "left": {
+            "use_model": false
+          },
+          "right": {
+            "use_model": true
+          }
+        }
+      },
+      "right": {
+        "use_model": true
+      }
+    },
+    "text": "if correction_norm <= 0.744569:\n  if correction_per_cycle <= 0.0715032:\n    KEEP WM\n  else:\n    if wm_ball_distance <= 1.28213:\n      KEEP WM\n    else:\n      USE MODEL\nelse:\n  USE MODEL",
+    "runtime_guard": "Keep WM for posCount0, fresh named sighting, invalid or unknown target, missing history, age outside1\u201330 or reset boundary.",
+    "numeric_contract": "Use float32 feature values and full-precision stored double split thresholds. Do not replace thresholds by their rounded display values."
+  },
+  "wmresidual128_l1": {
+    "selector": "tree74_cost5",
+    "threshold": 0.8,
+    "original_nodes": 49,
+    "pruned_nodes": 11,
+    "validation_equivalence_rows": 500000,
+    "mismatches": 0,
+    "tree": {
+      "feature": 53,
+      "name": "correction_norm",
+      "threshold": 0.7173847556114197,
+      "left": {
+        "feature": 54,
+        "name": "correction_per_cycle",
+        "threshold": 0.051711564883589745,
+        "left": {
+          "use_model": false
+        },
+        "right": {
+          "feature": 72,
+          "name": "wm_ball_distance",
+          "threshold": 1.3196248412132263,
+          "left": {
+            "use_model": false
+          },
+          "right": {
+            "feature": 54,
+            "name": "correction_per_cycle",
+            "threshold": 0.3258964568376541,
+            "left": {
+              "feature": 55,
+              "name": "last_speed",
+              "threshold": 0.11235835030674934,
+              "left": {
+                "use_model": true
+              },
+              "right": {
+                "use_model": false
+              }
+            },
+            "right": {
+              "use_model": true
+            }
+          }
+        }
+      },
+      "right": {
+        "use_model": true
+      }
+    },
+    "text": "if correction_norm <= 0.717385:\n  if correction_per_cycle <= 0.0517116:\n    KEEP WM\n  else:\n    if wm_ball_distance <= 1.31962:\n      KEEP WM\n    else:\n      if correction_per_cycle <= 0.325896:\n        if last_speed <= 0.112358:\n          USE MODEL\n        else:\n          KEEP WM\n      else:\n        USE MODEL\nelse:\n  USE MODEL",
+    "runtime_guard": "Keep WM for posCount0, fresh named sighting, invalid or unknown target, missing history, age outside1\u201330 or reset boundary.",
+    "numeric_contract": "Use float32 feature values and full-precision stored double split thresholds. Do not replace thresholds by their rounded display values."
+  }
+}

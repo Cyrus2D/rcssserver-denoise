@@ -1,0 +1,26 @@
+{
+  "l_6": {
+    "position_routing_matches": true,
+    "applied_non_playon": 0,
+    "fresh_player_mean_cm": 5.938589593126105,
+    "fresh_ball_mean_cm": 0.0,
+    "fresh_localized_player_cm": 0.0,
+    "fresh_self_mean_cm": 0.0
+  },
+  "l_9": {
+    "position_routing_matches": true,
+    "applied_non_playon": 0,
+    "fresh_player_mean_cm": 0.03283386014479958,
+    "fresh_ball_mean_cm": 0.0,
+    "fresh_localized_player_cm": 0.0,
+    "fresh_self_mean_cm": 0.0
+  },
+  "r_6": {
+    "position_routing_matches": true,
+    "applied_non_playon": 0,
+    "fresh_player_mean_cm": 1.7987271445163429,
+    "fresh_ball_mean_cm": 0.0,
+    "fresh_localized_player_cm": 0.0,
+    "fresh_self_mean_cm": 0.0
+  }
+}

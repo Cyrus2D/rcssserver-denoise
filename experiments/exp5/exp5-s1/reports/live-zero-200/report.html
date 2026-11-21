@@ -1,0 +1,410 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp5-S1 zero versus preserve</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:1140px;margin:35px auto;padding:0 24px;color:#193343;background:#f7f9fb}h1{font-size:30px}h2{margin-top:38px}table{border-collapse:collapse;display:block;overflow:auto;background:white}td,th{padding:9px 13px;border:1px solid #d8e1e8}th{background:#dfedf2}img{width:100%;background:white}pre{background:#193343;color:#eef7fa;padding:20px;overflow:auto}a{color:#05698b}code{font-size:.9em}</style></head><body><h1>Exp5-S1: zero-count live trial versus preserve</h1>
+<blockquote>
+<p><strong>Later integration finding:</strong> the earlier apply path duplicated derived
+player-cache entries and could repeat identity inference. The current cache-v2
+build fixes this. These historical match outcomes are not a clean gameplay
+evaluation of the intended prediction policy. See the
+<a href="../../../reports/final/report.html">final report</a>.</p>
+</blockquote>
+<p><strong>The zero-count setting works. The observed match result is better than the
+preserve batch, but the team has not demonstrated a gameplay advantage over
+stock. Position accuracy is almost identical in the two model batches.</strong></p>
+<p>Generated 2026-11-17 19:37 UTC. Current logs: <code>/home/nader/workspace/denoise/logs/exp5-live-zero</code>.
+Both model batches have200 complete games /4,400 finalized observers. Left
+uses the same frozen model; right is off. Only effective position-count policy
+changes from preserve to zero; both teams retain adaptive views. Game seeds
+are different, so comparisons are unpaired and trajectories are not identical.</p>
+<h2>1. Game outcomes</h2>
+<table>
+<thead>
+<tr>
+<th>Batch</th>
+<th style="text-align: right;">Goals L–R</th>
+<th style="text-align: right;">W / D / L</th>
+<th style="text-align: right;">Points L–R</th>
+<th style="text-align: right;">Win rate excluding draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stock baseline</td>
+<td style="text-align: right;">678–660</td>
+<td style="text-align: right;">87/44/69</td>
+<td style="text-align: right;">305–251</td>
+<td style="text-align: right;">55.77%</td>
+</tr>
+<tr>
+<td>Apply / preserve</td>
+<td style="text-align: right;">628–705</td>
+<td style="text-align: right;">75/30/95</td>
+<td style="text-align: right;">255–315</td>
+<td style="text-align: right;">44.12%</td>
+</tr>
+<tr>
+<td>Apply / zero</td>
+<td style="text-align: right;">704–715</td>
+<td style="text-align: right;">85/30/85</td>
+<td style="text-align: right;">285–285</td>
+<td style="text-align: right;">50.00%</td>
+</tr>
+</tbody>
+</table>
+<p>The decisive-game rate excludes draws (zero:85/(85+85)=50%). Its Wilson95%
+interval is[42.57%,
+57.43%]. The ordinary win rate,
+including draws in the denominator, is85/200=42.5%; it must not be compared
+directly with50% as though every game were decisive.</p>
+<p>Left-minus-right goals/game changed <strong>−0.385 →−0.055</strong> from preserve to zero,
+an observed +0.330. Independent whole-game bootstrap95% interval for that
+change: <strong>[-0.165,+0.815]</strong>. It includes zero, so these200-game
+batches do not establish that the improvement was caused by the count switch.
+There are no shared simulator/order-seed pairs between the two runs.</p>
+<p>Compared with the historical all-stock Exp5 batch, the zero-count change in
+goal difference is-0.145/game,
+95% bootstrap interval[-0.615,+0.325]. This also includes zero.
+The historical stock batch is a separate run, not a matched-seed control.</p>
+<p><img alt="Outcomes and regression risk" src="outcomes-and-risk.svg" /></p>
+<h2>2. Position accuracy and mistakes below50 metres</h2>
+<p>Each eligible target-cycle has equal weight. The denominator requires a
+valid identified stale WM position, original posCount&gt;0, named-sighting age1–30,
+PlayOn and same-cycle truth. Unselected rows retain WM and remain included.
+Fresh/invalid/unsupported tracks are not included in these accuracy means.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: right;">Preserve</th>
+<th style="text-align: right;">Zero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paired eligible samples</td>
+<td style="text-align: right;">116,211,295</td>
+<td style="text-align: right;">115,986,537</td>
+</tr>
+<tr>
+<td>Original WM mean error</td>
+<td style="text-align: right;">141.55cm</td>
+<td style="text-align: right;">143.05cm</td>
+</tr>
+<tr>
+<td>Used mean error</td>
+<td style="text-align: right;"><strong>52.62cm</strong></td>
+<td style="text-align: right;"><strong>52.58cm</strong></td>
+</tr>
+<tr>
+<td>Mean-error reduction</td>
+<td style="text-align: right;">62.83%</td>
+<td style="text-align: right;">63.24%</td>
+</tr>
+<tr>
+<td>Improved by &gt;1cm</td>
+<td style="text-align: right;">54.94%</td>
+<td style="text-align: right;">55.33%</td>
+</tr>
+<tr>
+<td>Added error &gt;1cm</td>
+<td style="text-align: right;">5.37%</td>
+<td style="text-align: right;">5.35%</td>
+</tr>
+<tr>
+<td>Added error &gt;5cm</td>
+<td style="text-align: right;">5.08%</td>
+<td style="text-align: right;">5.06%</td>
+</tr>
+<tr>
+<td>Added error &gt;10cm</td>
+<td style="text-align: right;">4.69%</td>
+<td style="text-align: right;">4.68%</td>
+</tr>
+<tr>
+<td>Added error &gt;25cm</td>
+<td style="text-align: right;">3.70%</td>
+<td style="text-align: right;">3.69%</td>
+</tr>
+<tr>
+<td>Added error &gt;50cm</td>
+<td style="text-align: right;">1.57%</td>
+<td style="text-align: right;">1.55%</td>
+</tr>
+<tr>
+<td>Added error &gt;1m</td>
+<td style="text-align: right;">0.72%</td>
+<td style="text-align: right;">0.72%</td>
+</tr>
+<tr>
+<td>Largest added error</td>
+<td style="text-align: right;">14.77m</td>
+<td style="text-align: right;">14.04m</td>
+</tr>
+<tr>
+<td>Games with a lower position-error mean than their own WM</td>
+<td style="text-align: right;">200/200</td>
+<td style="text-align: right;">200/200</td>
+</tr>
+</tbody>
+</table>
+<p>Added error is used position error minus original WM error for the same
+observer/target/cycle, not absolute error. The two batches have different
+sample mixes. The difference between52.62cm and52.58cm is not evidence of a
+better network: the weights and selection threshold did not change.</p>
+<p><img alt="Accuracy and age" src="accuracy-and-age.svg" /></p>
+<h3>By named-sighting age</h3>
+<table>
+<thead>
+<tr>
+<th>Age</th>
+<th style="text-align: right;">Preserve mean cm</th>
+<th style="text-align: right;">Zero mean cm</th>
+<th style="text-align: right;">Preserve adds &gt;25cm</th>
+<th style="text-align: right;">Zero adds &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">13.57</td>
+<td style="text-align: right;">13.46</td>
+<td style="text-align: right;">3.19%</td>
+<td style="text-align: right;">3.22%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">25.27</td>
+<td style="text-align: right;">25.11</td>
+<td style="text-align: right;">3.23%</td>
+<td style="text-align: right;">3.24%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">40.14</td>
+<td style="text-align: right;">39.91</td>
+<td style="text-align: right;">3.41%</td>
+<td style="text-align: right;">3.38%</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td style="text-align: right;">60.25</td>
+<td style="text-align: right;">60.16</td>
+<td style="text-align: right;">4.41%</td>
+<td style="text-align: right;">4.38%</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td style="text-align: right;">93.72</td>
+<td style="text-align: right;">93.57</td>
+<td style="text-align: right;">5.38%</td>
+<td style="text-align: right;">5.32%</td>
+</tr>
+<tr>
+<td>11–20</td>
+<td style="text-align: right;">150.94</td>
+<td style="text-align: right;">150.39</td>
+<td style="text-align: right;">4.66%</td>
+<td style="text-align: right;">4.56%</td>
+</tr>
+<tr>
+<td>21–30</td>
+<td style="text-align: right;">225.43</td>
+<td style="text-align: right;">224.31</td>
+<td style="text-align: right;">4.25%</td>
+<td style="text-align: right;">4.15%</td>
+</tr>
+</tbody>
+</table>
+<h3>By true observer-target distance</h3>
+<table>
+<thead>
+<tr>
+<th>Distance m</th>
+<th style="text-align: right;">Preserve original→used cm</th>
+<th style="text-align: right;">Zero original→used cm</th>
+<th style="text-align: right;">Preserve adds &gt;25cm</th>
+<th style="text-align: right;">Zero adds &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–10</td>
+<td style="text-align: right;">182.42→68.42</td>
+<td style="text-align: right;">183.76→68.20</td>
+<td style="text-align: right;">3.62%</td>
+<td style="text-align: right;">3.59%</td>
+</tr>
+<tr>
+<td>10–20</td>
+<td style="text-align: right;">173.09→61.95</td>
+<td style="text-align: right;">174.75→61.95</td>
+<td style="text-align: right;">3.94%</td>
+<td style="text-align: right;">3.92%</td>
+</tr>
+<tr>
+<td>20–35</td>
+<td style="text-align: right;">141.70→51.10</td>
+<td style="text-align: right;">143.40→51.00</td>
+<td style="text-align: right;">3.85%</td>
+<td style="text-align: right;">3.84%</td>
+</tr>
+<tr>
+<td>35–50</td>
+<td style="text-align: right;">91.17→38.87</td>
+<td style="text-align: right;">91.82→38.84</td>
+<td style="text-align: right;">3.22%</td>
+<td style="text-align: right;">3.22%</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Was posCount really zero, and did it contaminate the next input?</h2>
+<ul>
+<li>All2,200 left metadata records use apply/zero/adaptive and the expected
+  bundle. All2,200 right records use model-off/adaptive.</li>
+<li><strong>75,602,272 predictions applied</strong> across all distances. Every
+  applied prediction record has decision_count=0, while stock_count stays
+  positive. No applied row was fresh, ineligible, unselected, stopped, outside
+  age1–30, or at/below routing threshold0.8.</li>
+<li>Effective count of an unselected eligible position remains its original
+  count. Zero does not rewrite raw tracker/seen ages or velocity/body state.</li>
+<li>Raw object joins were checked in two full left-observer logs and one right
+  observer: 167,861 valid target rows,
+  including 68,020 applied rows.
+  Exposed WM position/count and prediction-log position/count agree; the
+  raw stock fields retain their original values. Right has no overlay.</li>
+<li>Reconstructed the observation-only Python pipeline from the same logs:
+  48 sampled eligible outputs from the
+  first and last game, zero routing disagreements; maximum position difference
+  0.00006554m including CSV rounding.
+  Input feature dumps were off, so this is a sampled output replay check.</li>
+<li>No server-configuration violations, model/runtime/unknown-column errors,
+  missing console/order files or disagreement between metadata and final
+  AutoTest score lines were found.</li>
+<li>No missing-decision placeholder rows in 30,430,945
+  recorded decisions. Per-game inference medians were
+  12.55–14.30ms;
+  per-game p95 range21.23–
+  23.11ms; maximum
+  82.74ms. These are inference times only.</li>
+<li>1,386,937 nonempty randomized command
+  rounds: left first692,998, right first
+  693,939. No fixed side priority is visible.</li>
+</ul>
+<p>The zero setting removes posCount-based skips/margins while a forecast is
+accepted. It does not remove all age handling: some intercept bonuses and
+receiver/look checks use seenPosCount/heardPosCount; velocity/body ages are
+unchanged. The original age distribution remains similar in both batches.</p>
+<h2>4. Near-ball and next-cycle checks (10 sampled games per policy)</h2>
+<p>Each context sample uses110 left observers from10 evenly spaced game IDs,
+chosen without using outcomes. These are separate sampled trajectories and
+must not be presented as the full200-game context result. True distances are
+labels for reporting only; none enters inference.</p>
+<p><img alt="Ball context" src="ball-context.svg" /></p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: right;">Preserve original→used cm</th>
+<th style="text-align: right;">Zero original→used cm</th>
+<th style="text-align: right;">Preserve adds &gt;25cm</th>
+<th style="text-align: right;">Zero adds &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target within2m of ball</td>
+<td style="text-align: right;">47.22→33.34</td>
+<td style="text-align: right;">47.17→32.48</td>
+<td style="text-align: right;">1.65%</td>
+<td style="text-align: right;">1.50%</td>
+</tr>
+<tr>
+<td>Target2–5m from ball</td>
+<td style="text-align: right;">48.64→32.69</td>
+<td style="text-align: right;">50.05→31.40</td>
+<td style="text-align: right;">4.22%</td>
+<td style="text-align: right;">4.76%</td>
+</tr>
+<tr>
+<td>Target at least5m from ball</td>
+<td style="text-align: right;">147.02→53.29</td>
+<td style="text-align: right;">150.91→54.11</td>
+<td style="text-align: right;">3.64%</td>
+<td style="text-align: right;">3.76%</td>
+</tr>
+<tr>
+<td>Observer within3m of ball</td>
+<td style="text-align: right;">210.66→69.39</td>
+<td style="text-align: right;">225.14→70.09</td>
+<td style="text-align: right;">3.88%</td>
+<td style="text-align: right;">4.05%</td>
+</tr>
+<tr>
+<td>Next cycle: current position + unchanged valid WM velocity</td>
+<td style="text-align: right;">69.01→45.90</td>
+<td style="text-align: right;">69.26→45.54</td>
+<td style="text-align: right;">1.69%</td>
+<td style="text-align: right;">1.75%</td>
+</tr>
+</tbody>
+</table>
+<p>For zero, target-near-ball error is47.17→
+32.48cm (31.1% reduction). This is a
+smaller gain than on the overall stale sample. The one-step test uses identical
+valid WM velocity for both candidate positions and true consecutive PlayOn
+positions; it is not the complete planner/intercept simulation.</p>
+<h2>5. Remaining regression risk</h2>
+<p>On 24,042,671 zero-batch eligible samples where WM error was already
+below10cm, mean error changed <strong>1.38→4.85cm</strong>;
+7.90% added &gt;25cm. These are truth-defined
+diagnostic groups, not a deployable oracle rule.</p>
+<p>Worst added-error case below50m: <code>202611170135_23762/l_2</code>,
+cycle227, object21; named age29,
+original count29, effective count0. Observer distance
+23.67m; error changed <strong>2.89→
+16.93m</strong>, adding14.04m. Routing score
+0.973 is not a calibrated correctness probability.</p>
+<p>Zero lets decision code use corrected stale players more freely, but also
+presents bad accepted forecasts as effective count-zero states. It does not
+make their uncertainty equal to a real fresh named measurement.</p>
+<h2>6. What this run establishes, and the next useful diagnostic</h2>
+<ol>
+<li>The selected model still reduces mean current-position error substantially.
+   Integration checks and sampled Python replay agree in zero mode.</li>
+<li>Keeping age and zeroing age produce almost identical position-error metrics.
+   Their distinction is decision behavior. The observed zero batch is better
+   than preserve, but the unpaired result is not statistically conclusive.</li>
+<li>Neither live trial has established stronger gameplay than stock. Even
+   zero's balanced85/30/85 does not demonstrate a gain over the original team.</li>
+<li>Current-point mean error is insufficient as the sole success metric. Rare
+   wrong corrections, remaining motion uncertainty, and action-dependent costs
+   still matter. Existing logs do not isolate a single cause of lost goals.</li>
+</ol>
+<p>Do not treat zero as a confirmed winning policy or enlarge the network based
+on these results alone. If continuing research, a useful next diagnostic is
+a clearly labelled <strong>oracle-position ceiling test</strong>: on the same eligible/
+selected stale players, provide same-cycle true position for testing only,
+with stock velocity/body and an explicit count policy. Keep it separate from
+training/normal model inference, use controlled seeds and swap treatment sides.
+This would help distinguish residual position-estimation failures from limits
+of current-point-only information and the planner's use of it. It is a proposed
+experiment; no oracle inference or new runtime behavior was implemented here.</p>
+<h2>Reproduce</h2>
+<pre><code class="language-bash">cd /home/nader/workspace/denoise
+exp=rcssserver-denoise/experiments/exp5/exp5-s1
+.venv-exp5-s1/bin/python &quot;$exp/code/audit_player_gap_batch.py&quot; \
+  logs/exp5-live-zero logs/exp5-s1/live-analysis/zero-200 --workers 6
+.venv-exp5-s1/bin/python &quot;$exp/code/audit_player_gap_context.py&quot; \
+  logs/exp5-live-zero logs/exp5-s1/live-analysis/zero-200/summary.json \
+  logs/exp5-s1/live-analysis/zero-200/context --workers 6
+.venv-exp5-s1/bin/python &quot;$exp/code/audit_player_gap_runtime.py&quot; \
+  logs/exp5-live-zero AutoTest2D/out/exp5-live-zero \
+  logs/exp5-s1/live-analysis/zero-200/runtime.json \
+  --reference preserve logs/exp5-live-preserve --reference baseline logs/exp5-logs
+.venv-exp5-s1/bin/python &quot;$exp/code/compare_player_gap_live.py&quot; \
+  logs/exp5-s1/live-analysis/preserve-200 logs/exp5-s1/live-analysis/zero-200 \
+  &quot;$exp/reports/live-zero-200&quot;
+</code></pre>
+<p>Per-game/observer caches are under logs/exp5-s1 outside Git. JSON evidence is
+alongside this report. Means and worsening rates are weighted by exact sample
+counts; per-game percentiles are not averaged into a global percentile.
+Game-outcome bootstrap uses whole games. No model weights, server, librcsc or
+Helios runtime code was changed by this review.</p></body></html>

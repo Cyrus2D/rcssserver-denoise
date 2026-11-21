@@ -1,0 +1,32 @@
+{
+  "games": 200,
+  "observers": 2200,
+  "counts": {
+    "observer_cycles_eligible": 9948791,
+    "observer_cycles_applied": 9181958,
+    "observer_cycles_better25": 8759331,
+    "observer_cycles_worse25": 3306130,
+    "observer_cycles_worse50": 1683255,
+    "observer_cycles_worse100": 812903,
+    "observer_cycles_worse25_near10": 414601,
+    "observer_cycles_worse25_opponent_near10": 256157,
+    "observer_cycles_worse25_good_wm10cm": 1486061,
+    "observer_cycles_both_better25_and_worse25": 3167144,
+    "target_episodes_added_over1m": 218818,
+    "target_episodes_added_over1m_at_least3cycles": 99229
+  },
+  "percent_of_observer_cycles_with_eligible_stale_under50": {
+    "observer_cycles_eligible": 100.0,
+    "observer_cycles_applied": 92.29219912248634,
+    "observer_cycles_better25": 88.0441754178975,
+    "observer_cycles_worse25": 33.23147506063802,
+    "observer_cycles_worse50": 16.919191487689307,
+    "observer_cycles_worse100": 8.17087221954909,
+    "observer_cycles_worse25_near10": 4.16735058561387,
+    "observer_cycles_worse25_opponent_near10": 2.574755063203157,
+    "observer_cycles_worse25_good_wm10cm": 14.937101402572434,
+    "observer_cycles_both_better25_and_worse25": 31.83446109180502
+  },
+  "max_consecutive_cycles_added_over1m": 28,
+  "note": "A cycle may have both better and worse targets. These observer-cycle and episode counts are correlated diagnostic exposures, not independent errors or failed actions."
+}

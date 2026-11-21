@@ -1,0 +1,102 @@
+[
+  {
+    "epoch": 1,
+    "loss": 0.7987801146507263,
+    "validation": {
+      "mean": 0.7082150844573974,
+      "map": 0.7082150844573974
+    },
+    "readout": "mean",
+    "elapsed_seconds": 10.943922332000511
+  },
+  {
+    "epoch": 2,
+    "loss": 0.6974120869114995,
+    "validation": {
+      "mean": 0.6605152823638916,
+      "map": 0.6605152823638916
+    },
+    "readout": "mean",
+    "elapsed_seconds": 20.266886002995307
+  },
+  {
+    "epoch": 3,
+    "loss": 0.6656025349348783,
+    "validation": {
+      "mean": 0.6457392901611329,
+      "map": 0.6457392901611329
+    },
+    "readout": "mean",
+    "elapsed_seconds": 30.10993885299831
+  },
+  {
+    "epoch": 4,
+    "loss": 0.6407927533239126,
+    "validation": {
+      "mean": 0.6282956785583496,
+      "map": 0.6282956785583496
+    },
+    "readout": "mean",
+    "elapsed_seconds": 38.89997020199371
+  },
+  {
+    "epoch": 5,
+    "loss": 0.6288446518033743,
+    "validation": {
+      "mean": 0.6112425019073486,
+      "map": 0.6112425019073486
+    },
+    "readout": "mean",
+    "elapsed_seconds": 48.0518360789938
+  },
+  {
+    "epoch": 6,
+    "loss": 0.6075338312983513,
+    "validation": {
+      "mean": 0.5951523317718506,
+      "map": 0.5951523317718506
+    },
+    "readout": "mean",
+    "elapsed_seconds": 58.34038321899425
+  },
+  {
+    "epoch": 7,
+    "loss": 0.5967642522975802,
+    "validation": {
+      "mean": 0.5810846981048584,
+      "map": 0.5810846981048584
+    },
+    "readout": "mean",
+    "elapsed_seconds": 68.52926912700059
+  },
+  {
+    "epoch": 8,
+    "loss": 0.5857759582623839,
+    "validation": {
+      "mean": 0.5732888664245606,
+      "map": 0.5732888664245606
+    },
+    "readout": "mean",
+    "elapsed_seconds": 78.7662630939958
+  },
+  {
+    "epoch": 9,
+    "loss": 0.5793377780541777,
+    "validation": {
+      "mean": 0.5683855452728271,
+      "map": 0.5683855452728271
+    },
+    "readout": "mean",
+    "elapsed_seconds": 88.49012325499643
+  },
+  {
+    "epoch": 10,
+    "loss": 0.5746127881854772,
+    "validation": {
+      "mean": 0.5640979051971435,
+      "map": 0.5640979051971435
+    },
+    "readout": "mean",
+    "elapsed_seconds": 97.7717955259941
+  }
+]

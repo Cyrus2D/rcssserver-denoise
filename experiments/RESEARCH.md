@@ -84,7 +84,8 @@ while leaving other rounded fields available for analysis.
   scoring while decisions and model inputs still use observations.
 - Use a separate port set and game ID per parallel match, and the same ID
   for both teams in that match. Use a separate log directory per
-  configuration. A complete player log has schema version 2 and
+  configuration. Baseline Exp5 logs have schema 2; the optional Exp5-S1 live integration
+  writes schema 4 with separate raw/decision positions. A complete log has
   `final: true` with `status: "ok"` in `<game_id>/<side>_<unum>/meta.json`.
 - Score `PlayOn` with valid fullstate. Give each eligible sample equal
   weight. Group by true distance, visual age, estimate age and visibility.
@@ -155,3 +156,87 @@ Retrieve logging selectively and rebuild before new collection. The next
 focus is accurate visible measurements with finite views and prediction
 while targets are unseen. Existing see_noise_free is distance-only, so
 verify the observation model before calling that experiment noiseless.
+
+## Exp5 baseline prepared
+
+[Exp5](exp5/README.md) adds an opt-in see_no_quantization mode and exact-mode
+client localization, preserving finite FOV/cadence. Its tested pilot has
+zero logged raw/fresh localization quantization error; error grows while
+targets are unseen. Both baseline teams use no neural models. The first
+100-game collection uses adaptive views, no fading/player payloads and
+reference-only fullstate. The native schema-2 logger remains sufficient.
+Analyze before selecting a learned gap predictor.
+
+## Exp5 200-game live baseline (2026-11-15)
+
+The [full visual audit](exp5/reports/02-live-200/report.html) covers 200 finalized games, 4,400 observers and 21,470,966 PlayOn decisions. All 819,660,850 checked raw/fix scalar readings were zero at stored precision; hearing logs contained no payloads and fullstate was reference-only. Both teams are baseline, with no neural correction.
+
+Position-count-1 errors: self 1.8406 cm, ball 19.1122 cm, teammate 24.5088 cm, opponent 24.0665 cm. At count 5: ball 302.6543 cm, teammate 112.0816 cm, opponent 116.4721 cm. Means weight valid samples equally.
+
+Do not equate receiving see with a self-position fix, a count-0 player track with confirmed identity, or a fresh ball position with fresh velocity. Anonymous near-field updates can retain the wrong uniform number; an exact position-only ball sighting can retain a badly outdated velocity. Player velocity/body fields are not logged once invalid (default counters >=5 / >=2), so unavailable old-field errors cannot be reconstructed from the saved WM columns. The report includes concrete cases, counter-conditioned view/distance plots, validity and error tails.
+
+Use live_audit.py for current WM counters and verify_run.py for finalized metadata/hearing checks. Original analyze.py measures separate causal baselines using time since the last identified sighting and resets across PlayOn boundaries; do not mix that age definition with WM counters. Preserve confirmed fresh measurements and field/identity masks in the next learned predictor; use whole-game splits and no truth inputs.
+
+## Exp5-S1: position prediction comparison
+
+[Exp5-S1](exp5/exp5-s1/README.md) builds observation-only 32-cycle histories for all 200 games/4,400 observers. Whole-game split is 160 train, ten selection, ten confidence calibration and 20 test. Three 64-unit GRUs predict current position only: deterministic, full-covariance Gaussian, three-component mixture. All use identical features and sampled endpoints; true states are labels only.
+
+On 28,180,368 paired held-out target-cycles, stock error 129.43 cm became 57.22 / 65.47 / 73.68 cm. The strongest point predictor reduced the mean by 55.79%, improving 66.30% and worsening 27.87% of rows (1 cm tolerance). Constant velocity alone scored 113.52 cm. All three improved pooled per-game means in all 20 games; this is one seed and is not a match-performance result.
+
+Do not apply the raw predictor universally: the single model worsened 77.31% of already-accurate (<10 cm stock error) rows, and its worst added error was 16.56 m. Current anonymous observations can be accurate despite no named sighting; preserve this distinction. A 25 cm capped/gated policy scored 117.44 cm with bounded added position error. Gaussian/mixture calibrated 90% moment ellipses covered about 89.65%/89.63%; mixture density/NLL was better, but point error was worse. Next candidates are uncertainty around the accurate point predictor, observation-preservation guards and replicated training seeds, before live integration. Full metrics, exact cases, code, TensorBoard logs and frozen splits are linked from the step.
+
+## Exp5 closeout and cache-v2 qualification
+
+[Final report](exp5/reports/final/report.html) · [SoccerWindow one-game guide](exp5/debug/README.md).
+
+The frozen visual-gap model reduced point error substantially, but both old200-game live batches used an overlay refresh that duplicated derived player containers and could rerun identity inference. Cache-v2 fixes those refreshes and resets current kickable pointers before rebuilding. Earlier live scores are historical measurements, not a clean test of the intended predictor. The corrected build first passed short correctness/display checks; the subsequent corrected-cache benchmark is recorded below. New metadata: player_gap_integration=cache-v2.
+
+
+### Corrected-cache preserve follow-up · 2026-11-18
+
+[New 200-game report](exp5/exp5-s1/reports/live-preserve-cache-v2-200/report.html):
+all 4,400 records identify cache-v2, left apply/preserve versus right off,
+635–684 goals and 78/22/100 W/D/L. Below 50 m on eligible stale-player rows,
+mean error improved 142.32→53.78 cm, but rare severe errors remain and no gameplay
+gain is established. The new cache-v2 zero batch is pending. The user removed
+old live logs and reused the preserve directory name; analysis must validate
+source fingerprints and use a new dated cache, not the old preserve-200 cache.
+Native/PyTorch replay and reconstructed truth-position RCG examples are included
+in the new report. Do not treat reconstructed clips as original action logs.
+
+
+## Corrected-cache zero review and half policy · 2026-11-18
+
+[Complete comparison](exp5/exp5-s1/reports/live-count-cache-v2-200/report.html) · [Half launch/checks](exp5/exp5-s1/reports/half-count-policy.md).
+
+Zero completed **678–702 goals, 78/35/87 W/D/L**, versus **635–684, 78/22/100**
+for preserve. Both have 200 games /4,400 finalized cache-v2 observers. Below
+50 m, eligible stale-target error means are **53.99 /53.78 cm**, respectively;
+added error >25 cm remains in **3.79% /3.77%** of target-cycles. Zero was correctly
+applied; no gameplay gain over stock is established. Its observed +0.125 goals
+difference/game versus preserve has independent-game bootstrap 95% interval
+[-0.365,+0.610], including zero. Seeds/trajectories are different.
+
+The requested **half** policy is now available: max(1,floor(original raw
+posCount/2)), on applied overlays only. Preserve remains default. Native/live
+correctness checks exist; no half gameplay benchmark has completed.
+
+
+## Exp5 closeout · all three corrected-cache policies completed
+
+[Short all-step closeout](exp5/reports/final/report.html) ·
+[600-game detailed comparison](exp5/exp5-s1/reports/live-count-cache-v2-200/report.html).
+
+Half completed 200 games: 656–696 goals, 86/28/86 W/D/L, 286–286 points.
+Its eligible stale-player mean error below50m changed142.87→53.70cm, versus
+53.78cm preserve and53.99cm zero. Count/routing checks and sampled native/Python
+output parity passed. Same frozen bundle, no runtime code/model changes for
+this analysis. No policy has established a gameplay advantage: half balances
+points, zero has a less negative goal margin, and independent-game uncertainty
+does not isolate a policy effect.
+
+Retain observation-only prediction, raw-input isolation, age/identity masks,
+cache-v2 invariants and visual tools. Do not equate lower mean error with safer
+decisions, selector score with calibrated confidence, or an inferred position
+with a true sighting. The compact closeout covers all stages; the original
+detailed cache/debug handoff is archived under reports/final/integration-handoff.

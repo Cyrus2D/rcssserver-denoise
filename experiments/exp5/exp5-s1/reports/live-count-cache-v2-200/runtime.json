@@ -1,0 +1,108 @@
+{
+  "current": {
+    "games": 200,
+    "goals_left": 656,
+    "goals_right": 696,
+    "wins": 86,
+    "draws": 28,
+    "losses": 86,
+    "mean_goal_difference": -0.2
+  },
+  "command_order": {
+    "nonempty_rounds": 1372723,
+    "left_first": 686118,
+    "right_first": 686605
+  },
+  "command_batch_sizes": {
+    "1": 304,
+    "2": 3556,
+    "6": 17,
+    "12": 198,
+    "14": 4,
+    "22": 1368483,
+    "15": 3,
+    "8": 26,
+    "5": 4,
+    "11": 26,
+    "7": 17,
+    "10": 19,
+    "20": 13,
+    "17": 1,
+    "21": 17,
+    "9": 18,
+    "19": 6,
+    "18": 4,
+    "3": 1,
+    "13": 5,
+    "4": 1
+  },
+  "runtime_errors": [],
+  "missing_files": [],
+  "score_mismatches": [],
+  "goal_diff_bootstrap95": [
+    -0.56,
+    0.15
+  ],
+  "references": {
+    "preserve": {
+      "games": 200,
+      "goals_left": 635,
+      "goals_right": 684,
+      "wins": 78,
+      "draws": 22,
+      "losses": 100,
+      "mean_goal_difference": -0.245,
+      "change_in_mean_goal_difference": 0.044999999999999984,
+      "independent_game_bootstrap95_for_change": [
+        -0.45499999999999996,
+        0.52
+      ],
+      "overlapping_simulator_and_order_seed_pairs": 0,
+      "paired": false,
+      "goal_diff_bootstrap95": [
+        -0.585,
+        0.095
+      ]
+    },
+    "zero": {
+      "games": 200,
+      "goals_left": 678,
+      "goals_right": 702,
+      "wins": 78,
+      "draws": 35,
+      "losses": 87,
+      "mean_goal_difference": -0.12,
+      "change_in_mean_goal_difference": -0.08000000000000002,
+      "independent_game_bootstrap95_for_change": [
+        -0.5800000000000001,
+        0.41
+      ],
+      "overlapping_simulator_and_order_seed_pairs": 0,
+      "paired": false,
+      "goal_diff_bootstrap95": [
+        -0.46,
+        0.23
+      ]
+    },
+    "baseline": {
+      "games": 200,
+      "goals_left": 678,
+      "goals_right": 660,
+      "wins": 87,
+      "draws": 44,
+      "losses": 69,
+      "mean_goal_difference": 0.09,
+      "change_in_mean_goal_difference": -0.29000000000000004,
+      "independent_game_bootstrap95_for_change": [
+        -0.76,
+        0.18000000000000002
+      ],
+      "overlapping_simulator_and_order_seed_pairs": 0,
+      "paired": false,
+      "goal_diff_bootstrap95": [
+        -0.22,
+        0.395
+      ]
+    }
+  }
+}

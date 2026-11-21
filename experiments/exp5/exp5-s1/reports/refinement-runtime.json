@@ -1,0 +1,22 @@
+{
+  "python": "3.10.12",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1",
+  "sklearn": "1.7.2",
+  "torch": "2.5.1+cu118",
+  "joblib": "1.6.0",
+  "cuda": "11.8",
+  "gpu": "Quadro P2200",
+  "training_openmp_threads": 8,
+  "artifacts_sha256": {
+    "logs/exp5-s1/refinement/frozen-policies.json": "8aebe341b6ae05da29b638726b814fc37f7561fa4a3bfc6586770386e45dcd7b",
+    "logs/exp5-s1/refinement/pruned-trees.json": "fa80974f2701e95c15729b71681845d6289c813bca2bbcaca693f5cc55501baa",
+    "logs/exp5-s1/refinement/tree-controls.pkl": "089dfaa9e768ea2c6f8f94357e76a06e8e5ebb227a27c6450e542a814fefe752",
+    "logs/exp5-s1/refinement/continue128/best.pt": "4e8b06b387cf1afd1c6d90159f4e7a549eea242015958961349a23aa96d103ea",
+    "logs/exp5-s1/refinement/continue128-selectors.pkl": "5bf01b15b821ddb5ec0d9d3431fe475af871bfbd9b467e2938b8cd64d1c44c10",
+    "logs/exp5-s1/refinement/wmresidual128_l1/best.pt": "cfadedba3fa9da705d2daba5b94eb4bc7ad552c607454df805b6a564714620e5",
+    "logs/exp5-s1/refinement/wmresidual128_l1-selectors.pkl": "6129b7165789866593b5ed934b606737f50f0a98c91734dc0327003bc1c68e4f",
+    "logs/exp5-s1/refinement/harm128_l3/best.pt": "094edade1db20e0f957e32ec4ef92ce57c10ba8131418c6e7ecafed6fddfd60e",
+    "logs/exp5-s1/refinement/harm128_l3-selectors.pkl": "cb4f37e07c8db1a784f9dbe4b4aaaf2eca2bb61e4fe5482b7b48a889da3ca6b2"
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "max_true_distance_m": 50,
+  "complete_games_only": true,
+  "complete_games": [
+    "202611161913_14309",
+    "202611161913_25750",
+    "202611161913_27650",
+    "202611161913_30182",
+    "202611161913_30852",
+    "202611161916_12230",
+    "202611161916_17123",
+    "202611161916_27284",
+    "202611161916_6770",
+    "202611161916_8946"
+  ],
+  "skipped_unfinished_or_excluded_observers": 111,
+  "skipped_unfinished_observers": 111,
+  "config_issues": [],
+  "checks": {
+    "applied_ineligible": 0,
+    "applied_unselected": 0,
+    "applied_fresh": 0,
+    "applied_outside_age": 0,
+    "applied_stopped": 0,
+    "applied_score_not_above_threshold": 0,
+    "selected_ineligible": 0,
+    "wrong_effective_count": 0,
+    "wrong_unapplied_count": 0,
+    "selected_but_not_applied": 0,
+    "used_error_mismatch": 0
+  },
+  "cycles": {
+    "decision_cycles": 1509967,
+    "missing_decision_placeholders": 0,
+    "play_on_decisions": 1094434
+  },
+  "groups": [
+    {
+      "mode": "apply",
+      "count_policy": "preserve",
+      "side": "l",
+      "observers": 110,
+      "games": 10,
+      "statuses": {
+        "ok": 11491557,
+        "inactive_or_invalid_self": 207834
+      },
+      "applied_all": 3879643,
+      "eligible_all": 6720682,
+      "selected_all": 3879643,
+      "bundles": [
+        "40e7c00f9436dad47d627da9d8280cb42fa7d9c9a85bc5ced75a7f80e663f929"
+      ],
+      "view_policies": [
+        "adaptive"
+      ],
+      "worst": {
+        "game": "202611161913_30182",
+        "observer": "l_7",
+        "cycle": 4857,
+        "object_id": 21,
+        "named_age": 30,
+        "stock_count": 8,
+        "score": 0.9388335464,
+        "distance_m": 19.169571,
+        "stock_error_m": 16.09237438,
+        "used_error_m": 29.35188065,
+        "added_error_m": 13.25950627
+      },
+      "inference_ms": {
+        "median": 14.33893,
+        "p95": 23.785021999999994,
+        "maximum": 57.38885,
+        "cycles": 547217
+      },
+      "selected_percent": 61.04612269646594,
+      "proposed": {
+        "samples": 5940546,
+        "stock_mean_cm": 142.58851026160727,
+        "used_mean_cm": 52.96600044068964,
+        "used_p95_cm": 215.78928399999998,
+        "gain_percent": 62.85394921125631,
+        "better_1cm_percent": 55.47104592742822,
+        "added_over_0cm_percent": 5.485657378968196,
+        "added_over_1cm_percent": 5.401894034656074,
+        "added_over_5cm_percent": 5.097039901719472,
+        "added_over_10cm_percent": 4.704937896280914,
+        "added_over_25cm_percent": 3.7110898560502688,
+        "added_over_50cm_percent": 1.6056436563238463,
+        "added_over_100cm_percent": 0.7507559069486205,
+        "max_added_cm": 1325.950627
+      },
+      "actually_used": {
+        "samples": 5940546,
+        "stock_mean_cm": 142.58851026160727,
+        "used_mean_cm": 52.96600044068964,
+        "used_p95_cm": 215.78928399999998,
+        "gain_percent": 62.85394921125631,
+        "better_1cm_percent": 55.47104592742822,
+        "added_over_0cm_percent": 5.485657378968196,
+        "added_over_1cm_percent": 5.401894034656074,
+        "added_over_5cm_percent": 5.097039901719472,
+        "added_over_10cm_percent": 4.704937896280914,
+        "added_over_25cm_percent": 3.7110898560502688,
+        "added_over_50cm_percent": 1.6056436563238463,
+        "added_over_100cm_percent": 0.7507559069486205,
+        "max_added_cm": 1325.950627
+      },
+      "by_named_age": {
+        "1": {
+          "samples": 2461227,
+          "stock_mean_cm": 25.547077749141806,
+          "used_mean_cm": 13.684128667531276,
+          "used_p95_cm": 45.38680529999996,
+          "gain_percent": 46.43564010764025,
+          "better_1cm_percent": 45.50681428409488,
+          "added_over_0cm_percent": 4.62480705761801,
+          "added_over_1cm_percent": 4.560773955429548,
+          "added_over_5cm_percent": 4.364652264906894,
+          "added_over_10cm_percent": 4.00093124283132,
+          "added_over_25cm_percent": 3.1662662566272837,
+          "added_over_50cm_percent": 0.005810110160501246,
+          "added_over_100cm_percent": 0.0,
+          "max_added_cm": 60.094322999999996
+        },
+        "2": {
+          "samples": 1143606,
+          "stock_mean_cm": 50.5226912674811,
+          "used_mean_cm": 25.227676937757398,
+          "used_p95_cm": 81.35253175,
+          "gain_percent": 50.06664074129563,
+          "better_1cm_percent": 53.072649146646654,
+          "added_over_0cm_percent": 6.2085193676843256,
+          "added_over_1cm_percent": 6.060566313922802,
+          "added_over_5cm_percent": 5.474787645395355,
+          "added_over_10cm_percent": 4.849659760441971,
+          "added_over_25cm_percent": 3.1579057822361896,
+          "added_over_50cm_percent": 1.3202973751449363,
+          "added_over_100cm_percent": 0.0023609529855562143,
+          "max_added_cm": 115.35955
+        },
+        "3": {
+          "samples": 482212,
+          "stock_mean_cm": 76.11548629234237,
+          "used_mean_cm": 40.12515855447397,
+          "used_p95_cm": 118.318843,
+          "gain_percent": 47.283843920588886,
+          "better_1cm_percent": 53.14840775426576,
+          "added_over_0cm_percent": 5.866299469942681,
+          "added_over_1cm_percent": 5.731296608130863,
+          "added_over_5cm_percent": 5.227576252768492,
+          "added_over_10cm_percent": 4.704569774290146,
+          "added_over_25cm_percent": 3.3873068277023384,
+          "added_over_50cm_percent": 1.8166283709239919,
+          "added_over_100cm_percent": 0.24014333944406197,
+          "max_added_cm": 146.71967
+        },
+        "4–5": {
+          "samples": 436549,
+          "stock_mean_cm": 107.33790557342932,
+          "used_mean_cm": 60.23206524236454,
+          "used_p95_cm": 173.20142739999994,
+          "gain_percent": 43.885559420422936,
+          "better_1cm_percent": 52.6868690570818,
+          "added_over_0cm_percent": 6.3779781880155495,
+          "added_over_1cm_percent": 6.2826853342923705,
+          "added_over_5cm_percent": 5.9099894857163795,
+          "added_over_10cm_percent": 5.498122776595525,
+          "added_over_25cm_percent": 4.448297900121178,
+          "added_over_50cm_percent": 2.9320878068670413,
+          "added_over_100cm_percent": 1.052344639433374,
+          "max_added_cm": 265.344257
+        },
+        "6–10": {
+          "samples": 547802,
+          "stock_mean_cm": 216.107201345373,
+          "used_mean_cm": 93.65144195646053,
+          "used_p95_cm": 258.4485436999999,
+          "gain_percent": 56.66435853435956,
+          "better_1cm_percent": 67.58774155625574,
+          "added_over_0cm_percent": 7.009649471889478,
+          "added_over_1cm_percent": 6.94028134252887,
+          "added_over_5cm_percent": 6.657149846112281,
+          "added_over_10cm_percent": 6.34827912274873,
+          "added_over_25cm_percent": 5.460914710059474,
+          "added_over_50cm_percent": 4.198597303405245,
+          "added_over_100cm_percent": 2.253003822549023,
+          "max_added_cm": 636.0340789999999
+        },
+        "11–20": {
+          "samples": 563080,
+          "stock_mean_cm": 478.8816292247123,
+          "used_mean_cm": 151.69532627002917,
+          "used_p95_cm": 419.80825754999984,
+          "gain_percent": 68.32300154933547,
+          "better_1cm_percent": 80.24721176387014,
+          "added_over_0cm_percent": 5.58517439795411,
+          "added_over_1cm_percent": 5.548589898415856,
+          "added_over_5cm_percent": 5.416281878241103,
+          "added_over_10cm_percent": 5.250941251687149,
+          "added_over_25cm_percent": 4.798607657881651,
+          "added_over_50cm_percent": 4.092846487177666,
+          "added_over_100cm_percent": 2.8791645947289903,
+          "max_added_cm": 923.7459839999999
+        },
+        "21–30": {
+          "samples": 306070,
+          "stock_mean_cm": 832.501430300902,
+          "used_mean_cm": 227.90394375382758,
+          "used_p95_cm": 685.1218430999998,
+          "gain_percent": 72.6241979342362,
+          "better_1cm_percent": 84.9217499264874,
+          "added_over_0cm_percent": 4.924036985003431,
+          "added_over_1cm_percent": 4.906067239520371,
+          "added_over_5cm_percent": 4.830267585846375,
+          "added_over_10cm_percent": 4.748913647204888,
+          "added_over_25cm_percent": 4.485248472571634,
+          "added_over_50cm_percent": 4.0957950795569635,
+          "added_over_100cm_percent": 3.3541346750743295,
+          "max_added_cm": 1325.950627
+        }
+      }
+    },
+    {
+      "mode": "off",
+      "count_policy": "preserve",
+      "side": "r",
+      "observers": 110,
+      "games": 10,
+      "statuses": {},
+      "applied_all": 0,
+      "eligible_all": 0,
+      "selected_all": 0,
+      "bundles": [
+        "off"
+      ],
+      "view_policies": [
+        "adaptive"
+      ],
+      "worst": null
+    }
+  ]
+}

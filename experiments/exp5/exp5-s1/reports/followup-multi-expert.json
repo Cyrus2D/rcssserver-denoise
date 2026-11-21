@@ -1,0 +1,142 @@
+{
+  "policies": {
+    "mean": {
+      "metrics": {
+        "n": 1000000,
+        "mean": 0.5643879429502939,
+        "baseline_mean": 1.2924323730674212,
+        "gain": 0.7280444301171277,
+        "gain_pct": 56.331336578114986,
+        "p95": 2.5171035885810844,
+        "p99": 5.15284129142762,
+        "max_error": 33.10324478149414,
+        "max_added_error": 13.840790510177612,
+        "hurt_pct": {
+          "0": 15.7472,
+          "0.05": 14.6294,
+          "0.1": 13.2497,
+          "0.25": 8.8555,
+          "0.5": 3.9127,
+          "1.0": 1.7076
+        },
+        "help_over_1cm_pct": 61.5587,
+        "accept_pct": 77.55109999999999
+      },
+      "choice_pct": {
+        "wm": 22.4489,
+        "point": 44.2882,
+        "gaussian": 23.5484,
+        "mixture": 9.7145
+      }
+    },
+    "risk": {
+      "metrics": {
+        "n": 1000000,
+        "mean": 0.5860538717385516,
+        "baseline_mean": 1.2924323730674212,
+        "gain": 0.7063785013288699,
+        "gain_pct": 54.654968108882315,
+        "p95": 2.5300119161605825,
+        "p99": 5.159925498962402,
+        "max_error": 33.10324478149414,
+        "max_added_error": 13.840790510177612,
+        "hurt_pct": {
+          "0": 7.3986,
+          "0.05": 7.0395,
+          "0.1": 6.716800000000001,
+          "0.25": 5.7593,
+          "0.5": 3.3783,
+          "1.0": 1.6453
+        },
+        "help_over_1cm_pct": 44.0214,
+        "accept_pct": 51.4929
+      },
+      "choice_pct": {
+        "wm": 48.507099999999994,
+        "point": 32.2136,
+        "gaussian": 12.992899999999999,
+        "mixture": 6.2864
+      }
+    }
+  },
+  "tuning": {
+    "mean": {
+      "threshold": 0.02,
+      "validation_utility": 0.7338671758823115,
+      "penalty": 0.0
+    },
+    "risk": {
+      "threshold": 0.2,
+      "validation_utility": 0.5412889529192857,
+      "penalty": 3.0
+    }
+  },
+  "metadata": {
+    "fit_games": "selection10",
+    "tune_games": "calibration10",
+    "test_games": "old test20 exploratory reuse",
+    "features": "71 point-selector observer/output features plus Gaussian/mixture correction and covariance, mixture maximum weight/entropy; no true states/errors as inputs",
+    "target": "expected improvement versus WM for each frozen model",
+    "fresh_policy": "retain WM whenever its position count is0"
+  },
+  "full_test": {
+    "mean": {
+      "metrics": {
+        "n": 28180368,
+        "mean": 0.5636403868072444,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.7306760581953099,
+        "gain_pct": 56.45265970439473,
+        "p95": 2.5090770602226247,
+        "p99": 5.145811080932617,
+        "max_error": 46.96780014038086,
+        "max_added_error": 15.275013148784637,
+        "hurt_pct": {
+          "0": 15.736185560103403,
+          "0.05": 14.618442881938234,
+          "0.1": 13.236487898241784,
+          "0.25": 8.858993608600144,
+          "0.5": 3.8961166156524287,
+          "1.0": 1.7008223597363954
+        },
+        "help_over_1cm_pct": 61.62399298689073,
+        "accept_pct": 77.60709157524131
+      },
+      "choice_pct": {
+        "wm": 22.392908424758684,
+        "point": 44.3601765597951,
+        "gaussian": 23.541378167950114,
+        "mixture": 9.7055368474961
+      }
+    },
+    "risk": {
+      "metrics": {
+        "n": 28180368,
+        "mean": 0.5853451476036715,
+        "baseline_mean": 1.2943164450025517,
+        "gain": 0.7089712973988815,
+        "gain_pct": 54.77573124688869,
+        "p95": 2.5231963753700253,
+        "p99": 5.15375343799591,
+        "max_error": 46.96780014038086,
+        "max_added_error": 15.275013148784637,
+        "hurt_pct": {
+          "0": 7.385968132140787,
+          "0.05": 7.0285242548997235,
+          "0.1": 6.694674817589323,
+          "0.25": 5.756173943505635,
+          "0.5": 3.361517493313075,
+          "1.0": 1.634166026504693
+        },
+        "help_over_1cm_pct": 44.10648931199195,
+        "accept_pct": 51.56794971591571
+      },
+      "choice_pct": {
+        "wm": 48.43205028408429,
+        "point": 32.29901752879877,
+        "gaussian": 12.999709585055811,
+        "mixture": 6.269222602061123
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "current": {
+    "games": 200,
+    "goals_left": 635,
+    "goals_right": 684,
+    "wins": 78,
+    "draws": 22,
+    "losses": 100,
+    "mean_goal_difference": -0.245
+  },
+  "command_order": {
+    "nonempty_rounds": 1371895,
+    "left_first": 685982,
+    "right_first": 685913
+  },
+  "command_batch_sizes": {
+    "1": 331,
+    "2": 3515,
+    "3": 2,
+    "15": 5,
+    "22": 1367644,
+    "8": 25,
+    "13": 6,
+    "10": 23,
+    "7": 25,
+    "5": 8,
+    "12": 195,
+    "19": 6,
+    "21": 27,
+    "20": 11,
+    "6": 16,
+    "11": 20,
+    "17": 4,
+    "14": 4,
+    "9": 16,
+    "4": 9,
+    "18": 3
+  },
+  "runtime_errors": [],
+  "missing_files": [],
+  "score_mismatches": [],
+  "goal_diff_bootstrap95": [
+    -0.585,
+    0.1
+  ],
+  "references": {}
+}

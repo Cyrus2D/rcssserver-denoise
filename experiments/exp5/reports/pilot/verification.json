@@ -1,0 +1,122 @@
+{
+  "exact-narrow-02": {
+    "agents": 22,
+    "exact": true,
+    "view_policy": "narrow",
+    "view_counts": {
+      "narrow": 2662,
+      "decisions": 2662,
+      "see_updates": 2662
+    },
+    "see_fraction": 1.0,
+    "max_absolute_errors": {
+      "n_dist": 0.0,
+      "n_dir": 0.0,
+      "n_dist_chg": 0.0,
+      "n_dir_chg": 0.0,
+      "n_body_rel": 0.0,
+      "n_ls_pos_d": 0.0
+    }
+  },
+  "exact-normal-02": {
+    "agents": 22,
+    "exact": true,
+    "view_policy": "normal",
+    "view_counts": {
+      "normal": 2684,
+      "decisions": 2684,
+      "see_updates": 1332
+    },
+    "see_fraction": 0.496274217585693,
+    "max_absolute_errors": {
+      "n_dist": 0.0,
+      "n_dir": 0.0,
+      "n_dist_chg": 0.0,
+      "n_dir_chg": 0.0,
+      "n_body_rel": 0.0,
+      "n_ls_pos_d": 0.0
+    }
+  },
+  "exact-wide-02": {
+    "agents": 22,
+    "exact": true,
+    "view_policy": "wide",
+    "view_counts": {
+      "wide": 2926,
+      "decisions": 2926,
+      "see_updates": 972
+    },
+    "see_fraction": 0.3321941216678059,
+    "max_absolute_errors": {
+      "n_dist": 0.0,
+      "n_dir": 0.0,
+      "n_dist_chg": 0.0,
+      "n_dir_chg": 0.0,
+      "n_body_rel": 0.0,
+      "n_ls_pos_d": 0.0
+    }
+  },
+  "exact-adaptive-03": {
+    "agents": 22,
+    "exact": true,
+    "view_policy": "adaptive",
+    "view_counts": {
+      "narrow": 3486,
+      "wide": 2425,
+      "normal": 3681,
+      "decisions": 9592,
+      "see_updates": 6129
+    },
+    "see_fraction": 0.6389699749791493,
+    "max_absolute_errors": {
+      "n_dist": 0.0,
+      "n_dir": 0.0,
+      "n_dist_chg": 0.0,
+      "n_dir_chg": 0.0,
+      "n_body_rel": 0.0,
+      "n_ls_pos_d": 0.0
+    }
+  },
+  "quantized-control-01": {
+    "agents": 22,
+    "exact": false,
+    "view_policy": "adaptive",
+    "view_counts": {
+      "narrow": 705,
+      "normal": 923,
+      "wide": 792,
+      "decisions": 2420,
+      "see_updates": 1423
+    },
+    "see_fraction": 0.5880165289256198,
+    "max_absolute_errors": {
+      "n_dist": 4.766942,
+      "n_dir": 0.500259,
+      "n_dist_chg": 0.502777,
+      "n_dir_chg": 0.05,
+      "n_body_rel": 0.5005,
+      "n_ls_pos_d": 8.316703
+    }
+  },
+  "installed-adaptive-01": {
+    "agents": 22,
+    "exact": true,
+    "view_policy": "adaptive",
+    "view_counts": {
+      "wide": 789,
+      "normal": 1049,
+      "narrow": 1506,
+      "decisions": 3344,
+      "see_updates": 2288
+    },
+    "see_fraction": 0.6842105263157895,
+    "max_absolute_errors": {
+      "n_dist": 0.0,
+      "n_dir": 0.0,
+      "n_dist_chg": 0.0,
+      "n_dir_chg": 0.0,
+      "n_body_rel": 0.0,
+      "n_ls_pos_d": 0.0
+    }
+  }
+}

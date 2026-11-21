@@ -1,0 +1,5610 @@
+{
+  "version": 2,
+  "generated_utc": "2026-11-15T17:12:55.520701+00:00",
+  "input_logs": "/home/nader/workspace/denoise/logs/exp5-logs",
+  "view_policies": [
+    "adaptive"
+  ],
+  "configurations": {
+    "see_no_quantization": [
+      "true"
+    ],
+    "see_no_fade_all": [
+      "true"
+    ],
+    "see_no_fade_unum": [
+      "true"
+    ],
+    "see_noise_free": [
+      "false"
+    ],
+    "full_view": [
+      "false"
+    ],
+    "say_msg_size": [
+      "0"
+    ],
+    "fullstate_l": [
+      "true"
+    ],
+    "fullstate_r": [
+      "true"
+    ],
+    "synch_mode": [
+      "true"
+    ],
+    "randomize_player_commands": [
+      "true"
+    ]
+  },
+  "observer_last_cycle_range": [
+    5999,
+    6000
+  ],
+  "games": [
+    "202611151200_20018",
+    "202611151200_24922",
+    "202611151200_27248",
+    "202611151200_4218",
+    "202611151200_4418",
+    "202611151202_11952",
+    "202611151202_28622",
+    "202611151202_4394",
+    "202611151202_7329",
+    "202611151202_8681",
+    "202611151203_10524",
+    "202611151203_14373",
+    "202611151203_19494",
+    "202611151203_22131",
+    "202611151203_23872",
+    "202611151205_13283",
+    "202611151205_13776",
+    "202611151205_23923",
+    "202611151205_26710",
+    "202611151205_30541",
+    "202611151206_13367",
+    "202611151206_23587",
+    "202611151206_27503",
+    "202611151206_32514",
+    "202611151206_8396",
+    "202611151208_12951",
+    "202611151208_16220",
+    "202611151208_16284",
+    "202611151208_1720",
+    "202611151208_7593",
+    "202611151209_3620",
+    "202611151209_4767",
+    "202611151209_5026",
+    "202611151210_31065",
+    "202611151210_708",
+    "202611151211_16844",
+    "202611151211_24258",
+    "202611151211_24523",
+    "202611151211_27410",
+    "202611151211_28004",
+    "202611151212_19073",
+    "202611151212_21848",
+    "202611151212_7698",
+    "202611151212_7937",
+    "202611151213_17179",
+    "202611151214_12127",
+    "202611151214_15513",
+    "202611151214_25063",
+    "202611151214_32009",
+    "202611151214_9704",
+    "202611151215_12015",
+    "202611151215_14821",
+    "202611151215_16097",
+    "202611151215_6019",
+    "202611151216_5721",
+    "202611151217_14084",
+    "202611151217_14804",
+    "202611151217_15916",
+    "202611151217_5430",
+    "202611151217_8301",
+    "202611151218_11800",
+    "202611151218_18264",
+    "202611151218_25976",
+    "202611151218_4375",
+    "202611151218_4896",
+    "202611151220_16821",
+    "202611151220_18299",
+    "202611151220_19155",
+    "202611151220_23412",
+    "202611151220_3952",
+    "202611151221_12115",
+    "202611151221_21405",
+    "202611151221_27262",
+    "202611151221_29277",
+    "202611151221_9065",
+    "202611151223_19808",
+    "202611151223_24795",
+    "202611151223_32765",
+    "202611151223_5036",
+    "202611151223_8781",
+    "202611151224_16430",
+    "202611151224_239",
+    "202611151224_27603",
+    "202611151224_32407",
+    "202611151224_9156",
+    "202611151225_30188",
+    "202611151226_17451",
+    "202611151226_1862",
+    "202611151226_19413",
+    "202611151226_22067",
+    "202611151227_15043",
+    "202611151227_20940",
+    "202611151227_4424",
+    "202611151227_5135",
+    "202611151227_9774",
+    "202611151228_14710",
+    "202611151229_11059",
+    "202611151229_15949",
+    "202611151229_20376",
+    "202611151229_22537",
+    "202611151230_19393",
+    "202611151230_19847",
+    "202611151230_21276",
+    "202611151230_29731",
+    "202611151230_3971",
+    "202611151231_17752",
+    "202611151231_21839",
+    "202611151232_11797",
+    "202611151232_12452",
+    "202611151232_17497",
+    "202611151233_17129",
+    "202611151233_26053",
+    "202611151233_26729",
+    "202611151233_2682",
+    "202611151233_32454",
+    "202611151234_24718",
+    "202611151234_27337",
+    "202611151235_18092",
+    "202611151235_18683",
+    "202611151235_24674",
+    "202611151236_1435",
+    "202611151236_14781",
+    "202611151236_15682",
+    "202611151236_26579",
+    "202611151236_28633",
+    "202611151237_11802",
+    "202611151238_23849",
+    "202611151238_27968",
+    "202611151238_29261",
+    "202611151238_31709",
+    "202611151239_1606",
+    "202611151239_21558",
+    "202611151239_22016",
+    "202611151239_553",
+    "202611151239_6509",
+    "202611151240_26438",
+    "202611151241_11869",
+    "202611151241_13573",
+    "202611151241_2972",
+    "202611151241_6443",
+    "202611151242_10097",
+    "202611151242_1187",
+    "202611151242_17932",
+    "202611151242_23759",
+    "202611151242_25597",
+    "202611151243_27120",
+    "202611151244_1055",
+    "202611151244_14221",
+    "202611151244_5611",
+    "202611151244_788",
+    "202611151245_18999",
+    "202611151245_28932",
+    "202611151245_6024",
+    "202611151245_828",
+    "202611151245_9130",
+    "202611151246_1070",
+    "202611151247_13458",
+    "202611151247_16718",
+    "202611151247_29394",
+    "202611151247_30582",
+    "202611151248_10732",
+    "202611151248_10758",
+    "202611151248_10951",
+    "202611151248_6879",
+    "202611151248_9930",
+    "202611151249_32547",
+    "202611151249_8850",
+    "202611151250_12609",
+    "202611151250_15366",
+    "202611151250_5372",
+    "202611151251_10583",
+    "202611151251_11723",
+    "202611151251_14006",
+    "202611151251_22310",
+    "202611151251_27153",
+    "202611151252_23805",
+    "202611151253_1735",
+    "202611151253_26025",
+    "202611151253_30235",
+    "202611151253_30498",
+    "202611151254_23110",
+    "202611151254_3204",
+    "202611151255_10595",
+    "202611151255_32609",
+    "202611151255_9766",
+    "202611151256_18322",
+    "202611151256_24062",
+    "202611151256_25232",
+    "202611151256_5484",
+    "202611151256_9370",
+    "202611151257_603",
+    "202611151258_11619",
+    "202611151258_29368",
+    "202611151258_7051",
+    "202611151258_9013",
+    "202611151259_22471",
+    "202611151259_7284",
+    "202611151300_13276",
+    "202611151300_28464",
+    "202611151300_29780"
+  ],
+  "skipped": [],
+  "counts": {
+    "observers": 4400,
+    "decisions": 21470966,
+    "see_updates": 12728868,
+    "missed_decision_placeholders": 0,
+    "age_rows/self/narrow/0": 5959598,
+    "age_rows/self/narrow/1": 434,
+    "age_rows/self/narrow/2": 10,
+    "age_rows/self/narrow/3": 0,
+    "age_rows/self/narrow/4": 0,
+    "age_rows/self/narrow/5": 0,
+    "age_rows/self/narrow/>5": 0,
+    "age_rows/self/normal/0": 4822271,
+    "age_rows/self/normal/1": 4825092,
+    "age_rows/self/normal/2": 24,
+    "age_rows/self/normal/3": 0,
+    "age_rows/self/normal/4": 0,
+    "age_rows/self/normal/5": 0,
+    "age_rows/self/normal/>5": 0,
+    "age_rows/self/wide/0": 1946555,
+    "age_rows/self/wide/1": 1962717,
+    "age_rows/self/wide/2": 1954254,
+    "age_rows/self/wide/3": 11,
+    "age_rows/self/wide/4": 0,
+    "age_rows/self/wide/5": 0,
+    "age_rows/self/wide/>5": 0,
+    "eligible/self/position": 21470966,
+    "measured/self/position": 21470966,
+    "eligible/self/velocity": 21470966,
+    "measured/self/velocity": 21470966,
+    "eligible/self/body": 21470966,
+    "measured/self/body": 21470966,
+    "visibility/ball/narrow/total": 5960042,
+    "visibility/ball/narrow/seen": 3816655,
+    "visibility/ball/narrow/outside_cone": 2378146,
+    "visibility/ball/normal/total": 9647387,
+    "visibility/ball/normal/seen": 4732566,
+    "visibility/ball/normal/outside_cone": 4021219,
+    "visibility/ball/wide/total": 5863537,
+    "visibility/ball/wide/seen": 1922617,
+    "visibility/ball/wide/outside_cone": 450701,
+    "potential/ball": 21470966,
+    "nonidentity_track/ball": 85917,
+    "age_rows/ball/narrow/0": 3816271,
+    "age_rows/ball/narrow/1": 1767807,
+    "age_rows/ball/narrow/2": 122234,
+    "age_rows/ball/narrow/3": 75780,
+    "age_rows/ball/narrow/4": 59571,
+    "age_rows/ball/narrow/5": 49545,
+    "age_rows/ball/narrow/>5": 48105,
+    "age_rows/ball/normal/0": 4732566,
+    "age_rows/ball/normal/1": 4655692,
+    "age_rows/ball/normal/2": 144257,
+    "age_rows/ball/normal/3": 50105,
+    "age_rows/ball/normal/4": 22917,
+    "age_rows/ball/normal/5": 18636,
+    "age_rows/ball/normal/>5": 21765,
+    "age_rows/ball/wide/0": 1922617,
+    "age_rows/ball/wide/1": 1875980,
+    "age_rows/ball/wide/2": 1897019,
+    "age_rows/ball/wide/3": 54119,
+    "age_rows/ball/wide/4": 23361,
+    "age_rows/ball/wide/5": 14709,
+    "age_rows/ball/wide/>5": 11993,
+    "eligible/ball/position": 21385049,
+    "measured/ball/position": 21385049,
+    "eligible/ball/velocity": 21385049,
+    "measured/ball/velocity": 21384452,
+    "eligible/ball/body": 21385049,
+    "measured/ball/body": 0,
+    "pos0_unseen/ball": 0,
+    "seen_pos_nonzero/ball": 384,
+    "visibility/teammate/narrow/total": 59600420,
+    "visibility/teammate/narrow/seen": 12390006,
+    "visibility/teammate/narrow/outside_cone": 47298046,
+    "visibility/teammate/normal/total": 96473870,
+    "visibility/teammate/normal/seen": 25911834,
+    "visibility/teammate/normal/outside_cone": 50626059,
+    "visibility/teammate/wide/total": 58635370,
+    "visibility/teammate/wide/seen": 16319194,
+    "visibility/teammate/wide/outside_cone": 11283849,
+    "potential/teammate": 214709660,
+    "nonidentity_track/teammate": 21171039,
+    "age_rows/teammate/narrow/0": 12410543,
+    "age_rows/teammate/narrow/1": 8984466,
+    "age_rows/teammate/narrow/2": 4664010,
+    "age_rows/teammate/narrow/3": 3839349,
+    "age_rows/teammate/narrow/4": 2559651,
+    "age_rows/teammate/narrow/5": 2141975,
+    "age_rows/teammate/narrow/>5": 16414264,
+    "age_rows/teammate/normal/0": 25914650,
+    "age_rows/teammate/normal/1": 25402754,
+    "age_rows/teammate/normal/2": 8433585,
+    "age_rows/teammate/normal/3": 7665615,
+    "age_rows/teammate/normal/4": 2055353,
+    "age_rows/teammate/normal/5": 1702150,
+    "age_rows/teammate/normal/>5": 14479310,
+    "age_rows/teammate/wide/0": 16319363,
+    "age_rows/teammate/wide/1": 15699571,
+    "age_rows/teammate/wide/2": 15864847,
+    "age_rows/teammate/wide/3": 2018261,
+    "age_rows/teammate/wide/4": 1716867,
+    "age_rows/teammate/wide/5": 1533270,
+    "age_rows/teammate/wide/>5": 3718767,
+    "eligible/teammate/position": 193538621,
+    "measured/teammate/position": 193538621,
+    "eligible/teammate/velocity": 193538621,
+    "measured/teammate/velocity": 153489764,
+    "eligible/teammate/body": 193538621,
+    "measured/teammate/body": 104622519,
+    "pos0_unseen/teammate": 43186,
+    "seen_pos_nonzero/teammate": 5797,
+    "visibility/opponent/narrow/total": 65560462,
+    "visibility/opponent/narrow/seen": 15370752,
+    "visibility/opponent/narrow/outside_cone": 51065900,
+    "visibility/opponent/normal/total": 106121257,
+    "visibility/opponent/normal/seen": 28368316,
+    "visibility/opponent/normal/outside_cone": 55816298,
+    "visibility/opponent/wide/total": 64498907,
+    "visibility/opponent/wide/seen": 18174194,
+    "visibility/opponent/wide/outside_cone": 11921656,
+    "potential/opponent": 236180626,
+    "nonidentity_track/opponent": 22382276,
+    "age_rows/opponent/narrow/0": 15326907,
+    "age_rows/opponent/narrow/1": 10233178,
+    "age_rows/opponent/narrow/2": 5323738,
+    "age_rows/opponent/narrow/3": 4341950,
+    "age_rows/opponent/narrow/4": 2696638,
+    "age_rows/opponent/narrow/5": 2246901,
+    "age_rows/opponent/narrow/>5": 16285465,
+    "age_rows/opponent/normal/0": 28343165,
+    "age_rows/opponent/normal/1": 27842334,
+    "age_rows/opponent/normal/2": 10112504,
+    "age_rows/opponent/normal/3": 9173500,
+    "age_rows/opponent/normal/4": 2291755,
+    "age_rows/opponent/normal/5": 1844771,
+    "age_rows/opponent/normal/>5": 14998257,
+    "age_rows/opponent/wide/0": 18171881,
+    "age_rows/opponent/wide/1": 17501388,
+    "age_rows/opponent/wide/2": 17690433,
+    "age_rows/opponent/wide/3": 2184244,
+    "age_rows/opponent/wide/4": 1848306,
+    "age_rows/opponent/wide/5": 1626759,
+    "age_rows/opponent/wide/>5": 3714276,
+    "eligible/opponent/position": 213798350,
+    "measured/opponent/position": 213798350,
+    "eligible/opponent/velocity": 213798350,
+    "measured/opponent/velocity": 172832747,
+    "eligible/opponent/body": 213798350,
+    "measured/opponent/body": 116803172,
+    "pos0_unseen/opponent": 25797,
+    "seen_pos_nonzero/opponent": 22498
+  },
+  "metrics": {
+    "state/self/position/all/all/all": {
+      "n": 21470966,
+      "mean": 0.007854738161058982,
+      "rmse": 0.019151757282252012,
+      "max": 8.905492,
+      "above_threshold": 21
+    },
+    "state/self/position/own/0/all": {
+      "n": 12728424,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/own/0/narrow": {
+      "n": 5959598,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/own/0/normal": {
+      "n": 4822271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/own/0/wide": {
+      "n": 1946555,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/own/1/all": {
+      "n": 6788243,
+      "mean": 0.018405740838093154,
+      "rmse": 0.02797321870078289,
+      "max": 8.905492,
+      "above_threshold": 10
+    },
+    "state/self/position/own/1/normal": {
+      "n": 4825092,
+      "mean": 0.02068114693440042,
+      "rmse": 0.029885466019785277,
+      "max": 8.905492,
+      "above_threshold": 4
+    },
+    "state/self/position/own/1/wide": {
+      "n": 1962717,
+      "mean": 0.01280884370849186,
+      "rmse": 0.022586199874107166,
+      "max": 1.944609,
+      "above_threshold": 6
+    },
+    "state/self/position/own/2/all": {
+      "n": 1954288,
+      "mean": 0.022364000368932328,
+      "rmse": 0.036217815497651316,
+      "max": 8.045499,
+      "above_threshold": 11
+    },
+    "state/self/position/own/2/wide": {
+      "n": 1954254,
+      "mean": 0.022363538365023184,
+      "rmse": 0.03621713235368747,
+      "max": 8.045499,
+      "above_threshold": 11
+    },
+    "state/self/position/pos/0/all": {
+      "n": 12728424,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/0/narrow": {
+      "n": 5959598,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/0/normal": {
+      "n": 4822271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/0/wide": {
+      "n": 1946555,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/1/all": {
+      "n": 6788243,
+      "mean": 0.018405740838093154,
+      "rmse": 0.02797321870078289,
+      "max": 8.905492,
+      "above_threshold": 10
+    },
+    "state/self/position/pos/1/normal": {
+      "n": 4825092,
+      "mean": 0.02068114693440042,
+      "rmse": 0.029885466019785277,
+      "max": 8.905492,
+      "above_threshold": 4
+    },
+    "state/self/position/pos/1/wide": {
+      "n": 1962717,
+      "mean": 0.01280884370849186,
+      "rmse": 0.022586199874107166,
+      "max": 1.944609,
+      "above_threshold": 6
+    },
+    "state/self/position/pos/2/all": {
+      "n": 1954288,
+      "mean": 0.022364000368932328,
+      "rmse": 0.036217815497651316,
+      "max": 8.045499,
+      "above_threshold": 11
+    },
+    "state/self/position/pos/2/wide": {
+      "n": 1954254,
+      "mean": 0.022363538365023184,
+      "rmse": 0.03621713235368747,
+      "max": 8.045499,
+      "above_threshold": 11
+    },
+    "state/self/position/view/all/narrow": {
+      "n": 5960042,
+      "mean": 2.4626697261529354e-06,
+      "rmse": 0.00043761356329714997,
+      "max": 0.247182,
+      "above_threshold": 0
+    },
+    "state/self/position/view/all/normal": {
+      "n": 9647387,
+      "mean": 0.010343680806108431,
+      "rmse": 0.021135438958795594,
+      "max": 8.905492,
+      "above_threshold": 4
+    },
+    "state/self/position/view/all/wide": {
+      "n": 5863537,
+      "mean": 0.011741146451194902,
+      "rmse": 0.024656294854301805,
+      "max": 8.045499,
+      "above_threshold": 17
+    },
+    "state/self/position/seen/0/all": {
+      "n": 8742098,
+      "mean": 0.019289893384860247,
+      "rmse": 0.030012012052126353,
+      "max": 8.905492,
+      "above_threshold": 21
+    },
+    "state/self/position/seen/1/all": {
+      "n": 12728868,
+      "mean": 1.1530966461432385e-06,
+      "rmse": 0.0002994473972709681,
+      "max": 0.247182,
+      "above_threshold": 0
+    },
+    "state/self/velocity/all/all/all": {
+      "n": 21470966,
+      "mean": 0.00029736143399416705,
+      "rmse": 0.0020671289281723538,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/0/all": {
+      "n": 12728859,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/0/narrow": {
+      "n": 5960033,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/0/normal": {
+      "n": 4822271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/0/wide": {
+      "n": 1946555,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/1/all": {
+      "n": 6787851,
+      "mean": 0.0004209404586223239,
+      "rmse": 0.001697684554595228,
+      "max": 0.018203,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/1/normal": {
+      "n": 4825115,
+      "mean": 0.0004223412007796704,
+      "rmse": 0.001714834298106458,
+      "max": 0.018203,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/1/wide": {
+      "n": 1962727,
+      "mean": 0.0004174945455990569,
+      "rmse": 0.001654764389534152,
+      "max": 0.017312,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/2/all": {
+      "n": 1954255,
+      "mean": 0.001804962057663918,
+      "rmse": 0.00607750197778382,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/2/wide": {
+      "n": 1954254,
+      "mean": 0.0018049613847534662,
+      "rmse": 0.006077503122924331,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/0/all": {
+      "n": 12728424,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/0/narrow": {
+      "n": 5959598,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/0/normal": {
+      "n": 4822271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/0/wide": {
+      "n": 1946555,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/1/all": {
+      "n": 6788243,
+      "mean": 0.00042091373776690077,
+      "rmse": 0.0016976296743401733,
+      "max": 0.018203,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/1/normal": {
+      "n": 4825092,
+      "mean": 0.000422343213973951,
+      "rmse": 0.0017148383851934873,
+      "max": 0.018203,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/1/wide": {
+      "n": 1962717,
+      "mean": 0.0004174883276600754,
+      "rmse": 0.0016547478070840828,
+      "max": 0.017312,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/2/all": {
+      "n": 1954288,
+      "mean": 0.0018049301054911045,
+      "rmse": 0.006077446370342699,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/2/wide": {
+      "n": 1954254,
+      "mean": 0.00180495991104534,
+      "rmse": 0.006077498827844734,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/view/all/narrow": {
+      "n": 5960042,
+      "mean": 1.4149229149727468e-09,
+      "rmse": 3.008980092476143e-06,
+      "max": 0.00725,
+      "above_threshold": 0
+    },
+    "state/self/velocity/view/all/normal": {
+      "n": 9647387,
+      "mean": 0.00021123315390996538,
+      "rmse": 0.001212750030638626,
+      "max": 0.018203,
+      "above_threshold": 0
+    },
+    "state/self/velocity/view/all/wide": {
+      "n": 5863537,
+      "mean": 0.0007413240204675101,
+      "rmse": 0.003636890434172129,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/seen/0/all": {
+      "n": 8742098,
+      "mean": 0.0007303314154108093,
+      "rmse": 0.0032395552693667536,
+      "max": 0.080115,
+      "above_threshold": 0
+    },
+    "state/self/velocity/seen/1/all": {
+      "n": 12728868,
+      "mean": 6.625098162696007e-10,
+      "rmse": 2.058965563917672e-06,
+      "max": 0.00725,
+      "above_threshold": 0
+    },
+    "state/self/body/all/all/all": {
+      "n": 21470966,
+      "mean": 0.23790057332422768,
+      "rmse": 1.2430465236347072,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/own/0/all": {
+      "n": 12728859,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/own/0/narrow": {
+      "n": 5960033,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/own/0/normal": {
+      "n": 4822271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/own/0/wide": {
+      "n": 1946555,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/own/1/all": {
+      "n": 6787851,
+      "mean": 0.5042388923629882,
+      "rmse": 1.7690846961324733,
+      "max": 17.992095,
+      "above_threshold": 0
+    },
+    "state/self/body/own/1/normal": {
+      "n": 4825115,
+      "mean": 0.4273910946271745,
+      "rmse": 1.5382526743954938,
+      "max": 17.951291,
+      "above_threshold": 0
+    },
+    "state/self/body/own/1/wide": {
+      "n": 1962727,
+      "mean": 0.6931593983340528,
+      "rmse": 2.237518319897963,
+      "max": 17.992095,
+      "above_threshold": 0
+    },
+    "state/self/body/own/2/all": {
+      "n": 1954255,
+      "mean": 0.8623524828950165,
+      "rmse": 2.471014218253524,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/own/2/wide": {
+      "n": 1954254,
+      "mean": 0.8623516242248961,
+      "rmse": 2.471014182243726,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/pos/0/all": {
+      "n": 12728424,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/0/narrow": {
+      "n": 5959598,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/0/normal": {
+      "n": 4822271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/0/wide": {
+      "n": 1946555,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/1/all": {
+      "n": 6788243,
+      "mean": 0.504207467201307,
+      "rmse": 1.7690300626742845,
+      "max": 17.992095,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/1/normal": {
+      "n": 4825092,
+      "mean": 0.427393131893029,
+      "rmse": 1.5382563406229304,
+      "max": 17.951291,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/1/wide": {
+      "n": 1962717,
+      "mean": 0.6931549512364751,
+      "rmse": 2.2375143040893697,
+      "max": 17.992095,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/2/all": {
+      "n": 1954288,
+      "mean": 0.8623379212582795,
+      "rmse": 2.4709933554601586,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/pos/2/wide": {
+      "n": 1954254,
+      "mean": 0.8623516242248961,
+      "rmse": 2.471014182243726,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/view/all/narrow": {
+      "n": 5960042,
+      "mean": 7.754641661921173e-07,
+      "rmse": 0.0013452494695338458,
+      "max": 2.540412,
+      "above_threshold": 0
+    },
+    "state/self/body/view/all/normal": {
+      "n": 9647387,
+      "mean": 0.2137587848361426,
+      "rmse": 1.0878694620171387,
+      "max": 17.951291,
+      "above_threshold": 0
+    },
+    "state/self/body/view/all/wide": {
+      "n": 5863537,
+      "mean": 0.5194367797904229,
+      "rmse": 1.9263639475005827,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/seen/0/all": {
+      "n": 8742098,
+      "mean": 0.5842934384201597,
+      "rmse": 1.9480731900588935,
+      "max": 32.354443,
+      "above_threshold": 4
+    },
+    "state/self/body/seen/1/all": {
+      "n": 12728868,
+      "mean": 3.630958385301819e-07,
+      "rmse": 0.0009205186633087252,
+      "max": 2.540412,
+      "above_threshold": 0
+    },
+    "sensor/self/n_rawfix_pos_d": {
+      "n": 12728424,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/self/n_rawfix_face": {
+      "n": 12728859,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/self/n_sb_speed_mag": {
+      "n": 21470966,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/self/n_sb_speed_dir": {
+      "n": 19130079,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/self/n_sb_neck": {
+      "n": 21470966,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "fresh_wm/self/n_est_pos_d": {
+      "n": 12728868,
+      "mean": 1.1530966461432385e-06,
+      "rmse": 0.0002994473972709681,
+      "max": 0.247182,
+      "above_threshold": 417
+    },
+    "fresh_wm/self/n_est_vel_d": {
+      "n": 12728868,
+      "mean": 6.625098162696007e-10,
+      "rmse": 2.058965563917672e-06,
+      "max": 0.00725,
+      "above_threshold": 2
+    },
+    "fresh_wm/self/n_est_body": {
+      "n": 12728868,
+      "mean": 3.630958385301819e-07,
+      "rmse": 0.0009205186633087252,
+      "max": 2.540412,
+      "above_threshold": 2
+    },
+    "fresh_wm/self/n_est_face": {
+      "n": 12728868,
+      "mean": 3.630958385301819e-07,
+      "rmse": 0.0009205186633087252,
+      "max": 2.540412,
+      "above_threshold": 2
+    },
+    "sensor/ball/n_dist": {
+      "n": 10471838,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/ball/n_dir": {
+      "n": 10471838,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/ball/n_dist_chg": {
+      "n": 10214545,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/ball/n_dir_chg": {
+      "n": 10214545,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "localization/ball/n_ls_pos_d": {
+      "n": 10471838,
+      "mean": 1.2780787861691512e-06,
+      "rmse": 0.00031413673160820985,
+      "max": 0.247182,
+      "above_threshold": 368
+    },
+    "localization/ball/n_ls_rpos_d": {
+      "n": 10471838,
+      "mean": 2.9328184794302587e-09,
+      "rmse": 9.49066494721324e-06,
+      "max": 0.030712,
+      "above_threshold": 1
+    },
+    "localization/ball/n_ls_vel_d": {
+      "n": 10430747,
+      "mean": 0.001575398830975384,
+      "rmse": 0.05068057429302166,
+      "max": 4.062896,
+      "above_threshold": 31388
+    },
+    "localization/ball/n_ls_rvel_d": {
+      "n": 10214545,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/all/all/all": {
+      "n": 21385049,
+      "mean": 0.18488842153861793,
+      "rmse": 0.8020786196781053,
+      "max": 39.656603,
+      "above_threshold": 1122365
+    },
+    "state/ball/position/own/0/all": {
+      "n": 10471454,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/own/0/narrow": {
+      "n": 3816271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/own/0/normal": {
+      "n": 4732566,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/own/0/wide": {
+      "n": 1922617,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/own/1/all": {
+      "n": 8299479,
+      "mean": 0.19112182455392684,
+      "rmse": 0.5020379811202553,
+      "max": 21.778502,
+      "above_threshold": 565442
+    },
+    "state/ball/position/own/1/narrow": {
+      "n": 1767807,
+      "mean": 0.22498261132295574,
+      "rmse": 0.5684933104379328,
+      "max": 21.778502,
+      "above_threshold": 153691
+    },
+    "state/ball/position/own/1/normal": {
+      "n": 4655692,
+      "mean": 0.18073876796854257,
+      "rmse": 0.4790925540422715,
+      "max": 21.778502,
+      "above_threshold": 291158
+    },
+    "state/ball/position/own/1/wide": {
+      "n": 1875980,
+      "mean": 0.1849815552569858,
+      "rmse": 0.49078701347799375,
+      "max": 21.778502,
+      "above_threshold": 120593
+    },
+    "state/ball/position/own/2/all": {
+      "n": 2163510,
+      "mean": 0.5481194811847411,
+      "rmse": 1.212665348465729,
+      "max": 21.77851,
+      "above_threshold": 335379
+    },
+    "state/ball/position/own/2/normal": {
+      "n": 144257,
+      "mean": 1.0791987982489584,
+      "rmse": 1.9673683431061046,
+      "max": 21.778301,
+      "above_threshold": 42980
+    },
+    "state/ball/position/own/2/wide": {
+      "n": 1897019,
+      "mean": 0.47693756823152544,
+      "rmse": 1.0735903051501317,
+      "max": 21.77851,
+      "above_threshold": 257240
+    },
+    "state/ball/position/own/3/all": {
+      "n": 180004,
+      "mean": 1.7619523322815052,
+      "rmse": 3.0343722859238804,
+      "max": 21.778479,
+      "above_threshold": 68275
+    },
+    "state/ball/position/own/3/normal": {
+      "n": 50105,
+      "mean": 2.261174536094201,
+      "rmse": 3.6991248977650417,
+      "max": 21.778112,
+      "above_threshold": 21003
+    },
+    "state/ball/position/own/3/wide": {
+      "n": 54119,
+      "mean": 2.0850929305049997,
+      "rmse": 3.344665196874137,
+      "max": 16.401752,
+      "above_threshold": 23937
+    },
+    "state/ball/position/own/4/all": {
+      "n": 105849,
+      "mean": 2.5003263823182102,
+      "rmse": 4.057829010373963,
+      "max": 21.77848,
+      "above_threshold": 50169
+    },
+    "state/ball/position/own/4/wide": {
+      "n": 23361,
+      "mean": 3.333225010230725,
+      "rmse": 5.0100158351664295,
+      "max": 18.058882,
+      "above_threshold": 12740
+    },
+    "state/ball/position/own/5/all": {
+      "n": 82890,
+      "mean": 3.026543422198093,
+      "rmse": 4.7920439515047155,
+      "max": 22.911244,
+      "above_threshold": 45889
+    },
+    "state/ball/position/own/5/wide": {
+      "n": 14709,
+      "mean": 4.6164850084982,
+      "rmse": 6.49946994372709,
+      "max": 22.911244,
+      "above_threshold": 9883
+    },
+    "state/ball/position/pos/0/all": {
+      "n": 10471454,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/pos/0/narrow": {
+      "n": 3816271,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/pos/0/normal": {
+      "n": 4732566,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/pos/0/wide": {
+      "n": 1922617,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/pos/1/all": {
+      "n": 8299479,
+      "mean": 0.19112182455392684,
+      "rmse": 0.5020379811202553,
+      "max": 21.778502,
+      "above_threshold": 565442
+    },
+    "state/ball/position/pos/1/narrow": {
+      "n": 1767807,
+      "mean": 0.22498261132295574,
+      "rmse": 0.5684933104379328,
+      "max": 21.778502,
+      "above_threshold": 153691
+    },
+    "state/ball/position/pos/1/normal": {
+      "n": 4655692,
+      "mean": 0.18073876796854257,
+      "rmse": 0.4790925540422715,
+      "max": 21.778502,
+      "above_threshold": 291158
+    },
+    "state/ball/position/pos/1/wide": {
+      "n": 1875980,
+      "mean": 0.1849815552569858,
+      "rmse": 0.49078701347799375,
+      "max": 21.778502,
+      "above_threshold": 120593
+    },
+    "state/ball/position/pos/2/all": {
+      "n": 2163510,
+      "mean": 0.5481194811847411,
+      "rmse": 1.212665348465729,
+      "max": 21.77851,
+      "above_threshold": 335379
+    },
+    "state/ball/position/pos/2/normal": {
+      "n": 144257,
+      "mean": 1.0791987982489584,
+      "rmse": 1.9673683431061046,
+      "max": 21.778301,
+      "above_threshold": 42980
+    },
+    "state/ball/position/pos/2/wide": {
+      "n": 1897019,
+      "mean": 0.47693756823152544,
+      "rmse": 1.0735903051501317,
+      "max": 21.77851,
+      "above_threshold": 257240
+    },
+    "state/ball/position/pos/3/all": {
+      "n": 180004,
+      "mean": 1.7619523322815052,
+      "rmse": 3.0343722859238804,
+      "max": 21.778479,
+      "above_threshold": 68275
+    },
+    "state/ball/position/pos/3/normal": {
+      "n": 50105,
+      "mean": 2.261174536094201,
+      "rmse": 3.6991248977650417,
+      "max": 21.778112,
+      "above_threshold": 21003
+    },
+    "state/ball/position/pos/3/wide": {
+      "n": 54119,
+      "mean": 2.0850929305049997,
+      "rmse": 3.344665196874137,
+      "max": 16.401752,
+      "above_threshold": 23937
+    },
+    "state/ball/position/pos/4/all": {
+      "n": 105849,
+      "mean": 2.5003263823182102,
+      "rmse": 4.057829010373963,
+      "max": 21.77848,
+      "above_threshold": 50169
+    },
+    "state/ball/position/pos/4/wide": {
+      "n": 23361,
+      "mean": 3.333225010230725,
+      "rmse": 5.0100158351664295,
+      "max": 18.058882,
+      "above_threshold": 12740
+    },
+    "state/ball/position/pos/5/all": {
+      "n": 82890,
+      "mean": 3.026543422198093,
+      "rmse": 4.7920439515047155,
+      "max": 22.911244,
+      "above_threshold": 45889
+    },
+    "state/ball/position/pos/5/wide": {
+      "n": 14709,
+      "mean": 4.6164850084982,
+      "rmse": 6.49946994372709,
+      "max": 22.911244,
+      "above_threshold": 9883
+    },
+    "state/ball/position/view/all/narrow": {
+      "n": 5939313,
+      "mean": 0.1640060086075612,
+      "rmse": 0.7843913683709888,
+      "max": 23.964139,
+      "above_threshold": 291788
+    },
+    "state/ball/position/view/all/normal": {
+      "n": 9645938,
+      "mean": 0.14445387796438253,
+      "rmse": 0.7089485696213187,
+      "max": 39.656603,
+      "above_threshold": 396175
+    },
+    "state/ball/position/view/all/wide": {
+      "n": 5799798,
+      "mean": 0.2735219027336813,
+      "rmse": 0.9518967134878742,
+      "max": 35.909999,
+      "above_threshold": 434402
+    },
+    "state/ball/position/seen/0/all": {
+      "n": 2228213,
+      "mean": 0.5578422470849956,
+      "rmse": 1.5726117054474635,
+      "max": 35.909999,
+      "above_threshold": 341437
+    },
+    "state/ball/position/seen/1/all": {
+      "n": 10471838,
+      "mean": 1.2780787861691512e-06,
+      "rmse": 0.00031413673160820985,
+      "max": 0.247182,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/0/0-3": {
+      "n": 614313,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/1/0-3": {
+      "n": 257091,
+      "mean": 0.03444564415323759,
+      "rmse": 0.15806634507391681,
+      "max": 3.599685,
+      "above_threshold": 1732
+    },
+    "state/ball/position/distance/0/3-10": {
+      "n": 1138883,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/1/3-10": {
+      "n": 582878,
+      "mean": 0.18923658013340705,
+      "rmse": 0.5237723922739475,
+      "max": 21.778502,
+      "above_threshold": 42627
+    },
+    "state/ball/position/distance/2/3-10": {
+      "n": 143767,
+      "mean": 0.7612076205387883,
+      "rmse": 1.5480704034817017,
+      "max": 21.778301,
+      "above_threshold": 30848
+    },
+    "state/ball/position/distance/3/3-10": {
+      "n": 79893,
+      "mean": 1.1743418300351725,
+      "rmse": 2.190564607515882,
+      "max": 21.778479,
+      "above_threshold": 23755
+    },
+    "state/ball/position/distance/4/3-10": {
+      "n": 57890,
+      "mean": 1.503434317412334,
+      "rmse": 2.5975558228288507,
+      "max": 21.778273,
+      "above_threshold": 21877
+    },
+    "state/ball/position/distance/0/10-20": {
+      "n": 2994635,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/1/10-20": {
+      "n": 1741157,
+      "mean": 0.20523133964943985,
+      "rmse": 0.5329198555768098,
+      "max": 18.865408,
+      "above_threshold": 133763
+    },
+    "state/ball/position/distance/2/10-20": {
+      "n": 280552,
+      "mean": 0.8680287658366358,
+      "rmse": 1.6619441283623055,
+      "max": 18.865391,
+      "above_threshold": 71759
+    },
+    "state/ball/position/distance/0/20-40": {
+      "n": 4177615,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/1/20-40": {
+      "n": 4170445,
+      "mean": 0.1968421303553938,
+      "rmse": 0.5043866844908421,
+      "max": 21.778502,
+      "above_threshold": 288395
+    },
+    "state/ball/position/distance/2/20-40": {
+      "n": 221896,
+      "mean": 0.6564787712306669,
+      "rmse": 1.5059732607970486,
+      "max": 21.77851,
+      "above_threshold": 37010
+    },
+    "state/ball/position/distance/3/20-40": {
+      "n": 43635,
+      "mean": 2.2462404095336304,
+      "rmse": 3.6358516643639667,
+      "max": 14.741748,
+      "above_threshold": 18733
+    },
+    "state/ball/position/distance/4/20-40": {
+      "n": 21324,
+      "mean": 3.4397281106734208,
+      "rmse": 5.099932399792068,
+      "max": 21.77848,
+      "above_threshold": 11876
+    },
+    "state/ball/position/distance/0/40+": {
+      "n": 1546008,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/1/40+": {
+      "n": 1547908,
+      "mean": 0.1865710383892325,
+      "rmse": 0.48891520362263174,
+      "max": 21.778502,
+      "above_threshold": 98925
+    },
+    "state/ball/position/distance/2/40+": {
+      "n": 1508853,
+      "mean": 0.4539323184133908,
+      "rmse": 1.0143570286632344,
+      "max": 21.77851,
+      "above_threshold": 195153
+    },
+    "state/ball/position/distance/3/40+": {
+      "n": 2918,
+      "mean": 2.2943843615490045,
+      "rmse": 3.7213498838542085,
+      "max": 13.327484,
+      "above_threshold": 1312
+    },
+    "state/ball/position/distance/4/40+": {
+      "n": 2727,
+      "mean": 3.3086183722038873,
+      "rmse": 5.101907054151924,
+      "max": 17.771524,
+      "above_threshold": 1478
+    },
+    "state/ball/position/distance/5/40+": {
+      "n": 2600,
+      "mean": 4.56239432923077,
+      "rmse": 6.679021281286932,
+      "max": 22.062835,
+      "above_threshold": 1697
+    },
+    "state/ball/velocity/all/all/all": {
+      "n": 21384452,
+      "mean": 0.12611300771490425,
+      "rmse": 0.42111390118313924,
+      "max": 5.430404,
+      "above_threshold": 1955140
+    },
+    "state/ball/velocity/own/0/all": {
+      "n": 10142326,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/own/0/narrow": {
+      "n": 3509677,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/own/0/normal": {
+      "n": 4710883,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/own/0/wide": {
+      "n": 1921766,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/own/1/all": {
+      "n": 8467797,
+      "mean": 0.19052499602186967,
+      "rmse": 0.49481006364375674,
+      "max": 5.380852,
+      "above_threshold": 1197029
+    },
+    "state/ball/velocity/own/1/narrow": {
+      "n": 2018235,
+      "mean": 0.20080164889420704,
+      "rmse": 0.5225147500969483,
+      "max": 5.30174,
+      "above_threshold": 292208
+    },
+    "state/ball/velocity/own/1/normal": {
+      "n": 4569501,
+      "mean": 0.1843604078226485,
+      "rmse": 0.4770191025159228,
+      "max": 5.380852,
+      "above_threshold": 638171
+    },
+    "state/ball/velocity/own/1/wide": {
+      "n": 1880061,
+      "mean": 0.19447613985769605,
+      "rmse": 0.5065607895194355,
+      "max": 5.380852,
+      "above_threshold": 266650
+    },
+    "state/ball/velocity/own/2/all": {
+      "n": 2285837,
+      "mean": 0.3135565663833423,
+      "rmse": 0.6848629028644458,
+      "max": 5.430404,
+      "above_threshold": 510537
+    },
+    "state/ball/velocity/own/2/narrow": {
+      "n": 165602,
+      "mean": 0.47454998523568576,
+      "rmse": 0.9505190416604062,
+      "max": 5.430404,
+      "above_threshold": 45967
+    },
+    "state/ball/velocity/own/2/normal": {
+      "n": 234667,
+      "mean": 0.3729088676805856,
+      "rmse": 0.8398717507350189,
+      "max": 5.380852,
+      "above_threshold": 48370
+    },
+    "state/ball/velocity/own/2/wide": {
+      "n": 1885568,
+      "mean": 0.2920305017506662,
+      "rmse": 0.6336140715803135,
+      "max": 5.233257,
+      "above_threshold": 416200
+    },
+    "state/ball/velocity/own/3/all": {
+      "n": 202924,
+      "mean": 0.6493402888421278,
+      "rmse": 1.1058504640078717,
+      "max": 5.226284,
+      "above_threshold": 80516
+    },
+    "state/ball/velocity/own/3/normal": {
+      "n": 63800,
+      "mean": 0.70817486645768,
+      "rmse": 1.2176751506791068,
+      "max": 5.187948,
+      "above_threshold": 23725
+    },
+    "state/ball/velocity/own/3/wide": {
+      "n": 58245,
+      "mean": 0.73967109077174,
+      "rmse": 1.1931718780686194,
+      "max": 5.119509,
+      "above_threshold": 25963
+    },
+    "state/ball/velocity/own/4/all": {
+      "n": 113031,
+      "mean": 0.7714259627004975,
+      "rmse": 1.171749054727702,
+      "max": 5.006687,
+      "above_threshold": 57947
+    },
+    "state/ball/velocity/own/4/wide": {
+      "n": 25495,
+      "mean": 0.8828592497744658,
+      "rmse": 1.3073346668491113,
+      "max": 4.992288,
+      "above_threshold": 13620
+    },
+    "state/ball/velocity/own/5/all": {
+      "n": 85563,
+      "mean": 0.8049768225634911,
+      "rmse": 1.1560812982684001,
+      "max": 4.735427,
+      "above_threshold": 50003
+    },
+    "state/ball/velocity/own/5/wide": {
+      "n": 15139,
+      "mean": 1.0597750986855146,
+      "rmse": 1.4099935740374716,
+      "max": 4.717236,
+      "above_threshold": 10190
+    },
+    "state/ball/velocity/pos/0/all": {
+      "n": 10471268,
+      "mean": 0.0013674359340244179,
+      "rmse": 0.04727596888228366,
+      "max": 4.902423,
+      "above_threshold": 7662
+    },
+    "state/ball/velocity/pos/0/narrow": {
+      "n": 3816267,
+      "mean": 0.0029821750192007006,
+      "rmse": 0.07118117207633584,
+      "max": 4.882016,
+      "above_threshold": 5873
+    },
+    "state/ball/velocity/pos/0/normal": {
+      "n": 4732416,
+      "mean": 0.0005241251608058125,
+      "rmse": 0.026557618412314743,
+      "max": 4.902423,
+      "above_threshold": 1459
+    },
+    "state/ball/velocity/pos/0/wide": {
+      "n": 1922585,
+      "mean": 0.00023803042622302782,
+      "rmse": 0.019479834476455963,
+      "max": 3.906848,
+      "above_threshold": 330
+    },
+    "state/ball/velocity/pos/1/all": {
+      "n": 8299292,
+      "mean": 0.19280476503043867,
+      "rmse": 0.4948922324583552,
+      "max": 5.430404,
+      "above_threshold": 1190886
+    },
+    "state/ball/velocity/pos/1/narrow": {
+      "n": 1767781,
+      "mean": 0.23130561223420784,
+      "rmse": 0.5608298390278623,
+      "max": 5.430404,
+      "above_threshold": 294124
+    },
+    "state/ball/velocity/pos/1/normal": {
+      "n": 4655542,
+      "mean": 0.1815327677585124,
+      "rmse": 0.47254133581076635,
+      "max": 5.380852,
+      "above_threshold": 638827
+    },
+    "state/ball/velocity/pos/1/wide": {
+      "n": 1875969,
+      "mean": 0.1844976930866128,
+      "rmse": 0.48268241928993794,
+      "max": 5.380852,
+      "above_threshold": 257935
+    },
+    "state/ball/velocity/pos/2/all": {
+      "n": 2163434,
+      "mean": 0.33645037703207,
+      "rmse": 0.715829850804803,
+      "max": 5.233257,
+      "above_threshold": 516867
+    },
+    "state/ball/velocity/pos/2/normal": {
+      "n": 144226,
+      "mean": 0.5815008581046415,
+      "rmse": 1.063558812542524,
+      "max": 5.233257,
+      "above_threshold": 47392
+    },
+    "state/ball/velocity/pos/2/wide": {
+      "n": 1896986,
+      "mean": 0.30108772033847364,
+      "rmse": 0.6506997446203108,
+      "max": 5.233257,
+      "above_threshold": 425566
+    },
+    "state/ball/velocity/pos/3/all": {
+      "n": 179955,
+      "mean": 0.711349445400239,
+      "rmse": 1.1604108184594468,
+      "max": 5.119509,
+      "above_threshold": 78765
+    },
+    "state/ball/velocity/pos/3/normal": {
+      "n": 50102,
+      "mean": 0.8677933510239108,
+      "rmse": 1.3589066134016676,
+      "max": 5.119509,
+      "above_threshold": 22784
+    },
+    "state/ball/velocity/pos/3/wide": {
+      "n": 54079,
+      "mean": 0.8046349019027719,
+      "rmse": 1.2469510858072286,
+      "max": 5.119509,
+      "above_threshold": 26256
+    },
+    "state/ball/velocity/pos/4/all": {
+      "n": 105825,
+      "mean": 0.7982639823765649,
+      "rmse": 1.1915715482073583,
+      "max": 4.992288,
+      "above_threshold": 56477
+    },
+    "state/ball/velocity/pos/4/wide": {
+      "n": 23341,
+      "mean": 0.9575736940576665,
+      "rmse": 1.3669533879469067,
+      "max": 4.992288,
+      "above_threshold": 13514
+    },
+    "state/ball/velocity/pos/5/all": {
+      "n": 82873,
+      "mean": 0.816034064134278,
+      "rmse": 1.1664375503065094,
+      "max": 4.717236,
+      "above_threshold": 48996
+    },
+    "state/ball/velocity/pos/5/wide": {
+      "n": 14703,
+      "mean": 1.0879880104740536,
+      "rmse": 1.432404108760302,
+      "max": 4.717236,
+      "above_threshold": 10162
+    },
+    "state/ball/velocity/view/all/narrow": {
+      "n": 5939218,
+      "mean": 0.10768278392424732,
+      "rmse": 0.3976098124770668,
+      "max": 5.430404,
+      "above_threshold": 459770
+    },
+    "state/ball/velocity/view/all/normal": {
+      "n": 9645593,
+      "mean": 0.10823325237411528,
+      "rmse": 0.38507090413359923,
+      "max": 5.380852,
+      "above_threshold": 751913
+    },
+    "state/ball/velocity/view/all/wide": {
+      "n": 5799641,
+      "mean": 0.17472325097622426,
+      "rmse": 0.49534802728515026,
+      "max": 5.380852,
+      "above_threshold": 743457
+    },
+    "state/ball/velocity/seen/0/all": {
+      "n": 2228059,
+      "mean": 0.3249134408792585,
+      "rmse": 0.7081716461491849,
+      "max": 5.430404,
+      "above_threshold": 506349
+    },
+    "state/ball/velocity/seen/1/all": {
+      "n": 10471652,
+      "mean": 0.0013680501735542773,
+      "rmse": 0.04728306813760367,
+      "max": 4.902423,
+      "above_threshold": 7665
+    },
+    "state/ball/velocity/distance/0/0-3": {
+      "n": 614127,
+      "mean": 0.023310321700560317,
+      "rmse": 0.19519056266184037,
+      "max": 4.902423,
+      "above_threshold": 7660
+    },
+    "state/ball/velocity/distance/1/0-3": {
+      "n": 256943,
+      "mean": 0.03308369056561184,
+      "rmse": 0.158366559985428,
+      "max": 5.380852,
+      "above_threshold": 2073
+    },
+    "state/ball/velocity/distance/0/3-10": {
+      "n": 1138883,
+      "mean": 2.8889736698150747e-06,
+      "rmse": 0.0022216839321153085,
+      "max": 1.968208,
+      "above_threshold": 2
+    },
+    "state/ball/velocity/distance/1/3-10": {
+      "n": 582839,
+      "mean": 0.19571247827273047,
+      "rmse": 0.52821407123067,
+      "max": 5.430404,
+      "above_threshold": 70317
+    },
+    "state/ball/velocity/distance/2/3-10": {
+      "n": 143703,
+      "mean": 0.4501388065106503,
+      "rmse": 0.8954660232110664,
+      "max": 5.226284,
+      "above_threshold": 39945
+    },
+    "state/ball/velocity/distance/3/3-10": {
+      "n": 79844,
+      "mean": 0.5289489862857575,
+      "rmse": 0.9221128304649905,
+      "max": 5.119509,
+      "above_threshold": 30356
+    },
+    "state/ball/velocity/distance/4/3-10": {
+      "n": 57867,
+      "mean": 0.5820606702956783,
+      "rmse": 0.9164477223259409,
+      "max": 4.992288,
+      "above_threshold": 27120
+    },
+    "state/ball/velocity/distance/0/10-20": {
+      "n": 2994635,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/distance/1/10-20": {
+      "n": 1741157,
+      "mean": 0.20968806147349145,
+      "rmse": 0.5264999426530126,
+      "max": 5.380852,
+      "above_threshold": 259076
+    },
+    "state/ball/velocity/distance/2/10-20": {
+      "n": 280552,
+      "mean": 0.509662471769939,
+      "rmse": 0.9533080302197398,
+      "max": 5.233257,
+      "above_threshold": 90149
+    },
+    "state/ball/velocity/distance/0/20-40": {
+      "n": 4177615,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/distance/1/20-40": {
+      "n": 4170445,
+      "mean": 0.19778225606595928,
+      "rmse": 0.4952142224713751,
+      "max": 5.380852,
+      "above_threshold": 637163
+    },
+    "state/ball/velocity/distance/2/20-40": {
+      "n": 221896,
+      "mean": 0.368330768350939,
+      "rmse": 0.8196988790805025,
+      "max": 5.055127,
+      "above_threshold": 43149
+    },
+    "state/ball/velocity/distance/3/20-40": {
+      "n": 43635,
+      "mean": 0.8636332360948776,
+      "rmse": 1.3321174929387027,
+      "max": 5.119509,
+      "above_threshold": 20437
+    },
+    "state/ball/velocity/distance/4/20-40": {
+      "n": 21324,
+      "mean": 1.0165932356968679,
+      "rmse": 1.4174243678336884,
+      "max": 4.992288,
+      "above_threshold": 12437
+    },
+    "state/ball/velocity/distance/0/40+": {
+      "n": 1546008,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/velocity/distance/1/40+": {
+      "n": 1547908,
+      "mean": 0.18582092682510842,
+      "rmse": 0.4810406631244033,
+      "max": 5.380852,
+      "above_threshold": 222257
+    },
+    "state/ball/velocity/distance/2/40+": {
+      "n": 1508853,
+      "mean": 0.28986243812883034,
+      "rmse": 0.6240477085057349,
+      "max": 5.233257,
+      "above_threshold": 343024
+    },
+    "state/ball/velocity/distance/3/40+": {
+      "n": 2918,
+      "mean": 0.9155614804660729,
+      "rmse": 1.4336797505604815,
+      "max": 4.898194,
+      "above_threshold": 1437
+    },
+    "state/ball/velocity/distance/4/40+": {
+      "n": 2727,
+      "mean": 0.9983707766776677,
+      "rmse": 1.4409127657761789,
+      "max": 4.845162,
+      "above_threshold": 1608
+    },
+    "state/ball/velocity/distance/5/40+": {
+      "n": 2600,
+      "mean": 1.0785744338461531,
+      "rmse": 1.4627230982380086,
+      "max": 4.563125,
+      "above_threshold": 1758
+    },
+    "fresh_identity/ball/position/confirmed": {
+      "n": 10471454,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "fresh_identity/ball/velocity/confirmed": {
+      "n": 10471268,
+      "mean": 0.0013674359340244179,
+      "rmse": 0.04727596888228366,
+      "max": 4.902423,
+      "above_threshold": 7662
+    },
+    "sensor/teammate/n_dist": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/teammate/n_dir": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/teammate/n_dist_chg": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/teammate/n_dir_chg": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/teammate/n_body_rel": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/teammate/n_head_rel": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "localization/teammate/n_ls_pos_d": {
+      "n": 54479652,
+      "mean": 6.170377152923077e-10,
+      "rmse": 3.2255699581070664e-06,
+      "max": 0.017758,
+      "above_threshold": 2
+    },
+    "localization/teammate/n_ls_rpos_d": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "localization/teammate/n_ls_vel_d": {
+      "n": 54479652,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/teammate/position/all/all/all": {
+      "n": 193538621,
+      "mean": 0.9741639964110363,
+      "rmse": 2.491181222398164,
+      "max": 49.833913,
+      "above_threshold": 37781894
+    },
+    "state/teammate/position/own/0/all": {
+      "n": 54644556,
+      "mean": 0.007736167366278904,
+      "rmse": 0.3269994749631339,
+      "max": 49.550128,
+      "above_threshold": 44534
+    },
+    "state/teammate/position/own/0/narrow": {
+      "n": 12410543,
+      "mean": 0.021601710882432783,
+      "rmse": 0.4958669496232044,
+      "max": 45.139692,
+      "above_threshold": 31503
+    },
+    "state/teammate/position/own/0/normal": {
+      "n": 25914650,
+      "mean": 0.005520890718686146,
+      "rmse": 0.31144308418084665,
+      "max": 49.550128,
+      "above_threshold": 12126
+    },
+    "state/teammate/position/own/0/wide": {
+      "n": 16319363,
+      "mean": 0.0007094957339327523,
+      "rmse": 0.1304891526316751,
+      "max": 48.914599,
+      "above_threshold": 905
+    },
+    "state/teammate/position/own/1/all": {
+      "n": 50086791,
+      "mean": 0.24508813987622008,
+      "rmse": 0.4076953970491307,
+      "max": 49.644723,
+      "above_threshold": 18318
+    },
+    "state/teammate/position/own/1/narrow": {
+      "n": 8984466,
+      "mean": 0.227705005101138,
+      "rmse": 0.360362398194716,
+      "max": 47.816949,
+      "above_threshold": 3622
+    },
+    "state/teammate/position/own/1/normal": {
+      "n": 25402754,
+      "mean": 0.25647666550083514,
+      "rmse": 0.4575146880930907,
+      "max": 49.644723,
+      "above_threshold": 13274
+    },
+    "state/teammate/position/own/1/wide": {
+      "n": 15699571,
+      "mean": 0.23660881700143266,
+      "rmse": 0.34245501020896807,
+      "max": 48.914599,
+      "above_threshold": 1422
+    },
+    "state/teammate/position/own/2/all": {
+      "n": 28962442,
+      "mean": 0.4928579021089797,
+      "rmse": 0.6620933574488802,
+      "max": 49.739318,
+      "above_threshold": 1579872
+    },
+    "state/teammate/position/own/2/narrow": {
+      "n": 4664010,
+      "mean": 0.4514666249045349,
+      "rmse": 0.626059625152618,
+      "max": 47.543114,
+      "above_threshold": 208061
+    },
+    "state/teammate/position/own/2/normal": {
+      "n": 8433585,
+      "mean": 0.5189093310864832,
+      "rmse": 0.7314704774508455,
+      "max": 49.739318,
+      "above_threshold": 362430
+    },
+    "state/teammate/position/own/2/wide": {
+      "n": 15864847,
+      "mean": 0.4911776079429573,
+      "rmse": 0.6329444046676532,
+      "max": 48.914599,
+      "above_threshold": 1009381
+    },
+    "state/teammate/position/own/3/all": {
+      "n": 13523225,
+      "mean": 0.7383237462781256,
+      "rmse": 0.9769871162894617,
+      "max": 49.833913,
+      "above_threshold": 5083234
+    },
+    "state/teammate/position/own/3/narrow": {
+      "n": 3839349,
+      "mean": 0.6868247467607136,
+      "rmse": 0.9024874661257657,
+      "max": 47.286451,
+      "above_threshold": 1249111
+    },
+    "state/teammate/position/own/3/normal": {
+      "n": 7665615,
+      "mean": 0.7928955475027119,
+      "rmse": 1.0219861892729112,
+      "max": 49.833913,
+      "above_threshold": 3234506
+    },
+    "state/teammate/position/own/3/wide": {
+      "n": 2018261,
+      "mean": 0.6290198526062784,
+      "rmse": 0.9376651612266571,
+      "max": 48.914599,
+      "above_threshold": 599617
+    },
+    "state/teammate/position/own/4/all": {
+      "n": 6331871,
+      "mean": 0.9012646659265483,
+      "rmse": 1.258087686236224,
+      "max": 49.833913,
+      "above_threshold": 2663725
+    },
+    "state/teammate/position/own/4/narrow": {
+      "n": 2559651,
+      "mean": 0.9063970082144013,
+      "rmse": 1.1838834009009054,
+      "max": 47.753512,
+      "above_threshold": 1080959
+    },
+    "state/teammate/position/own/4/normal": {
+      "n": 2055353,
+      "mean": 0.9512744774707794,
+      "rmse": 1.3967264327170281,
+      "max": 49.833913,
+      "above_threshold": 920782
+    },
+    "state/teammate/position/own/4/wide": {
+      "n": 1716867,
+      "mean": 0.8337435234872587,
+      "rmse": 1.1884088651345166,
+      "max": 47.451368,
+      "above_threshold": 661984
+    },
+    "state/teammate/position/own/5/all": {
+      "n": 5377395,
+      "mean": 1.120816227606862,
+      "rmse": 1.5307700136147628,
+      "max": 49.833913,
+      "above_threshold": 2609223
+    },
+    "state/teammate/position/own/5/narrow": {
+      "n": 2141975,
+      "mean": 1.1324423418597314,
+      "rmse": 1.4607141997734996,
+      "max": 47.69001,
+      "above_threshold": 1058755
+    },
+    "state/teammate/position/own/5/normal": {
+      "n": 1702150,
+      "mean": 1.186292587481127,
+      "rmse": 1.676915990447736,
+      "max": 49.833913,
+      "above_threshold": 874773
+    },
+    "state/teammate/position/own/5/wide": {
+      "n": 1533270,
+      "mean": 1.0318864030901276,
+      "rmse": 1.4545109786282397,
+      "max": 47.451368,
+      "above_threshold": 675695
+    },
+    "state/teammate/position/own/>5/all": {
+      "n": 34612341,
+      "mean": 4.040388048188306,
+      "rmse": 5.73574260346194,
+      "max": 49.833913,
+      "above_threshold": 25782988
+    },
+    "state/teammate/position/own/>5/narrow": {
+      "n": 16414264,
+      "mean": 4.163051980121009,
+      "rmse": 5.745234321333867,
+      "max": 47.69001,
+      "above_threshold": 12692322
+    },
+    "state/teammate/position/own/>5/normal": {
+      "n": 14479310,
+      "mean": 4.244925437106532,
+      "rmse": 5.988968734101819,
+      "max": 49.833913,
+      "above_threshold": 11003567
+    },
+    "state/teammate/position/own/>5/wide": {
+      "n": 3718767,
+      "mean": 2.702579461966292,
+      "rmse": 4.56702262960008,
+      "max": 47.451368,
+      "above_threshold": 2087099
+    },
+    "state/teammate/position/pos/0/all": {
+      "n": 54644556,
+      "mean": 0.007736167366278904,
+      "rmse": 0.3269994749631339,
+      "max": 49.550128,
+      "above_threshold": 44534
+    },
+    "state/teammate/position/pos/0/narrow": {
+      "n": 12410543,
+      "mean": 0.021601710882432783,
+      "rmse": 0.4958669496232044,
+      "max": 45.139692,
+      "above_threshold": 31503
+    },
+    "state/teammate/position/pos/0/normal": {
+      "n": 25914650,
+      "mean": 0.005520890718686146,
+      "rmse": 0.31144308418084665,
+      "max": 49.550128,
+      "above_threshold": 12126
+    },
+    "state/teammate/position/pos/0/wide": {
+      "n": 16319363,
+      "mean": 0.0007094957339327523,
+      "rmse": 0.1304891526316751,
+      "max": 48.914599,
+      "above_threshold": 905
+    },
+    "state/teammate/position/pos/1/all": {
+      "n": 50086791,
+      "mean": 0.24508813987622008,
+      "rmse": 0.4076953970491307,
+      "max": 49.644723,
+      "above_threshold": 18318
+    },
+    "state/teammate/position/pos/1/narrow": {
+      "n": 8984466,
+      "mean": 0.227705005101138,
+      "rmse": 0.360362398194716,
+      "max": 47.816949,
+      "above_threshold": 3622
+    },
+    "state/teammate/position/pos/1/normal": {
+      "n": 25402754,
+      "mean": 0.25647666550083514,
+      "rmse": 0.4575146880930907,
+      "max": 49.644723,
+      "above_threshold": 13274
+    },
+    "state/teammate/position/pos/1/wide": {
+      "n": 15699571,
+      "mean": 0.23660881700143266,
+      "rmse": 0.34245501020896807,
+      "max": 48.914599,
+      "above_threshold": 1422
+    },
+    "state/teammate/position/pos/2/all": {
+      "n": 28962442,
+      "mean": 0.4928579021089797,
+      "rmse": 0.6620933574488802,
+      "max": 49.739318,
+      "above_threshold": 1579872
+    },
+    "state/teammate/position/pos/2/narrow": {
+      "n": 4664010,
+      "mean": 0.4514666249045349,
+      "rmse": 0.626059625152618,
+      "max": 47.543114,
+      "above_threshold": 208061
+    },
+    "state/teammate/position/pos/2/normal": {
+      "n": 8433585,
+      "mean": 0.5189093310864832,
+      "rmse": 0.7314704774508455,
+      "max": 49.739318,
+      "above_threshold": 362430
+    },
+    "state/teammate/position/pos/2/wide": {
+      "n": 15864847,
+      "mean": 0.4911776079429573,
+      "rmse": 0.6329444046676532,
+      "max": 48.914599,
+      "above_threshold": 1009381
+    },
+    "state/teammate/position/pos/3/all": {
+      "n": 13523225,
+      "mean": 0.7383237462781256,
+      "rmse": 0.9769871162894617,
+      "max": 49.833913,
+      "above_threshold": 5083234
+    },
+    "state/teammate/position/pos/3/narrow": {
+      "n": 3839349,
+      "mean": 0.6868247467607136,
+      "rmse": 0.9024874661257657,
+      "max": 47.286451,
+      "above_threshold": 1249111
+    },
+    "state/teammate/position/pos/3/normal": {
+      "n": 7665615,
+      "mean": 0.7928955475027119,
+      "rmse": 1.0219861892729112,
+      "max": 49.833913,
+      "above_threshold": 3234506
+    },
+    "state/teammate/position/pos/3/wide": {
+      "n": 2018261,
+      "mean": 0.6290198526062784,
+      "rmse": 0.9376651612266571,
+      "max": 48.914599,
+      "above_threshold": 599617
+    },
+    "state/teammate/position/pos/4/all": {
+      "n": 6331871,
+      "mean": 0.9012646659265483,
+      "rmse": 1.258087686236224,
+      "max": 49.833913,
+      "above_threshold": 2663725
+    },
+    "state/teammate/position/pos/4/narrow": {
+      "n": 2559651,
+      "mean": 0.9063970082144013,
+      "rmse": 1.1838834009009054,
+      "max": 47.753512,
+      "above_threshold": 1080959
+    },
+    "state/teammate/position/pos/4/normal": {
+      "n": 2055353,
+      "mean": 0.9512744774707794,
+      "rmse": 1.3967264327170281,
+      "max": 49.833913,
+      "above_threshold": 920782
+    },
+    "state/teammate/position/pos/4/wide": {
+      "n": 1716867,
+      "mean": 0.8337435234872587,
+      "rmse": 1.1884088651345166,
+      "max": 47.451368,
+      "above_threshold": 661984
+    },
+    "state/teammate/position/pos/5/all": {
+      "n": 5377395,
+      "mean": 1.120816227606862,
+      "rmse": 1.5307700136147628,
+      "max": 49.833913,
+      "above_threshold": 2609223
+    },
+    "state/teammate/position/pos/5/narrow": {
+      "n": 2141975,
+      "mean": 1.1324423418597314,
+      "rmse": 1.4607141997734996,
+      "max": 47.69001,
+      "above_threshold": 1058755
+    },
+    "state/teammate/position/pos/5/normal": {
+      "n": 1702150,
+      "mean": 1.186292587481127,
+      "rmse": 1.676915990447736,
+      "max": 49.833913,
+      "above_threshold": 874773
+    },
+    "state/teammate/position/pos/5/wide": {
+      "n": 1533270,
+      "mean": 1.0318864030901276,
+      "rmse": 1.4545109786282397,
+      "max": 47.451368,
+      "above_threshold": 675695
+    },
+    "state/teammate/position/pos/>5/all": {
+      "n": 34612341,
+      "mean": 4.040388048188306,
+      "rmse": 5.73574260346194,
+      "max": 49.833913,
+      "above_threshold": 25782988
+    },
+    "state/teammate/position/pos/>5/narrow": {
+      "n": 16414264,
+      "mean": 4.163051980121009,
+      "rmse": 5.745234321333867,
+      "max": 47.69001,
+      "above_threshold": 12692322
+    },
+    "state/teammate/position/pos/>5/normal": {
+      "n": 14479310,
+      "mean": 4.244925437106532,
+      "rmse": 5.988968734101819,
+      "max": 49.833913,
+      "above_threshold": 11003567
+    },
+    "state/teammate/position/pos/>5/wide": {
+      "n": 3718767,
+      "mean": 2.702579461966292,
+      "rmse": 4.56702262960008,
+      "max": 47.451368,
+      "above_threshold": 2087099
+    },
+    "state/teammate/position/view/all/narrow": {
+      "n": 51014258,
+      "mean": 1.5708482722049983,
+      "rmse": 3.3106258193638953,
+      "max": 47.816949,
+      "above_threshold": 16324333
+    },
+    "state/teammate/position/view/all/normal": {
+      "n": 85653417,
+      "mean": 0.9637750663715721,
+      "rmse": 2.5305241110715024,
+      "max": 49.833913,
+      "above_threshold": 16421458
+    },
+    "state/teammate/position/view/all/wide": {
+      "n": 56870946,
+      "mean": 0.45457428828410906,
+      "rmse": 1.2820958993015918,
+      "max": 48.914599,
+      "above_threshold": 5036103
+    },
+    "state/teammate/position/seen/0/all": {
+      "n": 58208688,
+      "mean": 2.0595707781907917,
+      "rmse": 3.8110379392915332,
+      "max": 49.833913,
+      "above_threshold": 23993251
+    },
+    "state/teammate/position/seen/1/all": {
+      "n": 54607167,
+      "mean": 0.0009942033489486828,
+      "rmse": 0.10646655226524687,
+      "max": 24.422441,
+      "above_threshold": 7045
+    },
+    "state/teammate/position/distance/0/0-3": {
+      "n": 174245,
+      "mean": 0.025379902998651328,
+      "rmse": 0.24064950332544394,
+      "max": 5.790871,
+      "above_threshold": 1705
+    },
+    "state/teammate/position/distance/0/3-10": {
+      "n": 3489599,
+      "mean": 0.04233580823469977,
+      "rmse": 0.5451881681435066,
+      "max": 25.135626,
+      "above_threshold": 24899
+    },
+    "state/teammate/position/distance/1/3-10": {
+      "n": 2761951,
+      "mean": 0.25335995440831505,
+      "rmse": 0.44946783619456393,
+      "max": 25.255736,
+      "above_threshold": 7974
+    },
+    "state/teammate/position/distance/2/3-10": {
+      "n": 1607636,
+      "mean": 0.5168566035893698,
+      "rmse": 0.6831345687799569,
+      "max": 25.380287,
+      "above_threshold": 76081
+    },
+    "state/teammate/position/distance/3/3-10": {
+      "n": 1287815,
+      "mean": 0.7900859992211612,
+      "rmse": 0.978865516329965,
+      "max": 25.509213,
+      "above_threshold": 516271
+    },
+    "state/teammate/position/distance/4/3-10": {
+      "n": 618397,
+      "mean": 0.9757128990793937,
+      "rmse": 1.2445545198634054,
+      "max": 25.642447,
+      "above_threshold": 277710
+    },
+    "state/teammate/position/distance/5/3-10": {
+      "n": 507188,
+      "mean": 1.2201018123871226,
+      "rmse": 1.533249066092014,
+      "max": 25.779925,
+      "above_threshold": 269120
+    },
+    "state/teammate/position/distance/>5/3-10": {
+      "n": 3589126,
+      "mean": 4.532638239687325,
+      "rmse": 6.0827455196885145,
+      "max": 29.217471,
+      "above_threshold": 2932709
+    },
+    "state/teammate/position/distance/0/10-20": {
+      "n": 12999791,
+      "mean": 0.015188328134275392,
+      "rmse": 0.45526373585437585,
+      "max": 22.831184,
+      "above_threshold": 15201
+    },
+    "state/teammate/position/distance/1/10-20": {
+      "n": 11493124,
+      "mean": 0.2602482535386376,
+      "rmse": 0.4539827692003816,
+      "max": 23.98348,
+      "above_threshold": 6719
+    },
+    "state/teammate/position/distance/2/10-20": {
+      "n": 6002305,
+      "mean": 0.5076814454607022,
+      "rmse": 0.6603636835366583,
+      "max": 24.45421,
+      "above_threshold": 263772
+    },
+    "state/teammate/position/distance/3/10-20": {
+      "n": 4282146,
+      "mean": 0.7745011873987946,
+      "rmse": 0.962462332050454,
+      "max": 29.471084,
+      "above_threshold": 1700015
+    },
+    "state/teammate/position/distance/4/10-20": {
+      "n": 1949390,
+      "mean": 0.9517057986677878,
+      "rmse": 1.224660697254318,
+      "max": 29.344191,
+      "above_threshold": 874327
+    },
+    "state/teammate/position/distance/5/10-20": {
+      "n": 1654323,
+      "mean": 1.181416553431222,
+      "rmse": 1.5021179392308504,
+      "max": 29.217579,
+      "above_threshold": 860129
+    },
+    "state/teammate/position/distance/>5/10-20": {
+      "n": 10610770,
+      "mean": 4.7573384272888735,
+      "rmse": 6.221687605343563,
+      "max": 38.243173,
+      "above_threshold": 8984646
+    },
+    "state/teammate/position/distance/0/20-40": {
+      "n": 25104466,
+      "mean": 0.002140441228226086,
+      "rmse": 0.2343210421013061,
+      "max": 47.031914,
+      "above_threshold": 2191
+    },
+    "state/teammate/position/distance/1/20-40": {
+      "n": 23487961,
+      "mean": 0.25290178139226305,
+      "rmse": 0.38635495746610177,
+      "max": 47.945015,
+      "above_threshold": 2021
+    },
+    "state/teammate/position/distance/2/20-40": {
+      "n": 12438950,
+      "mean": 0.5058613714591668,
+      "rmse": 0.6541222105246606,
+      "max": 47.881015,
+      "above_threshold": 556675
+    },
+    "state/teammate/position/distance/3/20-40": {
+      "n": 6186546,
+      "mean": 0.7611304830774721,
+      "rmse": 0.9717348964309825,
+      "max": 47.81718,
+      "above_threshold": 2426224
+    },
+    "state/teammate/position/distance/4/20-40": {
+      "n": 2811214,
+      "mean": 0.9462443206717801,
+      "rmse": 1.2587312962979127,
+      "max": 47.753512,
+      "above_threshold": 1258858
+    },
+    "state/teammate/position/distance/5/20-40": {
+      "n": 2385617,
+      "mean": 1.183400937311396,
+      "rmse": 1.546177236459823,
+      "max": 47.69001,
+      "above_threshold": 1229835
+    },
+    "state/teammate/position/distance/>5/20-40": {
+      "n": 14586559,
+      "mean": 4.25616153826581,
+      "rmse": 5.8288121437341065,
+      "max": 47.69001,
+      "above_threshold": 11629985
+    },
+    "state/teammate/position/distance/0/40+": {
+      "n": 12876455,
+      "mean": 0.001506811476450623,
+      "rmse": 0.2369523604121425,
+      "max": 49.550128,
+      "above_threshold": 538
+    },
+    "state/teammate/position/distance/1/40+": {
+      "n": 12267969,
+      "mean": 0.21384616248671634,
+      "rmse": 0.3914405967458722,
+      "max": 49.644723,
+      "above_threshold": 807
+    },
+    "state/teammate/position/distance/2/40+": {
+      "n": 8902310,
+      "mean": 0.4602340160666163,
+      "rmse": 0.6701963600139773,
+      "max": 49.739318,
+      "above_threshold": 681608
+    },
+    "state/teammate/position/distance/3/40+": {
+      "n": 1765020,
+      "mean": 0.5325324351882696,
+      "rmse": 1.0271184916440312,
+      "max": 49.833913,
+      "above_threshold": 439917
+    },
+    "state/teammate/position/distance/4/40+": {
+      "n": 952286,
+      "mean": 0.616353811723579,
+      "rmse": 1.3296674782005236,
+      "max": 49.833913,
+      "above_threshold": 252397
+    },
+    "state/teammate/position/distance/5/40+": {
+      "n": 829592,
+      "mean": 0.7586887948967682,
+      "rmse": 1.5405976121021003,
+      "max": 49.833913,
+      "above_threshold": 249649
+    },
+    "state/teammate/position/distance/>5/40+": {
+      "n": 5817824,
+      "mean": 1.8798833139374798,
+      "rmse": 4.116327655943369,
+      "max": 49.833913,
+      "above_threshold": 2227720
+    },
+    "state/teammate/velocity/all/all/all": {
+      "n": 153489764,
+      "mean": 0.04104507441304034,
+      "rmse": 0.07808337893850752,
+      "max": 0.845298,
+      "above_threshold": 906242
+    },
+    "state/teammate/velocity/own/0/all": {
+      "n": 54479652,
+      "mean": 2.030358545608918e-06,
+      "rmse": 0.0006948654533936346,
+      "max": 0.547153,
+      "above_threshold": 94
+    },
+    "state/teammate/velocity/own/0/narrow": {
+      "n": 12302374,
+      "mean": 6.416103103352248e-07,
+      "rmse": 0.0003629548576971182,
+      "max": 0.391407,
+      "above_threshold": 4
+    },
+    "state/teammate/velocity/own/0/normal": {
+      "n": 25863396,
+      "mean": 2.9097905394945056e-06,
+      "rmse": 0.0008609141021385713,
+      "max": 0.547153,
+      "above_threshold": 80
+    },
+    "state/teammate/velocity/own/0/wide": {
+      "n": 16313882,
+      "mean": 1.6834026383174778e-06,
+      "rmse": 0.0005814215590207073,
+      "max": 0.335775,
+      "above_threshold": 10
+    },
+    "state/teammate/velocity/own/1/all": {
+      "n": 50113637,
+      "mean": 0.05144138755205491,
+      "rmse": 0.07900030772665628,
+      "max": 0.781064,
+      "above_threshold": 58529
+    },
+    "state/teammate/velocity/own/1/narrow": {
+      "n": 9072244,
+      "mean": 0.055212293209375755,
+      "rmse": 0.08358096546368962,
+      "max": 0.781064,
+      "above_threshold": 15090
+    },
+    "state/teammate/velocity/own/1/normal": {
+      "n": 25348322,
+      "mean": 0.05220730816718362,
+      "rmse": 0.07951385218722178,
+      "max": 0.600248,
+      "above_threshold": 29488
+    },
+    "state/teammate/velocity/own/1/wide": {
+      "n": 15693071,
+      "mean": 0.048024250230563545,
+      "rmse": 0.07535932938494336,
+      "max": 0.600248,
+      "above_threshold": 13951
+    },
+    "state/teammate/velocity/own/2/all": {
+      "n": 29004474,
+      "mean": 0.06965973357924024,
+      "rmse": 0.1036078919641093,
+      "max": 0.845298,
+      "above_threshold": 272414
+    },
+    "state/teammate/velocity/own/2/narrow": {
+      "n": 4665743,
+      "mean": 0.0725916478363682,
+      "rmse": 0.10586917763712991,
+      "max": 0.835269,
+      "above_threshold": 36687
+    },
+    "state/teammate/velocity/own/2/normal": {
+      "n": 8478874,
+      "mean": 0.06703528096171732,
+      "rmse": 0.0999051687061196,
+      "max": 0.845298,
+      "above_threshold": 57269
+    },
+    "state/teammate/velocity/own/2/wide": {
+      "n": 15859857,
+      "mean": 0.07020027090193814,
+      "rmse": 0.10487183426400992,
+      "max": 0.629172,
+      "above_threshold": 178458
+    },
+    "state/teammate/velocity/own/3/all": {
+      "n": 13559483,
+      "mean": 0.08153662421996472,
+      "rmse": 0.11946165457263058,
+      "max": 0.841161,
+      "above_threshold": 309752
+    },
+    "state/teammate/velocity/own/3/narrow": {
+      "n": 3839501,
+      "mean": 0.08642272663635195,
+      "rmse": 0.12404857261761604,
+      "max": 0.702758,
+      "above_threshold": 95032
+    },
+    "state/teammate/velocity/own/3/normal": {
+      "n": 7700747,
+      "mean": 0.0797589726283697,
+      "rmse": 0.11701490121410499,
+      "max": 0.841161,
+      "above_threshold": 165063
+    },
+    "state/teammate/velocity/own/3/wide": {
+      "n": 2019235,
+      "mean": 0.07902530188611036,
+      "rmse": 0.11980746717753807,
+      "max": 0.635279,
+      "above_threshold": 49657
+    },
+    "state/teammate/velocity/own/4/all": {
+      "n": 6332518,
+      "mean": 0.09410707522647391,
+      "rmse": 0.13661124240123043,
+      "max": 0.755859,
+      "above_threshold": 265453
+    },
+    "state/teammate/velocity/own/4/narrow": {
+      "n": 2559792,
+      "mean": 0.09729845143706985,
+      "rmse": 0.1381190471038078,
+      "max": 0.741892,
+      "above_threshold": 106218
+    },
+    "state/teammate/velocity/own/4/normal": {
+      "n": 2055656,
+      "mean": 0.09757233385644287,
+      "rmse": 0.14051172246550891,
+      "max": 0.740838,
+      "above_threshold": 95449
+    },
+    "state/teammate/velocity/own/4/wide": {
+      "n": 1717070,
+      "mean": 0.08520083437017714,
+      "rmse": 0.12942577457647556,
+      "max": 0.755859,
+      "above_threshold": 63786
+    },
+    "state/teammate/velocity/pos/0/all": {
+      "n": 54626256,
+      "mean": 0.00012365670292322438,
+      "rmse": 0.005233337756326373,
+      "max": 0.845298,
+      "above_threshold": 4236
+    },
+    "state/teammate/velocity/pos/0/narrow": {
+      "n": 12403073,
+      "mean": 0.00034443000924045205,
+      "rmse": 0.008959386154528815,
+      "max": 0.835269,
+      "above_threshold": 2858
+    },
+    "state/teammate/velocity/pos/0/normal": {
+      "n": 25909301,
+      "mean": 9.477096005021519e-05,
+      "rmse": 0.0043708386105459525,
+      "max": 0.845298,
+      "above_threshold": 1368
+    },
+    "state/teammate/velocity/pos/0/wide": {
+      "n": 16313882,
+      "mean": 1.6834026383174778e-06,
+      "rmse": 0.0005814215590207073,
+      "max": 0.335775,
+      "above_threshold": 10
+    },
+    "state/teammate/velocity/pos/1/all": {
+      "n": 50076061,
+      "mean": 0.05148955259767731,
+      "rmse": 0.07901785991182636,
+      "max": 0.841161,
+      "above_threshold": 57534
+    },
+    "state/teammate/velocity/pos/1/narrow": {
+      "n": 8983680,
+      "mean": 0.05540635287821917,
+      "rmse": 0.08347264097485654,
+      "max": 0.690738,
+      "above_threshold": 12657
+    },
+    "state/teammate/velocity/pos/1/normal": {
+      "n": 25397039,
+      "mean": 0.05224323004343139,
+      "rmse": 0.07960003821030172,
+      "max": 0.841161,
+      "above_threshold": 30882
+    },
+    "state/teammate/velocity/pos/1/wide": {
+      "n": 15695342,
+      "mean": 0.04802811443165748,
+      "rmse": 0.07536628084555082,
+      "max": 0.600248,
+      "above_threshold": 13995
+    },
+    "state/teammate/velocity/pos/2/all": {
+      "n": 28956900,
+      "mean": 0.0697033011863839,
+      "rmse": 0.10363107440544456,
+      "max": 0.728959,
+      "above_threshold": 271515
+    },
+    "state/teammate/velocity/pos/2/narrow": {
+      "n": 4663376,
+      "mean": 0.07263609623971987,
+      "rmse": 0.1059232637759003,
+      "max": 0.657692,
+      "above_threshold": 36853
+    },
+    "state/teammate/velocity/pos/2/normal": {
+      "n": 8432885,
+      "mean": 0.06713603793648315,
+      "rmse": 0.09992219984295496,
+      "max": 0.728959,
+      "above_threshold": 56131
+    },
+    "state/teammate/velocity/pos/2/wide": {
+      "n": 15860639,
+      "mean": 0.07020597385212538,
+      "rmse": 0.10487882575413011,
+      "max": 0.629172,
+      "above_threshold": 178531
+    },
+    "state/teammate/velocity/pos/3/all": {
+      "n": 13514917,
+      "mean": 0.08157244839683438,
+      "rmse": 0.11947537325170392,
+      "max": 0.736246,
+      "above_threshold": 308541
+    },
+    "state/teammate/velocity/pos/3/narrow": {
+      "n": 3837970,
+      "mean": 0.08643654894957489,
+      "rmse": 0.12407049812512533,
+      "max": 0.736246,
+      "above_threshold": 95088
+    },
+    "state/teammate/velocity/pos/3/normal": {
+      "n": 7659529,
+      "mean": 0.07981043249134508,
+      "rmse": 0.11701842855435353,
+      "max": 0.661961,
+      "above_threshold": 163838
+    },
+    "state/teammate/velocity/pos/3/wide": {
+      "n": 2017418,
+      "mean": 0.07900874564815026,
+      "rmse": 0.11979735117869347,
+      "max": 0.635279,
+      "above_threshold": 49615
+    },
+    "state/teammate/velocity/pos/4/all": {
+      "n": 6315630,
+      "mean": 0.09405451457289297,
+      "rmse": 0.1365557620619853,
+      "max": 0.755859,
+      "above_threshold": 264416
+    },
+    "state/teammate/velocity/pos/4/narrow": {
+      "n": 2551555,
+      "mean": 0.09719169696008909,
+      "rmse": 0.13800578677654968,
+      "max": 0.741892,
+      "above_threshold": 105575
+    },
+    "state/teammate/velocity/pos/4/normal": {
+      "n": 2048241,
+      "mean": 0.09757925415661538,
+      "rmse": 0.14051636514581928,
+      "max": 0.740838,
+      "above_threshold": 95130
+    },
+    "state/teammate/velocity/pos/4/wide": {
+      "n": 1715834,
+      "mean": 0.08518173927198079,
+      "rmse": 0.12940432344393019,
+      "max": 0.755859,
+      "above_threshold": 63711
+    },
+    "state/teammate/velocity/view/all/narrow": {
+      "n": 32439654,
+      "mean": 0.0437885436392139,
+      "rmse": 0.08302074790818889,
+      "max": 0.835269,
+      "above_threshold": 253031
+    },
+    "state/teammate/velocity/view/all/normal": {
+      "n": 69446995,
+      "mean": 0.03897368689294616,
+      "rmse": 0.07502876527176684,
+      "max": 0.845298,
+      "above_threshold": 347349
+    },
+    "state/teammate/velocity/view/all/wide": {
+      "n": 51603115,
+      "mean": 0.042108080905852295,
+      "rmse": 0.07890754621472552,
+      "max": 0.755859,
+      "above_threshold": 305862
+    },
+    "state/teammate/velocity/seen/0/all": {
+      "n": 31099388,
+      "mean": 0.07101353523214025,
+      "rmse": 0.10637719864583166,
+      "max": 0.845298,
+      "above_threshold": 410419
+    },
+    "state/teammate/velocity/seen/1/all": {
+      "n": 54591694,
+      "mean": 3.0212257582627846e-05,
+      "rmse": 0.002243723943957086,
+      "max": 0.793422,
+      "above_threshold": 798
+    },
+    "state/teammate/velocity/distance/0/0-3": {
+      "n": 163640,
+      "mean": 0.00935166470911757,
+      "rmse": 0.03881753978588987,
+      "max": 0.793422,
+      "above_threshold": 707
+    },
+    "state/teammate/velocity/distance/0/3-10": {
+      "n": 3485204,
+      "mean": 0.0008114087227031754,
+      "rmse": 0.01394819993393643,
+      "max": 0.845298,
+      "above_threshold": 1881
+    },
+    "state/teammate/velocity/distance/1/3-10": {
+      "n": 2759350,
+      "mean": 0.053019606073894235,
+      "rmse": 0.08018170721498254,
+      "max": 0.821989,
+      "above_threshold": 4527
+    },
+    "state/teammate/velocity/distance/2/3-10": {
+      "n": 1605737,
+      "mean": 0.07505060573431395,
+      "rmse": 0.10752958234551753,
+      "max": 0.728959,
+      "above_threshold": 16010
+    },
+    "state/teammate/velocity/distance/3/3-10": {
+      "n": 1281008,
+      "mean": 0.08771806632667403,
+      "rmse": 0.12438132014566314,
+      "max": 0.736246,
+      "above_threshold": 34900
+    },
+    "state/teammate/velocity/distance/4/3-10": {
+      "n": 604181,
+      "mean": 0.11075211504830502,
+      "rmse": 0.150681526394485,
+      "max": 0.725897,
+      "above_threshold": 33036
+    },
+    "state/teammate/velocity/distance/0/10-20": {
+      "n": 12996873,
+      "mean": 0.00015091087979393197,
+      "rmse": 0.005884062522888914,
+      "max": 0.790696,
+      "above_threshold": 1186
+    },
+    "state/teammate/velocity/distance/1/10-20": {
+      "n": 11491627,
+      "mean": 0.052966286683948226,
+      "rmse": 0.07999633392056778,
+      "max": 0.765975,
+      "above_threshold": 15904
+    },
+    "state/teammate/velocity/distance/2/10-20": {
+      "n": 6001890,
+      "mean": 0.07082214992977212,
+      "rmse": 0.10372466390051599,
+      "max": 0.69206,
+      "above_threshold": 49233
+    },
+    "state/teammate/velocity/distance/3/10-20": {
+      "n": 4281093,
+      "mean": 0.08577065507336558,
+      "rmse": 0.122327981199958,
+      "max": 0.702758,
+      "above_threshold": 103822
+    },
+    "state/teammate/velocity/distance/4/10-20": {
+      "n": 1947834,
+      "mean": 0.10157478397286422,
+      "rmse": 0.14227284138740906,
+      "max": 0.755859,
+      "above_threshold": 90019
+    },
+    "state/teammate/velocity/distance/0/20-40": {
+      "n": 25104103,
+      "mean": 1.3870520607726956e-05,
+      "rmse": 0.001994057084669619,
+      "max": 0.751697,
+      "above_threshold": 381
+    },
+    "state/teammate/velocity/distance/1/20-40": {
+      "n": 23487701,
+      "mean": 0.05350992516423806,
+      "rmse": 0.08079738661118678,
+      "max": 0.699255,
+      "above_threshold": 27954
+    },
+    "state/teammate/velocity/distance/2/20-40": {
+      "n": 12438884,
+      "mean": 0.06818382480582665,
+      "rmse": 0.100825125837479,
+      "max": 0.718482,
+      "above_threshold": 80597
+    },
+    "state/teammate/velocity/distance/3/20-40": {
+      "n": 6186288,
+      "mean": 0.08384702222819242,
+      "rmse": 0.12144354408927946,
+      "max": 0.661961,
+      "above_threshold": 145377
+    },
+    "state/teammate/velocity/distance/4/20-40": {
+      "n": 2810912,
+      "mean": 0.09697580316566302,
+      "rmse": 0.13868531091352726,
+      "max": 0.740838,
+      "above_threshold": 120558
+    },
+    "state/teammate/velocity/distance/0/40+": {
+      "n": 12876436,
+      "mean": 6.763894450296649e-06,
+      "rmse": 0.0012971586966799575,
+      "max": 0.547153,
+      "above_threshold": 81
+    },
+    "state/teammate/velocity/distance/1/40+": {
+      "n": 12267950,
+      "mean": 0.04593630861619098,
+      "rmse": 0.07426131221467795,
+      "max": 0.600248,
+      "above_threshold": 8785
+    },
+    "state/teammate/velocity/distance/2/40+": {
+      "n": 8902303,
+      "mean": 0.07011337832951764,
+      "rmse": 0.10667412392093374,
+      "max": 0.629172,
+      "above_threshold": 125538
+    },
+    "state/teammate/velocity/distance/3/40+": {
+      "n": 1764997,
+      "mean": 0.05895437499100565,
+      "rmse": 0.10034389960821906,
+      "max": 0.640334,
+      "above_threshold": 24372
+    },
+    "state/teammate/velocity/distance/4/40+": {
+      "n": 952261,
+      "mean": 0.05945066533334875,
+      "rmse": 0.1052647301589371,
+      "max": 0.697775,
+      "above_threshold": 20775
+    },
+    "state/teammate/body/all/all/all": {
+      "n": 104622519,
+      "mean": 4.571805429433608,
+      "rmse": 20.02255631015188,
+      "max": 179.999998,
+      "above_threshold": 5412067
+    },
+    "state/teammate/body/own/0/all": {
+      "n": 54542233,
+      "mean": 0.026488611749852627,
+      "rmse": 1.429871997259016,
+      "max": 179.981994,
+      "above_threshold": 15360
+    },
+    "state/teammate/body/own/0/narrow": {
+      "n": 12364955,
+      "mean": 0.1127952721520619,
+      "rmse": 2.9459261241730985,
+      "max": 179.981994,
+      "above_threshold": 14732
+    },
+    "state/teammate/body/own/0/normal": {
+      "n": 25863396,
+      "mean": 0.0013443124114095463,
+      "rmse": 0.338505662350517,
+      "max": 171.362847,
+      "above_threshold": 436
+    },
+    "state/teammate/body/own/0/wide": {
+      "n": 16313882,
+      "mean": 0.0009360791802956524,
+      "rmse": 0.27579012023964583,
+      "max": 103.859247,
+      "above_threshold": 192
+    },
+    "state/teammate/body/own/1/all": {
+      "n": 50080286,
+      "mean": 9.522091235088276,
+      "rmse": 28.901515738834192,
+      "max": 179.999998,
+      "above_threshold": 5396707
+    },
+    "state/teammate/body/own/1/narrow": {
+      "n": 8991980,
+      "mean": 12.227683416132493,
+      "rmse": 33.42280116292093,
+      "max": 179.999998,
+      "above_threshold": 1226999
+    },
+    "state/teammate/body/own/1/normal": {
+      "n": 25394545,
+      "mean": 9.485721533579667,
+      "rmse": 28.78036056686433,
+      "max": 179.998447,
+      "above_threshold": 2730236
+    },
+    "state/teammate/body/own/1/wide": {
+      "n": 15693761,
+      "mean": 8.030731786036569,
+      "rmse": 26.175412865555526,
+      "max": 179.998694,
+      "above_threshold": 1439472
+    },
+    "state/teammate/body/pos/0/all": {
+      "n": 54596580,
+      "mean": 0.046500295346521725,
+      "rmse": 1.93265776644971,
+      "max": 179.999998,
+      "above_threshold": 26275
+    },
+    "state/teammate/body/pos/0/narrow": {
+      "n": 12377200,
+      "mean": 0.1551712633179556,
+      "rmse": 3.6189429116589005,
+      "max": 179.999998,
+      "above_threshold": 19987
+    },
+    "state/teammate/body/pos/0/normal": {
+      "n": 25905498,
+      "mean": 0.023273061543962602,
+      "rmse": 1.2516672165901965,
+      "max": 179.959053,
+      "above_threshold": 6096
+    },
+    "state/teammate/body/pos/0/wide": {
+      "n": 16313882,
+      "mean": 0.0009360791802956524,
+      "rmse": 0.27579012023964583,
+      "max": 103.859247,
+      "above_threshold": 192
+    },
+    "state/teammate/body/pos/1/all": {
+      "n": 50025939,
+      "mean": 9.51056697427131,
+      "rmse": 28.885251272234335,
+      "max": 179.998694,
+      "above_threshold": 5385792
+    },
+    "state/teammate/body/pos/1/narrow": {
+      "n": 8979735,
+      "mean": 12.185794728711826,
+      "rmse": 33.354237781199956,
+      "max": 179.998694,
+      "above_threshold": 1221744
+    },
+    "state/teammate/body/pos/1/normal": {
+      "n": 25352443,
+      "mean": 9.479064821363409,
+      "rmse": 28.77847719041698,
+      "max": 179.998447,
+      "above_threshold": 2724576
+    },
+    "state/teammate/body/pos/1/wide": {
+      "n": 15693761,
+      "mean": 8.030731786036569,
+      "rmse": 26.175412865555526,
+      "max": 179.998694,
+      "above_threshold": 1439472
+    },
+    "state/teammate/body/view/all/narrow": {
+      "n": 21356935,
+      "mean": 5.2135661408609435,
+      "rmse": 21.80261266563321,
+      "max": 179.999998,
+      "above_threshold": 1241731
+    },
+    "state/teammate/body/view/all/normal": {
+      "n": 51257941,
+      "mean": 4.7001566220968956,
+      "rmse": 20.25892805351677,
+      "max": 179.998447,
+      "above_threshold": 2730672
+    },
+    "state/teammate/body/view/all/wide": {
+      "n": 32007643,
+      "mean": 3.9380486838862523,
+      "rmse": 18.32969622755105,
+      "max": 179.998694,
+      "above_threshold": 1439664
+    },
+    "state/teammate/body/seen/0/all": {
+      "n": 9007849,
+      "mean": 12.294585432582632,
+      "rmse": 33.488445862307685,
+      "max": 179.998694,
+      "above_threshold": 1236226
+    },
+    "state/teammate/body/seen/1/all": {
+      "n": 54568466,
+      "mean": 0.02228751361335685,
+      "rmse": 1.2973312147995038,
+      "max": 179.999998,
+      "above_threshold": 11793
+    },
+    "state/teammate/body/distance/0/0-3": {
+      "n": 141186,
+      "mean": 8.584413436785521,
+      "rmse": 25.45749076176319,
+      "max": 179.999998,
+      "above_threshold": 11739
+    },
+    "state/teammate/body/distance/0/3-10": {
+      "n": 3479436,
+      "mean": 0.2118457338640516,
+      "rmse": 4.331418567440254,
+      "max": 179.981994,
+      "above_threshold": 7829
+    },
+    "state/teammate/body/distance/1/3-10": {
+      "n": 2748459,
+      "mean": 13.033547700313148,
+      "rmse": 34.865125492780294,
+      "max": 179.990954,
+      "above_threshold": 387582
+    },
+    "state/teammate/body/distance/0/10-20": {
+      "n": 12995573,
+      "mean": 0.035112805489838736,
+      "rmse": 1.656470743157458,
+      "max": 179.881883,
+      "above_threshold": 5097
+    },
+    "state/teammate/body/distance/1/10-20": {
+      "n": 11487484,
+      "mean": 9.78420863185925,
+      "rmse": 29.19269700781989,
+      "max": 179.998694,
+      "above_threshold": 1274871
+    },
+    "state/teammate/body/distance/0/20-40": {
+      "n": 25103959,
+      "mean": 0.0037431501572321724,
+      "rmse": 0.5701906029453213,
+      "max": 179.908297,
+      "above_threshold": 1121
+    },
+    "state/teammate/body/distance/1/20-40": {
+      "n": 23486762,
+      "mean": 9.855265359665973,
+      "rmse": 29.28255377259637,
+      "max": 179.998694,
+      "above_threshold": 2641900
+    },
+    "state/teammate/body/distance/0/40+": {
+      "n": 12876426,
+      "mean": 0.003057953465891856,
+      "rmse": 0.5084135516351876,
+      "max": 171.362847,
+      "above_threshold": 489
+    },
+    "state/teammate/body/distance/1/40+": {
+      "n": 12267874,
+      "mean": 7.81372966703563,
+      "rmse": 26.245491912709593,
+      "max": 179.998447,
+      "above_threshold": 1079004
+    },
+    "fresh_identity/teammate/position/confirmed": {
+      "n": 54478946,
+      "mean": 6.170457115671805e-10,
+      "rmse": 3.225590858337154e-06,
+      "max": 0.017758,
+      "above_threshold": 0
+    },
+    "fresh_identity/teammate/velocity/confirmed": {
+      "n": 54478946,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "fresh_identity/teammate/body/confirmed": {
+      "n": 54478946,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "fresh_identity/teammate/position/no_named_observation": {
+      "n": 165610,
+      "mean": 2.5526199942998624,
+      "rmse": 5.939873930931361,
+      "max": 49.550128,
+      "above_threshold": 44534
+    },
+    "fresh_identity/teammate/velocity/no_named_observation": {
+      "n": 147310,
+      "mean": 0.04585501805715839,
+      "rmse": 0.10077745063203968,
+      "max": 0.845298,
+      "above_threshold": 4236
+    },
+    "fresh_identity/teammate/body/no_named_observation": {
+      "n": 117634,
+      "mean": 21.581830889963793,
+      "rmse": 41.63621507384807,
+      "max": 179.999998,
+      "above_threshold": 26275
+    },
+    "sensor/opponent/n_dist": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/opponent/n_dir": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/opponent/n_dist_chg": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/opponent/n_dir_chg": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/opponent/n_body_rel": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "sensor/opponent/n_head_rel": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "localization/opponent/n_ls_pos_d": {
+      "n": 60646813,
+      "mean": 7.649994732616867e-08,
+      "rmse": 7.545053909284078e-05,
+      "max": 0.217142,
+      "above_threshold": 149
+    },
+    "localization/opponent/n_ls_rpos_d": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "localization/opponent/n_ls_vel_d": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/position/all/all/all": {
+      "n": 213798350,
+      "mean": 0.9378196031996882,
+      "rmse": 2.4107705747858748,
+      "max": 47.378938,
+      "above_threshold": 40105126
+    },
+    "state/opponent/position/own/0/all": {
+      "n": 61841953,
+      "mean": 0.004046395022728342,
+      "rmse": 0.22573155696111774,
+      "max": 44.982017,
+      "above_threshold": 27465
+    },
+    "state/opponent/position/own/0/narrow": {
+      "n": 15326907,
+      "mean": 0.00793424895492613,
+      "rmse": 0.306992016362892,
+      "max": 34.674525,
+      "above_threshold": 13662
+    },
+    "state/opponent/position/own/0/normal": {
+      "n": 28343165,
+      "mean": 0.004401280757847616,
+      "rmse": 0.24240029113073275,
+      "max": 44.982017,
+      "above_threshold": 13272
+    },
+    "state/opponent/position/own/0/wide": {
+      "n": 18171881,
+      "mean": 0.00021369544721319716,
+      "rmse": 0.04766460595544476,
+      "max": 28.962687,
+      "above_threshold": 531
+    },
+    "state/opponent/position/own/1/all": {
+      "n": 55576900,
+      "mean": 0.24066476372453294,
+      "rmse": 0.36242840075768995,
+      "max": 45.105355,
+      "above_threshold": 16562
+    },
+    "state/opponent/position/own/1/narrow": {
+      "n": 10233178,
+      "mean": 0.22236021947688195,
+      "rmse": 0.32265354681157715,
+      "max": 34.919161,
+      "above_threshold": 1648
+    },
+    "state/opponent/position/own/1/normal": {
+      "n": 27842334,
+      "mean": 0.2534368048594992,
+      "rmse": 0.4042264288384444,
+      "max": 45.105355,
+      "above_threshold": 14059
+    },
+    "state/opponent/position/own/1/wide": {
+      "n": 17501388,
+      "mean": 0.231048967786155,
+      "rmse": 0.31033583498209594,
+      "max": 28.962251,
+      "above_threshold": 855
+    },
+    "state/opponent/position/own/2/all": {
+      "n": 33126675,
+      "mean": 0.47894721078152275,
+      "rmse": 0.6130819709908265,
+      "max": 47.367146,
+      "above_threshold": 1712466
+    },
+    "state/opponent/position/own/2/narrow": {
+      "n": 5323738,
+      "mean": 0.44533522174814,
+      "rmse": 0.5934309358310647,
+      "max": 35.163488,
+      "above_threshold": 258914
+    },
+    "state/opponent/position/own/2/normal": {
+      "n": 10112504,
+      "mean": 0.49350616453293855,
+      "rmse": 0.6347583191604359,
+      "max": 47.367146,
+      "above_threshold": 484461
+    },
+    "state/opponent/position/own/2/wide": {
+      "n": 17690433,
+      "mean": 0.4807399280782446,
+      "rmse": 0.6062528687588143,
+      "max": 28.962045,
+      "above_threshold": 969091
+    },
+    "state/opponent/position/own/3/all": {
+      "n": 15699694,
+      "mean": 0.7239742034528828,
+      "rmse": 0.912560474246867,
+      "max": 47.378938,
+      "above_threshold": 5678771
+    },
+    "state/opponent/position/own/3/narrow": {
+      "n": 4341950,
+      "mean": 0.6848040323536658,
+      "rmse": 0.8810517822154222,
+      "max": 35.407697,
+      "above_threshold": 1414513
+    },
+    "state/opponent/position/own/3/normal": {
+      "n": 9173500,
+      "mean": 0.7532316330020176,
+      "rmse": 0.9376759898869563,
+      "max": 42.384875,
+      "above_threshold": 3556372
+    },
+    "state/opponent/position/own/3/wide": {
+      "n": 2184244,
+      "mean": 0.6789617847099496,
+      "rmse": 0.8659925788576166,
+      "max": 47.378938,
+      "above_threshold": 707886
+    },
+    "state/opponent/position/own/4/all": {
+      "n": 6836699,
+      "mean": 0.9267388904779922,
+      "rmse": 1.1851962160129192,
+      "max": 47.378938,
+      "above_threshold": 3022868
+    },
+    "state/opponent/position/own/4/narrow": {
+      "n": 2696638,
+      "mean": 0.918231247446636,
+      "rmse": 1.1662849031108664,
+      "max": 28.463045,
+      "above_threshold": 1183162
+    },
+    "state/opponent/position/own/4/normal": {
+      "n": 2291755,
+      "mean": 0.9505132261454656,
+      "rmse": 1.2323281308882323,
+      "max": 42.384875,
+      "above_threshold": 1049253
+    },
+    "state/opponent/position/own/4/wide": {
+      "n": 1848306,
+      "mean": 0.9096730371242633,
+      "rmse": 1.1525148054285428,
+      "max": 47.378938,
+      "above_threshold": 790453
+    },
+    "state/opponent/position/own/5/all": {
+      "n": 5718431,
+      "mean": 1.164720631744442,
+      "rmse": 1.477639743110447,
+      "max": 47.378938,
+      "above_threshold": 2934919
+    },
+    "state/opponent/position/own/5/narrow": {
+      "n": 2246901,
+      "mean": 1.1575144418944137,
+      "rmse": 1.4556933204397067,
+      "max": 28.581316,
+      "above_threshold": 1163047
+    },
+    "state/opponent/position/own/5/normal": {
+      "n": 1844771,
+      "mean": 1.199724293070522,
+      "rmse": 1.5359242130362185,
+      "max": 42.384875,
+      "above_threshold": 971263
+    },
+    "state/opponent/position/own/5/wide": {
+      "n": 1626759,
+      "mean": 1.1349791985463125,
+      "rmse": 1.4398448917941469,
+      "max": 47.378938,
+      "above_threshold": 800609
+    },
+    "state/opponent/position/own/>5/all": {
+      "n": 34997998,
+      "mean": 4.190249219951723,
+      "rmse": 5.817604054808531,
+      "max": 47.378938,
+      "above_threshold": 26712075
+    },
+    "state/opponent/position/own/>5/narrow": {
+      "n": 16285465,
+      "mean": 4.389759555067419,
+      "rmse": 6.005888304060323,
+      "max": 38.877034,
+      "above_threshold": 12745576
+    },
+    "state/opponent/position/own/>5/normal": {
+      "n": 14998257,
+      "mean": 4.2221431635047315,
+      "rmse": 5.836251084574421,
+      "max": 47.378938,
+      "above_threshold": 11512899
+    },
+    "state/opponent/position/own/>5/wide": {
+      "n": 3714276,
+      "mean": 3.18669640324763,
+      "rmse": 4.8172826053805675,
+      "max": 47.378938,
+      "above_threshold": 2453600
+    },
+    "state/opponent/position/pos/0/all": {
+      "n": 61841953,
+      "mean": 0.004046395022728342,
+      "rmse": 0.22573155696111774,
+      "max": 44.982017,
+      "above_threshold": 27465
+    },
+    "state/opponent/position/pos/0/narrow": {
+      "n": 15326907,
+      "mean": 0.00793424895492613,
+      "rmse": 0.306992016362892,
+      "max": 34.674525,
+      "above_threshold": 13662
+    },
+    "state/opponent/position/pos/0/normal": {
+      "n": 28343165,
+      "mean": 0.004401280757847616,
+      "rmse": 0.24240029113073275,
+      "max": 44.982017,
+      "above_threshold": 13272
+    },
+    "state/opponent/position/pos/0/wide": {
+      "n": 18171881,
+      "mean": 0.00021369544721319716,
+      "rmse": 0.04766460595544476,
+      "max": 28.962687,
+      "above_threshold": 531
+    },
+    "state/opponent/position/pos/1/all": {
+      "n": 55576900,
+      "mean": 0.24066476372453294,
+      "rmse": 0.36242840075768995,
+      "max": 45.105355,
+      "above_threshold": 16562
+    },
+    "state/opponent/position/pos/1/narrow": {
+      "n": 10233178,
+      "mean": 0.22236021947688195,
+      "rmse": 0.32265354681157715,
+      "max": 34.919161,
+      "above_threshold": 1648
+    },
+    "state/opponent/position/pos/1/normal": {
+      "n": 27842334,
+      "mean": 0.2534368048594992,
+      "rmse": 0.4042264288384444,
+      "max": 45.105355,
+      "above_threshold": 14059
+    },
+    "state/opponent/position/pos/1/wide": {
+      "n": 17501388,
+      "mean": 0.231048967786155,
+      "rmse": 0.31033583498209594,
+      "max": 28.962251,
+      "above_threshold": 855
+    },
+    "state/opponent/position/pos/2/all": {
+      "n": 33126675,
+      "mean": 0.47894721078152275,
+      "rmse": 0.6130819709908265,
+      "max": 47.367146,
+      "above_threshold": 1712466
+    },
+    "state/opponent/position/pos/2/narrow": {
+      "n": 5323738,
+      "mean": 0.44533522174814,
+      "rmse": 0.5934309358310647,
+      "max": 35.163488,
+      "above_threshold": 258914
+    },
+    "state/opponent/position/pos/2/normal": {
+      "n": 10112504,
+      "mean": 0.49350616453293855,
+      "rmse": 0.6347583191604359,
+      "max": 47.367146,
+      "above_threshold": 484461
+    },
+    "state/opponent/position/pos/2/wide": {
+      "n": 17690433,
+      "mean": 0.4807399280782446,
+      "rmse": 0.6062528687588143,
+      "max": 28.962045,
+      "above_threshold": 969091
+    },
+    "state/opponent/position/pos/3/all": {
+      "n": 15699694,
+      "mean": 0.7239742034528828,
+      "rmse": 0.912560474246867,
+      "max": 47.378938,
+      "above_threshold": 5678771
+    },
+    "state/opponent/position/pos/3/narrow": {
+      "n": 4341950,
+      "mean": 0.6848040323536658,
+      "rmse": 0.8810517822154222,
+      "max": 35.407697,
+      "above_threshold": 1414513
+    },
+    "state/opponent/position/pos/3/normal": {
+      "n": 9173500,
+      "mean": 0.7532316330020176,
+      "rmse": 0.9376759898869563,
+      "max": 42.384875,
+      "above_threshold": 3556372
+    },
+    "state/opponent/position/pos/3/wide": {
+      "n": 2184244,
+      "mean": 0.6789617847099496,
+      "rmse": 0.8659925788576166,
+      "max": 47.378938,
+      "above_threshold": 707886
+    },
+    "state/opponent/position/pos/4/all": {
+      "n": 6836699,
+      "mean": 0.9267388904779922,
+      "rmse": 1.1851962160129192,
+      "max": 47.378938,
+      "above_threshold": 3022868
+    },
+    "state/opponent/position/pos/4/narrow": {
+      "n": 2696638,
+      "mean": 0.918231247446636,
+      "rmse": 1.1662849031108664,
+      "max": 28.463045,
+      "above_threshold": 1183162
+    },
+    "state/opponent/position/pos/4/normal": {
+      "n": 2291755,
+      "mean": 0.9505132261454656,
+      "rmse": 1.2323281308882323,
+      "max": 42.384875,
+      "above_threshold": 1049253
+    },
+    "state/opponent/position/pos/4/wide": {
+      "n": 1848306,
+      "mean": 0.9096730371242633,
+      "rmse": 1.1525148054285428,
+      "max": 47.378938,
+      "above_threshold": 790453
+    },
+    "state/opponent/position/pos/5/all": {
+      "n": 5718431,
+      "mean": 1.164720631744442,
+      "rmse": 1.477639743110447,
+      "max": 47.378938,
+      "above_threshold": 2934919
+    },
+    "state/opponent/position/pos/5/narrow": {
+      "n": 2246901,
+      "mean": 1.1575144418944137,
+      "rmse": 1.4556933204397067,
+      "max": 28.581316,
+      "above_threshold": 1163047
+    },
+    "state/opponent/position/pos/5/normal": {
+      "n": 1844771,
+      "mean": 1.199724293070522,
+      "rmse": 1.5359242130362185,
+      "max": 42.384875,
+      "above_threshold": 971263
+    },
+    "state/opponent/position/pos/5/wide": {
+      "n": 1626759,
+      "mean": 1.1349791985463125,
+      "rmse": 1.4398448917941469,
+      "max": 47.378938,
+      "above_threshold": 800609
+    },
+    "state/opponent/position/pos/>5/all": {
+      "n": 34997998,
+      "mean": 4.190249219951723,
+      "rmse": 5.817604054808531,
+      "max": 47.378938,
+      "above_threshold": 26712075
+    },
+    "state/opponent/position/pos/>5/narrow": {
+      "n": 16285465,
+      "mean": 4.389759555067419,
+      "rmse": 6.005888304060323,
+      "max": 38.877034,
+      "above_threshold": 12745576
+    },
+    "state/opponent/position/pos/>5/normal": {
+      "n": 14998257,
+      "mean": 4.2221431635047315,
+      "rmse": 5.836251084574421,
+      "max": 47.378938,
+      "above_threshold": 11512899
+    },
+    "state/opponent/position/pos/>5/wide": {
+      "n": 3714276,
+      "mean": 3.18669640324763,
+      "rmse": 4.8172826053805675,
+      "max": 47.378938,
+      "above_threshold": 2453600
+    },
+    "state/opponent/position/view/all/narrow": {
+      "n": 56454777,
+      "mean": 1.4933638890653143,
+      "rmse": 3.2698567283758164,
+      "max": 38.877034,
+      "above_threshold": 16780522
+    },
+    "state/opponent/position/view/all/normal": {
+      "n": 94606286,
+      "mean": 0.9174625047980848,
+      "rmse": 2.382590999778474,
+      "max": 47.378938,
+      "above_threshold": 17601579
+    },
+    "state/opponent/position/view/all/wide": {
+      "n": 62737287,
+      "mean": 0.46860550889790636,
+      "rmse": 1.2743837794321884,
+      "max": 47.378938,
+      "above_threshold": 5723025
+    },
+    "state/opponent/position/seen/0/all": {
+      "n": 62824046,
+      "mean": 2.0075554217814795,
+      "rmse": 3.746800911115137,
+      "max": 47.378938,
+      "above_threshold": 25096025
+    },
+    "state/opponent/position/seen/1/all": {
+      "n": 61838654,
+      "mean": 0.0035958164781691388,
+      "rmse": 0.20993805663625403,
+      "max": 25.745302,
+      "above_threshold": 23279
+    },
+    "state/opponent/position/distance/0/0-3": {
+      "n": 1617925,
+      "mean": 0.003119704294698456,
+      "rmse": 0.08263977389528555,
+      "max": 5.798519,
+      "above_threshold": 1961
+    },
+    "state/opponent/position/distance/0/3-10": {
+      "n": 4591010,
+      "mean": 0.0197855128681924,
+      "rmse": 0.37523590191123507,
+      "max": 12.821738,
+      "above_threshold": 14856
+    },
+    "state/opponent/position/distance/1/3-10": {
+      "n": 3858456,
+      "mean": 0.2706677805635206,
+      "rmse": 0.4390137910191842,
+      "max": 12.997932,
+      "above_threshold": 8111
+    },
+    "state/opponent/position/distance/2/3-10": {
+      "n": 2265599,
+      "mean": 0.5362994265538605,
+      "rmse": 0.6706577095831465,
+      "max": 13.489941,
+      "above_threshold": 148042
+    },
+    "state/opponent/position/distance/3/3-10": {
+      "n": 1625129,
+      "mean": 0.8271478576242259,
+      "rmse": 0.9985589528037632,
+      "max": 13.962937,
+      "above_threshold": 678129
+    },
+    "state/opponent/position/distance/4/3-10": {
+      "n": 821435,
+      "mean": 1.0755247692854577,
+      "rmse": 1.3015823023809436,
+      "max": 13.045516,
+      "above_threshold": 420073
+    },
+    "state/opponent/position/distance/5/3-10": {
+      "n": 687542,
+      "mean": 1.3559982470438166,
+      "rmse": 1.6238144918299078,
+      "max": 13.545709,
+      "above_threshold": 411118
+    },
+    "state/opponent/position/distance/>5/3-10": {
+      "n": 4317498,
+      "mean": 5.185511313745137,
+      "rmse": 6.681542136398785,
+      "max": 27.915869,
+      "above_threshold": 3800196
+    },
+    "state/opponent/position/distance/0/10-20": {
+      "n": 12770029,
+      "mean": 0.008925445937828328,
+      "rmse": 0.34665325318193674,
+      "max": 22.674196,
+      "above_threshold": 8898
+    },
+    "state/opponent/position/distance/1/10-20": {
+      "n": 10835243,
+      "mean": 0.2640813070658407,
+      "rmse": 0.4303212187353997,
+      "max": 22.526918,
+      "above_threshold": 5162
+    },
+    "state/opponent/position/distance/2/10-20": {
+      "n": 5928299,
+      "mean": 0.5285530813393523,
+      "rmse": 0.6627168151470473,
+      "max": 22.69089,
+      "above_threshold": 338578
+    },
+    "state/opponent/position/distance/3/10-20": {
+      "n": 4020697,
+      "mean": 0.8081490270619747,
+      "rmse": 0.9783597128617673,
+      "max": 22.03378,
+      "above_threshold": 1649496
+    },
+    "state/opponent/position/distance/4/10-20": {
+      "n": 1701598,
+      "mean": 1.0489852021282347,
+      "rmse": 1.2812614872625376,
+      "max": 22.033554,
+      "above_threshold": 859841
+    },
+    "state/opponent/position/distance/5/10-20": {
+      "n": 1408153,
+      "mean": 1.3194734645184156,
+      "rmse": 1.5907466104008043,
+      "max": 22.033744,
+      "above_threshold": 829619
+    },
+    "state/opponent/position/distance/>5/10-20": {
+      "n": 9330865,
+      "mean": 5.04811819142984,
+      "rmse": 6.521361511620438,
+      "max": 40.002724,
+      "above_threshold": 8159949
+    },
+    "state/opponent/position/distance/0/20-40": {
+      "n": 26604150,
+      "mean": 0.0014909721281830088,
+      "rmse": 0.18691162160672062,
+      "max": 39.641331,
+      "above_threshold": 1733
+    },
+    "state/opponent/position/distance/1/20-40": {
+      "n": 24836283,
+      "mean": 0.2553114922527658,
+      "rmse": 0.36120782472245827,
+      "max": 39.883408,
+      "above_threshold": 1576
+    },
+    "state/opponent/position/distance/2/20-40": {
+      "n": 13530948,
+      "mean": 0.505443191574456,
+      "rmse": 0.6243497343963464,
+      "max": 38.276088,
+      "above_threshold": 641041
+    },
+    "state/opponent/position/distance/3/20-40": {
+      "n": 7253409,
+      "mean": 0.7668515033583522,
+      "rmse": 0.9337241967893212,
+      "max": 38.560905,
+      "above_threshold": 2800833
+    },
+    "state/opponent/position/distance/4/20-40": {
+      "n": 2945485,
+      "mean": 0.9895560451905205,
+      "rmse": 1.2181420288081322,
+      "max": 38.560905,
+      "above_threshold": 1401759
+    },
+    "state/opponent/position/distance/5/20-40": {
+      "n": 2455921,
+      "mean": 1.2460840277879452,
+      "rmse": 1.5239588033111247,
+      "max": 38.560905,
+      "above_threshold": 1352633
+    },
+    "state/opponent/position/distance/>5/20-40": {
+      "n": 14838408,
+      "mean": 4.449511573586399,
+      "rmse": 5.935261834802267,
+      "max": 38.560905,
+      "above_threshold": 12222094
+    },
+    "state/opponent/position/distance/0/40+": {
+      "n": 16258839,
+      "mean": 4.365540509995824e-05,
+      "rmse": 0.042719316219935514,
+      "max": 44.982017,
+      "above_threshold": 17
+    },
+    "state/opponent/position/distance/1/40+": {
+      "n": 15464989,
+      "mean": 0.1907582509756716,
+      "rmse": 0.2816875575499782,
+      "max": 45.105355,
+      "above_threshold": 254
+    },
+    "state/opponent/position/distance/2/40+": {
+      "n": 11328535,
+      "mean": 0.4094014744752079,
+      "rmse": 0.5571609650662611,
+      "max": 47.367146,
+      "above_threshold": 573948
+    },
+    "state/opponent/position/distance/3/40+": {
+      "n": 2792693,
+      "mean": 0.4305838111783142,
+      "rmse": 0.6742460952888462,
+      "max": 47.378938,
+      "above_threshold": 546240
+    },
+    "state/opponent/position/distance/4/40+": {
+      "n": 1365582,
+      "mean": 0.5484673327357856,
+      "rmse": 0.8726921903046714,
+      "max": 47.378938,
+      "above_threshold": 339510
+    },
+    "state/opponent/position/distance/5/40+": {
+      "n": 1163495,
+      "mean": 0.6910015849565316,
+      "rmse": 1.0938639806949657,
+      "max": 47.378938,
+      "above_threshold": 339139
+    },
+    "state/opponent/position/distance/>5/40+": {
+      "n": 6475120,
+      "mean": 1.6673903919847048,
+      "rmse": 3.2428076621561517,
+      "max": 47.378938,
+      "above_threshold": 2494611
+    },
+    "state/opponent/velocity/all/all/all": {
+      "n": 172832747,
+      "mean": 0.04061168297500935,
+      "rmse": 0.07758210748491066,
+      "max": 0.981748,
+      "above_threshold": 1007900
+    },
+    "state/opponent/velocity/own/0/all": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/velocity/own/0/narrow": {
+      "n": 14494562,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/velocity/own/0/normal": {
+      "n": 28012683,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/velocity/own/0/wide": {
+      "n": 18139568,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/velocity/own/1/all": {
+      "n": 55933200,
+      "mean": 0.04976449249215136,
+      "rmse": 0.07723120703489622,
+      "max": 0.853609,
+      "above_threshold": 58055
+    },
+    "state/opponent/velocity/own/1/narrow": {
+      "n": 10984340,
+      "mean": 0.04957823823816451,
+      "rmse": 0.07846941442517737,
+      "max": 0.853609,
+      "above_threshold": 13614
+    },
+    "state/opponent/velocity/own/1/normal": {
+      "n": 27495071,
+      "mean": 0.05145925018327832,
+      "rmse": 0.07859265936279944,
+      "max": 0.588319,
+      "above_threshold": 29817
+    },
+    "state/opponent/velocity/own/1/wide": {
+      "n": 17453789,
+      "mean": 0.04721194628037499,
+      "rmse": 0.07422353518619984,
+      "max": 0.588319,
+      "above_threshold": 14624
+    },
+    "state/opponent/velocity/own/2/all": {
+      "n": 33437587,
+      "mean": 0.06827152083396446,
+      "rmse": 0.10215612489509725,
+      "max": 0.981748,
+      "above_threshold": 288868
+    },
+    "state/opponent/velocity/own/2/narrow": {
+      "n": 5338405,
+      "mean": 0.07232087055909023,
+      "rmse": 0.1062594459609753,
+      "max": 0.745281,
+      "above_threshold": 49357
+    },
+    "state/opponent/velocity/own/2/normal": {
+      "n": 10434554,
+      "mean": 0.06522774858762531,
+      "rmse": 0.09848629578501579,
+      "max": 0.981748,
+      "above_threshold": 67494
+    },
+    "state/opponent/velocity/own/2/wide": {
+      "n": 17664628,
+      "mean": 0.06884573825019127,
+      "rmse": 0.10301638123903079,
+      "max": 0.605277,
+      "above_threshold": 172017
+    },
+    "state/opponent/velocity/own/3/all": {
+      "n": 15971170,
+      "mean": 0.0815216650423231,
+      "rmse": 0.11960881899023969,
+      "max": 0.937861,
+      "above_threshold": 366939
+    },
+    "state/opponent/velocity/own/3/narrow": {
+      "n": 4344722,
+      "mean": 0.08642509530644313,
+      "rmse": 0.12459733460812854,
+      "max": 0.736485,
+      "above_threshold": 114246
+    },
+    "state/opponent/velocity/own/3/normal": {
+      "n": 9421092,
+      "mean": 0.07869339982382081,
+      "rmse": 0.11624656773507416,
+      "max": 0.937861,
+      "above_threshold": 194375
+    },
+    "state/opponent/velocity/own/3/wide": {
+      "n": 2205356,
+      "mean": 0.08394363477415892,
+      "rmse": 0.1236685870392314,
+      "max": 0.77221,
+      "above_threshold": 58318
+    },
+    "state/opponent/velocity/own/4/all": {
+      "n": 6843977,
+      "mean": 0.09507777843496551,
+      "rmse": 0.1374057684101135,
+      "max": 0.867055,
+      "above_threshold": 294038
+    },
+    "state/opponent/velocity/own/4/narrow": {
+      "n": 2698070,
+      "mean": 0.09755754037960472,
+      "rmse": 0.13859193765071365,
+      "max": 0.770444,
+      "above_threshold": 115030
+    },
+    "state/opponent/velocity/own/4/normal": {
+      "n": 2294141,
+      "mean": 0.09533950218883666,
+      "rmse": 0.13872478144566863,
+      "max": 0.867055,
+      "above_threshold": 104492
+    },
+    "state/opponent/velocity/own/4/wide": {
+      "n": 1851766,
+      "mean": 0.09114045454825291,
+      "rmse": 0.13398550177466498,
+      "max": 0.786633,
+      "above_threshold": 74516
+    },
+    "state/opponent/velocity/pos/0/all": {
+      "n": 61759532,
+      "mean": 0.00019695363140057482,
+      "rmse": 0.004732526220177131,
+      "max": 0.981748,
+      "above_threshold": 2428
+    },
+    "state/opponent/velocity/pos/0/narrow": {
+      "n": 15296842,
+      "mean": 0.0002591247369881968,
+      "rmse": 0.006098256649344675,
+      "max": 0.853609,
+      "above_threshold": 1242
+    },
+    "state/opponent/velocity/pos/0/normal": {
+      "n": 28323122,
+      "mean": 0.000289515186249595,
+      "rmse": 0.005362087713536353,
+      "max": 0.981748,
+      "above_threshold": 1186
+    },
+    "state/opponent/velocity/pos/0/wide": {
+      "n": 18139568,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/velocity/pos/1/all": {
+      "n": 55531104,
+      "mean": 0.05045531445953242,
+      "rmse": 0.07779414143891858,
+      "max": 0.937861,
+      "above_threshold": 59280
+    },
+    "state/opponent/velocity/pos/1/narrow": {
+      "n": 10231063,
+      "mean": 0.053123185672593394,
+      "rmse": 0.08118381191815224,
+      "max": 0.745281,
+      "above_threshold": 12627
+    },
+    "state/opponent/velocity/pos/1/normal": {
+      "n": 27819201,
+      "mean": 0.05148873104410871,
+      "rmse": 0.07867998587303757,
+      "max": 0.937861,
+      "above_threshold": 31970
+    },
+    "state/opponent/velocity/pos/1/wide": {
+      "n": 17480840,
+      "mean": 0.04724929105677986,
+      "rmse": 0.07426941919011663,
+      "max": 0.77221,
+      "above_threshold": 14683
+    },
+    "state/opponent/velocity/pos/2/all": {
+      "n": 33102270,
+      "mean": 0.06872286090552103,
+      "rmse": 0.10259647277257729,
+      "max": 0.86595,
+      "above_threshold": 288877
+    },
+    "state/opponent/velocity/pos/2/narrow": {
+      "n": 5322218,
+      "mean": 0.07252771625777071,
+      "rmse": 0.10649989207696114,
+      "max": 0.736485,
+      "above_threshold": 49649
+    },
+    "state/opponent/velocity/pos/2/normal": {
+      "n": 10109919,
+      "mean": 0.06641506769628916,
+      "rmse": 0.09960968486582795,
+      "max": 0.86595,
+      "above_threshold": 66489
+    },
+    "state/opponent/velocity/pos/2/wide": {
+      "n": 17670133,
+      "mean": 0.06889724175318888,
+      "rmse": 0.10308126580366686,
+      "max": 0.786633,
+      "above_threshold": 172739
+    },
+    "state/opponent/velocity/pos/3/all": {
+      "n": 15663571,
+      "mean": 0.08207337131794534,
+      "rmse": 0.12019124475185927,
+      "max": 0.867055,
+      "above_threshold": 365234
+    },
+    "state/opponent/velocity/pos/3/narrow": {
+      "n": 4337845,
+      "mean": 0.08652434057072118,
+      "rmse": 0.12472617357996407,
+      "max": 0.770444,
+      "above_threshold": 114646
+    },
+    "state/opponent/velocity/pos/3/normal": {
+      "n": 9144783,
+      "mean": 0.07955128465705526,
+      "rmse": 0.11712868100204805,
+      "max": 0.867055,
+      "above_threshold": 192675
+    },
+    "state/opponent/velocity/pos/3/wide": {
+      "n": 2180943,
+      "mean": 0.08379570908776615,
+      "rmse": 0.12362987335142211,
+      "max": 0.640334,
+      "above_threshold": 57913
+    },
+    "state/opponent/velocity/pos/4/all": {
+      "n": 6776270,
+      "mean": 0.09512325725554029,
+      "rmse": 0.13749971573392494,
+      "max": 0.781439,
+      "above_threshold": 292081
+    },
+    "state/opponent/velocity/pos/4/narrow": {
+      "n": 2672131,
+      "mean": 0.09751185989085114,
+      "rmse": 0.13860784757641412,
+      "max": 0.736242,
+      "above_threshold": 114083
+    },
+    "state/opponent/velocity/pos/4/normal": {
+      "n": 2260516,
+      "mean": 0.09559441309639034,
+      "rmse": 0.13904142299365457,
+      "max": 0.781439,
+      "above_threshold": 103858
+    },
+    "state/opponent/velocity/pos/4/wide": {
+      "n": 1843623,
+      "mean": 0.09108354064035877,
+      "rmse": 0.13394012533352137,
+      "max": 0.760345,
+      "above_threshold": 74140
+    },
+    "state/opponent/velocity/view/all/narrow": {
+      "n": 37860099,
+      "mean": 0.04145188337484272,
+      "rmse": 0.0808016779088869,
+      "max": 0.853609,
+      "above_threshold": 292247
+    },
+    "state/opponent/velocity/view/all/normal": {
+      "n": 77657541,
+      "mean": 0.03934708958600686,
+      "rmse": 0.07548586471669258,
+      "max": 0.981748,
+      "above_threshold": 396178
+    },
+    "state/opponent/velocity/view/all/wide": {
+      "n": 57315107,
+      "mean": 0.04177010605249324,
+      "rmse": 0.07821058806881145,
+      "max": 0.786633,
+      "above_threshold": 319475
+    },
+    "state/opponent/velocity/seen/0/all": {
+      "n": 35457493,
+      "mean": 0.06994609927489799,
+      "rmse": 0.10558330839619817,
+      "max": 0.981748,
+      "above_threshold": 469825
+    },
+    "state/opponent/velocity/seen/1/all": {
+      "n": 61741412,
+      "mean": 0.0001532783929852464,
+      "rmse": 0.003555549669069844,
+      "max": 0.895211,
+      "above_threshold": 1182
+    },
+    "state/opponent/velocity/distance/0/0-3": {
+      "n": 1541261,
+      "mean": 0.005996944956759433,
+      "rmse": 0.021784075754662926,
+      "max": 0.895211,
+      "above_threshold": 1029
+    },
+    "state/opponent/velocity/distance/0/3-10": {
+      "n": 4587251,
+      "mean": 0.00036782218173803875,
+      "rmse": 0.009278805893402013,
+      "max": 0.981748,
+      "above_threshold": 887
+    },
+    "state/opponent/velocity/distance/1/3-10": {
+      "n": 3851540,
+      "mean": 0.05296736024888743,
+      "rmse": 0.07971220465200662,
+      "max": 0.937861,
+      "above_threshold": 4911
+    },
+    "state/opponent/velocity/distance/2/3-10": {
+      "n": 2258714,
+      "mean": 0.07611864939075955,
+      "rmse": 0.10979350488333306,
+      "max": 0.86595,
+      "above_threshold": 28696
+    },
+    "state/opponent/velocity/distance/3/3-10": {
+      "n": 1590898,
+      "mean": 0.09324243700790373,
+      "rmse": 0.1312167782112976,
+      "max": 0.867055,
+      "above_threshold": 55234
+    },
+    "state/opponent/velocity/distance/4/3-10": {
+      "n": 762941,
+      "mean": 0.11246774195514463,
+      "rmse": 0.15263632281059392,
+      "max": 0.749307,
+      "above_threshold": 45345
+    },
+    "state/opponent/velocity/distance/0/10-20": {
+      "n": 12768307,
+      "mean": 7.83935506876519e-05,
+      "rmse": 0.003983837066231395,
+      "max": 0.706216,
+      "above_threshold": 351
+    },
+    "state/opponent/velocity/distance/1/10-20": {
+      "n": 10834082,
+      "mean": 0.05264862274625575,
+      "rmse": 0.07959201768645853,
+      "max": 0.717898,
+      "above_threshold": 16063
+    },
+    "state/opponent/velocity/distance/2/10-20": {
+      "n": 5927991,
+      "mean": 0.07363240826478985,
+      "rmse": 0.10722262924274534,
+      "max": 0.605277,
+      "above_threshold": 64143
+    },
+    "state/opponent/velocity/distance/3/10-20": {
+      "n": 4019798,
+      "mean": 0.0887260937201322,
+      "rmse": 0.1256546549630745,
+      "max": 0.640334,
+      "above_threshold": 109848
+    },
+    "state/opponent/velocity/distance/4/10-20": {
+      "n": 1700454,
+      "mean": 0.10885137143374653,
+      "rmse": 0.14882694549133232,
+      "max": 0.760345,
+      "above_threshold": 91011
+    },
+    "state/opponent/velocity/distance/0/20-40": {
+      "n": 26603874,
+      "mean": 8.667510152844654e-06,
+      "rmse": 0.0014226523038312123,
+      "max": 0.541188,
+      "above_threshold": 160
+    },
+    "state/opponent/velocity/distance/1/20-40": {
+      "n": 24836079,
+      "mean": 0.054009792473079216,
+      "rmse": 0.08093719374015286,
+      "max": 0.588319,
+      "above_threshold": 27493
+    },
+    "state/opponent/velocity/distance/2/20-40": {
+      "n": 13530902,
+      "mean": 0.06938733310122268,
+      "rmse": 0.10175490723389115,
+      "max": 0.605277,
+      "above_threshold": 87220
+    },
+    "state/opponent/velocity/distance/3/20-40": {
+      "n": 7253229,
+      "mean": 0.08688116010414114,
+      "rmse": 0.12350637490660465,
+      "max": 0.676758,
+      "above_threshold": 169514
+    },
+    "state/opponent/velocity/distance/4/20-40": {
+      "n": 2945264,
+      "mean": 0.09914737333834933,
+      "rmse": 0.13989571047147972,
+      "max": 0.781439,
+      "above_threshold": 127933
+    },
+    "state/opponent/velocity/distance/0/40+": {
+      "n": 16258839,
+      "mean": 1.2742478106831614e-07,
+      "rmse": 0.000153286894314935,
+      "max": 0.391655,
+      "above_threshold": 1
+    },
+    "state/opponent/velocity/distance/1/40+": {
+      "n": 15464988,
+      "mean": 0.042662043617686586,
+      "rmse": 0.07058470829804,
+      "max": 0.56842,
+      "above_threshold": 9113
+    },
+    "state/opponent/velocity/distance/2/40+": {
+      "n": 11328534,
+      "mean": 0.06381896890798049,
+      "rmse": 0.09950629415477906,
+      "max": 0.603711,
+      "above_threshold": 107716
+    },
+    "state/opponent/velocity/distance/3/40+": {
+      "n": 2792690,
+      "mean": 0.053599018099395185,
+      "rmse": 0.09391466759243741,
+      "max": 0.6192,
+      "above_threshold": 30249
+    },
+    "state/opponent/velocity/distance/4/40+": {
+      "n": 1365579,
+      "mean": 0.059587036306211476,
+      "rmse": 0.10466977338739021,
+      "max": 0.722429,
+      "above_threshold": 27544
+    },
+    "state/opponent/body/all/all/all": {
+      "n": 116803172,
+      "mean": 4.806292856874332,
+      "rmse": 20.665145423925022,
+      "max": 179.999581,
+      "above_threshold": 6279219
+    },
+    "state/opponent/body/own/0/all": {
+      "n": 61191443,
+      "mean": 0.10143942381280335,
+      "rmse": 2.35471908177238,
+      "max": 179.990141,
+      "above_threshold": 67063
+    },
+    "state/opponent/body/own/0/narrow": {
+      "n": 15039192,
+      "mean": 0.4127365832016773,
+      "rmse": 4.749765827630358,
+      "max": 179.990141,
+      "above_threshold": 67063
+    },
+    "state/opponent/body/own/0/normal": {
+      "n": 28012683,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/body/own/0/wide": {
+      "n": 18139568,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/body/own/1/all": {
+      "n": 55611729,
+      "mean": 9.983200244028914,
+      "rmse": 29.846987328459527,
+      "max": 179.999581,
+      "above_threshold": 6212156
+    },
+    "state/opponent/body/own/1/narrow": {
+      "n": 10329389,
+      "mean": 13.16629491170852,
+      "rmse": 35.230519382678445,
+      "max": 179.999581,
+      "above_threshold": 1479749
+    },
+    "state/opponent/body/own/1/normal": {
+      "n": 27818142,
+      "mean": 9.353556395511568,
+      "rmse": 28.603742425095625,
+      "max": 179.998694,
+      "above_threshold": 2938423
+    },
+    "state/opponent/body/own/1/wide": {
+      "n": 17464198,
+      "mean": 9.103463249589986,
+      "rmse": 28.273266129382478,
+      "max": 179.998694,
+      "above_threshold": 1793984
+    },
+    "state/opponent/body/pos/0/all": {
+      "n": 61590565,
+      "mean": 0.22673534503404874,
+      "rmse": 4.025314483759884,
+      "max": 179.999581,
+      "above_threshold": 143485
+    },
+    "state/opponent/body/pos/0/narrow": {
+      "n": 15149631,
+      "mean": 0.7526443073674204,
+      "rmse": 7.5221262507062185,
+      "max": 179.999581,
+      "above_threshold": 120334
+    },
+    "state/opponent/body/pos/0/normal": {
+      "n": 28301366,
+      "mean": 0.0905424308936184,
+      "rmse": 2.2301543547345033,
+      "max": 179.98457,
+      "above_threshold": 23151
+    },
+    "state/opponent/body/pos/0/wide": {
+      "n": 18139568,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/opponent/body/pos/1/all": {
+      "n": 55212607,
+      "mean": 9.914864067870353,
+      "rmse": 29.75487576493905,
+      "max": 179.999573,
+      "above_threshold": 6135734
+    },
+    "state/opponent/body/pos/1/narrow": {
+      "n": 10218950,
+      "mean": 12.800211667645401,
+      "rmse": 34.697574216266254,
+      "max": 179.999573,
+      "above_threshold": 1426478
+    },
+    "state/opponent/body/pos/1/normal": {
+      "n": 27529459,
+      "mean": 9.358559699269758,
+      "rmse": 28.664275325657236,
+      "max": 179.998694,
+      "above_threshold": 2915272
+    },
+    "state/opponent/body/pos/1/wide": {
+      "n": 17464198,
+      "mean": 9.103463249589986,
+      "rmse": 28.273266129382478,
+      "max": 179.998694,
+      "above_threshold": 1793984
+    },
+    "state/opponent/body/view/all/narrow": {
+      "n": 25368581,
+      "mean": 5.605635039340672,
+      "rmse": 22.77614110147272,
+      "max": 179.999581,
+      "above_threshold": 1546812
+    },
+    "state/opponent/body/view/all/normal": {
+      "n": 55830825,
+      "mean": 4.660482090589722,
+      "rmse": 20.190631184550153,
+      "max": 179.998694,
+      "above_threshold": 2938423
+    },
+    "state/opponent/body/view/all/wide": {
+      "n": 35603766,
+      "mean": 4.465389551109928,
+      "rmse": 19.801693561345633,
+      "max": 179.998694,
+      "above_threshold": 1793984
+    },
+    "state/opponent/body/seen/0/all": {
+      "n": 10236848,
+      "mean": 12.826326942058238,
+      "rmse": 34.71142281323048,
+      "max": 179.999573,
+      "above_threshold": 1431841
+    },
+    "state/opponent/body/seen/1/all": {
+      "n": 61572667,
+      "mean": 0.21873864458473116,
+      "rmse": 3.962082923422649,
+      "max": 179.999581,
+      "above_threshold": 138122
+    },
+    "state/opponent/body/distance/0/0-3": {
+      "n": 1374074,
+      "mean": 9.798465666764677,
+      "rmse": 26.517217080196716,
+      "max": 179.999581,
+      "above_threshold": 138077
+    },
+    "state/opponent/body/distance/0/3-10": {
+      "n": 4586382,
+      "mean": 0.06142683280372199,
+      "rmse": 2.041066058783851,
+      "max": 179.990141,
+      "above_threshold": 2812
+    },
+    "state/opponent/body/distance/1/3-10": {
+      "n": 3815451,
+      "mean": 10.832890345431771,
+      "rmse": 30.994505530540856,
+      "max": 179.999573,
+      "above_threshold": 461120
+    },
+    "state/opponent/body/distance/0/10-20": {
+      "n": 12767557,
+      "mean": 0.013188248023721368,
+      "rmse": 0.8339079486249146,
+      "max": 179.342183,
+      "above_threshold": 1991
+    },
+    "state/opponent/body/distance/1/10-20": {
+      "n": 10830763,
+      "mean": 10.303245703178714,
+      "rmse": 30.35153597669347,
+      "max": 179.998249,
+      "above_threshold": 1247379
+    },
+    "state/opponent/body/distance/0/20-40": {
+      "n": 26603714,
+      "mean": 0.0018549499786759097,
+      "rmse": 0.3698563144242966,
+      "max": 178.963057,
+      "above_threshold": 589
+    },
+    "state/opponent/body/distance/1/20-40": {
+      "n": 24835178,
+      "mean": 10.046778353349552,
+      "rmse": 29.61513122860389,
+      "max": 179.998694,
+      "above_threshold": 2843723
+    },
+    "state/opponent/body/distance/0/40+": {
+      "n": 16258838,
+      "mean": 9.126766285511916e-05,
+      "rmse": 0.09259478555312417,
+      "max": 112.481973,
+      "above_threshold": 16
+    },
+    "state/opponent/body/distance/1/40+": {
+      "n": 15464971,
+      "mean": 9.227774051828746,
+      "rmse": 29.308686929541654,
+      "max": 179.998694,
+      "above_threshold": 1557345
+    },
+    "fresh_identity/opponent/position/confirmed": {
+      "n": 60646813,
+      "mean": 7.649994732616867e-08,
+      "rmse": 7.545053909284078e-05,
+      "max": 0.217142,
+      "above_threshold": 0
+    },
+    "fresh_identity/opponent/velocity/confirmed": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "fresh_identity/opponent/body/confirmed": {
+      "n": 60646813,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/ball/position/own/2/narrow": {
+      "n": 122234,
+      "mean": 1.026067779423074,
+      "rmse": 1.8901822829848731,
+      "max": 21.77851,
+      "above_threshold": 35159
+    },
+    "state/ball/position/own/3/narrow": {
+      "n": 75780,
+      "mean": 1.2010975611375034,
+      "rmse": 2.1986971209610546,
+      "max": 21.778479,
+      "above_threshold": 23335
+    },
+    "state/ball/position/own/4/narrow": {
+      "n": 59571,
+      "mean": 1.6946453785063196,
+      "rmse": 2.909846632563781,
+      "max": 21.778273,
+      "above_threshold": 23801
+    },
+    "state/ball/position/own/4/normal": {
+      "n": 22917,
+      "mean": 3.7455975011999842,
+      "rmse": 5.33447305880957,
+      "max": 21.77848,
+      "above_threshold": 13628
+    },
+    "state/ball/position/own/5/narrow": {
+      "n": 49545,
+      "mean": 2.134224745645372,
+      "rmse": 3.5287869880830964,
+      "max": 21.778509,
+      "above_threshold": 24480
+    },
+    "state/ball/position/own/5/normal": {
+      "n": 18636,
+      "mean": 4.143922582796736,
+      "rmse": 5.97427277346863,
+      "max": 22.062835,
+      "above_threshold": 11526
+    },
+    "state/ball/position/own/>5/all": {
+      "n": 81863,
+      "mean": 4.264303860633012,
+      "rmse": 6.233120035869146,
+      "max": 39.656603,
+      "above_threshold": 57211
+    },
+    "state/ball/position/own/>5/narrow": {
+      "n": 48105,
+      "mean": 3.1852355644319723,
+      "rmse": 4.907508891468704,
+      "max": 23.964139,
+      "above_threshold": 31322
+    },
+    "state/ball/position/own/>5/normal": {
+      "n": 21765,
+      "mean": 5.508246461061337,
+      "rmse": 7.481493302809984,
+      "max": 39.656603,
+      "above_threshold": 15880
+    },
+    "state/ball/position/own/>5/wide": {
+      "n": 11993,
+      "mean": 6.335025922704909,
+      "rmse": 8.186383118465349,
+      "max": 35.909999,
+      "above_threshold": 10009
+    },
+    "state/ball/position/pos/2/narrow": {
+      "n": 122234,
+      "mean": 1.026067779423074,
+      "rmse": 1.8901822829848731,
+      "max": 21.77851,
+      "above_threshold": 35159
+    },
+    "state/ball/position/pos/3/narrow": {
+      "n": 75780,
+      "mean": 1.2010975611375034,
+      "rmse": 2.1986971209610546,
+      "max": 21.778479,
+      "above_threshold": 23335
+    },
+    "state/ball/position/pos/4/narrow": {
+      "n": 59571,
+      "mean": 1.6946453785063196,
+      "rmse": 2.909846632563781,
+      "max": 21.778273,
+      "above_threshold": 23801
+    },
+    "state/ball/position/pos/4/normal": {
+      "n": 22917,
+      "mean": 3.7455975011999842,
+      "rmse": 5.33447305880957,
+      "max": 21.77848,
+      "above_threshold": 13628
+    },
+    "state/ball/position/pos/5/narrow": {
+      "n": 49545,
+      "mean": 2.134224745645372,
+      "rmse": 3.5287869880830964,
+      "max": 21.778509,
+      "above_threshold": 24480
+    },
+    "state/ball/position/pos/5/normal": {
+      "n": 18636,
+      "mean": 4.143922582796736,
+      "rmse": 5.97427277346863,
+      "max": 22.062835,
+      "above_threshold": 11526
+    },
+    "state/ball/position/pos/>5/all": {
+      "n": 81863,
+      "mean": 4.264303860633012,
+      "rmse": 6.233120035869146,
+      "max": 39.656603,
+      "above_threshold": 57211
+    },
+    "state/ball/position/pos/>5/narrow": {
+      "n": 48105,
+      "mean": 3.1852355644319723,
+      "rmse": 4.907508891468704,
+      "max": 23.964139,
+      "above_threshold": 31322
+    },
+    "state/ball/position/pos/>5/normal": {
+      "n": 21765,
+      "mean": 5.508246461061337,
+      "rmse": 7.481493302809984,
+      "max": 39.656603,
+      "above_threshold": 15880
+    },
+    "state/ball/position/pos/>5/wide": {
+      "n": 11993,
+      "mean": 6.335025922704909,
+      "rmse": 8.186383118465349,
+      "max": 35.909999,
+      "above_threshold": 10009
+    },
+    "state/ball/position/distance/2/0-3": {
+      "n": 8442,
+      "mean": 0.27376007900971333,
+      "rmse": 0.8696092540146658,
+      "max": 7.987836,
+      "above_threshold": 609
+    },
+    "state/ball/position/distance/5/3-10": {
+      "n": 46773,
+      "mean": 1.7840131114959477,
+      "rmse": 2.9014055765234095,
+      "max": 22.062835,
+      "above_threshold": 21950
+    },
+    "state/ball/position/distance/>5/3-10": {
+      "n": 44226,
+      "mean": 2.5101879656536874,
+      "rmse": 3.7995697218767335,
+      "max": 29.039352,
+      "above_threshold": 27569
+    },
+    "state/ball/position/distance/3/10-20": {
+      "n": 52152,
+      "mean": 2.2528857002224263,
+      "rmse": 3.532713792759565,
+      "max": 17.919671,
+      "above_threshold": 24254
+    },
+    "state/ball/position/distance/4/10-20": {
+      "n": 23435,
+      "mean": 4.034747552250908,
+      "rmse": 5.54739317109093,
+      "max": 18.058882,
+      "above_threshold": 14830
+    },
+    "state/ball/position/distance/5/10-20": {
+      "n": 15439,
+      "mean": 5.246210168987631,
+      "rmse": 6.889202176751021,
+      "max": 22.911244,
+      "above_threshold": 11191
+    },
+    "state/ball/position/distance/>5/10-20": {
+      "n": 13719,
+      "mean": 7.610687069174138,
+      "rmse": 9.09382744800291,
+      "max": 35.909999,
+      "above_threshold": 12018
+    },
+    "state/ball/position/distance/5/20-40": {
+      "n": 17998,
+      "mean": 4.110877329481052,
+      "rmse": 6.030882292870815,
+      "max": 22.911244,
+      "above_threshold": 10983
+    },
+    "state/ball/position/distance/>5/20-40": {
+      "n": 20620,
+      "mean": 5.310211345150344,
+      "rmse": 7.354531309630043,
+      "max": 39.656603,
+      "above_threshold": 14786
+    },
+    "state/ball/position/distance/>5/40+": {
+      "n": 3189,
+      "mean": 7.347499059893389,
+      "rmse": 9.439597485688045,
+      "max": 26.599087,
+      "above_threshold": 2757
+    },
+    "state/ball/velocity/own/3/narrow": {
+      "n": 80879,
+      "mean": 0.5378779363122689,
+      "rmse": 0.9345436976353373,
+      "max": 5.226284,
+      "above_threshold": 30828
+    },
+    "state/ball/velocity/own/4/narrow": {
+      "n": 62103,
+      "mean": 0.6284258638874135,
+      "rmse": 0.9841511318569482,
+      "max": 4.978064,
+      "above_threshold": 29876
+    },
+    "state/ball/velocity/own/4/normal": {
+      "n": 25433,
+      "mean": 1.0089026065348166,
+      "rmse": 1.422542422477983,
+      "max": 5.006687,
+      "above_threshold": 14451
+    },
+    "state/ball/velocity/own/5/narrow": {
+      "n": 51521,
+      "mean": 0.6589743045942433,
+      "rmse": 0.9767559944606101,
+      "max": 4.704386,
+      "above_threshold": 28322
+    },
+    "state/ball/velocity/own/5/normal": {
+      "n": 18903,
+      "mean": 0.9988510555467389,
+      "rmse": 1.3627728140304023,
+      "max": 4.735427,
+      "above_threshold": 11491
+    },
+    "state/ball/velocity/own/>5/all": {
+      "n": 86974,
+      "mean": 0.9077811834801207,
+      "rmse": 1.218694988151619,
+      "max": 4.665634,
+      "above_threshold": 59108
+    },
+    "state/ball/velocity/own/>5/narrow": {
+      "n": 51201,
+      "mean": 0.7659813261264428,
+      "rmse": 1.0677142647713878,
+      "max": 4.350643,
+      "above_threshold": 32569
+    },
+    "state/ball/velocity/own/>5/normal": {
+      "n": 22406,
+      "mean": 1.084850947692582,
+      "rmse": 1.397610535517294,
+      "max": 4.665634,
+      "above_threshold": 15705
+    },
+    "state/ball/velocity/own/>5/wide": {
+      "n": 13367,
+      "mean": 1.1541243688935439,
+      "rmse": 1.4222704706191978,
+      "max": 4.665634,
+      "above_threshold": 10834
+    },
+    "state/ball/velocity/pos/2/narrow": {
+      "n": 122222,
+      "mean": 0.5961402363649754,
+      "rmse": 1.0787309680251533,
+      "max": 5.226284,
+      "above_threshold": 43909
+    },
+    "state/ball/velocity/pos/3/narrow": {
+      "n": 75774,
+      "mean": 0.5413315400269224,
+      "rmse": 0.9312451669534114,
+      "max": 4.990039,
+      "above_threshold": 29725
+    },
+    "state/ball/velocity/pos/4/narrow": {
+      "n": 59568,
+      "mean": 0.6197175826114691,
+      "rmse": 0.9675469582463305,
+      "max": 4.827577,
+      "above_threshold": 28796
+    },
+    "state/ball/velocity/pos/4/normal": {
+      "n": 22916,
+      "mean": 1.1001143908622797,
+      "rmse": 1.4900079218173283,
+      "max": 4.992288,
+      "above_threshold": 14167
+    },
+    "state/ball/velocity/pos/5/narrow": {
+      "n": 49534,
+      "mean": 0.6495434759962855,
+      "rmse": 0.9639278620018548,
+      "max": 4.473544,
+      "above_threshold": 27132
+    },
+    "state/ball/velocity/pos/5/normal": {
+      "n": 18636,
+      "mean": 1.0440017567611073,
+      "rmse": 1.4006954524061612,
+      "max": 4.688843,
+      "above_threshold": 11702
+    },
+    "state/ball/velocity/pos/>5/all": {
+      "n": 81805,
+      "mean": 0.9093964497891329,
+      "rmse": 1.222716569736292,
+      "max": 4.665634,
+      "above_threshold": 55487
+    },
+    "state/ball/velocity/pos/>5/narrow": {
+      "n": 48072,
+      "mean": 0.7551787812864039,
+      "rmse": 1.0585787364564918,
+      "max": 4.343199,
+      "above_threshold": 30211
+    },
+    "state/ball/velocity/pos/>5/normal": {
+      "n": 21755,
+      "mean": 1.1191972024821883,
+      "rmse": 1.4261074640915663,
+      "max": 4.665634,
+      "above_threshold": 15582
+    },
+    "state/ball/velocity/pos/>5/wide": {
+      "n": 11978,
+      "mean": 1.1472772633995658,
+      "rmse": 1.4210307232960206,
+      "max": 4.665634,
+      "above_threshold": 9694
+    },
+    "state/ball/velocity/distance/2/0-3": {
+      "n": 8430,
+      "mean": 0.13334860735468565,
+      "rmse": 0.4466649275454045,
+      "max": 5.04806,
+      "above_threshold": 600
+    },
+    "state/ball/velocity/distance/5/3-10": {
+      "n": 46760,
+      "mean": 0.592942110051326,
+      "rmse": 0.8793048552509853,
+      "max": 4.717236,
+      "above_threshold": 24749
+    },
+    "state/ball/velocity/distance/>5/3-10": {
+      "n": 44205,
+      "mean": 0.662497549643705,
+      "rmse": 0.9381718189328468,
+      "max": 4.409017,
+      "above_threshold": 26479
+    },
+    "state/ball/velocity/distance/3/10-20": {
+      "n": 52152,
+      "mean": 0.8629033911451136,
+      "rmse": 1.315142560523079,
+      "max": 5.119509,
+      "above_threshold": 26282
+    },
+    "state/ball/velocity/distance/4/10-20": {
+      "n": 23434,
+      "mean": 1.11679078334898,
+      "rmse": 1.4989530359308965,
+      "max": 4.992288,
+      "above_threshold": 15189
+    },
+    "state/ball/velocity/distance/5/10-20": {
+      "n": 15435,
+      "mean": 1.1817919719468746,
+      "rmse": 1.5034053558153133,
+      "max": 4.688843,
+      "above_threshold": 11208
+    },
+    "state/ball/velocity/distance/>5/10-20": {
+      "n": 13688,
+      "mean": 1.3128641086353006,
+      "rmse": 1.5565100016353453,
+      "max": 4.665634,
+      "above_threshold": 11672
+    },
+    "state/ball/velocity/distance/5/20-40": {
+      "n": 17998,
+      "mean": 1.0400045266696294,
+      "rmse": 1.4098516726334203,
+      "max": 4.571438,
+      "above_threshold": 11218
+    },
+    "state/ball/velocity/distance/>5/20-40": {
+      "n": 20614,
+      "mean": 1.111866837974192,
+      "rmse": 1.4315446131427323,
+      "max": 4.665634,
+      "above_threshold": 14567
+    },
+    "state/ball/velocity/distance/>5/40+": {
+      "n": 3189,
+      "mean": 1.2748385609909065,
+      "rmse": 1.5500694885328405,
+      "max": 4.376875,
+      "above_threshold": 2687
+    },
+    "state/opponent/position/distance/1/0-3": {
+      "n": 581929,
+      "mean": 0.30689985129457364,
+      "rmse": 0.3768730131830996,
+      "max": 9.015004,
+      "above_threshold": 1459
+    },
+    "state/opponent/position/distance/2/0-3": {
+      "n": 73294,
+      "mean": 0.5515317880317628,
+      "rmse": 0.7141309385644256,
+      "max": 9.015004,
+      "above_threshold": 10857
+    },
+    "state/opponent/position/distance/3/0-3": {
+      "n": 7766,
+      "mean": 1.011219059490085,
+      "rmse": 1.2312044325582867,
+      "max": 8.802899,
+      "above_threshold": 4073
+    },
+    "state/opponent/velocity/distance/1/0-3": {
+      "n": 544415,
+      "mean": 0.04826179780865698,
+      "rmse": 0.07688427555896338,
+      "max": 0.868296,
+      "above_threshold": 1700
+    },
+    "state/opponent/velocity/distance/2/0-3": {
+      "n": 56129,
+      "mean": 0.08216111051328191,
+      "rmse": 0.11835013503880042,
+      "max": 0.822254,
+      "above_threshold": 1102
+    },
+    "state/opponent/body/distance/1/0-3": {
+      "n": 266244,
+      "mean": 8.564819325186674,
+      "rmse": 25.532768617635625,
+      "max": 179.992025,
+      "above_threshold": 26167
+    },
+    "fresh_identity/opponent/position/no_named_observation": {
+      "n": 1195140,
+      "mean": 0.20937491117107623,
+      "rmse": 1.623769802447084,
+      "max": 44.982017,
+      "above_threshold": 27465
+    },
+    "fresh_identity/opponent/velocity/no_named_observation": {
+      "n": 1112719,
+      "mean": 0.010931568617952966,
+      "rmse": 0.03525756174038549,
+      "max": 0.981748,
+      "above_threshold": 2428
+    },
+    "fresh_identity/opponent/body/no_named_observation": {
+      "n": 943752,
+      "mean": 14.797063218003252,
+      "rmse": 32.51831004357033,
+      "max": 179.999581,
+      "above_threshold": 143485
+    },
+    "state/teammate/position/distance/1/0-3": {
+      "n": 75786,
+      "mean": 0.28026205486501454,
+      "rmse": 0.4089218555481146,
+      "max": 6.182782,
+      "above_threshold": 797
+    },
+    "state/teammate/position/distance/2/0-3": {
+      "n": 11241,
+      "mean": 0.5926565898941374,
+      "rmse": 0.8197586354448164,
+      "max": 6.906839,
+      "above_threshold": 1736
+    },
+    "state/teammate/position/distance/>5/0-3": {
+      "n": 8062,
+      "mean": 9.98184383130737,
+      "rmse": 11.20337215095226,
+      "max": 24.422441,
+      "above_threshold": 7928
+    },
+    "state/teammate/velocity/distance/1/0-3": {
+      "n": 69433,
+      "mean": 0.04401446716978961,
+      "rmse": 0.07578546660469482,
+      "max": 0.841161,
+      "above_threshold": 364
+    },
+    "state/teammate/velocity/distance/2/0-3": {
+      "n": 8086,
+      "mean": 0.06332036890922582,
+      "rmse": 0.10397244247463651,
+      "max": 0.597941,
+      "above_threshold": 137
+    },
+    "state/teammate/body/distance/1/0-3": {
+      "n": 35360,
+      "mean": 6.527396655458142,
+      "rmse": 23.303212993799875,
+      "max": 179.939244,
+      "above_threshold": 2435
+    },
+    "state/opponent/position/distance/4/0-3": {
+      "n": 2599,
+      "mean": 1.427637561754521,
+      "rmse": 1.7221261292783263,
+      "max": 8.660049,
+      "above_threshold": 1685
+    },
+    "state/opponent/position/distance/5/0-3": {
+      "n": 3320,
+      "mean": 1.743217457228915,
+      "rmse": 2.025639240088691,
+      "max": 8.857001,
+      "above_threshold": 2410
+    },
+    "state/opponent/position/distance/>5/0-3": {
+      "n": 36107,
+      "mean": 9.371278158778072,
+      "rmse": 10.670529960599923,
+      "max": 25.745302,
+      "above_threshold": 35225
+    },
+    "state/opponent/velocity/distance/3/0-3": {
+      "n": 6956,
+      "mean": 0.10171166417481303,
+      "rmse": 0.1434947594152474,
+      "max": 0.563266,
+      "above_threshold": 389
+    },
+    "state/opponent/velocity/distance/4/0-3": {
+      "n": 2032,
+      "mean": 0.1436408110236221,
+      "rmse": 0.18842688845864516,
+      "max": 0.652319,
+      "above_threshold": 248
+    },
+    "state/teammate/position/distance/3/0-3": {
+      "n": 1698,
+      "mean": 1.064332593050648,
+      "rmse": 1.4375242563709756,
+      "max": 7.266286,
+      "above_threshold": 807
+    },
+    "state/teammate/velocity/distance/3/0-3": {
+      "n": 1531,
+      "mean": 0.08429221358589158,
+      "rmse": 0.12940805926716942,
+      "max": 0.649286,
+      "above_threshold": 70
+    },
+    "state/teammate/position/distance/4/0-3": {
+      "n": 584,
+      "mean": 1.7594475068493152,
+      "rmse": 2.1515615640876384,
+      "max": 7.216553,
+      "above_threshold": 433
+    },
+    "state/teammate/velocity/distance/4/0-3": {
+      "n": 442,
+      "mean": 0.10265528506787333,
+      "rmse": 0.148837568845357,
+      "max": 0.572839,
+      "above_threshold": 28
+    },
+    "state/teammate/position/distance/5/0-3": {
+      "n": 675,
+      "mean": 1.870303269629631,
+      "rmse": 2.2282400197715067,
+      "max": 7.198822,
+      "above_threshold": 490
+    },
+    "state/ball/position/distance/4/0-3": {
+      "n": 473,
+      "mean": 1.4747593805496833,
+      "rmse": 3.4169842362094607,
+      "max": 16.377075,
+      "above_threshold": 108
+    },
+    "state/ball/velocity/distance/4/0-3": {
+      "n": 473,
+      "mean": 0.4712783171247357,
+      "rmse": 1.025113566417248,
+      "max": 4.64149,
+      "above_threshold": 123
+    },
+    "state/ball/position/distance/3/0-3": {
+      "n": 1406,
+      "mean": 0.8069465988620197,
+      "rmse": 2.048429553512704,
+      "max": 13.564127,
+      "above_threshold": 221
+    },
+    "state/ball/velocity/distance/3/0-3": {
+      "n": 1406,
+      "mean": 0.2980826984352775,
+      "rmse": 0.7526560805114315,
+      "max": 5.006687,
+      "above_threshold": 253
+    },
+    "state/ball/position/distance/>5/0-3": {
+      "n": 109,
+      "mean": 6.7374828715596315,
+      "rmse": 8.587517855064595,
+      "max": 17.476215,
+      "above_threshold": 81
+    },
+    "state/ball/velocity/distance/>5/0-3": {
+      "n": 109,
+      "mean": 1.3899569266055045,
+      "rmse": 1.7253404931104832,
+      "max": 4.141668,
+      "above_threshold": 82
+    },
+    "state/self/position/own/1/narrow": {
+      "n": 434,
+      "mean": 0.03241816359447003,
+      "rmse": 0.04954598572259413,
+      "max": 0.247182,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/1/narrow": {
+      "n": 434,
+      "mean": 0.03241816359447003,
+      "rmse": 0.04954598572259413,
+      "max": 0.247182,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/1/narrow": {
+      "n": 434,
+      "mean": 1.9430875576036864e-05,
+      "rmse": 0.0003526136415176416,
+      "max": 0.00725,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/1/narrow": {
+      "n": 434,
+      "mean": 0.010649306451612902,
+      "rmse": 0.15764587987408424,
+      "max": 2.540412,
+      "above_threshold": 0
+    },
+    "state/ball/position/distance/5/0-3": {
+      "n": 80,
+      "mean": 7.2563096375,
+      "rmse": 8.920669057033615,
+      "max": 20.838409,
+      "above_threshold": 68
+    },
+    "state/ball/velocity/distance/5/0-3": {
+      "n": 80,
+      "mean": 1.7245480625000003,
+      "rmse": 2.172384445274452,
+      "max": 4.449982,
+      "above_threshold": 63
+    },
+    "state/self/position/own/2/normal": {
+      "n": 24,
+      "mean": 0.04396320833333334,
+      "rmse": 0.05216391863515432,
+      "max": 0.100177,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/2/normal": {
+      "n": 24,
+      "mean": 0.04396320833333334,
+      "rmse": 0.05216391863515432,
+      "max": 0.100177,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/2/normal": {
+      "n": 24,
+      "mean": 0.00013,
+      "rmse": 0.0006368673331236263,
+      "max": 0.00312,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/2/normal": {
+      "n": 24,
+      "mean": 0.1058505,
+      "rmse": 0.5185594280369415,
+      "max": 2.540412,
+      "above_threshold": 0
+    },
+    "state/self/position/own/3/all": {
+      "n": 11,
+      "mean": 0.04336709090909091,
+      "rmse": 0.04886974668907692,
+      "max": 0.081949,
+      "above_threshold": 0
+    },
+    "state/self/position/own/3/wide": {
+      "n": 11,
+      "mean": 0.04336709090909091,
+      "rmse": 0.04886974668907692,
+      "max": 0.081949,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/3/all": {
+      "n": 11,
+      "mean": 0.04336709090909091,
+      "rmse": 0.04886974668907692,
+      "max": 0.081949,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/3/wide": {
+      "n": 11,
+      "mean": 0.04336709090909091,
+      "rmse": 0.04886974668907692,
+      "max": 0.081949,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/3/all": {
+      "n": 11,
+      "mean": 0.0017508181818181817,
+      "rmse": 0.00464289450274679,
+      "max": 0.014835,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/3/wide": {
+      "n": 11,
+      "mean": 0.0017508181818181817,
+      "rmse": 0.00464289450274679,
+      "max": 0.014835,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/3/all": {
+      "n": 11,
+      "mean": 1.4236352727272725,
+      "rmse": 2.7852961836588483,
+      "max": 6.59683,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/3/wide": {
+      "n": 11,
+      "mean": 1.4236352727272725,
+      "rmse": 2.7852961836588483,
+      "max": 6.59683,
+      "above_threshold": 0
+    },
+    "state/self/position/own/2/narrow": {
+      "n": 10,
+      "mean": 0.06081320000000001,
+      "rmse": 0.08717589251851683,
+      "max": 0.218897,
+      "above_threshold": 0
+    },
+    "state/self/position/pos/2/narrow": {
+      "n": 10,
+      "mean": 0.06081320000000001,
+      "rmse": 0.08717589251851683,
+      "max": 0.218897,
+      "above_threshold": 0
+    },
+    "state/self/velocity/pos/2/narrow": {
+      "n": 10,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/pos/2/narrow": {
+      "n": 10,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/1/narrow": {
+      "n": 9,
+      "mean": 0.0009369999999999999,
+      "rmse": 0.0024486274840317293,
+      "max": 0.00725,
+      "above_threshold": 0
+    },
+    "state/self/body/own/1/narrow": {
+      "n": 9,
+      "mean": 0.5135332222222222,
+      "rmse": 1.094728021702854,
+      "max": 2.540412,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/3/all": {
+      "n": 1,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/3/wide": {
+      "n": 1,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/own/3/all": {
+      "n": 1,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/body/own/3/wide": {
+      "n": 1,
+      "mean": 0.0,
+      "rmse": 0.0,
+      "max": 0.0,
+      "above_threshold": 0
+    },
+    "state/self/velocity/own/2/normal": {
+      "n": 1,
+      "mean": 0.00312,
+      "rmse": 0.00312,
+      "max": 0.00312,
+      "above_threshold": 0
+    },
+    "state/self/body/own/2/normal": {
+      "n": 1,
+      "mean": 2.540412,
+      "rmse": 2.540412,
+      "max": 2.540412,
+      "above_threshold": 0
+    }
+  },
+  "thresholds": {
+    "position": 1.0,
+    "velocity": 0.3,
+    "body": 30.0
+  },
+  "sensor_tolerance": 5e-06,
+  "method": "Equal weight per valid observer-target-cycle. PlayOn, stopped=0, decision_made=1, same-cycle truth only. Player WM tracks require unum matching. Missing values excluded independently per metric; no zero filling. Velocity/body own-age plots use their own counters; pos-age tables use position count for all metrics. Current view comparisons are descriptive, not randomized causal comparisons."
+}

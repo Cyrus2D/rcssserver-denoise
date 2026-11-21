@@ -1,0 +1,411 @@
+{
+  "source": "/home/nader/workspace/denoise/logs/exp5-live-preserve/202611180029_27747",
+  "observer": "l_5",
+  "target_object_id": 20,
+  "focus_cycle": 5036,
+  "cycles": [
+    5016,
+    5017,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5023,
+    5024,
+    5025,
+    5026,
+    5027,
+    5028,
+    5029,
+    5030,
+    5031,
+    5032,
+    5033,
+    5034,
+    5035,
+    5036,
+    5037,
+    5038,
+    5039,
+    5040,
+    5041,
+    5042,
+    5043,
+    5044,
+    5045,
+    5046,
+    5047,
+    5048,
+    5049,
+    5050,
+    5051,
+    5052,
+    5053,
+    5054,
+    5055,
+    5056
+  ],
+  "rcg": "/home/nader/workspace/denoise/rcssserver-denoise/experiments/exp5/exp5-s1/reports/live-preserve-cache-v2-200/replays/largest-added-error/reconstructed.rcg",
+  "dlog": "/home/nader/workspace/denoise/rcssserver-denoise/experiments/exp5/exp5-s1/reports/live-preserve-cache-v2-200/replays/largest-added-error/lt-5.log",
+  "records": [
+    {
+      "cycle": 5016,
+      "stock_error_m": 0.27403832,
+      "used_error_m": 5.28598128,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -36.9512,
+        12.5731
+      ],
+      "truth": [
+        -40.653457,
+        8.800149
+      ]
+    },
+    {
+      "cycle": 5017,
+      "stock_error_m": 0.14386538,
+      "used_error_m": 5.92906058,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -36.3432,
+        13.0617
+      ],
+      "truth": [
+        -40.56847,
+        8.902323
+      ]
+    },
+    {
+      "cycle": 5018,
+      "stock_error_m": 0.05441852,
+      "used_error_m": 6.46934329,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -35.8033,
+        13.485
+      ],
+      "truth": [
+        -40.487028,
+        9.022362
+      ]
+    },
+    {
+      "cycle": 5019,
+      "stock_error_m": 0.17375629,
+      "used_error_m": 7.10656684,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -35.1766,
+        13.9759
+      ],
+      "truth": [
+        -40.389894,
+        9.146308
+      ]
+    },
+    {
+      "cycle": 5020,
+      "stock_error_m": 0.32152652,
+      "used_error_m": 7.63132244,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -34.6418,
+        14.3873
+      ],
+      "truth": [
+        -40.301992,
+        9.268805
+      ]
+    },
+    {
+      "cycle": 5021,
+      "stock_error_m": 0.46988042,
+      "used_error_m": 8.23300239,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -34.0301,
+        14.8273
+      ],
+      "truth": [
+        -40.209743,
+        9.387229
+      ]
+    },
+    {
+      "cycle": 5022,
+      "stock_error_m": 0.61952886,
+      "used_error_m": 8.74114201,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -33.4938,
+        15.2109
+      ],
+      "truth": [
+        -40.115914,
+        9.505175
+      ]
+    },
+    {
+      "cycle": 5023,
+      "stock_error_m": 0.77337875,
+      "used_error_m": 9.34182745,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -32.8706,
+        15.6387
+      ],
+      "truth": [
+        -40.021092,
+        9.627007
+      ]
+    },
+    {
+      "cycle": 5024,
+      "stock_error_m": 0.92394628,
+      "used_error_m": 9.84761938,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -32.3312,
+        16.0132
+      ],
+      "truth": [
+        -39.925467,
+        9.744094
+      ]
+    },
+    {
+      "cycle": 5025,
+      "stock_error_m": 1.08017737,
+      "used_error_m": 10.4569276,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -31.6909,
+        16.4341
+      ],
+      "truth": [
+        -39.828384,
+        9.866872
+      ]
+    },
+    {
+      "cycle": 5026,
+      "stock_error_m": 1.24375572,
+      "used_error_m": 10.95899461,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -31.1385,
+        16.8003
+      ],
+      "truth": [
+        -39.731179,
+        9.998486
+      ]
+    },
+    {
+      "cycle": 5027,
+      "stock_error_m": 1.40007657,
+      "used_error_m": 11.61679019,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -30.4842,
+        17.2784
+      ],
+      "truth": [
+        -39.634558,
+        10.12159
+      ]
+    },
+    {
+      "cycle": 5028,
+      "stock_error_m": 1.55423687,
+      "used_error_m": 12.09900709,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -29.9168,
+        17.5779
+      ],
+      "truth": [
+        -39.538372,
+        10.242299
+      ]
+    },
+    {
+      "cycle": 5029,
+      "stock_error_m": 1.7073493,
+      "used_error_m": 12.80514541,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -29.1012,
+        17.9136
+      ],
+      "truth": [
+        -39.442533,
+        10.361923
+      ]
+    },
+    {
+      "cycle": 5030,
+      "stock_error_m": 1.86121314,
+      "used_error_m": 13.28748564,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -28.5449,
+        18.2189
+      ],
+      "truth": [
+        -39.349207,
+        10.48429
+      ]
+    },
+    {
+      "cycle": 5031,
+      "stock_error_m": 2.0000878,
+      "used_error_m": 13.93394295,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -27.9009,
+        18.6617
+      ],
+      "truth": [
+        -39.259151,
+        10.590438
+      ]
+    },
+    {
+      "cycle": 5032,
+      "stock_error_m": 2.1467559,
+      "used_error_m": 14.46295439,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -27.3337,
+        19.0256
+      ],
+      "truth": [
+        -39.159201,
+        10.698855
+      ]
+    },
+    {
+      "cycle": 5033,
+      "stock_error_m": 2.20873266,
+      "used_error_m": 15.15657628,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -26.6264,
+        19.3295
+      ],
+      "truth": [
+        -39.117518,
+        10.745046
+      ]
+    },
+    {
+      "cycle": 5034,
+      "stock_error_m": 2.3164311,
+      "used_error_m": 15.73970879,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -25.9989,
+        19.6414
+      ],
+      "truth": [
+        -39.030013,
+        10.813688
+      ]
+    },
+    {
+      "cycle": 5035,
+      "stock_error_m": 2.44711585,
+      "used_error_m": 16.33328679,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -25.3171,
+        19.9367
+      ],
+      "truth": [
+        -38.91652,
+        10.890588
+      ]
+    },
+    {
+      "cycle": 5036,
+      "stock_error_m": 2.59127608,
+      "used_error_m": 16.86974636,
+      "stock": [
+        -40.4494,
+        8.9831
+      ],
+      "used": [
+        -24.6675,
+        20.1971
+      ],
+      "truth": [
+        -38.795007,
+        10.977478
+      ]
+    }
+  ],
+  "caveat": "Reconstructed visualization from all 22 agents same-cycle truth; not original RCG. Player types/views copied from self logs; action counters and unrecorded state bits are placeholders. No model/decision data was changed."
+}

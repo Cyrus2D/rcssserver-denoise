@@ -1,0 +1,211 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp5-S1 first 10 live games</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:1140px;margin:35px auto;padding:0 24px;color:#193343;background:#f7f9fb}h1{font-size:30px}h2{margin-top:38px}table{border-collapse:collapse;display:block;overflow:auto;background:white}td,th{padding:9px 13px;border:1px solid #d8e1e8}th{background:#dfedf2}img{width:100%;background:white}pre{background:#193343;color:#eef7fa;padding:20px;overflow:auto}a{color:#05698b}code{font-size:.9em}</style></head><body><h1>Exp5-S1: first 10 live games, preserve-count policy</h1>
+<blockquote>
+<p><strong>Later integration finding:</strong> the earlier apply path duplicated derived
+player-cache entries and could repeat identity inference. The current cache-v2
+build fixes this. These historical match outcomes are not a clean gameplay
+evaluation of the intended prediction policy. See the
+<a href="../../../reports/final/report.html">final report</a>.</p>
+</blockquote>
+<p><strong>Integration passes the pilot checks.</strong> Left-only application is active and
+position-error reduction is consistent with the frozen offline confirmation.
+This is a snapshot of the first ten complete games, not a win-rate conclusion.</p>
+<p>Generated 2026-11-16 23:30 UTC.
+Source: <code>/home/nader/workspace/denoise/logs/exp5-live-preserve</code>.
+Games still running at the snapshot were excluded. Both teams' 220 observer
+logs finalized successfully. Every eligible target-cycle has equal weight.</p>
+<h2>Main result: true observer distance below 50 metres</h2>
+<p>The denominator is <strong>5,940,546 eligible stale target-cycles</strong> observed by
+the left team: identified valid stock track, positive original position count,
+confirmed named-sighting age 1–30, PlayOn and valid same-cycle truth.
+Unselected rows keep stock WM and remain in the denominator. Fresh/invalid
+tracks and unsupported horizons are not included in these accuracy numbers.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: right;">Frozen offline confirmation</th>
+<th style="text-align: right;">First 10 live games</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original WM mean error</td>
+<td style="text-align: right;">134.98 cm</td>
+<td style="text-align: right;">142.59 cm</td>
+</tr>
+<tr>
+<td>Selected-policy mean error</td>
+<td style="text-align: right;">52.30 cm</td>
+<td style="text-align: right;">52.97 cm</td>
+</tr>
+<tr>
+<td>Reduction in mean error</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">62.85%</td>
+</tr>
+<tr>
+<td>Added error &gt;25 cm vs WM</td>
+<td style="text-align: right;">3.64%</td>
+<td style="text-align: right;">3.71%</td>
+</tr>
+<tr>
+<td>Added error &gt;50 cm vs WM</td>
+<td style="text-align: right;">1.70%</td>
+<td style="text-align: right;">1.61%</td>
+</tr>
+<tr>
+<td>Added error &gt;100 cm vs WM</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0.75%</td>
+</tr>
+<tr>
+<td>Largest added error</td>
+<td style="text-align: right;">11.82 m</td>
+<td style="text-align: right;">13.26 m</td>
+</tr>
+</tbody>
+</table>
+<p>Offline and live games have different trajectories, so matching means are
+evidence of a consistent effect, not an exact replay. “Added error” is used
+position error minus original WM error on the <strong>same</strong> observer-target-cycle.
+The p95 absolute used error is 215.79cm. Below50m,
+61.05% of eligible positions were replaced;
+55.47% improved by &gt;1cm and
+5.40% worsened by &gt;1cm; the rest were unchanged
+or changed by at most 1cm.</p>
+<p><img alt="Live error and regression risk" src="pilot.svg" /></p>
+<h2>Error by time since confirmed named sighting</h2>
+<p>Named-sighting age is not always posCount: anonymous WM refreshes can lower
+the latter without providing a confirmed named sighting. Every row below is
+restricted to original posCount&gt;0, so current count-zero refreshes are preserved.</p>
+<table>
+<thead>
+<tr>
+<th>Named-sighting age</th>
+<th style="text-align: right;">Original mean cm</th>
+<th style="text-align: right;">Used mean cm</th>
+<th style="text-align: right;">Reduction</th>
+<th style="text-align: right;">Added error &gt;25cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">25.55</td>
+<td style="text-align: right;">13.68</td>
+<td style="text-align: right;">46.4%</td>
+<td style="text-align: right;">3.17%</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">50.52</td>
+<td style="text-align: right;">25.23</td>
+<td style="text-align: right;">50.1%</td>
+<td style="text-align: right;">3.16%</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">76.12</td>
+<td style="text-align: right;">40.13</td>
+<td style="text-align: right;">47.3%</td>
+<td style="text-align: right;">3.39%</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td style="text-align: right;">107.34</td>
+<td style="text-align: right;">60.23</td>
+<td style="text-align: right;">43.9%</td>
+<td style="text-align: right;">4.45%</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td style="text-align: right;">216.11</td>
+<td style="text-align: right;">93.65</td>
+<td style="text-align: right;">56.7%</td>
+<td style="text-align: right;">5.46%</td>
+</tr>
+<tr>
+<td>11–20</td>
+<td style="text-align: right;">478.88</td>
+<td style="text-align: right;">151.70</td>
+<td style="text-align: right;">68.3%</td>
+<td style="text-align: right;">4.80%</td>
+</tr>
+<tr>
+<td>21–30</td>
+<td style="text-align: right;">832.50</td>
+<td style="text-align: right;">227.90</td>
+<td style="text-align: right;">72.6%</td>
+<td style="text-align: right;">4.49%</td>
+</tr>
+</tbody>
+</table>
+<h2>Activation, routing and timing checks</h2>
+<ul>
+<li>Left: 110 observers, all <code>apply</code>, <code>preserve</code>, <code>adaptive</code>, identical expected
+  model bundle. Right: 110 observers, all <code>off</code>, <code>adaptive</code>, <strong>zero corrections</strong>.</li>
+<li>All 220 metadata records match the Exp5 preset: unquantized visual fields,
+  finite view, no fading, no teammate payloads, synchronized execution and
+  randomized command order. Fullstate is reference-only, never the decision WM.</li>
+<li><strong>3,879,643 positions applied</strong> across all distances from
+  6,720,682 eligible rows. No applied row was fresh, ineligible,
+  outside age1–30, stopped, unselected or at/below the routing threshold.</li>
+<li>Original and effective counts matched on every checked prediction record.
+  Every selected prediction was applied; used-error fields matched the chosen
+  stock/prediction path. No runtime/model-loading/unknown-column errors found.</li>
+<li>Two full left-observer logs were joined with <code>objects</code>: used WM position,
+  original position, application flag and effective count agree with prediction
+  logs. One right observer was also checked: no overlay. No application outside
+  PlayOn in these routing checks.</li>
+<li>Reconstructed the observation-only Python pipeline for two full-game left
+  observers and compared 48 sampled eligible outputs:
+  maximum position difference 0.00006497m,
+  zero routing disagreements. Input diagnostic rows were not enabled in these
+  live games, so this is an output replay check, not an exhaustive feature dump.</li>
+<li>1,509,967 decisions logged, including
+  1,094,434 PlayOn decisions across both teams;
+  zero missing-decision placeholder rows.</li>
+<li>Live CPU inference: median 14.34ms,
+  p95 23.79ms, maximum
+  57.39ms. These exclude the rest of action time.</li>
+<li>Server command logs: 68,820 nonempty
+  command rounds; left first 34,662, right
+  first 34,158. Timing did not give either
+  side a fixed first-command priority.</li>
+</ul>
+<h2>Fresh measurement sanity and the worst regression</h2>
+<p>For sampled observers l6, l9 and r6, fresh localized named-player positions,
+fresh ball positions and see-updated self positions have zero mean error at
+the logger's displayed precision. This supports that visual quantization is
+disabled. A <strong>WM</strong> count-zero track can still have association/fusion error;
+count zero alone is not proof that a confirmed named visual measurement exists.</p>
+<p>Worst below50m added-error case:
+<code>202611161913_30182/l_7</code>, cycle 4857, target
+right unum 10. Last named sighting was 30
+cycles old; original posCount was 8. True observer distance
+was 19.17m. Error increased from
+<strong>16.09m to 29.35m</strong> despite a routing
+score of 0.939. That score is not a calibrated probability of
+correctness. This is a real rare regression, not removed from the averages.</p>
+<h2>Match scores and next action</h2>
+<p>These same ten games finished <strong>27–36 goals</strong>, <strong>3 wins /1 draw /6 losses</strong> for
+the treatment side. Improved position accuracy has not yet demonstrated better
+gameplay. Ten games are too few to estimate the gameplay effect reliably.</p>
+<p>Continue the planned preserve-count batch without changing the frozen model
+or threshold mid-run. Then compare match results, positional error, tail risks
+and tactical situations over the complete batch. Test zero-count separately
+to distinguish the effect of position correction from age-based decision gates.</p>
+<h2>Reproduce this snapshot</h2>
+<pre><code class="language-bash">cd /home/nader/workspace/denoise
+.venv-exp5-s1/bin/python \
+  rcssserver-denoise/experiments/exp5/exp5-s1/code/summarize_player_gap_live.py \
+  logs/exp5-live-preserve --complete-games-only --limit 10 \
+  --output logs/exp5-live-preserve/pilot-under50.json
+</code></pre>
+<p>The reader now processes CSVs in chunks and retains only compact paired arrays,
+so summary generation does not load all prediction columns into RAM. Its
+results were regression-checked against the previous short-match summarizer.
+The verifier now supports <code>--observer l_6 --observer l_9</code> and output replay
+without feature diagnostics. JSON evidence is alongside this report:
+under50.json, output-check.json, routing-check.json, runtime-check.json and
+game-scores.json. The frozen game IDs are recorded in under50.json.</p></body></html>

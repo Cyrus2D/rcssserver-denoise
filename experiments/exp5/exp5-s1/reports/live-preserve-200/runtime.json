@@ -1,0 +1,30 @@
+{
+  "command_order": {
+    "nonempty_rounds": 1381049,
+    "left_first": 690878,
+    "right_first": 690171
+  },
+  "runtime_errors": [],
+  "missing_files": [],
+  "baseline": {
+    "games": 200,
+    "left_goals": 678,
+    "right_goals": 660,
+    "wins": 87,
+    "draws": 44,
+    "losses": 69
+  },
+  "current_goal_diff_mean": -0.385,
+  "current_goal_diff_normal95": [
+    -0.7258092854445519,
+    -0.04419071455544804
+  ],
+  "goal_diff_bootstrap95": [
+    -0.725,
+    -0.05
+  ],
+  "change_from_baseline_bootstrap95": [
+    -0.925,
+    -0.015
+  ]
+}

@@ -1,0 +1,105 @@
+5016,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5016,0 4 r -37.251200 12.273100 .6 .6 #00d5ff
+5016,0 4 l -40.449400 8.983100 -36.951200 12.573100 #00d5ff
+5016,0 4 m -36.501200 12.123100 (c #00d5ff) recorded object20 APPLY pc=9>9 originalErr=0.274m usedErr=5.286m
+5016,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=9>9 originalErr=0.274m usedErr=5.286m
+5017,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5017,0 4 r -36.643200 12.761700 .6 .6 #00d5ff
+5017,0 4 l -40.449400 8.983100 -36.343200 13.061700 #00d5ff
+5017,0 4 m -35.893200 12.611700 (c #00d5ff) recorded object20 APPLY pc=10>10 originalErr=0.144m usedErr=5.929m
+5017,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=10>10 originalErr=0.144m usedErr=5.929m
+5018,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5018,0 4 r -36.103300 13.185000 .6 .6 #00d5ff
+5018,0 4 l -40.449400 8.983100 -35.803300 13.485000 #00d5ff
+5018,0 4 m -35.353300 13.035000 (c #00d5ff) recorded object20 APPLY pc=11>11 originalErr=0.054m usedErr=6.469m
+5018,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=11>11 originalErr=0.054m usedErr=6.469m
+5019,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5019,0 4 r -35.476600 13.675900 .6 .6 #00d5ff
+5019,0 4 l -40.449400 8.983100 -35.176600 13.975900 #00d5ff
+5019,0 4 m -34.726600 13.525900 (c #00d5ff) recorded object20 APPLY pc=12>12 originalErr=0.174m usedErr=7.107m
+5019,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=12>12 originalErr=0.174m usedErr=7.107m
+5020,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5020,0 4 r -34.941800 14.087300 .6 .6 #00d5ff
+5020,0 4 l -40.449400 8.983100 -34.641800 14.387300 #00d5ff
+5020,0 4 m -34.191800 13.937300 (c #00d5ff) recorded object20 APPLY pc=13>13 originalErr=0.322m usedErr=7.631m
+5020,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=13>13 originalErr=0.322m usedErr=7.631m
+5021,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5021,0 4 r -34.330100 14.527300 .6 .6 #00d5ff
+5021,0 4 l -40.449400 8.983100 -34.030100 14.827300 #00d5ff
+5021,0 4 m -33.580100 14.377300 (c #00d5ff) recorded object20 APPLY pc=14>14 originalErr=0.470m usedErr=8.233m
+5021,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=14>14 originalErr=0.470m usedErr=8.233m
+5022,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5022,0 4 r -33.793800 14.910900 .6 .6 #00d5ff
+5022,0 4 l -40.449400 8.983100 -33.493800 15.210900 #00d5ff
+5022,0 4 m -33.043800 14.760900 (c #00d5ff) recorded object20 APPLY pc=15>15 originalErr=0.620m usedErr=8.741m
+5022,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=15>15 originalErr=0.620m usedErr=8.741m
+5023,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5023,0 4 r -33.170600 15.338700 .6 .6 #00d5ff
+5023,0 4 l -40.449400 8.983100 -32.870600 15.638700 #00d5ff
+5023,0 4 m -32.420600 15.188700 (c #00d5ff) recorded object20 APPLY pc=16>16 originalErr=0.773m usedErr=9.342m
+5023,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=16>16 originalErr=0.773m usedErr=9.342m
+5024,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5024,0 4 r -32.631200 15.713200 .6 .6 #00d5ff
+5024,0 4 l -40.449400 8.983100 -32.331200 16.013200 #00d5ff
+5024,0 4 m -31.881200 15.563200 (c #00d5ff) recorded object20 APPLY pc=17>17 originalErr=0.924m usedErr=9.848m
+5024,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=17>17 originalErr=0.924m usedErr=9.848m
+5025,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5025,0 4 r -31.990900 16.134100 .6 .6 #00d5ff
+5025,0 4 l -40.449400 8.983100 -31.690900 16.434100 #00d5ff
+5025,0 4 m -31.240900 15.984100 (c #00d5ff) recorded object20 APPLY pc=18>18 originalErr=1.080m usedErr=10.457m
+5025,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=18>18 originalErr=1.080m usedErr=10.457m
+5026,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5026,0 4 r -31.438500 16.500300 .6 .6 #00d5ff
+5026,0 4 l -40.449400 8.983100 -31.138500 16.800300 #00d5ff
+5026,0 4 m -30.688500 16.350300 (c #00d5ff) recorded object20 APPLY pc=19>19 originalErr=1.244m usedErr=10.959m
+5026,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=19>19 originalErr=1.244m usedErr=10.959m
+5027,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5027,0 4 r -30.784200 16.978400 .6 .6 #00d5ff
+5027,0 4 l -40.449400 8.983100 -30.484200 17.278400 #00d5ff
+5027,0 4 m -30.034200 16.828400 (c #00d5ff) recorded object20 APPLY pc=20>20 originalErr=1.400m usedErr=11.617m
+5027,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=20>20 originalErr=1.400m usedErr=11.617m
+5028,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5028,0 4 r -30.216800 17.277900 .6 .6 #00d5ff
+5028,0 4 l -40.449400 8.983100 -29.916800 17.577900 #00d5ff
+5028,0 4 m -29.466800 17.127900 (c #00d5ff) recorded object20 APPLY pc=21>21 originalErr=1.554m usedErr=12.099m
+5028,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=21>21 originalErr=1.554m usedErr=12.099m
+5029,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5029,0 4 r -29.401200 17.613600 .6 .6 #00d5ff
+5029,0 4 l -40.449400 8.983100 -29.101200 17.913600 #00d5ff
+5029,0 4 m -28.651200 17.463600 (c #00d5ff) recorded object20 APPLY pc=22>22 originalErr=1.707m usedErr=12.805m
+5029,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=22>22 originalErr=1.707m usedErr=12.805m
+5030,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5030,0 4 r -28.844900 17.918900 .6 .6 #00d5ff
+5030,0 4 l -40.449400 8.983100 -28.544900 18.218900 #00d5ff
+5030,0 4 m -28.094900 17.768900 (c #00d5ff) recorded object20 APPLY pc=23>23 originalErr=1.861m usedErr=13.287m
+5030,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=23>23 originalErr=1.861m usedErr=13.287m
+5031,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5031,0 4 r -28.200900 18.361700 .6 .6 #00d5ff
+5031,0 4 l -40.449400 8.983100 -27.900900 18.661700 #00d5ff
+5031,0 4 m -27.450900 18.211700 (c #00d5ff) recorded object20 APPLY pc=24>24 originalErr=2.000m usedErr=13.934m
+5031,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=24>24 originalErr=2.000m usedErr=13.934m
+5032,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5032,0 4 r -27.633700 18.725600 .6 .6 #00d5ff
+5032,0 4 l -40.449400 8.983100 -27.333700 19.025600 #00d5ff
+5032,0 4 m -26.883700 18.575600 (c #00d5ff) recorded object20 APPLY pc=25>25 originalErr=2.147m usedErr=14.463m
+5032,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=25>25 originalErr=2.147m usedErr=14.463m
+5033,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5033,0 4 r -26.926400 19.029500 .6 .6 #00d5ff
+5033,0 4 l -40.449400 8.983100 -26.626400 19.329500 #00d5ff
+5033,0 4 m -26.176400 18.879500 (c #00d5ff) recorded object20 APPLY pc=26>26 originalErr=2.209m usedErr=15.157m
+5033,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=26>26 originalErr=2.209m usedErr=15.157m
+5034,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5034,0 4 r -26.298900 19.341400 .6 .6 #00d5ff
+5034,0 4 l -40.449400 8.983100 -25.998900 19.641400 #00d5ff
+5034,0 4 m -25.548900 19.191400 (c #00d5ff) recorded object20 APPLY pc=27>27 originalErr=2.316m usedErr=15.740m
+5034,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=27>27 originalErr=2.316m usedErr=15.740m
+5035,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5035,0 4 r -25.617100 19.636700 .6 .6 #00d5ff
+5035,0 4 l -40.449400 8.983100 -25.317100 19.936700 #00d5ff
+5035,0 4 m -24.867100 19.486700 (c #00d5ff) recorded object20 APPLY pc=28>28 originalErr=2.447m usedErr=16.333m
+5035,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=28>28 originalErr=2.447m usedErr=16.333m
+5036,0 4 c -40.449400 8.983100 0.3 #ff9f1c
+5036,0 4 r -24.967500 19.897100 .6 .6 #00d5ff
+5036,0 4 l -40.449400 8.983100 -24.667500 20.197100 #00d5ff
+5036,0 4 m -24.217500 19.747100 (c #00d5ff) recorded object20 APPLY pc=29>29 originalErr=2.591m usedErr=16.870m
+5036,0 4 M [RECORDED-GAP] recorded object20 APPLY pc=29>29 originalErr=2.591m usedErr=16.870m

@@ -1,0 +1,126 @@
+{
+  "mean": {
+    "model": "continue128",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 1000000000.0,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.5,
+      "utility": 0.8305535561812446,
+      "calibration_hurt25": 7.4682,
+      "calibration_use_pct": 77.8616
+    },
+    "source": "blend"
+  },
+  "cap25": {
+    "model": "continue128",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 0.25,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.5,
+      "utility": 0.1331321704843864,
+      "calibration_hurt25": 0.0018,
+      "calibration_use_pct": 77.8616
+    },
+    "source": "blend"
+  },
+  "cap50": {
+    "model": "continue128",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 0.5,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.5,
+      "utility": 0.22229447235473246,
+      "calibration_hurt25": 5.334,
+      "calibration_use_pct": 77.8616
+    },
+    "source": "blend"
+  },
+  "risk": {
+    "model": "wmresidual128_l1",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 1000000000.0,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.8,
+      "utility": 0.7135009765625,
+      "calibration_hurt25": 3.5006000000000004,
+      "calibration_use_pct": 57.1604
+    },
+    "source": "routing"
+  },
+  "near50_mean": {
+    "model": "continue128",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 1000000000.0,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.5,
+      "utility": 0.9029852841047108,
+      "calibration_hurt25": 7.4682,
+      "calibration_use_pct": 77.8616
+    },
+    "source": "blend"
+  },
+  "near50_risk": {
+    "model": "wmresidual128_l1",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 1000000000.0,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.8,
+      "utility": 0.7770519852638245,
+      "calibration_hurt25": 3.5006000000000004,
+      "calibration_use_pct": 57.1604
+    },
+    "source": "routing"
+  },
+  "harm1": {
+    "model": "harm128_l3",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 1000000000.0,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.95,
+      "utility": 0.6639513969421387,
+      "calibration_hurt25": 0.773,
+      "calibration_use_pct": 27.617000000000004
+    },
+    "source": "routing"
+  },
+  "harm3": {
+    "model": "harm128_l3",
+    "candidate": "strong_cost",
+    "alpha": 1.0,
+    "cap_m": 1000000000.0,
+    "cap_per_cycle": null,
+    "tuning": {
+      "threshold": 0.6,
+      "utility": 0.7838428616523743,
+      "calibration_hurt25": 2.9152,
+      "calibration_use_pct": 72.8582
+    },
+    "source": "routing"
+  },
+  "provenance": {
+    "choice": "Original calibration10 only. No test metrics choose policy.",
+    "checkpoint_sha256": {
+      "continue128": "4e8b06b387cf1afd1c6d90159f4e7a549eea242015958961349a23aa96d103ea",
+      "wmresidual128_l1": "cfadedba3fa9da705d2daba5b94eb4bc7ad552c607454df805b6a564714620e5",
+      "harm128_l3": "094edade1db20e0f957e32ec4ef92ce57c10ba8131418c6e7ecafed6fddfd60e"
+    },
+    "source_sha256": {
+      "routing-results.json": "d08f59e59bb52eaf23643338f89548d599d40642968da6b2f8cc910cbed3fa52",
+      "blend-results.json": "b06cf85c25a78049afa5d950837e0b6fe0914093a15080496499ddaeacaffbed"
+    }
+  }
+}

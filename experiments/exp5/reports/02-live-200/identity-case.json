@@ -1,0 +1,16 @@
+{
+  "game": "202611151200_20018",
+  "observer": "l_9",
+  "cycle": 1262,
+  "target": 14,
+  "target_error_m": 7.357442,
+  "target_position_count": 0,
+  "target_seen": false,
+  "nearest_other_truth_id": 16,
+  "other_form": "anonymous",
+  "other_unum_visible": false,
+  "other_localization_error_m": 0.0,
+  "distance_between_stored_track_and_other_truth_m": 4.4102154141656686e-05,
+  "actual_view_degrees": 120,
+  "mode": "play_on"
+}

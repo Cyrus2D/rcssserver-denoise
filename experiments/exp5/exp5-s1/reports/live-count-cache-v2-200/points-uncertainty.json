@@ -1,0 +1,23 @@
+{
+  "means": {
+    "preserve": -0.33,
+    "zero": -0.135,
+    "half": 0.0
+  },
+  "comparisons": {
+    "preserve": {
+      "change": 0.33,
+      "bootstrap95": [
+        -0.22499999999999998,
+        0.885
+      ]
+    },
+    "zero": {
+      "change": 0.135,
+      "bootstrap95": [
+        -0.405,
+        0.675
+      ]
+    }
+  }
+}

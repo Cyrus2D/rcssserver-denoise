@@ -1,0 +1,13 @@
+{
+  "models": [
+    "wide128",
+    "continue128",
+    "harm128_l1",
+    "harm128_l3",
+    "hard128_l1",
+    "seed128_50511",
+    "seed128_50521",
+    "wmresidual128_l1"
+  ],
+  "amendment": "Add a WM-centered identity-initialized correction candidate before final policy freeze and before any fresh-game prediction scoring. Same encoder initialization, features, harm penalty1 and 2.048M additional endpoints."
+}

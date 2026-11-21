@@ -1,0 +1,147 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp5 SoccerWindow visual debugger</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:1120px;margin:36px auto;padding:0 24px;color:#193343;background:#f7f9fb}h1{font-size:30px}h2{margin-top:36px}table{border-collapse:collapse;display:block;overflow:auto;background:white}td,th{padding:9px 12px;border:1px solid #d8e1e8}th{background:#dfedf2}img{max-width:100%;background:white}pre{background:#193343;color:#eef7fa;padding:20px;overflow:auto}a{color:#05698b}code{font-size:.9em}blockquote{border-left:5px solid #cb6d4c;background:#fff1e8;padding:8px 18px;margin:20px 0}</style></head><body><h1>Exp5 visual debugger: original WM versus used position</h1>
+<p><strong>Ready in the rebuilt <code>helios-base-denoise/build/bin</code>.</strong> This build includes
+the cache-v2 integration correction described in the <a href="../reports/final/README.md">final report</a>.
+The old200-game results apply to the earlier implementation, not this build.</p>
+<h2>What the symbols mean</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orange outline circle</td>
+<td>Original WM position (<code>trackedPos</code>)</td>
+</tr>
+<tr>
+<td>Cyan outline square</td>
+<td>Actually used position (<code>pos</code>)</td>
+</tr>
+<tr>
+<td>Cyan connecting line</td>
+<td>Position correction; not velocity</td>
+</tr>
+<tr>
+<td><code>APPLY pc=8&gt;0</code></td>
+<td>Forecast used; original count8, effective count0</td>
+</tr>
+<tr>
+<td><code>WM:fresh</code></td>
+<td>Current raw count-zero position was preserved</td>
+</tr>
+<tr>
+<td><code>WM:gated</code></td>
+<td>Eligible forecast rejected; WM used</td>
+</tr>
+<tr>
+<td><code>SHADOW</code></td>
+<td>Selected proposal logged, but WM used</td>
+</tr>
+<tr>
+<td><code>WM:off</code></td>
+<td>Model disabled; both symbols coincide</td>
+</tr>
+<tr>
+<td><code>t7</code> / <code>o7</code></td>
+<td>Teammate7 / opponent7 relative to the selected observer</td>
+</tr>
+</tbody>
+</table>
+<p>Circle radius0.30m and square width0.60m are constant drawing sizes. They are
+not uncertainty bounds, player sizes or kickable areas. When position is kept,
+circle and square have the same center and no displacement line appears.
+The standard monitor players show reality; this overlay adds no third truth
+position. It shows player positions only; velocity/body and ball are stock.</p>
+<p>All11 players produce their own debug data. There is no observer6-only filter.
+Select any observer in SoccerWindow to see that agent's world.</p>
+<h2>Run one game in separate terminals</h2>
+<p>Use a fresh RUN directory for each visual game. Ports below are6000/6001/6002;
+live debug packets go to6032. Close a previous server on those ports first.
+The shell variable RUN is set in each terminal independently.</p>
+<h3>1. Server</h3>
+<pre><code class="language-bash">RUN=/home/nader/workspace/denoise/logs/exp5-debug/one-01
+mkdir -p &quot;$RUN/server&quot; &quot;$RUN/left&quot; &quot;$RUN/right&quot; &quot;$RUN/csv&quot;
+cd /home/nader/workspace/denoise/rcssserver-denoise/build
+./rcssserver \
+  include=../experiments/exp5/server-baseline.conf \
+  server::auto_mode=false \
+  server::port=6000 server::coach_port=6001 server::olcoach_port=6002 \
+  server::game_log_dir=&quot;$RUN/server&quot; server::text_log_dir=&quot;$RUN/server&quot; \
+  server::game_log_fixed=true server::game_log_fixed_name=exp5-debug \
+  server::text_log_fixed=true server::text_log_fixed_name=exp5-debug
+</code></pre>
+<p>This retains Exp5 unquantized fields, finite views, no hearing/fading, fullstate
+for reference and randomized synchronous command ordering. Start kickoff from
+SoccerWindow after the teams connect.</p>
+<h3>2. SoccerWindow</h3>
+<pre><code class="language-bash">/home/nader/workspace/soccerwindow2/src/qt/soccerwindow2 --host localhost --port 6000
+</code></pre>
+<h3>3. Left team: apply, zero count, live and dlog output</h3>
+<pre><code class="language-bash">RUN=/home/nader/workspace/denoise/logs/exp5-debug/one-01
+mkdir -p &quot;$RUN/left&quot; &quot;$RUN/csv&quot;
+cd /home/nader/workspace/denoise/helios-base-denoise/build/bin
+./start-debug.sh -p 6000 -P 6002 -t lt \
+  --fullstate reference --view-policy adaptive \
+  --player-gap apply \
+  --player-gap-model-dir /home/nader/workspace/denoise/logs/exp5-s1/live-model \
+  --player-gap-pos-count zero \
+  --player-gap-debug both --player-gap-debug-target all \
+  --debug-server-port 6032 --debug-server-logging \
+  --log-dir &quot;$RUN/left&quot; \
+  --denoise-log-dir &quot;$RUN/csv&quot; --denoise-game-id one-01 \
+  --no-denoise-raw --no-denoise-landmarks
+</code></pre>
+<h3>4. Right team: original WM, with its own observer logs</h3>
+<pre><code class="language-bash">RUN=/home/nader/workspace/denoise/logs/exp5-debug/one-01
+mkdir -p &quot;$RUN/right&quot; &quot;$RUN/csv&quot;
+cd /home/nader/workspace/denoise/helios-base-denoise/build/bin
+./start-debug.sh -p 6000 -P 6002 -t rt \
+  --fullstate reference --view-policy adaptive \
+  --player-gap off --player-gap-debug both \
+  --debug-server-port 6032 --debug-server-logging \
+  --log-dir &quot;$RUN/right&quot; \
+  --denoise-log-dir &quot;$RUN/csv&quot; --denoise-game-id one-01 \
+  --no-denoise-raw --no-denoise-landmarks
+</code></pre>
+<p>For the original non-debug right team, use start.sh with the normal reference/
+dataset flags and no model options. The right debug command above also keeps
+the model off; its two position markers coincide.</p>
+<h2>Where to open the logs</h2>
+<ul>
+<li><strong>Colored dlog, left:</strong> <code>logs/exp5-debug/one-01/left</code>, containing
+  <code>lt-1.log</code> through <code>lt-11.log</code>. Right is <code>.../right</code>, with <code>rt-*.log</code>.</li>
+<li>In SoccerWindow's <strong>Debug Message</strong> window, use <strong>Open debug log directory</strong>,
+  choose Left/Right correctly and the corresponding directory. Enable <strong>WM</strong>
+  and debug-log objects. Select the observer number1–11. These files include
+  <code>[GAP]</code> text, coordinates, raw/effective count, selection status and score.</li>
+<li><strong>Live agent debug:</strong> select an observer and enable agent debug drawings;
+  the incoming packets carry the same colored comparison. No directory is
+  needed for incoming packets. <code>*.dcl</code> files also retain these packets.</li>
+<li><strong>Server replay:</strong> the RCG is under <code>.../server/exp5-debug.rcg*</code>.
+  Open it as the game log, then load the matching left/right debug directories.</li>
+<li><code>.../csv</code> is the dataset; it is not the Debug Message log directory.</li>
+</ul>
+<p>Use either incoming-agent geometry or dlog geometry for inspection. Enabling
+both views together can paint the same comparison twice. dlog directory loading
+indexes the file at load time in this SoccerWindow version; for later cycles
+of a running game, reload the directory, or use the live agent view. Full replay
+after the game is the simplest dlog workflow.</p>
+<h2>Optional focused view and output modes</h2>
+<p>Replace the left target with <code>--player-gap-debug-target opponent:10</code> to inspect
+only opponent10, or <code>teammate:7</code>. The observer is still selectable among all11.</p>
+<p><code>--player-gap-debug off|live|dlog|both</code> defaults to off. <code>dlog</code> requires <code>--debug</code>
+and the WM category enabled; <code>live</code> requires a debug-server connection or packet
+logging. start-debug.sh supplies debug/connection options; it works with the
+normal Release executable and does not require a separate Debug CMake build.</p>
+<p>The banner shows <code>revision=cache-v2</code>, <code>cache=N/N</code> and <code>cache_ok=1</code>. A mismatched
+count or cache_ok=0 is a structural problem, not neural uncertainty. Scores
+are routing scores, not calibrated confidence percentages.</p>
+<h2>Verification</h2>
+<p>The short all-observer and focused matches finalized all22 agents. Packet
+geometry matched original/used CSV coordinates on both sides. All derived player
+containers remained unique; full feature replay passed after the cache fix.
+The synthetic packet test checks color serialization, old-drawing removal,
+valid syntax and viewer-size limits. No full GUI interaction was automated.
+Evidence is in <code>logs/exp5-s1/debug-checks</code> and the final report's JSON artifact.</p></body></html>
