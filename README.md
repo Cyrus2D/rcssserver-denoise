@@ -9,6 +9,10 @@ The RoboCup Soccer Simulator Server (rcssserver) is a research and educational t
 
 For further reading, please check [the user's manual](https://rcsoccersim.readthedocs.io/).
 
+## Denoising research
+
+[Experiments and results](experiments/README.md) · [Presentation](experiments/denoise-presentation.html)
+
 ## :soccer: Quick Start
 
 rcssserver is implemented by C++14 and depends some libraries.

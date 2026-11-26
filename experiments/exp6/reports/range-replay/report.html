@@ -1,0 +1,229 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp6 Gaussian range handling</title><style>body{font:16px/1.65 system-ui,sans-serif;color:#1e293b;background:#f7fafc;margin:0}main{max-width:1050px;margin:auto;padding:28px 24px}img{width:100%;background:white}table{border-collapse:collapse;display:block;overflow:auto;margin:18px 0;background:white}td,th{padding:8px 12px;border:1px solid #d5e2e8}th{background:#e4eff1}pre{overflow:auto;padding:16px;background:#edf4f7}a{color:#075e71}</style></head><body><main><h1>Exp6 step 1 · Use reported Gaussian ranges in librcsc</h1>
+<p>With observer position and angle held fixed, player position error fell from
+<strong>170.60 to 67.48 cm</strong> across the 200 Exp6 games.
+Ball position error fell from <strong>158.15 to 62.47 cm</strong>.
+The rebuilt librcsc applies the Gaussian range path after the server
+acknowledges the mode. The live checks verified the reported-range path for
+Gaussian and the original lookup for quantized observations.</p>
+<p><a href="../report.html">Original Exp6 baseline</a> · <a href="replay-metrics.json">Replay metrics</a> · <a href="pilot-audit.json">Pilot verification</a></p>
+<h2>Paired replay on existing games</h2>
+<p>For each valid fresh localized observation, we kept the direction and origin
+used by librcsc. The new position is the old global position plus
+(reported range − localized range) times the unit localized relative vector.
+Fullstate provides the reference for both error measurements. PlayOn rows
+require both position estimates and the same-cycle truth, with a known
+identity for players. Each sample has equal weight.</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th style="text-align: right;">Paired rows</th>
+<th style="text-align: right;">Stock cm</th>
+<th style="text-align: right;">Raw range cm</th>
+<th style="text-align: right;">Mean reduction</th>
+<th style="text-align: right;">Improved &gt;1 cm</th>
+<th style="text-align: right;">Worsened &gt;25 cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Players</td>
+<td style="text-align: right;">438,509,883</td>
+<td style="text-align: right;">170.60</td>
+<td style="text-align: right;">67.48</td>
+<td style="text-align: right;">60.45%</td>
+<td style="text-align: right;">79.28%</td>
+<td style="text-align: right;">10.64%</td>
+</tr>
+<tr>
+<td>Teammates</td>
+<td style="text-align: right;">208,814,230</td>
+<td style="text-align: right;">165.30</td>
+<td style="text-align: right;">65.51</td>
+<td style="text-align: right;">60.37%</td>
+<td style="text-align: right;">79.45%</td>
+<td style="text-align: right;">10.55%</td>
+</tr>
+<tr>
+<td>Opponents</td>
+<td style="text-align: right;">229,695,653</td>
+<td style="text-align: right;">175.43</td>
+<td style="text-align: right;">69.27</td>
+<td style="text-align: right;">60.51%</td>
+<td style="text-align: right;">79.13%</td>
+<td style="text-align: right;">10.73%</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">20,881,423</td>
+<td style="text-align: right;">158.15</td>
+<td style="text-align: right;">62.47</td>
+<td style="text-align: right;">60.50%</td>
+<td style="text-align: right;">79.09%</td>
+<td style="text-align: right;">9.62%</td>
+</tr>
+</tbody>
+</table>
+<p>An improvement or regression means the change in the individual sample's
+error against truth. Some Gaussian draws are closer to truth after the old
+lookup, which can partially offset an underestimated range. The replay tests
+the global visual fix along the recorded trajectories. The live changes can
+also affect landmark localization, player/ball velocities and later actions.</p>
+<p><img alt="Paired replay by distance" src="range-replay.svg" /></p>
+<table>
+<thead>
+<tr>
+<th>Player distance (m)</th>
+<th style="text-align: right;">Stock cm</th>
+<th style="text-align: right;">Raw range cm</th>
+<th style="text-align: right;">Worsened &gt;25 cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–3</td>
+<td style="text-align: right;">18.28</td>
+<td style="text-align: right;">13.97</td>
+<td style="text-align: right;">0.03%</td>
+</tr>
+<tr>
+<td>3–10</td>
+<td style="text-align: right;">43.69</td>
+<td style="text-align: right;">21.61</td>
+<td style="text-align: right;">2.49%</td>
+</tr>
+<tr>
+<td>10–20</td>
+<td style="text-align: right;">85.47</td>
+<td style="text-align: right;">36.23</td>
+<td style="text-align: right;">7.08%</td>
+</tr>
+<tr>
+<td>20–30</td>
+<td style="text-align: right;">140.08</td>
+<td style="text-align: right;">56.26</td>
+<td style="text-align: right;">11.13%</td>
+</tr>
+<tr>
+<td>30–40</td>
+<td style="text-align: right;">196.46</td>
+<td style="text-align: right;">77.08</td>
+<td style="text-align: right;">12.41%</td>
+</tr>
+<tr>
+<td>40–60</td>
+<td style="text-align: right;">272.32</td>
+<td style="text-align: right;">104.45</td>
+<td style="text-align: right;">14.85%</td>
+</tr>
+<tr>
+<td>60+</td>
+<td style="text-align: right;">438.86</td>
+<td style="text-align: right;">165.53</td>
+<td style="text-align: right;">16.98%</td>
+</tr>
+</tbody>
+</table>
+<h2>What changed in librcsc</h2>
+<ul>
+<li>Acknowledged Gaussian observations use reported distance for landmarks,
+  players and the ball. The existing estimators get a working radial interval
+  of ±2 estimated sigma, derived from the observer's player-type noise rates
+  and measured range and focus geometry.</li>
+<li>Ball radial velocity uncertainty uses the Gaussian 0.01 m/cycle rounding
+  step. At a reported range of zero it leaves direct velocity unavailable.</li>
+<li>Server exact-observation flags take precedence. The logged
+  <strong>gaussian_range_localization</strong> field identifies the active range path.</li>
+</ul>
+<h2>Short live controls</h2>
+<p>One stock and one updated match per sensor mode used the Exp6 360° preset,
+the same simulator and player-type seeds and 22 finalized observers each.
+Trajectories and the number of PlayOn rows vary by match.</p>
+<table>
+<thead>
+<tr>
+<th>Short match</th>
+<th style="text-align: right;">PlayOn observer cycles</th>
+<th style="text-align: right;">Player WM cm</th>
+<th style="text-align: right;">Ball WM cm</th>
+<th style="text-align: right;">Self WM cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stock-gaussian</td>
+<td style="text-align: right;">7,394</td>
+<td style="text-align: right;">162.09</td>
+<td style="text-align: right;">132.69</td>
+<td style="text-align: right;">12.86</td>
+</tr>
+<tr>
+<td>new-gaussian</td>
+<td style="text-align: right;">7,084</td>
+<td style="text-align: right;">64.68</td>
+<td style="text-align: right;">61.70</td>
+<td style="text-align: right;">3.66</td>
+</tr>
+<tr>
+<td>stock-quantized</td>
+<td style="text-align: right;">6,842</td>
+<td style="text-align: right;">73.57</td>
+<td style="text-align: right;">61.62</td>
+<td style="text-align: right;">1.53</td>
+</tr>
+<tr>
+<td>new-quantized</td>
+<td style="text-align: right;">7,700</td>
+<td style="text-align: right;">76.22</td>
+<td style="text-align: right;">63.93</td>
+<td style="text-align: right;">1.55</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Short match</th>
+<th style="text-align: right;">Player ranges checked</th>
+<th style="text-align: right;">Ball ranges checked</th>
+<th style="text-align: right;">Localized radial source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stock-gaussian</td>
+<td style="text-align: right;">155,274</td>
+<td style="text-align: right;">7,394</td>
+<td style="text-align: right;">quantization table</td>
+</tr>
+<tr>
+<td>new-gaussian</td>
+<td style="text-align: right;">148,764</td>
+<td style="text-align: right;">7,084</td>
+<td style="text-align: right;">reported distance</td>
+</tr>
+<tr>
+<td>stock-quantized</td>
+<td style="text-align: right;">143,682</td>
+<td style="text-align: right;">6,842</td>
+<td style="text-align: right;">quantization table</td>
+</tr>
+<tr>
+<td>new-quantized</td>
+<td style="text-align: right;">161,700</td>
+<td style="text-align: right;">7,700</td>
+<td style="text-align: right;">quantization table</td>
+</tr>
+</tbody>
+</table>
+<p>Every checked radius matched its expected source within 0.15 mm, including
+allowance for CSV rounding near a table boundary. Updated Gaussian player
+distance intervals also matched the expected two-sigma width in this
+zero-focus run. These short matches test routing and estimate quality.
+The paired replay is the population comparison.</p>
+<h2>Reproduce</h2>
+<pre><code>exp=rcssserver-denoise/experiments/exp6
+python3 "$exp/reporting/analyze_logs.py" logs/exp6-logs logs/exp6-analysis/raw-range-replay-200 --autotest AutoTest2D/out/exp6logs --autotest AutoTest2D/out/exp6logs2
+.venv-exp5-s1/bin/python "$exp/reporting/analyze_range_pilot.py" /home/nader/workspace/denoise/logs/exp6-analysis/final-range-pilot-yB9YQa logs/exp6-analysis/raw-range-replay-200/scan_logs librcsc-denoise/rcsc/player/object_table.cpp /home/nader/workspace/denoise/logs/exp6-analysis/final-range-pilot-yB9YQa/routing-audit.json
+.venv-exp5-s1/bin/python "$exp/reporting/render_range_study.py" logs/exp6-analysis/raw-range-replay-200/metrics.json /home/nader/workspace/denoise/logs/exp6-analysis/final-range-pilot-yB9YQa/routing-audit.json "$exp/reports/range-replay"
+</code></pre></main></body></html>

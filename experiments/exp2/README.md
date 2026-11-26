@@ -1,13 +1,24 @@
 # Exp2 · Self localization
 
-We trained a recurrent position tracker on the Exp1 logs and used it on the
-left team in 100 new games. On the same live `PlayOn` cycles where the model
-was applied, mean position error fell from **4.317 to 3.145 cm** (**27.2%**).
-The match results showed no clear change.
+[All experiments](../README.md) · [Live audit](reports/steps/07-live-100-games.md) · [Full report](reports/report.html) · [Exp1 comparison](reports/comparison.html)
 
-[Full report](reports/report.html) · [Comparison with Exp1](reports/comparison.html)
+## Results at a glance
 
-## Steps
+On 5.02 million paired PlayOn player-cycles, the self-position GRU reduced
+mean error from **4.317 to 3.145 cm (27.2%)** and p90 from **8.657 to 6.260 cm**.
+The paired mean fell in all 100 games.
+
+The left team recorded **43 wins, 15 draws and 42 losses**, with goals
+**317–337** and points **144–141**. These matches leave the gameplay effect
+uncertain.
+
+## Setup
+
+Use the Exp1 quantized logs to train a 48-unit GRU with circular angle
+features and up to 11 consecutive cycles. In live tests the model supplies
+self position on the left. Standard velocity and orientation are retained.
+
+## Steps and reports
 
 | Step | What we tested |
 |---|---|
@@ -22,7 +33,7 @@ The match results showed no clear change.
 The [training guide](code/training.md) covers dataset construction, training,
 TensorBoard, and the offline comparisons.
 
-## Run in Helios
+## Reproduce
 
 Use the same match launcher and Helios `start.sh` as in Exp1.
 
@@ -37,7 +48,7 @@ Use `shadow` to record the model position while playing with librcsc. Use the
 original Exp1 arguments for the control team. Give both teams the same game
 ID and each parallel match a distinct ID.
 
-## Rebuild the HTML reports
+### Rebuild the HTML reports
 
 Run from the server checkout with NumPy, pandas and Matplotlib installed.
 Both reports use left-team observers. Ball and player metrics include

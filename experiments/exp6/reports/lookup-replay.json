@@ -1,0 +1,37 @@
+{
+  "table_entries": 61,
+  "tolerance_m": 0.00015,
+  "records": [
+    {
+      "game": "202611211953_17297",
+      "observer": "l_1",
+      "n": 103677,
+      "matches": 103677,
+      "matches_allow_csv_rounding": 103677
+    },
+    {
+      "game": "202611211953_17297",
+      "observer": "r_1",
+      "n": 103677,
+      "matches": 103677,
+      "matches_allow_csv_rounding": 103677
+    },
+    {
+      "game": "202611212204_7339",
+      "observer": "l_1",
+      "n": 101115,
+      "matches": 101115,
+      "matches_allow_csv_rounding": 101115
+    },
+    {
+      "game": "202611212204_7339",
+      "observer": "r_1",
+      "n": 101094,
+      "matches": 101094,
+      "matches_allow_csv_rounding": 101094
+    }
+  ],
+  "n": 409563,
+  "matches": 409563,
+  "matches_allow_csv_rounding": 409563
+}

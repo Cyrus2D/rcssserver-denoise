@@ -1,0 +1,1535 @@
+{
+  "source": "/home/nader/workspace/denoise/logs/exp6-logs4",
+  "baseline_source": "/home/nader/workspace/denoise/logs/exp6-logs3",
+  "live_match": {
+    "games": 200,
+    "wins": 92,
+    "draws": 31,
+    "losses": 77,
+    "decisive_win_rate": 0.5443786982248521,
+    "decisive_win_rate_wilson95": [
+      0.46913919343931987,
+      0.6176455403991108
+    ],
+    "exact_50pct_p": 0.28147844170582365,
+    "goals": [
+      845,
+      793
+    ],
+    "points": [
+      307,
+      262
+    ],
+    "goal_difference_mean_ci95": [
+      0.26,
+      -0.12157185489531341,
+      0.6415718548953134
+    ],
+    "point_difference_mean_ci95": [
+      0.225,
+      -0.1568746438439618,
+      0.6068746438439618
+    ]
+  },
+  "baseline_match": {
+    "games": 300,
+    "wins": 119,
+    "draws": 37,
+    "losses": 144,
+    "decisive_win_rate": 0.4524714828897338,
+    "decisive_win_rate_wilson95": [
+      0.3934317007108904,
+      0.5128797094032368
+    ],
+    "exact_50pct_p": 0.1387502435545098,
+    "goals": [
+      1255,
+      1341
+    ],
+    "points": [
+      394,
+      469
+    ],
+    "goal_difference_mean_ci95": [
+      -0.2866666666666667,
+      -0.5942648757009285,
+      0.02093154236759509
+    ],
+    "point_difference_mean_ci95": [
+      -0.25,
+      -0.5671202936828394,
+      0.0671202936828394
+    ]
+  },
+  "games_with_paired_gain_under50": 200,
+  "audit": {
+    "l": {
+      "corrections": 221031850,
+      "out_of_policy": 0,
+      "over_cap": 0,
+      "at_least_5m_not_applied": 0,
+      "under_5m_not_applied": 3767123,
+      "max_shift_m": 0.25013830174525
+    },
+    "r": {
+      "corrections": 0,
+      "out_of_policy": 0,
+      "over_cap": 0,
+      "at_least_5m_not_applied": 0,
+      "under_5m_not_applied": 0,
+      "max_shift_m": 0.0
+    }
+  },
+  "metrics": [
+    {
+      "side": "l",
+      "target": "ball",
+      "band": "all",
+      "n": 10704713,
+      "applied": 0,
+      "stock_cm": 61.14162887439758,
+      "decision_cm": 61.14162887439758,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "l",
+      "target": "opponent",
+      "band": "under50",
+      "n": 101879920,
+      "applied": 98882726,
+      "stock_cm": 55.644427558200114,
+      "decision_cm": 43.6068463511492,
+      "improvement_pct": 21.63303988429113,
+      "better1": 76892464,
+      "worse1": 18667982,
+      "worse5": 13107270,
+      "worse10": 8301670,
+      "worse25": 0,
+      "max_added_cm": 25.012566825350003
+    },
+    {
+      "side": "l",
+      "target": "opponent",
+      "band": "within2m_of_ball_under20m",
+      "n": 1669497,
+      "applied": 1542911,
+      "stock_cm": 27.237472989673986,
+      "decision_cm": 18.61102102385419,
+      "improvement_pct": 31.671263957159958,
+      "better1": 1117632,
+      "worse1": 338693,
+      "worse5": 195728,
+      "worse10": 95098,
+      "worse25": 0,
+      "max_added_cm": 25.008847562406
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "0-5",
+      "n": 3759356,
+      "applied": 78646,
+      "stock_cm": 8.565420364615402,
+      "decision_cm": 8.430333353435307,
+      "improvement_pct": 1.5771206249042158,
+      "better1": 59635,
+      "worse1": 12851,
+      "worse5": 5080,
+      "worse10": 1539,
+      "worse25": 0,
+      "max_added_cm": 25.000756127562003
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "10-20",
+      "n": 52674621,
+      "applied": 52674621,
+      "stock_cm": 33.283172747759686,
+      "decision_cm": 22.083789484166083,
+      "improvement_pct": 33.64878507367492,
+      "better1": 40306175,
+      "worse1": 9948759,
+      "worse5": 6051413,
+      "worse10": 3120008,
+      "worse25": 0,
+      "max_added_cm": 25.011560820102
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "20-35",
+      "n": 79393969,
+      "applied": 79393969,
+      "stock_cm": 59.277236810156666,
+      "decision_cm": 45.46622476868613,
+      "improvement_pct": 23.29901457063891,
+      "better1": 63678746,
+      "worse1": 13668544,
+      "worse5": 10113375,
+      "worse10": 6629885,
+      "worse25": 0,
+      "max_added_cm": 25.011846812216998
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "35-50",
+      "n": 47137379,
+      "applied": 47137379,
+      "stock_cm": 90.36202286484604,
+      "decision_cm": 76.96784115367149,
+      "improvement_pct": 14.822799763135164,
+      "better1": 37013319,
+      "worse1": 9265139,
+      "worse5": 7643964,
+      "worse10": 5764791,
+      "worse25": 0,
+      "max_added_cm": 25.012566825350003
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "5-10",
+      "n": 14956674,
+      "applied": 14870261,
+      "stock_cm": 17.805796451545753,
+      "decision_cm": 11.371027697956603,
+      "improvement_pct": 36.13861795567441,
+      "better1": 10165511,
+      "worse1": 3422360,
+      "worse5": 1602163,
+      "worse10": 573508,
+      "worse25": 0,
+      "max_added_cm": 25.010597985902
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "50+",
+      "n": 26876974,
+      "applied": 26876974,
+      "stock_cm": 144.76344458485949,
+      "decision_cm": 129.88913736713337,
+      "improvement_pct": 10.274905560848879,
+      "better1": 21932828,
+      "worse1": 4578312,
+      "worse5": 3883956,
+      "worse10": 3069534,
+      "worse25": 0,
+      "max_added_cm": 25.012119006901003
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "all",
+      "n": 224798973,
+      "applied": 221031850,
+      "stock_cm": 66.31783777943708,
+      "decision_cm": 53.79852837193869,
+      "improvement_pct": 18.87774063010874,
+      "better1": 173156214,
+      "worse1": 40895965,
+      "worse5": 29299951,
+      "worse10": 19159265,
+      "worse25": 0,
+      "max_added_cm": 25.012566825350003
+    },
+    {
+      "side": "l",
+      "target": "player",
+      "band": "under50",
+      "n": 197921999,
+      "applied": 194154876,
+      "stock_cm": 55.66525471552213,
+      "decision_cm": 43.46574409358247,
+      "improvement_pct": 21.915844424471576,
+      "better1": 151223386,
+      "worse1": 36317653,
+      "worse5": 25415995,
+      "worse10": 16089731,
+      "worse25": 0,
+      "max_added_cm": 25.012566825350003
+    },
+    {
+      "side": "l",
+      "target": "self",
+      "band": "all",
+      "n": 10704713,
+      "applied": 0,
+      "stock_cm": 3.7426887825390542,
+      "decision_cm": 3.7426887825390542,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "l",
+      "target": "teammate",
+      "band": "under50",
+      "n": 96042079,
+      "applied": 95272150,
+      "stock_cm": 55.68734783495309,
+      "decision_cm": 43.31606504808081,
+      "improvement_pct": 22.21560779575722,
+      "better1": 74330922,
+      "worse1": 17649671,
+      "worse5": 12308725,
+      "worse10": 7788061,
+      "worse25": 0,
+      "max_added_cm": 25.011876366935
+    },
+    {
+      "side": "l",
+      "target": "teammate",
+      "band": "within2m_of_ball_under20m",
+      "n": 938543,
+      "applied": 914178,
+      "stock_cm": 31.437373125339583,
+      "decision_cm": 21.56027527899789,
+      "improvement_pct": 31.418330682280892,
+      "better1": 674711,
+      "worse1": 191961,
+      "worse5": 117370,
+      "worse10": 62648,
+      "worse25": 0,
+      "max_added_cm": 25.009460279838
+    },
+    {
+      "side": "r",
+      "target": "ball",
+      "band": "all",
+      "n": 10705069,
+      "applied": 0,
+      "stock_cm": 61.06918094264193,
+      "decision_cm": 61.06918094264193,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "opponent",
+      "band": "under50",
+      "n": 101883350,
+      "applied": 0,
+      "stock_cm": 55.63721933258424,
+      "decision_cm": 55.63721933258424,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "opponent",
+      "band": "within2m_of_ball_under20m",
+      "n": 1691668,
+      "applied": 0,
+      "stock_cm": 27.208127116186585,
+      "decision_cm": 27.208127116186585,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "0-5",
+      "n": 3755904,
+      "applied": 0,
+      "stock_cm": 8.564017478798718,
+      "decision_cm": 8.564017478798718,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "10-20",
+      "n": 52692721,
+      "applied": 0,
+      "stock_cm": 33.279702333385664,
+      "decision_cm": 33.279702333385664,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "20-35",
+      "n": 79509008,
+      "applied": 0,
+      "stock_cm": 59.266678046847126,
+      "decision_cm": 59.266678046847126,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "35-50",
+      "n": 47022562,
+      "applied": 0,
+      "stock_cm": 90.36285046485446,
+      "decision_cm": 90.36285046485446,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "5-10",
+      "n": 14948406,
+      "applied": 0,
+      "stock_cm": 17.794726115748574,
+      "decision_cm": 17.794726115748574,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "50+",
+      "n": 26877848,
+      "applied": 0,
+      "stock_cm": 144.68139773766623,
+      "decision_cm": 144.68139773766623,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "all",
+      "n": 224806449,
+      "applied": 0,
+      "stock_cm": 66.28732711497531,
+      "decision_cm": 66.28732711497531,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "player",
+      "band": "under50",
+      "n": 197928601,
+      "applied": 0,
+      "stock_cm": 55.641751368708796,
+      "decision_cm": 55.641751368708796,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "self",
+      "band": "all",
+      "n": 10705069,
+      "applied": 0,
+      "stock_cm": 3.7410460410670865,
+      "decision_cm": 3.7410460410670865,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "teammate",
+      "band": "under50",
+      "n": 96045251,
+      "applied": 0,
+      "stock_cm": 55.64655888410263,
+      "decision_cm": 55.64655888410263,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    },
+    {
+      "side": "r",
+      "target": "teammate",
+      "band": "within2m_of_ball_under20m",
+      "n": 931164,
+      "applied": 0,
+      "stock_cm": 31.36580622742428,
+      "decision_cm": 31.36580622742428,
+      "improvement_pct": 0.0,
+      "better1": 0,
+      "worse1": 0,
+      "worse5": 0,
+      "worse10": 0,
+      "worse25": 0,
+      "max_added_cm": 0.0
+    }
+  ],
+  "scores": [
+    {
+      "game": "202611231302_10663",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231302_20169",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231302_22538",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231302_27058",
+      "left": 6,
+      "right": 2
+    },
+    {
+      "game": "202611231302_28983",
+      "left": 5,
+      "right": 3
+    },
+    {
+      "game": "202611231305_14148",
+      "left": 3,
+      "right": 2
+    },
+    {
+      "game": "202611231305_16758",
+      "left": 1,
+      "right": 4
+    },
+    {
+      "game": "202611231305_2070",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231305_31771",
+      "left": 6,
+      "right": 5
+    },
+    {
+      "game": "202611231305_5843",
+      "left": 1,
+      "right": 8
+    },
+    {
+      "game": "202611231307_23003",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231307_30421",
+      "left": 3,
+      "right": 6
+    },
+    {
+      "game": "202611231307_32759",
+      "left": 0,
+      "right": 6
+    },
+    {
+      "game": "202611231307_4243",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231307_9481",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231310_14912",
+      "left": 1,
+      "right": 5
+    },
+    {
+      "game": "202611231310_19683",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231310_22532",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231310_26687",
+      "left": 6,
+      "right": 6
+    },
+    {
+      "game": "202611231310_9629",
+      "left": 2,
+      "right": 3
+    },
+    {
+      "game": "202611231312_19952",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231312_29991",
+      "left": 9,
+      "right": 1
+    },
+    {
+      "game": "202611231312_30338",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231312_8304",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231312_9203",
+      "left": 2,
+      "right": 3
+    },
+    {
+      "game": "202611231315_11465",
+      "left": 8,
+      "right": 2
+    },
+    {
+      "game": "202611231315_16426",
+      "left": 4,
+      "right": 2
+    },
+    {
+      "game": "202611231315_28523",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231315_6030",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231315_9675",
+      "left": 6,
+      "right": 6
+    },
+    {
+      "game": "202611231317_14206",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231317_16253",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231317_24019",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231317_31100",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231317_32463",
+      "left": 2,
+      "right": 3
+    },
+    {
+      "game": "202611231319_20698",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231319_24642",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231319_28114",
+      "left": 4,
+      "right": 1
+    },
+    {
+      "game": "202611231319_31758",
+      "left": 7,
+      "right": 6
+    },
+    {
+      "game": "202611231319_3837",
+      "left": 4,
+      "right": 2
+    },
+    {
+      "game": "202611231322_1255",
+      "left": 5,
+      "right": 3
+    },
+    {
+      "game": "202611231322_13556",
+      "left": 5,
+      "right": 2
+    },
+    {
+      "game": "202611231322_20906",
+      "left": 8,
+      "right": 5
+    },
+    {
+      "game": "202611231322_21351",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231322_22460",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231324_17445",
+      "left": 4,
+      "right": 1
+    },
+    {
+      "game": "202611231324_273",
+      "left": 4,
+      "right": 2
+    },
+    {
+      "game": "202611231324_27437",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231324_28242",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231324_4199",
+      "left": 4,
+      "right": 8
+    },
+    {
+      "game": "202611231326_10102",
+      "left": 2,
+      "right": 6
+    },
+    {
+      "game": "202611231326_12252",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231326_28497",
+      "left": 7,
+      "right": 3
+    },
+    {
+      "game": "202611231326_4445",
+      "left": 4,
+      "right": 1
+    },
+    {
+      "game": "202611231326_7047",
+      "left": 7,
+      "right": 5
+    },
+    {
+      "game": "202611231328_12",
+      "left": 3,
+      "right": 7
+    },
+    {
+      "game": "202611231329_3239",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231329_5336",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231329_7152",
+      "left": 5,
+      "right": 3
+    },
+    {
+      "game": "202611231329_9005",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231331_14447",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231331_14888",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231331_17920",
+      "left": 6,
+      "right": 6
+    },
+    {
+      "game": "202611231331_28614",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231331_7680",
+      "left": 7,
+      "right": 4
+    },
+    {
+      "game": "202611231333_29305",
+      "left": 1,
+      "right": 3
+    },
+    {
+      "game": "202611231333_4861",
+      "left": 2,
+      "right": 5
+    },
+    {
+      "game": "202611231333_79",
+      "left": 8,
+      "right": 4
+    },
+    {
+      "game": "202611231333_8805",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231333_8817",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231335_1108",
+      "left": 4,
+      "right": 2
+    },
+    {
+      "game": "202611231335_2981",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231336_29614",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231336_4388",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231336_5564",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231337_16461",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231338_12469",
+      "left": 7,
+      "right": 2
+    },
+    {
+      "game": "202611231338_18692",
+      "left": 3,
+      "right": 2
+    },
+    {
+      "game": "202611231338_22218",
+      "left": 2,
+      "right": 3
+    },
+    {
+      "game": "202611231338_25556",
+      "left": 5,
+      "right": 2
+    },
+    {
+      "game": "202611231340_23343",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231340_2410",
+      "left": 6,
+      "right": 1
+    },
+    {
+      "game": "202611231340_29286",
+      "left": 4,
+      "right": 7
+    },
+    {
+      "game": "202611231340_31803",
+      "left": 3,
+      "right": 8
+    },
+    {
+      "game": "202611231340_32492",
+      "left": 5,
+      "right": 1
+    },
+    {
+      "game": "202611231342_18756",
+      "left": 5,
+      "right": 6
+    },
+    {
+      "game": "202611231342_29498",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231342_413",
+      "left": 2,
+      "right": 5
+    },
+    {
+      "game": "202611231343_3224",
+      "left": 1,
+      "right": 5
+    },
+    {
+      "game": "202611231343_32380",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231344_20430",
+      "left": 2,
+      "right": 4
+    },
+    {
+      "game": "202611231345_12883",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231345_14501",
+      "left": 5,
+      "right": 1
+    },
+    {
+      "game": "202611231345_15428",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231345_4344",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231347_1104",
+      "left": 1,
+      "right": 3
+    },
+    {
+      "game": "202611231347_19169",
+      "left": 2,
+      "right": 6
+    },
+    {
+      "game": "202611231347_22268",
+      "left": 2,
+      "right": 3
+    },
+    {
+      "game": "202611231347_31405",
+      "left": 2,
+      "right": 4
+    },
+    {
+      "game": "202611231347_7900",
+      "left": 2,
+      "right": 2
+    },
+    {
+      "game": "202611231349_10972",
+      "left": 2,
+      "right": 6
+    },
+    {
+      "game": "202611231349_19397",
+      "left": 8,
+      "right": 4
+    },
+    {
+      "game": "202611231349_3499",
+      "left": 1,
+      "right": 3
+    },
+    {
+      "game": "202611231350_11300",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231350_8103",
+      "left": 6,
+      "right": 5
+    },
+    {
+      "game": "202611231351_14829",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231351_20076",
+      "left": 6,
+      "right": 4
+    },
+    {
+      "game": "202611231352_24266",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231352_25874",
+      "left": 5,
+      "right": 2
+    },
+    {
+      "game": "202611231352_27120",
+      "left": 5,
+      "right": 1
+    },
+    {
+      "game": "202611231353_3931",
+      "left": 7,
+      "right": 5
+    },
+    {
+      "game": "202611231354_13585",
+      "left": 4,
+      "right": 1
+    },
+    {
+      "game": "202611231354_18207",
+      "left": 2,
+      "right": 5
+    },
+    {
+      "game": "202611231354_18246",
+      "left": 8,
+      "right": 6
+    },
+    {
+      "game": "202611231354_29767",
+      "left": 2,
+      "right": 4
+    },
+    {
+      "game": "202611231356_30044",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231356_30271",
+      "left": 2,
+      "right": 1
+    },
+    {
+      "game": "202611231356_30661",
+      "left": 8,
+      "right": 4
+    },
+    {
+      "game": "202611231357_12020",
+      "left": 3,
+      "right": 2
+    },
+    {
+      "game": "202611231357_19738",
+      "left": 5,
+      "right": 6
+    },
+    {
+      "game": "202611231358_24274",
+      "left": 2,
+      "right": 5
+    },
+    {
+      "game": "202611231358_3734",
+      "left": 1,
+      "right": 5
+    },
+    {
+      "game": "202611231358_5091",
+      "left": 7,
+      "right": 2
+    },
+    {
+      "game": "202611231359_8097",
+      "left": 3,
+      "right": 6
+    },
+    {
+      "game": "202611231359_888",
+      "left": 7,
+      "right": 4
+    },
+    {
+      "game": "202611231400_5917",
+      "left": 5,
+      "right": 1
+    },
+    {
+      "game": "202611231401_17378",
+      "left": 8,
+      "right": 3
+    },
+    {
+      "game": "202611231401_23310",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231401_31774",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231401_5859",
+      "left": 1,
+      "right": 7
+    },
+    {
+      "game": "202611231403_1823",
+      "left": 2,
+      "right": 8
+    },
+    {
+      "game": "202611231403_23798",
+      "left": 2,
+      "right": 1
+    },
+    {
+      "game": "202611231403_2494",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231403_30978",
+      "left": 2,
+      "right": 6
+    },
+    {
+      "game": "202611231404_4516",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231405_23462",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231405_31295",
+      "left": 1,
+      "right": 4
+    },
+    {
+      "game": "202611231405_5497",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231406_11790",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231406_5621",
+      "left": 6,
+      "right": 6
+    },
+    {
+      "game": "202611231407_7027",
+      "left": 6,
+      "right": 3
+    },
+    {
+      "game": "202611231408_16365",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231408_20346",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231408_25267",
+      "left": 6,
+      "right": 1
+    },
+    {
+      "game": "202611231408_31052",
+      "left": 6,
+      "right": 3
+    },
+    {
+      "game": "202611231409_21027",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231410_19769",
+      "left": 1,
+      "right": 2
+    },
+    {
+      "game": "202611231410_24338",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231410_8084",
+      "left": 7,
+      "right": 1
+    },
+    {
+      "game": "202611231411_24729",
+      "left": 2,
+      "right": 2
+    },
+    {
+      "game": "202611231412_20204",
+      "left": 6,
+      "right": 2
+    },
+    {
+      "game": "202611231412_29945",
+      "left": 9,
+      "right": 3
+    },
+    {
+      "game": "202611231412_4142",
+      "left": 5,
+      "right": 3
+    },
+    {
+      "game": "202611231413_23197",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231413_30245",
+      "left": 2,
+      "right": 2
+    },
+    {
+      "game": "202611231414_1009",
+      "left": 3,
+      "right": 6
+    },
+    {
+      "game": "202611231415_14382",
+      "left": 1,
+      "right": 7
+    },
+    {
+      "game": "202611231415_19590",
+      "left": 1,
+      "right": 4
+    },
+    {
+      "game": "202611231415_20204",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231415_32258",
+      "left": 3,
+      "right": 9
+    },
+    {
+      "game": "202611231416_17842",
+      "left": 5,
+      "right": 2
+    },
+    {
+      "game": "202611231417_11480",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231417_15305",
+      "left": 5,
+      "right": 6
+    },
+    {
+      "game": "202611231417_20526",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231417_28599",
+      "left": 3,
+      "right": 7
+    },
+    {
+      "game": "202611231419_11410",
+      "left": 6,
+      "right": 3
+    },
+    {
+      "game": "202611231419_15458",
+      "left": 3,
+      "right": 2
+    },
+    {
+      "game": "202611231419_32328",
+      "left": 8,
+      "right": 5
+    },
+    {
+      "game": "202611231419_3774",
+      "left": 6,
+      "right": 3
+    },
+    {
+      "game": "202611231420_25494",
+      "left": 4,
+      "right": 2
+    },
+    {
+      "game": "202611231421_1028",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231421_19445",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231421_29351",
+      "left": 4,
+      "right": 6
+    },
+    {
+      "game": "202611231422_26407",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231422_28530",
+      "left": 4,
+      "right": 7
+    },
+    {
+      "game": "202611231423_31489",
+      "left": 10,
+      "right": 4
+    },
+    {
+      "game": "202611231424_15285",
+      "left": 5,
+      "right": 8
+    },
+    {
+      "game": "202611231424_27706",
+      "left": 7,
+      "right": 3
+    },
+    {
+      "game": "202611231424_8114",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "game": "202611231424_8486",
+      "left": 2,
+      "right": 2
+    },
+    {
+      "game": "202611231425_23797",
+      "left": 5,
+      "right": 4
+    },
+    {
+      "game": "202611231426_24683",
+      "left": 4,
+      "right": 2
+    },
+    {
+      "game": "202611231426_24802",
+      "left": 4,
+      "right": 4
+    },
+    {
+      "game": "202611231426_26598",
+      "left": 6,
+      "right": 1
+    },
+    {
+      "game": "202611231426_3234",
+      "left": 5,
+      "right": 6
+    },
+    {
+      "game": "202611231428_15655",
+      "left": 2,
+      "right": 5
+    },
+    {
+      "game": "202611231428_22472",
+      "left": 6,
+      "right": 2
+    },
+    {
+      "game": "202611231428_5423",
+      "left": 3,
+      "right": 4
+    },
+    {
+      "game": "202611231428_7602",
+      "left": 2,
+      "right": 3
+    },
+    {
+      "game": "202611231429_27728",
+      "left": 5,
+      "right": 5
+    },
+    {
+      "game": "202611231430_4472",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231430_9892",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231431_12103",
+      "left": 3,
+      "right": 5
+    },
+    {
+      "game": "202611231431_24552",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "game": "202611231431_30120",
+      "left": 8,
+      "right": 3
+    },
+    {
+      "game": "202611231432_9015",
+      "left": 8,
+      "right": 4
+    },
+    {
+      "game": "202611231433_14807",
+      "left": 8,
+      "right": 3
+    },
+    {
+      "game": "202611231433_17345",
+      "left": 4,
+      "right": 5
+    },
+    {
+      "game": "202611231433_30576",
+      "left": 3,
+      "right": 2
+    },
+    {
+      "game": "202611231433_4590",
+      "left": 6,
+      "right": 4
+    }
+  ]
+}

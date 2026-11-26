@@ -22,7 +22,7 @@ and [observation and localization notes](../../librcsc-denoise/.github/instructi
 
 ## Server controls
 
-These four boolean settings default to `false`. Exp1 used those defaults,
+These observation switches default to `false`. Exp1 used those defaults,
 standard quantized `see`, normal view control, visual fading and teammate
 communication.
 
@@ -32,9 +32,11 @@ communication.
 | `server::see_no_fade_unum` | Keeps team and uniform number visible in far, in-cone, high-quality player observations. The velocity and orientation fields still fade. |
 | `server::see_no_fade_all` | Bypasses those far-object fades, including the relevant motion and orientation fields. Close and low-quality observation paths keep their existing behavior. |
 | `server::see_noise_free` | Selects `ExactObservation` ahead of Gaussian see. It bypasses distance quantization. Bearing and motion fields still use their normal rounding. |
+| `server::see_no_quantization` | Uses `UnquantizedObservation` for exact visible range, bearing and motion measurements. Exp5 uses this with finite views, so unseen players remain unobserved. |
 
-To select Gaussian see, set `gaussian_see : on` in the Helios player
-configuration. To suppress normal teammate payloads, set
+To request Gaussian see, use `start.sh --gaussian-see` or set
+`gaussian_see : on` in the Helios player configuration. Exp6 uses
+reported Gaussian ranges after server acknowledgment. To suppress normal teammate payloads, set
 `server::say_msg_size=0`. The hearing-capacity settings control delivery
 limits.
 

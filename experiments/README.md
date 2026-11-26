@@ -1,20 +1,38 @@
-# Denoise experiments
+# RoboCup 2D denoising experiments
 
-Measure RoboCup 2D observation errors and test ways to reduce them.
+We tested how much Helios can improve what it knows about itself, the ball and
+other players. The experiments isolate three causes of error: noisy visual
+measurements, time without a sighting and missing fields such as velocity.
+We measure accuracy during active play (PlayOn) and separately check whether
+the same methods improve match results.
 
-Completed Exp3/Exp4 work is summarized in [Exp3–Exp4](exp3-exp4/README.md):
-methods, paired noise reductions, match outcomes and the handoff to visual-gap prediction.
+[Open the 15-slide presentation](denoise-presentation.html) · [Download PDF](denoise-presentation.pdf) · [Server changes and research guide](RESEARCH.md)
 
-New to the code? Start with the [research guide](RESEARCH.md) for server
-changes, the planned experiment matrix, and the measurement rules.
+## Results at a glance
 
-| Experiment | What we ran | Results |
-|---|---|---|
-| [Exp1 · Baseline](exp1/README.md) | 100 games with standard quantized observations | [Full report](exp1/reports/report.html) |
-| [Exp2 · Self localization](exp2/README.md) | Train a recurrent position tracker, then run 100 games with it active on the left | [Full report](exp2/reports/report.html) · [Exp1 comparison](exp2/reports/comparison.html) |
-| [Exp3 · Player quantization](exp3/README.md) | 200 games with 360° views, uniform-number fading disabled and no teammate payloads | [Exp1 comparison](exp3/reports/report.html) · [Live results](exp3/reports/31-live-results.md) |
-| [Exp4 · Player and ball state](exp4/README.md) | Learn player velocity and body direction plus ball position, velocity and next-cycle motion | [Offline results](exp4/README.md) · [155-game live audit](exp4/reports/03-live-f3-audit.html) · [F4 repair](exp4/reports/04-live-f4-fix.html) · [60-game audit](exp4/reports/05-live-f4-60-games.html) · [Random command priority](exp4/reports/06-server-command-order.html) · [Closeout: ball stability](exp4/reports/09-closeout-ball-stability.html) |
-| [Exp5 · Visual-gap prediction](exp5/README.md) | 200 games: exact visible kinematics, adaptive finite views, no hearing/fading | [600-game cache-v2 comparison](exp5/exp5-s1/reports/live-count-cache-v2-200/report.html) · [Half-count method](exp5/exp5-s1/reports/half-count-policy.md) · [Corrected-cache preserve](exp5/exp5-s1/reports/live-preserve-cache-v2-200/report.html) · [Final report / cache correction](exp5/reports/final/report.html) · [Historical zero/preserve results](exp5/exp5-s1/reports/live-zero-200/report.html) · [S1 model comparison](exp5/exp5-s1/reports/report.html) · [Live integration](exp5/exp5-s1/reports/live-integration.md) · [200-game visual audit](exp5/reports/02-live-200/report.html) · [Findings](exp5/reports/02-live-200/README.md) · [Pilot](exp5/reports/01-pilot.html) |
+| Experiment | What we tested | Main result | Match result |
+|---|---|---|---|
+| [Exp1 · Baseline](exp1/README.md) | 100 games with normal quantized vision and hearing | Self position averaged **4.31 cm** error. Below 50 m, opponent error was **78.74 cm** fresh and **140.70 cm** at visual age 3–5. | Stock vs stock baseline |
+| [Exp2 · Self localization](exp2/README.md) | Recurrent self-position tracker in normal vision | **4.317 → 3.145 cm** on paired live samples (**−27.2%**). | 100 games, **43–15–42 W–D–L**. No clear advantage. |
+| [Exp3 · Player quantization](exp3/README.md) | Quantized 360° every cycle, known identities, no teammate payloads | Step26 reduced live relative player error **79.06 → 52.75 cm** in F2's sampled observers. | F2, 100 games, **386–359 goals**. Advantage uncertain. |
+| [Exp4 · Player and ball state](exp4/README.md) | Player velocity/body and ball state on the same quantized setup | F4 reduced live player velocity error **10.43 → 7.57 cm/cycle** and ball position error **75.17 → 69.92 cm**. Ball motion could still be wrong after a kick. | F3, **671–671 goals** in 155 games. Repaired F4, **222–225** in the first 60. |
+| [Exp5 · Visual gaps](exp5/README.md) | Exact visible inputs, adaptive 60°/120°/180° vision. Predict stale player positions. | Live half-count policy **142.87 → 53.70 cm** below 50 m. | **600** corrected-cache games across three policies. Half tied on points, **656–696 goals**. |
+| [Exp6 · Gaussian noise](exp6/README.md) | Fix Gaussian range localization, then denoise fresh players with a capped GRU | Live player error below 50 m **55.67 → 43.47 cm** (**−21.9%**), with a lower mean in all 200 games. | **845–793 goals**, **92–31–77 W–D–L**. Favorable result, with match-strength uncertainty. |
 
-Raw logs, generated training data, and model weights live in the workspace's
-`logs/` directory outside this repository.
+**How to read the numbers.** Paired error compares the two estimates for the
+same observer, object and cycle against reference fullstate. Match results
+come from separate simulated games. Each accuracy result has its own sensor
+setup, distance filter and target, so the values cannot be ranked across
+experiments as if they used the same test. Fullstate provides labels and
+evaluation truth. The models use information available to the agent.
+
+## Start here
+
+- [Research guide](RESEARCH.md) documents server controls, logging, measurement
+  and reproduction rules across server, librcsc and Helios.
+- [Exp3–Exp4 archive](exp3-exp4/README.md) records the quantized-model handoff,
+  integration repairs and the ball stability investigation.
+- Each experiment README links to its main reports, scripts and reproduction
+  instructions. Raw logs, generated training data and weights live under
+  the workspace's sibling directory `logs/`. The committed reports and
+  metrics preserve results from batches whose raw logs were retired.

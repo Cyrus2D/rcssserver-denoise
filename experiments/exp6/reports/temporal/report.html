@@ -1,0 +1,430 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp6 first Gaussian temporal denoising study</title><style>body{font:16px/1.6 system-ui,sans-serif;margin:0;background:#f7fafc;color:#1e293b}main{max-width:1100px;margin:auto;padding:28px 24px}img{display:block;width:100%;background:white}table{border-collapse:collapse;display:block;overflow:auto;background:white;margin:18px 0}td,th{border:1px solid #d5e2e8;padding:8px 11px}th{background:#e4eff1;text-align:left}pre{background:#edf4f7;padding:16px;overflow:auto}a{color:#075e71}</style></head><body><main><h1>Exp6 · first Gaussian temporal denoising study</h1>
+<p>The corrected visual position is the baseline. We compared two-frame
+averages with Kalman filters that combine previous motion and the current
+measured position. Player and ball candidates are selected separately.
+The evaluation covers 40 held-out games after choosing settings on
+20 other games. Each game contributes four observers with rotating
+uniform numbers, balanced between the two sides.</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th style="text-align: right;">Selection</th>
+<th style="text-align: right;">Validation choice</th>
+<th style="text-align: right;">Visual cm</th>
+<th style="text-align: right;">Test cm</th>
+<th style="text-align: right;">95% change interval, cm</th>
+<th style="text-align: right;">Worsened &gt;25 cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player</td>
+<td style="text-align: right;">Lowest mean</td>
+<td style="text-align: right;">Kalman, position only</td>
+<td style="text-align: right;">55.90</td>
+<td style="text-align: right;">40.17</td>
+<td style="text-align: right;">[-16.34, -15.12]</td>
+<td style="text-align: right;">6.06%</td>
+</tr>
+<tr>
+<td>Player</td>
+<td style="text-align: right;">25 cm cap</td>
+<td style="text-align: right;">Kalman + velocity, quick + 25 cm cap</td>
+<td style="text-align: right;">55.90</td>
+<td style="text-align: right;">51.44</td>
+<td style="text-align: right;">[-4.83, -4.12]</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">Lowest mean</td>
+<td style="text-align: right;">Kalman + velocity, medium</td>
+<td style="text-align: right;">52.26</td>
+<td style="text-align: right;">38.89</td>
+<td style="text-align: right;">[-13.70, -13.04]</td>
+<td style="text-align: right;">10.40%</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">25 cm cap</td>
+<td style="text-align: right;">Kalman + velocity, medium + 25 cm cap</td>
+<td style="text-align: right;">52.26</td>
+<td style="text-align: right;">43.67</td>
+<td style="text-align: right;">[-8.74, -8.43]</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+</tbody>
+</table>
+<p>A negative change in the interval means lower position error than the visual
+baseline. The intervals resample whole matches. A 25 cm cap limits how far
+the output can move from the visual position in each cycle. By the triangle
+inequality, it also limits added position error to 25 cm.</p>
+<p><img alt="Held-out accuracy by distance for the frozen picks" src="temporal-error.svg" /></p>
+<h2>Close targets below 3 m</h2>
+<table>
+<thead>
+<tr>
+<th>Target below 3 m</th>
+<th style="text-align: right;">Visual cm</th>
+<th style="text-align: right;">Best mean filter cm</th>
+<th style="text-align: right;">25 cm cap cm</th>
+<th style="text-align: right;">Best mean worsened &gt;25 cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player</td>
+<td style="text-align: right;">6.05</td>
+<td style="text-align: right;">5.83</td>
+<td style="text-align: right;">15.45</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">4.89</td>
+<td style="text-align: right;">6.42</td>
+<td style="text-align: right;">6.09</td>
+<td style="text-align: right;">1.75%</td>
+</tr>
+</tbody>
+</table>
+<p>Distance slices use reference truth for analysis. These slices show how the
+overall improvements vary near the observer. The filters use measured range
+and pose during inference.</p>
+<h2>All candidates under 50 m on the held-out games</h2>
+<h3>Players</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean cm</th>
+<th style="text-align: right;">Gain cm</th>
+<th style="text-align: right;">Worsened &gt;25 cm</th>
+<th style="text-align: right;">Worsened &gt;50 cm</th>
+<th style="text-align: right;">Max added cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current visual position</td>
+<td style="text-align: right;">55.90</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td>Kalman, position only</td>
+<td style="text-align: right;">40.17</td>
+<td style="text-align: right;">15.73</td>
+<td style="text-align: right;">6.06%</td>
+<td style="text-align: right;">1.39%</td>
+<td style="text-align: right;">991.37</td>
+</tr>
+<tr>
+<td>Average two positions</td>
+<td style="text-align: right;">47.73</td>
+<td style="text-align: right;">8.17</td>
+<td style="text-align: right;">16.70%</td>
+<td style="text-align: right;">3.98%</td>
+<td style="text-align: right;">786.65</td>
+</tr>
+<tr>
+<td>Average with one-cycle velocity prediction</td>
+<td style="text-align: right;">51.36</td>
+<td style="text-align: right;">4.54</td>
+<td style="text-align: right;">5.23%</td>
+<td style="text-align: right;">0.84%</td>
+<td style="text-align: right;">784.53</td>
+</tr>
+<tr>
+<td>Kalman + velocity, quick + 25 cm cap</td>
+<td style="text-align: right;">51.44</td>
+<td style="text-align: right;">4.46</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, medium + 25 cm cap</td>
+<td style="text-align: right;">51.78</td>
+<td style="text-align: right;">4.12</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, smooth + 25 cm cap</td>
+<td style="text-align: right;">52.34</td>
+<td style="text-align: right;">3.56</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, quick + 50 cm cap</td>
+<td style="text-align: right;">53.07</td>
+<td style="text-align: right;">2.83</td>
+<td style="text-align: right;">24.14%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">50.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, medium + 50 cm cap</td>
+<td style="text-align: right;">54.01</td>
+<td style="text-align: right;">1.89</td>
+<td style="text-align: right;">27.16%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">50.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, smooth + 50 cm cap</td>
+<td style="text-align: right;">55.34</td>
+<td style="text-align: right;">0.57</td>
+<td style="text-align: right;">29.77%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">50.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, quick</td>
+<td style="text-align: right;">70.12</td>
+<td style="text-align: right;">-14.22</td>
+<td style="text-align: right;">35.50%</td>
+<td style="text-align: right;">22.64%</td>
+<td style="text-align: right;">1,418.32</td>
+</tr>
+<tr>
+<td>Kalman + velocity, medium</td>
+<td style="text-align: right;">77.46</td>
+<td style="text-align: right;">-21.56</td>
+<td style="text-align: right;">41.88%</td>
+<td style="text-align: right;">28.59%</td>
+<td style="text-align: right;">1,420.69</td>
+</tr>
+<tr>
+<td>Kalman + velocity, smooth</td>
+<td style="text-align: right;">87.91</td>
+<td style="text-align: right;">-32.00</td>
+<td style="text-align: right;">47.99%</td>
+<td style="text-align: right;">34.74%</td>
+<td style="text-align: right;">1,428.47</td>
+</tr>
+</tbody>
+</table>
+<h3>Ball</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean cm</th>
+<th style="text-align: right;">Gain cm</th>
+<th style="text-align: right;">Worsened &gt;25 cm</th>
+<th style="text-align: right;">Worsened &gt;50 cm</th>
+<th style="text-align: right;">Max added cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current visual position</td>
+<td style="text-align: right;">52.26</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, medium</td>
+<td style="text-align: right;">38.89</td>
+<td style="text-align: right;">13.37</td>
+<td style="text-align: right;">10.40%</td>
+<td style="text-align: right;">3.83%</td>
+<td style="text-align: right;">1,620.17</td>
+</tr>
+<tr>
+<td>Kalman + velocity, medium + 50 cm cap</td>
+<td style="text-align: right;">40.31</td>
+<td style="text-align: right;">11.95</td>
+<td style="text-align: right;">8.24%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">50.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, smooth + 50 cm cap</td>
+<td style="text-align: right;">40.58</td>
+<td style="text-align: right;">11.68</td>
+<td style="text-align: right;">10.21%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">50.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, quick</td>
+<td style="text-align: right;">41.15</td>
+<td style="text-align: right;">11.11</td>
+<td style="text-align: right;">8.74%</td>
+<td style="text-align: right;">2.60%</td>
+<td style="text-align: right;">1,618.41</td>
+</tr>
+<tr>
+<td>Kalman + velocity, smooth</td>
+<td style="text-align: right;">41.34</td>
+<td style="text-align: right;">10.92</td>
+<td style="text-align: right;">14.22%</td>
+<td style="text-align: right;">6.95%</td>
+<td style="text-align: right;">1,629.94</td>
+</tr>
+<tr>
+<td>Kalman + velocity, quick + 50 cm cap</td>
+<td style="text-align: right;">41.80</td>
+<td style="text-align: right;">10.46</td>
+<td style="text-align: right;">7.30%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">50.00</td>
+</tr>
+<tr>
+<td>Kalman, position only</td>
+<td style="text-align: right;">43.67</td>
+<td style="text-align: right;">8.59</td>
+<td style="text-align: right;">7.03%</td>
+<td style="text-align: right;">1.94%</td>
+<td style="text-align: right;">966.16</td>
+</tr>
+<tr>
+<td>Kalman + velocity, medium + 25 cm cap</td>
+<td style="text-align: right;">43.67</td>
+<td style="text-align: right;">8.59</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, smooth + 25 cm cap</td>
+<td style="text-align: right;">43.74</td>
+<td style="text-align: right;">8.52</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td>Kalman + velocity, quick + 25 cm cap</td>
+<td style="text-align: right;">44.47</td>
+<td style="text-align: right;">7.79</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">25.00</td>
+</tr>
+<tr>
+<td>Average with one-cycle velocity prediction</td>
+<td style="text-align: right;">50.02</td>
+<td style="text-align: right;">2.23</td>
+<td style="text-align: right;">8.65%</td>
+<td style="text-align: right;">4.15%</td>
+<td style="text-align: right;">905.92</td>
+</tr>
+<tr>
+<td>Average two positions</td>
+<td style="text-align: right;">68.87</td>
+<td style="text-align: right;">-16.61</td>
+<td style="text-align: right;">41.98%</td>
+<td style="text-align: right;">22.82%</td>
+<td style="text-align: right;">905.43</td>
+</tr>
+</tbody>
+</table>
+<p>“Worsened” measures the increase in Euclidean error compared with the current
+visual position for the same sample.</p>
+<h2>How the filters work</h2>
+<ul>
+<li><strong>Two-frame averages.</strong> Average the previous and current observed positions.
+  The velocity version advances the previous position by the previous direct
+  visual velocity first, and uses the current fix when that velocity is missing.</li>
+<li><strong>Kalman filters.</strong> Predict the current position with a constant-velocity
+  state. Trust the current measurement less along the viewing ray when
+  estimated Gaussian range noise is large. Including direct visual velocity
+  offers another update when both motion fields are present. Filters differ
+  in how quickly they allow motion to change. The ball uses larger process
+  and velocity uncertainty.</li>
+<li><strong>Caps.</strong> Limit the output correction to 25 or 50 cm. Prediction history
+  is updated from the underlying filter state. The cap applies to evaluation
+  output each cycle.</li>
+</ul>
+<p>Inputs use current and past observations only. Track history restarts when
+a consecutive PlayOn observation is missing. Truth is read for scoring after
+calculating the outputs, and supplies the distance slices. Validation
+chooses the lowest mean error under 50 m, once among all candidates and once
+among the 25 cm capped candidates. Test trajectories are the recorded games
+played with corrected Gaussian localization.</p>
+<p>The reported variance settings are working estimates for filtering. They
+approximate correlated position and velocity measurements. This study
+measures current position error on recorded trajectories. Live decisions
+and gameplay need a separate evaluation.</p>
+<h2>Confirmation on 40 additional games</h2>
+<p>The first test found that filtering could worsen close positions, especially
+for the ball. The follow-up uses the current visual position when the measured
+range is below 5 m and caps position corrections at 25 cm elsewhere.
+Validation chose the position-only filter for players and the medium
+position-and-velocity filter for the ball. The same validation games were
+used for selection. The 40 confirmation games differ from the first 40 test games.</p>
+<table>
+<thead>
+<tr>
+<th>Target under 50 m</th>
+<th style="text-align: right;">Visual cm</th>
+<th style="text-align: right;">Filtered cm</th>
+<th style="text-align: right;">95% change interval, cm</th>
+<th style="text-align: right;">Worsened &gt;25 cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player</td>
+<td style="text-align: right;">55.58</td>
+<td style="text-align: right;">47.20</td>
+<td style="text-align: right;">[-8.56, -8.20]</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">51.98</td>
+<td style="text-align: right;">43.31</td>
+<td style="text-align: right;">[-8.80, -8.53]</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Target under 3 m</th>
+<th style="text-align: right;">Rows</th>
+<th style="text-align: right;">Visual cm</th>
+<th style="text-align: right;">Filtered cm</th>
+<th style="text-align: right;">Max added cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player</td>
+<td style="text-align: right;">102,455</td>
+<td style="text-align: right;">6.04</td>
+<td style="text-align: right;">6.04</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">31,689</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">4.93</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+<p>Distance slices use true distance for evaluation. The gate uses measured
+Gaussian range. The 25 cm cap bounds added position error relative to the
+visual estimate for each sample.</p>
+<p><a href="confirmation-metrics.json">Confirmation split and metrics</a></p>
+<p><a href="../fixed-live/report.html">Live corrected Gaussian audit</a> ·
+<a href="metrics.json">Split and numerical results</a></p>
+<pre><code>exp=rcssserver-denoise/experiments/exp6
+.venv-exp5-s1/bin/python "$exp/reporting/analyze_temporal.py" logs/exp6-logs3 logs/exp6-analysis/temporal-exp6logs3
+</code></pre></main></body></html>

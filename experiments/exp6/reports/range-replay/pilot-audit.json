@@ -1,0 +1,238 @@
+{
+  "stock-gaussian": {
+    "player_checked": 155274,
+    "ball_checked": 7394,
+    "confirmed": 22,
+    "samples": {
+      "all_visual_relative": {
+        "n": 155274,
+        "mean": 1.6218399153431995
+      },
+      "all_track_position": {
+        "n": 155274,
+        "mean": 1.6209215770186876
+      },
+      "all_paired_visual": {
+        "n": 155274,
+        "mean": 1.6209215770186876
+      },
+      "all_track_velocity": {
+        "n": 115895,
+        "mean": 0.04855627675913542
+      },
+      "ball_visual_relative": {
+        "n": 7394,
+        "mean": 1.3203054784960775
+      },
+      "ball_track_position": {
+        "n": 7394,
+        "mean": 1.3269144590208277
+      },
+      "ball_paired_visual": {
+        "n": 7394,
+        "mean": 1.3269144590208277
+      },
+      "ball_track_velocity": {
+        "n": 6287,
+        "mean": 0.10620802274534748
+      },
+      "self_self_position": {
+        "n": 7394,
+        "mean": 0.1286288114687561
+      },
+      "self_self_fix_position": {
+        "n": 7394,
+        "mean": 0.1265543282391104
+      }
+    },
+    "focus_labeled": 7394,
+    "focus_nonzero": 0,
+    "full_view": 7394,
+    "high_quality": 7394,
+    "known_ranges": 155274,
+    "off_grid_ranges": 155123,
+    "one_see": 7394,
+    "play": 7394,
+    "say": 0,
+    "see": 7394,
+    "skipped": 0,
+    "truth": 7394
+  },
+  "new-gaussian": {
+    "player_checked": 148764,
+    "ball_checked": 7084,
+    "confirmed": 22,
+    "samples": {
+      "all_visual_relative": {
+        "n": 148764,
+        "mean": 0.6445586029953506
+      },
+      "all_track_position": {
+        "n": 148764,
+        "mean": 0.6468421989930345
+      },
+      "all_paired_visual": {
+        "n": 148764,
+        "mean": 0.6468421989930345
+      },
+      "all_track_velocity": {
+        "n": 114150,
+        "mean": 0.07220749292159447
+      },
+      "ball_visual_relative": {
+        "n": 7084,
+        "mean": 0.6141759202428005
+      },
+      "ball_track_position": {
+        "n": 7084,
+        "mean": 0.6169979922360246
+      },
+      "ball_paired_visual": {
+        "n": 7084,
+        "mean": 0.6169979922360246
+      },
+      "ball_track_velocity": {
+        "n": 5405,
+        "mean": 0.06630689472710453
+      },
+      "self_self_position": {
+        "n": 7084,
+        "mean": 0.03660090697346136
+      },
+      "self_self_fix_position": {
+        "n": 7084,
+        "mean": 0.04103083385093163
+      }
+    },
+    "focus_labeled": 7084,
+    "focus_nonzero": 0,
+    "full_view": 7084,
+    "high_quality": 7084,
+    "known_ranges": 148764,
+    "off_grid_ranges": 148621,
+    "one_see": 7084,
+    "play": 7084,
+    "say": 0,
+    "see": 7084,
+    "skipped": 0,
+    "truth": 7084
+  },
+  "stock-quantized": {
+    "player_checked": 143682,
+    "ball_checked": 6842,
+    "confirmed": 0,
+    "samples": {
+      "all_visual_relative": {
+        "n": 143682,
+        "mean": 0.7353323639634749
+      },
+      "all_track_position": {
+        "n": 143682,
+        "mean": 0.735671032627608
+      },
+      "all_paired_visual": {
+        "n": 143682,
+        "mean": 0.735671032627608
+      },
+      "all_track_velocity": {
+        "n": 112422,
+        "mean": 0.09156267473448272
+      },
+      "ball_visual_relative": {
+        "n": 6842,
+        "mean": 0.615795368897983
+      },
+      "ball_track_position": {
+        "n": 6842,
+        "mean": 0.6162119055831627
+      },
+      "ball_paired_visual": {
+        "n": 6842,
+        "mean": 0.6162119055831627
+      },
+      "ball_track_velocity": {
+        "n": 5937,
+        "mean": 0.15082799410476677
+      },
+      "self_self_position": {
+        "n": 6842,
+        "mean": 0.015310603770827257
+      },
+      "self_self_fix_position": {
+        "n": 6842,
+        "mean": 0.015993668956445502
+      }
+    },
+    "focus_labeled": 6842,
+    "focus_nonzero": 0,
+    "full_view": 6842,
+    "high_quality": 6842,
+    "known_ranges": 143682,
+    "off_grid_ranges": 0,
+    "one_see": 6842,
+    "play": 6842,
+    "say": 0,
+    "see": 6842,
+    "skipped": 0,
+    "truth": 6842
+  },
+  "new-quantized": {
+    "player_checked": 161700,
+    "ball_checked": 7700,
+    "confirmed": 0,
+    "samples": {
+      "all_visual_relative": {
+        "n": 161700,
+        "mean": 0.7618676923191074
+      },
+      "all_track_position": {
+        "n": 161700,
+        "mean": 0.7622267053494134
+      },
+      "all_paired_visual": {
+        "n": 161700,
+        "mean": 0.7622267053494134
+      },
+      "all_track_velocity": {
+        "n": 123568,
+        "mean": 0.09565789159005587
+      },
+      "ball_visual_relative": {
+        "n": 7700,
+        "mean": 0.6389109044155843
+      },
+      "ball_track_position": {
+        "n": 7700,
+        "mean": 0.6393222018181819
+      },
+      "ball_paired_visual": {
+        "n": 7700,
+        "mean": 0.6393222018181819
+      },
+      "ball_track_velocity": {
+        "n": 6551,
+        "mean": 0.15106780308349857
+      },
+      "self_self_position": {
+        "n": 7700,
+        "mean": 0.01546810987012985
+      },
+      "self_self_fix_position": {
+        "n": 7700,
+        "mean": 0.016139485324675327
+      }
+    },
+    "focus_labeled": 7700,
+    "focus_nonzero": 0,
+    "full_view": 7700,
+    "high_quality": 7700,
+    "known_ranges": 161700,
+    "off_grid_ranges": 0,
+    "one_see": 7700,
+    "play": 7700,
+    "say": 0,
+    "see": 7700,
+    "skipped": 0,
+    "truth": 7700
+  }
+}

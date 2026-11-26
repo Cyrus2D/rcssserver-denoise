@@ -1,0 +1,903 @@
+{
+  "source": "/home/nader/workspace/denoise/logs/exp6-logs",
+  "games": 200,
+  "observers": 4400,
+  "metrics": [
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "replay_improved_1cm",
+      "n": 2810448,
+      "mean": 0.6182455608500851,
+      "mean_square": 0.6182455608500851
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "replay_raw",
+      "n": 2810448,
+      "mean": 0.13970782015908312,
+      "mean_square": 0.027094714801841415
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "replay_stock",
+      "n": 2810448,
+      "mean": 0.18276602889396995,
+      "mean_square": 0.0450864223061099
+    },
+    {
+      "target": "all",
+      "distance": "0–3",
+      "metric": "replay_worsened_25cm",
+      "n": 2810448,
+      "mean": 0.00032165690309872305,
+      "mean_square": 0.00032165690309872305
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "replay_improved_1cm",
+      "n": 106305066,
+      "mean": 0.788187159396524,
+      "mean_square": 0.788187159396524
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "replay_raw",
+      "n": 106305066,
+      "mean": 0.36228368136267036,
+      "mean_square": 0.18602514945941814
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "replay_stock",
+      "n": 106305066,
+      "mean": 0.8546560052589331,
+      "mean_square": 1.0433478147821047
+    },
+    {
+      "target": "all",
+      "distance": "10–20",
+      "metric": "replay_worsened_25cm",
+      "n": 106305066,
+      "mean": 0.07077146257545243,
+      "mean_square": 0.07077146257545243
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "replay_improved_1cm",
+      "n": 110450416,
+      "mean": 0.7962721661455762,
+      "mean_square": 0.7962721661455762
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "replay_raw",
+      "n": 110450416,
+      "mean": 0.5626123890126449,
+      "mean_square": 0.4492800558866074
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "replay_stock",
+      "n": 110450416,
+      "mean": 1.400837992769407,
+      "mean_square": 2.76544745441147
+    },
+    {
+      "target": "all",
+      "distance": "20–30",
+      "metric": "replay_worsened_25cm",
+      "n": 110450416,
+      "mean": 0.1112815998809819,
+      "mean_square": 0.1112815998809819
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "replay_improved_1cm",
+      "n": 84282888,
+      "mean": 0.8089830642727858,
+      "mean_square": 0.8089830642727858
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "replay_raw",
+      "n": 84282888,
+      "mean": 0.7708467864508802,
+      "mean_square": 0.8441445846276415
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "replay_stock",
+      "n": 84282888,
+      "mean": 1.964570629191707,
+      "mean_square": 5.304549037471864
+    },
+    {
+      "target": "all",
+      "distance": "30–40",
+      "metric": "replay_worsened_25cm",
+      "n": 84282888,
+      "mean": 0.12414369332004854,
+      "mean_square": 0.12414369332004854
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "replay_improved_1cm",
+      "n": 34090912,
+      "mean": 0.7477908481885143,
+      "mean_square": 0.7477908481885143
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "replay_raw",
+      "n": 34090912,
+      "mean": 0.21609872865337482,
+      "mean_square": 0.06437066511001184
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "replay_stock",
+      "n": 34090912,
+      "mean": 0.4368861196851535,
+      "mean_square": 0.275813239280124
+    },
+    {
+      "target": "all",
+      "distance": "3–10",
+      "metric": "replay_worsened_25cm",
+      "n": 34090912,
+      "mean": 0.024898336542008615,
+      "mean_square": 0.024898336542008615
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "replay_improved_1cm",
+      "n": 71940256,
+      "mean": 0.80163925188145,
+      "mean_square": 0.80163925188145
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "replay_raw",
+      "n": 71940256,
+      "mean": 1.0444683035641056,
+      "mean_square": 1.565784144797557
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "replay_stock",
+      "n": 71940256,
+      "mean": 2.723201928477447,
+      "mean_square": 10.34908538248229
+    },
+    {
+      "target": "all",
+      "distance": "40–60",
+      "metric": "replay_worsened_25cm",
+      "n": 71940256,
+      "mean": 0.14848565454090126,
+      "mean_square": 0.14848565454090126
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "replay_improved_1cm",
+      "n": 28629897,
+      "mean": 0.7979281588054613,
+      "mean_square": 0.7979281588054613
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "replay_raw",
+      "n": 28629897,
+      "mean": 1.655263245960669,
+      "mean_square": 4.000927500697342
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "replay_stock",
+      "n": 28629897,
+      "mean": 4.388555026237819,
+      "mean_square": 27.33905237011872
+    },
+    {
+      "target": "all",
+      "distance": "60+",
+      "metric": "replay_worsened_25cm",
+      "n": 28629897,
+      "mean": 0.16983120826456344,
+      "mean_square": 0.16983120826456344
+    },
+    {
+      "target": "ball",
+      "distance": "0–3",
+      "metric": "replay_improved_1cm",
+      "n": 801739,
+      "mean": 0.6105977132208861,
+      "mean_square": 0.6105977132208861
+    },
+    {
+      "target": "ball",
+      "distance": "0–3",
+      "metric": "replay_raw",
+      "n": 801739,
+      "mean": 0.1169284731913552,
+      "mean_square": 0.01938909349904558
+    },
+    {
+      "target": "ball",
+      "distance": "0–3",
+      "metric": "replay_stock",
+      "n": 801739,
+      "mean": 0.152226156514776,
+      "mean_square": 0.03194053137637731
+    },
+    {
+      "target": "ball",
+      "distance": "0–3",
+      "metric": "replay_worsened_25cm",
+      "n": 801739,
+      "mean": 7.483732237049713e-05,
+      "mean_square": 7.483732237049713e-05
+    },
+    {
+      "target": "ball",
+      "distance": "10–20",
+      "metric": "replay_improved_1cm",
+      "n": 5117769,
+      "mean": 0.8005912341881785,
+      "mean_square": 0.8005912341881785
+    },
+    {
+      "target": "ball",
+      "distance": "10–20",
+      "metric": "replay_raw",
+      "n": 5117769,
+      "mean": 0.36726317438267253,
+      "mean_square": 0.19135519357851677
+    },
+    {
+      "target": "ball",
+      "distance": "10–20",
+      "metric": "replay_stock",
+      "n": 5117769,
+      "mean": 0.8838536878294034,
+      "mean_square": 1.108314798969009
+    },
+    {
+      "target": "ball",
+      "distance": "10–20",
+      "metric": "replay_worsened_25cm",
+      "n": 5117769,
+      "mean": 0.06624527210978065,
+      "mean_square": 0.06624527210978065
+    },
+    {
+      "target": "ball",
+      "distance": "20–30",
+      "metric": "replay_improved_1cm",
+      "n": 5057382,
+      "mean": 0.8053425665690273,
+      "mean_square": 0.8053425665690273
+    },
+    {
+      "target": "ball",
+      "distance": "20–30",
+      "metric": "replay_raw",
+      "n": 5057382,
+      "mean": 0.5622177312827528,
+      "mean_square": 0.44889578039951267
+    },
+    {
+      "target": "ball",
+      "distance": "20–30",
+      "metric": "replay_stock",
+      "n": 5057382,
+      "mean": 1.4243722964794838,
+      "mean_square": 2.841206206594772
+    },
+    {
+      "target": "ball",
+      "distance": "20–30",
+      "metric": "replay_worsened_25cm",
+      "n": 5057382,
+      "mean": 0.1052123410887293,
+      "mean_square": 0.1052123410887293
+    },
+    {
+      "target": "ball",
+      "distance": "30–40",
+      "metric": "replay_improved_1cm",
+      "n": 3471359,
+      "mean": 0.8102671028839138,
+      "mean_square": 0.8102671028839138
+    },
+    {
+      "target": "ball",
+      "distance": "30–40",
+      "metric": "replay_raw",
+      "n": 3471359,
+      "mean": 0.7663053286986887,
+      "mean_square": 0.837139382402948
+    },
+    {
+      "target": "ball",
+      "distance": "30–40",
+      "metric": "replay_stock",
+      "n": 3471359,
+      "mean": 1.9655466631624678,
+      "mean_square": 5.311482580281264
+    },
+    {
+      "target": "ball",
+      "distance": "30–40",
+      "metric": "replay_worsened_25cm",
+      "n": 3471359,
+      "mean": 0.1229682668948962,
+      "mean_square": 0.1229682668948962
+    },
+    {
+      "target": "ball",
+      "distance": "3–10",
+      "metric": "replay_improved_1cm",
+      "n": 2075000,
+      "mean": 0.7479146987951807,
+      "mean_square": 0.7479146987951807
+    },
+    {
+      "target": "ball",
+      "distance": "3–10",
+      "metric": "replay_raw",
+      "n": 2075000,
+      "mean": 0.2045081938357122,
+      "mean_square": 0.05831767430100481
+    },
+    {
+      "target": "ball",
+      "distance": "3–10",
+      "metric": "replay_stock",
+      "n": 2075000,
+      "mean": 0.4132007162987951,
+      "mean_square": 0.24932718984872929
+    },
+    {
+      "target": "ball",
+      "distance": "3–10",
+      "metric": "replay_worsened_25cm",
+      "n": 2075000,
+      "mean": 0.020582650602409637,
+      "mean_square": 0.020582650602409637
+    },
+    {
+      "target": "ball",
+      "distance": "40–60",
+      "metric": "replay_improved_1cm",
+      "n": 3511573,
+      "mean": 0.7995559255068883,
+      "mean_square": 0.7995559255068883
+    },
+    {
+      "target": "ball",
+      "distance": "40–60",
+      "metric": "replay_raw",
+      "n": 3511573,
+      "mean": 1.050062024325869,
+      "mean_square": 1.5820213209094893
+    },
+    {
+      "target": "ball",
+      "distance": "40–60",
+      "metric": "replay_stock",
+      "n": 3511573,
+      "mean": 2.7263512061520565,
+      "mean_square": 10.355791255251393
+    },
+    {
+      "target": "ball",
+      "distance": "40–60",
+      "metric": "replay_worsened_25cm",
+      "n": 3511573,
+      "mean": 0.1507438404384588,
+      "mean_square": 0.1507438404384588
+    },
+    {
+      "target": "ball",
+      "distance": "60+",
+      "metric": "replay_improved_1cm",
+      "n": 846601,
+      "mean": 0.8057054031355976,
+      "mean_square": 0.8057054031355976
+    },
+    {
+      "target": "ball",
+      "distance": "60+",
+      "metric": "replay_raw",
+      "n": 846601,
+      "mean": 1.7197824787480316,
+      "mean_square": 4.345099397697139
+    },
+    {
+      "target": "ball",
+      "distance": "60+",
+      "metric": "replay_stock",
+      "n": 846601,
+      "mean": 4.632211141107795,
+      "mean_square": 29.905334584153916
+    },
+    {
+      "target": "ball",
+      "distance": "60+",
+      "metric": "replay_worsened_25cm",
+      "n": 846601,
+      "mean": 0.16420013678226225,
+      "mean_square": 0.16420013678226225
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "replay_improved_1cm",
+      "n": 2496952,
+      "mean": 0.617583357629622,
+      "mean_square": 0.617583357629622
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "replay_raw",
+      "n": 2496952,
+      "mean": 0.13948595530247376,
+      "mean_square": 0.02695486743007464
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "replay_stock",
+      "n": 2496952,
+      "mean": 0.1823400260549662,
+      "mean_square": 0.044816390100279886
+    },
+    {
+      "target": "opponent",
+      "distance": "0–3",
+      "metric": "replay_worsened_25cm",
+      "n": 2496952,
+      "mean": 0.0003015676713048549,
+      "mean_square": 0.0003015676713048549
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "replay_improved_1cm",
+      "n": 51784649,
+      "mean": 0.7903895611998838,
+      "mean_square": 0.7903895611998838
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "replay_raw",
+      "n": 51784649,
+      "mean": 0.3652228087067566,
+      "mean_square": 0.18878313401283942
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "replay_stock",
+      "n": 51784649,
+      "mean": 0.8641598369172487,
+      "mean_square": 1.064495049680613
+    },
+    {
+      "target": "opponent",
+      "distance": "10–20",
+      "metric": "replay_worsened_25cm",
+      "n": 51784649,
+      "mean": 0.07039985923241461,
+      "mean_square": 0.07039985923241461
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "replay_improved_1cm",
+      "n": 55496173,
+      "mean": 0.7959603448691859,
+      "mean_square": 0.7959603448691859
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "replay_raw",
+      "n": 55496173,
+      "mean": 0.5639550606099818,
+      "mean_square": 0.4513440506046424
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "replay_stock",
+      "n": 55496173,
+      "mean": 1.4032032600748534,
+      "mean_square": 2.7768323103488406
+    },
+    {
+      "target": "opponent",
+      "distance": "20–30",
+      "metric": "replay_worsened_25cm",
+      "n": 55496173,
+      "mean": 0.11156102601885719,
+      "mean_square": 0.11156102601885719
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "replay_improved_1cm",
+      "n": 45051234,
+      "mean": 0.8085767861541817,
+      "mean_square": 0.8085767861541817
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "replay_raw",
+      "n": 45051234,
+      "mean": 0.772517849865081,
+      "mean_square": 0.8478712612403929
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "replay_stock",
+      "n": 45051234,
+      "mean": 1.9660215359538864,
+      "mean_square": 5.315327972885792
+    },
+    {
+      "target": "opponent",
+      "distance": "30–40",
+      "metric": "replay_worsened_25cm",
+      "n": 45051234,
+      "mean": 0.12459874018101258,
+      "mean_square": 0.12459874018101258
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "replay_improved_1cm",
+      "n": 19332689,
+      "mean": 0.7425999042347394,
+      "mean_square": 0.7425999042347394
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "replay_raw",
+      "n": 19332689,
+      "mean": 0.21311432677567296,
+      "mean_square": 0.06255406382228326
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "replay_stock",
+      "n": 19332689,
+      "mean": 0.4233699532914432,
+      "mean_square": 0.2600880408356935
+    },
+    {
+      "target": "opponent",
+      "distance": "3–10",
+      "metric": "replay_worsened_25cm",
+      "n": 19332689,
+      "mean": 0.023034767693206053,
+      "mean_square": 0.023034767693206053
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "replay_improved_1cm",
+      "n": 36984821,
+      "mean": 0.8012780702656368,
+      "mean_square": 0.8012780702656368
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "replay_raw",
+      "n": 36984821,
+      "mean": 1.0442464054673042,
+      "mean_square": 1.5670784653746201
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "replay_stock",
+      "n": 36984821,
+      "mean": 2.725467765907264,
+      "mean_square": 10.370568254079814
+    },
+    {
+      "target": "opponent",
+      "distance": "40–60",
+      "metric": "replay_worsened_25cm",
+      "n": 36984821,
+      "mean": 0.14887399346883415,
+      "mean_square": 0.14887399346883415
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "replay_improved_1cm",
+      "n": 18549135,
+      "mean": 0.7924680584835897,
+      "mean_square": 0.7924680584835897
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "replay_raw",
+      "n": 18549135,
+      "mean": 1.672135196334716,
+      "mean_square": 4.0915482035459725
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "replay_stock",
+      "n": 18549135,
+      "mean": 4.4379190240866295,
+      "mean_square": 28.3182983377772
+    },
+    {
+      "target": "opponent",
+      "distance": "60+",
+      "metric": "replay_worsened_25cm",
+      "n": 18549135,
+      "mean": 0.17498702769697885,
+      "mean_square": 0.17498702769697885
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "replay_improved_1cm",
+      "n": 313496,
+      "mean": 0.6235199173195193,
+      "mean_square": 0.6235199173195193
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "replay_raw",
+      "n": 313496,
+      "mean": 0.1414749428574287,
+      "mean_square": 0.0282085796506045
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "replay_stock",
+      "n": 313496,
+      "mean": 0.18615908220519545,
+      "mean_square": 0.04723719123589424
+    },
+    {
+      "target": "teammate",
+      "distance": "0–3",
+      "metric": "replay_worsened_25cm",
+      "n": 313496,
+      "mean": 0.0004816648378288718,
+      "mean_square": 0.0004816648378288718
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "replay_improved_1cm",
+      "n": 54520417,
+      "mean": 0.7860952714283165,
+      "mean_square": 0.7860952714283165
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "replay_raw",
+      "n": 54520417,
+      "mean": 0.3594920358424289,
+      "mean_square": 0.18340555720563445
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "replay_stock",
+      "n": 54520417,
+      "mean": 0.8456290642767839,
+      "mean_square": 1.0232617223272549
+    },
+    {
+      "target": "teammate",
+      "distance": "10–20",
+      "metric": "replay_worsened_25cm",
+      "n": 54520417,
+      "mean": 0.07112441931616187,
+      "mean_square": 0.07112441931616187
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "replay_improved_1cm",
+      "n": 54954243,
+      "mean": 0.7965870624402924,
+      "mean_square": 0.7965870624402924
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "replay_raw",
+      "n": 54954243,
+      "mean": 0.5612564766903178,
+      "mean_square": 0.44719570713226003
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "replay_stock",
+      "n": 54954243,
+      "mean": 1.3984494004349748,
+      "mean_square": 2.7539503269798686
+    },
+    {
+      "target": "teammate",
+      "distance": "20–30",
+      "metric": "replay_worsened_25cm",
+      "n": 54954243,
+      "mean": 0.110999418188692,
+      "mean_square": 0.110999418188692
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "replay_improved_1cm",
+      "n": 39231654,
+      "mean": 0.8094496092364599,
+      "mean_square": 0.8094496092364599
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "replay_raw",
+      "n": 39231654,
+      "mean": 0.7689278393450051,
+      "mean_square": 0.8398650969434481
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "replay_stock",
+      "n": 39231654,
+      "mean": 1.9629044965311946,
+      "mean_square": 5.292171166745274
+    },
+    {
+      "target": "teammate",
+      "distance": "30–40",
+      "metric": "replay_worsened_25cm",
+      "n": 39231654,
+      "mean": 0.12362114531291492,
+      "mean_square": 0.12362114531291492
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "replay_improved_1cm",
+      "n": 14758223,
+      "mean": 0.754590779662294,
+      "mean_square": 0.754590779662294
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "replay_raw",
+      "n": 14758223,
+      "mean": 0.22000817719285118,
+      "mean_square": 0.06675034101900561
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "replay_stock",
+      "n": 14758223,
+      "mean": 0.45459176360731246,
+      "mean_square": 0.2964126279049914
+    },
+    {
+      "target": "teammate",
+      "distance": "3–10",
+      "metric": "replay_worsened_25cm",
+      "n": 14758223,
+      "mean": 0.027339538100217078,
+      "mean_square": 0.027339538100217078
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "replay_improved_1cm",
+      "n": 34955435,
+      "mean": 0.8020214023942199,
+      "mean_square": 0.8020214023942199
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "replay_raw",
+      "n": 34955435,
+      "mean": 1.0447030842610285,
+      "mean_square": 1.5644146806538708
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "replay_stock",
+      "n": 34955435,
+      "mean": 2.7208045447299094,
+      "mean_square": 10.326355293138445
+    },
+    {
+      "target": "teammate",
+      "distance": "40–60",
+      "metric": "replay_worsened_25cm",
+      "n": 34955435,
+      "mean": 0.14807477006079311,
+      "mean_square": 0.14807477006079311
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "replay_improved_1cm",
+      "n": 10080762,
+      "mean": 0.8079750320461886,
+      "mean_square": 0.8079750320461886
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "replay_raw",
+      "n": 10080762,
+      "mean": 1.624217965335902,
+      "mean_square": 3.8341806167877497
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "replay_stock",
+      "n": 10080762,
+      "mean": 4.297722660565739,
+      "mean_square": 25.537188021738775
+    },
+    {
+      "target": "teammate",
+      "distance": "60+",
+      "metric": "replay_worsened_25cm",
+      "n": 10080762,
+      "mean": 0.1603442279462604,
+      "mean_square": 0.1603442279462604
+    }
+  ]
+}

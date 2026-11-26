@@ -1,0 +1,572 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exp6 Gaussian versus Exp3 quantization</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#1e293b;background:#f7fafc;margin:0}
+main{max-width:1080px;margin:auto;padding:32px 24px}img{display:block;width:100%;background:white}
+table{border-collapse:collapse;background:white;display:block;overflow:auto;margin:20px 0}
+td,th{padding:7px 12px;border:1px solid #d5e2e8}th{background:#e4eff1;text-align:left}
+td:not(:first-child){text-align:right}h2{margin:38px 0 12px}
+pre{overflow:auto;background:#edf4f7;padding:16px}a{color:#075e71}</style></head><body><main><h1>Exp6 · Gaussian visual noise versus Exp3 quantization</h1>
+<p><strong>Gaussian player range MAE was 59.6 cm, compared with
+75.5 cm under quantization. Player WM position error was
+170.6 cm versus 80.0 cm.</strong>
+Each experiment used 200 games with the stock agents and 360° vision.</p>
+<p><a href="../../exp3/reports/report.html">Exp3 report</a> · <a href="metrics.json">Exp6 metrics and scores</a> · <a href="../README.md">Run settings</a> · <a href="range-replay/report.html">Step 1 range correction</a></p>
+<h2>1. Collection checks</h2>
+<p>All <strong>4,400</strong> Exp6 observer logs finalized. Both sides requested Gaussian and
+used reference fullstate for labels. The runs share synchronized 360° vision,
+persistent uniform numbers, standard motion-field fading and no player
+messages. Exp6 disabled both exact-vision switches and used the standard
+Gaussian rates for movable objects and landmarks. Random command-order
+settings by observer were {'false': 4400}.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th style="text-align: right;">Exp3 quantized</th>
+<th style="text-align: right;">Exp6 Gaussian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PlayOn decisions</td>
+<td style="text-align: right;">21,539,323</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>360° view</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>High-quality view</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>Exactly one same-cycle see</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>Visual update used</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>Valid reference fullstate</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>Identified on-field player rows</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>Teammate payloads</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Skipped-decision placeholders, all modes</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Exp6 had <strong>438,509,883</strong> eligible on-field player rows with reference geometry.
+Among available WM player positions, <strong>100.00%</strong> had position
+count 0. <strong>99.90%</strong> of known ranges fell outside
+the 0.1 m grid. The batch retained the parsed fields in CSV. Gaussian
+acknowledgment packets were verified in the collection pilot.</p>
+<p>All <strong>200</strong> match scores agree with AutoTest2D. Goals were
+<strong>666–642</strong>, with <strong>91/23/86</strong>
+left wins/draws/losses. Both teams used the same setup.</p>
+<h2>2. Player error from the sensor to the world model</h2>
+<table>
+<thead>
+<tr>
+<th>Mean error</th>
+<th style="text-align: right;">Exp3 quantized</th>
+<th style="text-align: right;">Exp6 Gaussian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw range MAE (cm)</td>
+<td style="text-align: right;">75.52</td>
+<td style="text-align: right;">59.64</td>
+</tr>
+<tr>
+<td>Raw bearing MAE (°)</td>
+<td style="text-align: right;">0.250</td>
+<td style="text-align: right;">0.250</td>
+</tr>
+<tr>
+<td>Raw relative position (cm)</td>
+<td style="text-align: right;">78.07</td>
+<td style="text-align: right;">62.86</td>
+</tr>
+<tr>
+<td>Relative position with true range (cm)</td>
+<td style="text-align: right;">13.24</td>
+<td style="text-align: right;">13.05</td>
+</tr>
+<tr>
+<td>Relative position with true bearing (cm)</td>
+<td style="text-align: right;">75.52</td>
+<td style="text-align: right;">59.64</td>
+</tr>
+<tr>
+<td>Localized relative position (cm)</td>
+<td style="text-align: right;">80.01</td>
+<td style="text-align: right;">170.40</td>
+</tr>
+<tr>
+<td>Visual global position (cm), paired</td>
+<td style="text-align: right;">80.04</td>
+<td style="text-align: right;">170.60</td>
+</tr>
+<tr>
+<td>WM global position (cm), paired</td>
+<td style="text-align: right;">80.04</td>
+<td style="text-align: right;">170.60</td>
+</tr>
+<tr>
+<td>WM global position (cm), all available</td>
+<td style="text-align: right;">80.04</td>
+<td style="text-align: right;">170.60</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Player error by distance in both experiments" src="player-error-by-distance.svg" /></p>
+<p>Each cell below shows <strong>Exp3 / Exp6</strong>. Raw relative position compares the
+observed polar vector with the true vector in the observer's own frame.
+Visual and WM global errors include observer pose error. The visual and WM
+paired columns require both estimates for the same observer, target and
+cycle within each experiment.</p>
+<table>
+<thead>
+<tr>
+<th>True distance (m)</th>
+<th style="text-align: right;">Raw range (cm)</th>
+<th style="text-align: right;">Raw relative (cm)</th>
+<th style="text-align: right;">Visual global (cm)</th>
+<th style="text-align: right;">WM global (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–3</td>
+<td style="text-align: right;">5.21 / 3.84</td>
+<td style="text-align: right;">5.38 / 4.05</td>
+<td style="text-align: right;">5.53 / 18.28</td>
+<td style="text-align: right;">5.53 / 18.28</td>
+</tr>
+<tr>
+<td>3–10</td>
+<td style="text-align: right;">18.72 / 14.76</td>
+<td style="text-align: right;">19.33 / 15.55</td>
+<td style="text-align: right;">19.56 / 43.69</td>
+<td style="text-align: right;">19.56 / 43.69</td>
+</tr>
+<tr>
+<td>10–20</td>
+<td style="text-align: right;">38.32 / 30.20</td>
+<td style="text-align: right;">39.54 / 31.83</td>
+<td style="text-align: right;">40.59 / 85.47</td>
+<td style="text-align: right;">40.59 / 85.47</td>
+</tr>
+<tr>
+<td>20–30</td>
+<td style="text-align: right;">61.93 / 49.54</td>
+<td style="text-align: right;">64.03 / 52.21</td>
+<td style="text-align: right;">65.49 / 140.08</td>
+<td style="text-align: right;">65.49 / 140.08</td>
+</tr>
+<tr>
+<td>30–40</td>
+<td style="text-align: right;">88.86 / 69.07</td>
+<td style="text-align: right;">91.57 / 72.80</td>
+<td style="text-align: right;">94.84 / 196.46</td>
+<td style="text-align: right;">94.84 / 196.46</td>
+</tr>
+<tr>
+<td>40–60</td>
+<td style="text-align: right;">116.91 / 94.66</td>
+<td style="text-align: right;">120.96 / 99.77</td>
+<td style="text-align: right;">123.52 / 272.32</td>
+<td style="text-align: right;">123.52 / 272.32</td>
+</tr>
+<tr>
+<td>60+</td>
+<td style="text-align: right;">182.25 / 151.13</td>
+<td style="text-align: right;">189.23 / 159.28</td>
+<td style="text-align: right;">193.13 / 438.86</td>
+<td style="text-align: right;">193.13 / 438.86</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th style="text-align: right;">Exp3 raw relative (cm)</th>
+<th style="text-align: right;">Exp6 raw relative (cm)</th>
+<th style="text-align: right;">Exp3 WM position (cm)</th>
+<th style="text-align: right;">Exp6 WM position (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teammate</td>
+<td style="text-align: right;">76.22</td>
+<td style="text-align: right;">61.00</td>
+<td style="text-align: right;">78.13</td>
+<td style="text-align: right;">165.30</td>
+</tr>
+<tr>
+<td>Opponent</td>
+<td style="text-align: right;">79.76</td>
+<td style="text-align: right;">64.56</td>
+<td style="text-align: right;">81.78</td>
+<td style="text-align: right;">175.43</td>
+</tr>
+</tbody>
+</table>
+<p>Gaussian range MAE was <strong>0.79×</strong> the
+quantized baseline. Weighting Gaussian by Exp3's distance-bin counts gives
+<strong>60.4 cm</strong>. These are independent games, so differences in
+geometry can remain within each bin.</p>
+<p>The analysis includes PlayOn only and gives every eligible sample equal
+weight. Raw and visual player errors require an unambiguous uniform-number
+association. All-available WM errors include any valid matched track. Exp3
+uses its archived aggregates, which limit comparisons to shared measurements.</p>
+<h2>3. The Gaussian distance model and the localization step</h2>
+<p>Substituting true distance on the same Exp6 rows reduces mean raw relative
+position error from <strong>62.9 to
+13.0 cm</strong>. Substituting true bearing leaves
+<strong>59.6 cm</strong>. Each substitution changes one
+measurement and uses truth for diagnosis.</p>
+<p><img alt="Range versus bearing and range bias" src="range-diagnostics.svg" /></p>
+<p>Mean signed raw Gaussian range error is <strong>-0.01 cm</strong>. The norm of
+librcsc's localized relative vector minus true distance averages
+<strong>+158.81 cm</strong>. On rows with both ranges, MAE is
+<strong>59.6 cm before localization</strong> and
+<strong>167.8 cm after localization</strong>. Comparing
+the two ranges removes observer position and heading from this check.
+In librcsc, the lookup selects the first quantization-table bin whose
+reported value is at least the observed distance minus 0.001 m. Continuous
+Gaussian values between bins therefore often move to the next bin. This
+explains the upward bias. Replaying the stock table reproduced
+<strong>409,563 / 409,563</strong> logged localized
+ranges within 0.15 mm on four observer streams from the first and last games.
+<a href="lookup-replay.json">Lookup replay evidence</a></p>
+<table>
+<thead>
+<tr>
+<th>True distance (m)</th>
+<th style="text-align: right;">Raw signed error (cm)</th>
+<th style="text-align: right;">Localized signed error (cm)</th>
+<th style="text-align: right;">Raw MAE (cm), paired</th>
+<th style="text-align: right;">Localized MAE (cm), paired</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–3</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">11.26</td>
+<td style="text-align: right;">3.84</td>
+<td style="text-align: right;">11.76</td>
+</tr>
+<tr>
+<td>3–10</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">37.84</td>
+<td style="text-align: right;">14.76</td>
+<td style="text-align: right;">40.03</td>
+</tr>
+<tr>
+<td>10–20</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">78.82</td>
+<td style="text-align: right;">30.20</td>
+<td style="text-align: right;">83.35</td>
+</tr>
+<tr>
+<td>20–30</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">131.36</td>
+<td style="text-align: right;">49.54</td>
+<td style="text-align: right;">138.26</td>
+</tr>
+<tr>
+<td>30–40</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">183.91</td>
+<td style="text-align: right;">69.07</td>
+<td style="text-align: right;">194.71</td>
+</tr>
+<tr>
+<td>40–60</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">254.09</td>
+<td style="text-align: right;">94.66</td>
+<td style="text-align: right;">268.10</td>
+</tr>
+<tr>
+<td>60+</td>
+<td style="text-align: right;">-0.05</td>
+<td style="text-align: right;">406.97</td>
+<td style="text-align: right;">151.13</td>
+<td style="text-align: right;">431.00</td>
+</tr>
+</tbody>
+</table>
+<p>Exp6 player WM position error exceeded 50 cm in
+<strong>78.61%</strong> and 1 m in <strong>57.69%</strong>
+of available tracks.</p>
+<p>The server sets σ = d × distance rate + f × focus rate, where d is the
+true observer-to-object distance and f is the true focus-to-object distance.
+It clamps the noisy distance at zero. The table checks
+<strong>z = (observed distance − true distance) / σ</strong>. Nonzero observer focus distance
+appears in <strong>0.00%</strong> of labeled
+PlayOn decisions.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Mean z</th>
+<th style="text-align: right;">Std dev z</th>
+<th style="text-align: right;">abs(z) &gt; 1</th>
+<th style="text-align: right;">abs(z) &gt; 2</th>
+<th style="text-align: right;">abs(z) &gt; 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Players</td>
+<td style="text-align: right;">438,509,883</td>
+<td style="text-align: right;">-0.0001</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">31.73%</td>
+<td style="text-align: right;">4.55%</td>
+<td style="text-align: right;">0.27%</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td style="text-align: right;">20,881,423</td>
+<td style="text-align: right;">0.0002</td>
+<td style="text-align: right;">1.0002</td>
+<td style="text-align: right;">31.73%</td>
+<td style="text-align: right;">4.55%</td>
+<td style="text-align: right;">0.27%</td>
+</tr>
+<tr>
+<td>Flags and goals</td>
+<td style="text-align: right;">1,148,475,988</td>
+<td style="text-align: right;">-0.0001</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">31.73%</td>
+<td style="text-align: right;">4.55%</td>
+<td style="text-align: right;">0.27%</td>
+</tr>
+<tr>
+<td>Standard normal</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">31.73%</td>
+<td style="text-align: right;">4.55%</td>
+<td style="text-align: right;">0.27%</td>
+</tr>
+</tbody>
+</table>
+<h2>4. Velocity and body fields</h2>
+<p>Both raw motion fields were available for <strong>55.68%</strong>
+of Exp3 targets and <strong>56.94%</strong> of Exp6 targets.</p>
+<table>
+<thead>
+<tr>
+<th>Mean error</th>
+<th style="text-align: right;">Exp3 quantized</th>
+<th style="text-align: right;">Exp6 Gaussian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw distance-change MAE (m/cycle)</td>
+<td style="text-align: right;">0.0730</td>
+<td style="text-align: right;">0.0033</td>
+</tr>
+<tr>
+<td>Raw bearing-change MAE (°/cycle)</td>
+<td style="text-align: right;">0.0241</td>
+<td style="text-align: right;">0.0243</td>
+</tr>
+<tr>
+<td>Raw body MAE (°)</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">0.2500</td>
+</tr>
+<tr>
+<td>Raw head MAE (°)</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">0.2500</td>
+</tr>
+<tr>
+<td>Visual velocity error (m/cycle)</td>
+<td style="text-align: right;">0.0745</td>
+<td style="text-align: right;">0.0119</td>
+</tr>
+<tr>
+<td>WM velocity error (m/cycle)</td>
+<td style="text-align: right;">0.0942</td>
+<td style="text-align: right;">0.0558</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>True distance (m)</th>
+<th style="text-align: right;">Exp3 motion fields</th>
+<th style="text-align: right;">Exp6 motion fields</th>
+<th style="text-align: right;">Exp3 body angle</th>
+<th style="text-align: right;">Exp6 body angle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–3</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>3–10</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">100.00%</td>
+</tr>
+<tr>
+<td>10–20</td>
+<td style="text-align: right;">99.95%</td>
+<td style="text-align: right;">99.97%</td>
+<td style="text-align: right;">99.95%</td>
+<td style="text-align: right;">99.97%</td>
+</tr>
+<tr>
+<td>20–30</td>
+<td style="text-align: right;">75.63%</td>
+<td style="text-align: right;">75.80%</td>
+<td style="text-align: right;">75.63%</td>
+<td style="text-align: right;">75.80%</td>
+</tr>
+<tr>
+<td>30–40</td>
+<td style="text-align: right;">26.80%</td>
+<td style="text-align: right;">26.93%</td>
+<td style="text-align: right;">26.80%</td>
+<td style="text-align: right;">26.93%</td>
+</tr>
+<tr>
+<td>40–60</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.12%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.12%</td>
+</tr>
+<tr>
+<td>60+</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+</tbody>
+</table>
+<p>Coverage uses all eligible on-field targets. Error means use observations
+with the relevant field or a valid estimate. The server scales raw radial
+change with the same noisy distance ratio before rounding. Bearing, body
+and head use the same angular encoding as the quantized mode.</p>
+<h2>5. Ball, landmarks and self in Exp6</h2>
+<table>
+<thead>
+<tr>
+<th>Exp6 object and measure</th>
+<th style="text-align: right;">Mean error</th>
+<th style="text-align: right;">Samples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ball raw distance</td>
+<td style="text-align: right;">54.83 cm</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Ball raw relative position</td>
+<td style="text-align: right;">57.79 cm</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Ball visual global position</td>
+<td style="text-align: right;">158.15 cm</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Ball WM position</td>
+<td style="text-align: right;">158.15 cm</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Ball WM velocity</td>
+<td style="text-align: right;">0.1503 m/cycle</td>
+<td style="text-align: right;">16,578,601</td>
+</tr>
+<tr>
+<td>Landmark raw distance</td>
+<td style="text-align: right;">11.11 cm</td>
+<td style="text-align: right;">1,148,475,988</td>
+</tr>
+<tr>
+<td>Landmark raw bearing</td>
+<td style="text-align: right;">0.250°</td>
+<td style="text-align: right;">1,148,475,988</td>
+</tr>
+<tr>
+<td>Self fresh visual position fix</td>
+<td style="text-align: right;">12.81 cm</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Self WM position</td>
+<td style="text-align: right;">12.96 cm</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Self WM velocity</td>
+<td style="text-align: right;">0.0026 m/cycle</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+<tr>
+<td>Self WM looking direction</td>
+<td style="text-align: right;">0.250°</td>
+<td style="text-align: right;">20,881,423</td>
+</tr>
+</tbody>
+</table>
+<p>These measures give Exp6 reference points for later modeling. The archived
+Exp3 player metrics cover the player comparisons above.</p>
+<h2>Reproduce</h2>
+<p>Run from the denoise workspace. The first command streams the compressed
+CSVs and retains per-game totals for resuming interrupted runs.</p>
+<pre><code>exp=rcssserver-denoise/experiments/exp6
+mkdir -p "$exp/reports"
+python3 "$exp/reporting/analyze_logs.py" logs/exp6-logs logs/exp6-analysis/baseline-200 --autotest AutoTest2D/out/exp6logs --autotest AutoTest2D/out/exp6logs2
+.venv-exp5-s1/bin/python "$exp/reporting/verify_lookup.py" logs/exp6-logs librcsc-denoise/rcsc/player/object_table.cpp "$exp/reports/lookup-replay.json"
+.venv-exp5-s1/bin/python "$exp/reporting/render_report.py" rcssserver-denoise/experiments/exp3/reports/exp3-metrics.json logs/exp6-analysis/baseline-200/metrics.json "$exp/reports"
+</code></pre></main></body></html>
